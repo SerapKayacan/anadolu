@@ -36,5 +36,7 @@ class DatabaseSeeder extends Seeder
             'is_active' => true
         ]);
 
+        ServiceSeeder::run();
+
     }
 }

@@ -1,4 +1,4 @@
-@section('title', $front['singularPageName'] .' Düzenle')
+@section('title', 'Kullanıcı Düzenle')
 @section('css')
 @endsection
 @extends('admin.layouts.master')
@@ -19,13 +19,13 @@
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
                         <li class="breadcrumb-item text-muted">
-                            <a href="{{ route('user.index') }}" class="text-muted text-hover-primary">{{ $front["pluralPageName"] }}</a>
+                            <a href="{{ route('user.index') }}" class="text-muted text-hover-primary">Kullanıcılar</a>
                         </li>
                         <li class="breadcrumb-item">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
                         <li class="breadcrumb-item text-muted">
-                            {{ $front['singularPageName'] }} Düzenle
+                            Kullanıcı Düzenle
                         </li>
                     </ul>
                 </div>

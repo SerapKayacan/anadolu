@@ -1,4 +1,4 @@
-@section('title', $front["singularPageName"] . ' Listesi ')
+@section('title', 'Kullanıcı Listesi ')
 @section('css')
 <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 @endsection
@@ -9,7 +9,7 @@
         <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
             <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
                 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">{{ $front["pluralPageName"] }}</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Kullanıcılar</h1>
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <li class="breadcrumb-item text-muted">
                             <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Gösterge Paneli</a>
@@ -17,7 +17,7 @@
                         <li class="breadcrumb-item">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
-                        <li class="breadcrumb-item text-muted">{{ $front["pluralPageName"] }}</li>
+                        <li class="breadcrumb-item text-muted">Kullanıcılar</li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="card-toolbar">
-                            <a href="{{ route('user.create') }}" class="btn btn-primary">Yeni {{ $front["singularPageName"] }}</a>
+                            <a href="{{ route('user.create') }}" class="btn btn-primary">Yeni Kullanıcı</a>
                         </div>
                     </div>
                     <div class="card-body pt-0">
@@ -58,7 +58,7 @@
                                                 value="1" />
                                         </div>
                                     </th>
-                                    <th class="min-w-250px">{{ $front["singularPageName"] }}</th>
+                                    <th class="min-w-250px">Kullanıcılar</th>
                                     <th class="min-w-150px">Durum</th>
                                     <th class="text-end min-w-70px">İşlemler</th>
                                 </tr>

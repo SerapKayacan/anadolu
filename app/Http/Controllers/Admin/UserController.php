@@ -9,24 +9,16 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    protected $front = [
-        "singularPageName" => "Kullanıcı",
-        "pluralPageName" => "Kullanıcılar",
-    ];
-
     public function index()
     {
         $users = User::all();
-        return view('admin.user.list', [
-            "users" => $users,
-            "front" => $this->front
+        return view('admin.user.index', [
+            "users" => $users
         ]);
     }
     public function create()
     {
-        return view('admin.user.add', [
-            "front" => $this->front
-        ]);
+        return view('admin.user.create');
     }
 
     public function edit($id)
@@ -34,8 +26,7 @@ class UserController extends Controller
         $user = User::find($id);
 
         return view('admin.user.edit', [
-            "user" => $user,
-            "front" => $this->front
+            "user" => $user
         ]);
     }
 
@@ -53,7 +44,7 @@ class UserController extends Controller
         $user->is_active = true;
         $user->save();
 
-        return redirect()->to(route('user.index'));
+        return redirect()->to(route('user.edit', $user->id));
     }
 
     public function update(Request $request, $id)
@@ -72,7 +63,7 @@ class UserController extends Controller
         $user->is_active = $request->is_active;
         $user->update();
 
-        return redirect()->to(route('user.index'));
+        return redirect()->to(route('user.edit', $user->id));
     }
 
     public function profile()
@@ -80,8 +71,7 @@ class UserController extends Controller
         $user = User::find(Auth::user()->id);
 
         return view('admin.user.profile', [
-            "user" => $user,
-            "front" => $this->front
+            "user" => $user
         ]);
     }
 
