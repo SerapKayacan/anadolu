@@ -19,4 +19,12 @@ class SlugHelper
 
         return $slug;
     }
+
+    public static function imageSlugName($file)
+    {
+        $file_full_name = $file->getClientOriginalName();
+        $original_extension = $file->getClientOriginalExtension();
+        $slug = Str::slug(explode('.', $file_full_name)[0], '-') . '.' . $original_extension;
+        return $slug;
+    }
 }

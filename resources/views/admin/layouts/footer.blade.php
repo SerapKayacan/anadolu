@@ -41,7 +41,7 @@
         <script>
             @if(session()->has('success'))
             Swal.fire({
-                title: 'Success!',
+                title: 'Başarılı!',
                 text: '{{session()->get('success')}}',
                 icon: 'success',
                 confirmButtonText: 'Ok'
@@ -50,7 +50,7 @@
 
             @if(session()->has('error'))
             Swal.fire({
-                title: 'Error!',
+                title: 'Hata!',
                 text: '{{session()->get('error')}}',
                 icon: 'error',
                 confirmButtonText: 'Ok'
@@ -59,7 +59,7 @@
             //if validation fails
             @if ($errors->any())
             Swal.fire({
-                title: 'Error!',
+                title: 'Hata!',
                 text: 'Please check the form below for errors',
                 icon: 'error',
                 confirmButtonText: 'Ok'

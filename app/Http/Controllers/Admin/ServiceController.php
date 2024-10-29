@@ -6,25 +6,24 @@ use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\ServiceCategory;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
-        $types = ServiceCategory::types();
+        $services = Service::orderBy('sort_order','ASC')->get();
         return view('admin.service.index', [
-            "serviceCategories" => $services,
-            "types" => $types
+            "services" => $services
         ]);
     }
 
     public function create()
     {
-        $types = ServiceCategory::types();
+        $categories = ServiceCategory::where('is_active', true)->orderBy('sort_order','ASC')->get();
         return view('admin.service.create', [
-            "types" => $types
+            "categories" => $categories
         ]);
     }
 
@@ -34,26 +33,47 @@ class ServiceController extends Controller
         $service->title = $request->title;
         $service->slug = SlugHelper::generateUniqueSlug(Service::class, $request->title);
         $service->meta_description = $request->meta_description;
-        $service->meta_keywords = $request->meta_keywords;
         $service->category_page_detail = $request->category_page_detail;
         $service->sort_detail = $request->sort_detail;
         $service->detail = $request->detail;
-        $service->banner_image = $request->banner_image;
         $service->category_id = $request->category_id;
         $service->sort_order = $request->sort_order;
+        $service->can_be_appointment = $request->can_be_appointment;
+        $service->appointment_start_time = $request->appointment_start_time;
+        $service->appointment_end_time = $request->appointment_end_time;
         $service->is_active = $request->is_active;
         $service->save();
 
-        return redirect()->to(route('service.edit', $service->id));
+        $tags = json_decode($request->tags, true);
+        $tagIds = [];
+        if (!is_null($tags) && count($tags) > 0) {
+            foreach ($tags as $tagName) {
+                if (strlen($tagName["value"]) > 2) {
+                    $tag = Tag::firstOrCreate(['name' => $tagName["value"]]);
+                    $tagIds[] = $tag->id;
+                }
+            }
+        }
+        $service->tags()->sync($tagIds);
+
+        if ($request->hasFile('banner_image')) {
+            $service->clearMediaCollection('banner');
+            $service->addMedia($request->banner_image)->usingFileName(SlugHelper::imageSlugName($request->banner_image))->toMediaCollection('banner');
+        }
+
+        return redirect()->to(route('service.index', $service->id));
     }
 
     public function edit(string $id)
     {
         $service = Service::findOrFail($id);
-        $types = ServiceCategory::types();
+        $categories = ServiceCategory::where('is_active', true)->orderBy('sort_order','ASC')->get();
+        $tags = $service->tags->pluck('name')->toArray();
+
         return view('admin.service.edit', [
-            "serviceCategory" => $service,
-            "types" => $types
+            "service" => $service,
+            "categories" => $categories,
+            "tags" => $tags
         ]);
     }
 
@@ -65,17 +85,37 @@ class ServiceController extends Controller
         }
         $service->title = $request->title;
         $service->meta_description = $request->meta_description;
-        $service->meta_keywords = $request->meta_keywords;
         $service->category_page_detail = $request->category_page_detail;
         $service->sort_detail = $request->sort_detail;
         $service->detail = $request->detail;
-        $service->banner_image = $request->banner_image;
         $service->category_id = $request->category_id;
         $service->sort_order = $request->sort_order;
+        $service->can_be_appointment = $request->can_be_appointment;
+        $service->appointment_start_time = $request->appointment_start_time;
+        $service->appointment_end_time = $request->appointment_end_time;
         $service->is_active = $request->is_active;
         $service->update();
 
-        return redirect()->to(route('service.edit', $service->id));
+        $tags = json_decode($request->tags, true);
+        $tagIds = [];
+        if (!is_null($tags) && count($tags) > 0) {
+            foreach ($tags as $tagName) {
+                if (strlen($tagName["value"]) > 2) {
+                    $tag = Tag::firstOrCreate(['name' => $tagName["value"]]);
+                    $tagIds[] = $tag->id;
+                }
+            }
+        }
+        $service->tags()->sync($tagIds);
+
+        if ($request->hasFile('banner_image')) {
+            $service->clearMediaCollection('banner');
+            $service->addMedia($request->banner_image)->usingFileName(SlugHelper::imageSlugName($request->banner_image))->toMediaCollection('banner');
+        } else {
+            $service->clearMediaCollection('banner');
+        }
+
+        return redirect()->to(route('service.index', $service->id));
     }
 
     public function destroy(string $id)

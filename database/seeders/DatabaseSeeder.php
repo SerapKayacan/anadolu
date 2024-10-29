@@ -3,17 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\ActivityCategory;
-use App\Models\DonationCategory;
-use App\Models\Page;
-use App\Models\ProjectCategory;
-use App\Models\StaticPage;
-use App\Models\NewsCategory;
-use App\Models\RoleModel;
-use App\Models\User;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,14 +19,11 @@ class DatabaseSeeder extends Seeder
 //             'email' => 'test@example.com',
 //         ]);
 
-        User::create([
-            'name' => 'Osman Ustalar',
-            'email' => 'osmanustalar@gmail.com',
-            'password' => bcrypt('test'),
-            'is_active' => true
-        ]);
 
-        ServiceSeeder::run();
+        $this->call([
+            ServiceSeeder::class,
+            UserSeeder::class,
+        ]);
 
     }
 }

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('meta_description')->nullable();
-            $table->text('meta_keywords')->nullable();
             $table->text('home_page_detail')->nullable();
             $table->text('category_page_detail')->nullable();
             $table->text('icon')->nullable();
@@ -26,6 +25,7 @@ return new class extends Migration
             $table->boolean('is_show_service_page')->default(true);
             $table->integer('home_page_colspan')->default(1);
             $table->boolean('is_active')->default(true);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

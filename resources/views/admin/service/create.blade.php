@@ -1,4 +1,4 @@
-@section('title', 'Yeni Hizmet Kategorisi')
+@section('title', 'Yeni Hizmet')
 @section('css')
 @endsection
 @extends('admin.layouts.master')
@@ -9,7 +9,7 @@
             <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
                 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                        Yeni Hizmet Kategorisi
+                        Yeni Hizmet
                     </h1>
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <li class="breadcrumb-item text-muted">
@@ -19,13 +19,13 @@
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
                         <li class="breadcrumb-item text-muted">
-                            <a href="{{ route('service-category.index') }}" class="text-muted text-hover-primary">Hizmet Kategori Listesi</a>
+                            <a href="{{ route('service-category.index') }}" class="text-muted text-hover-primary">Hizmet Listesi</a>
                         </li>
                         <li class="breadcrumb-item">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
                         <li class="breadcrumb-item text-muted">
-                            Yeni Hizmet Kategorisi
+                            Yeni Hizmet
                         </li>
                     </ul>
                 </div>
@@ -34,7 +34,7 @@
 
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <div id="kt_app_content_container" class="app-container container-xxl">
-                <form class="form d-flex flex-column flex-lg-row" action="{{ route('service-category.store') }}" method="POST" id="form" enctype="multipart/form-data">
+                <form class="form d-flex flex-column flex-lg-row" action="{{ route('service.store') }}" method="POST" id="form" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
                     <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-12">
@@ -55,18 +55,62 @@
                                         <div class="card-body pt-5">
                                             <div class="mb-10 row">
                                                 <div class="col-sm-6">
-                                                    <label class="required form-label">Tip</label>
-                                                    <select name="type" class="form-control col-sm-4" required>
-                                                        @foreach($types as $key => $type)
-                                                            <option value="{{$key}}">{{ $type }}</option>
+                                                    <label class="form-label">Görsel Seçin</label>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                         <span class="input-group-btn">
+                                                            <a class="uploadImage btn btn-primary text-white btn-sm">
+                                                               <i class="far fa-file-image"></i> Seç
+                                                            </a>
+                                                               <input type="file" accept="image/jpeg, image/png, image/jpg" name="banner_image" class="d-none">
+                                                            <a data-input="thumbnail" data-preview="holder"
+                                                               class="removeImage btn btn-danger text-white btn-sm">
+                                                               <i class="fa fa-trash"></i> Kaldır
+                                                            </a>
+                                                            <div class="row col-md-12 thumb-output p-2">
+                                                                <img class="thumb img-thumbnail" src="">
+                                                            </div>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-muted fs-7">Medya görseli ekleyin.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-4">
+                                                    <label class="required form-label">Kategori</label>
+                                                    <select name="category_id" class="form-control col-sm-4" required>
+                                                        @foreach($categories as $category)
+                                                            <option value="{{$category->id}}">{{ $category->title }}</option>
                                                         @endforeach
                                                     </select>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <label class="form-label">Ikon</label>
-                                                    <input class="form-control" name="icon" value=""/>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                <div class="col-sm-4">
+                                                    <label class="required form-label">Randevulu</label>
+                                                    <select name="can_be_appointment" id="can_be_appointment" class="form-control" required>
+                                                        <option value="1">Evet</option>
+                                                        <option selected value="0">Hayır</option>
+                                                    </select>
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                                <div class="col-sm-4" style="display: none;" id="appointment_times">
+                                                    <label class="required form-label">Randevu Başlangıç / Bitiş Saatleri</label>
+                                                    <div class="d-flex">
+                                                        <select class="form-control me-2" id="appointment_start_time" name="appointment_start_time">
+                                                            @foreach (range(0, 23) as $hour)
+                                                                <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
+                                                                <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <select class="form-control" id="appointment_end_time" name="appointment_end_time">
+                                                            @foreach (range(0, 23) as $hour)
+                                                                <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
+                                                                <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
@@ -78,39 +122,23 @@
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
-                                                    <label class="form-label">Anasayfa Açıklama</label>
-                                                    <textarea class="form-control" name="home_page_detail" rows="2"></textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
                                                     <label class="form-label">Kategori Sayfası Açıklama</label>
                                                     <textarea class="form-control" name="category_page_detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
-                                                <div class="col-sm-4">
-                                                    <label class="required form-label">Anasayfada Göster</label>
-                                                    <select name="is_show_home_page" class="form-control col-sm-4">
-                                                        <option selected value="1">Evet</option>
-                                                        <option value="0">Hayır</option>
-                                                    </select>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                <div class="col-sm-12">
+                                                    <label class="form-label">Kısa Açıklama</label>
+                                                    <textarea class="form-control" name="sort_detail" rows="2"></textarea>
+                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <label class="required form-label">Anasayfada Kolon Sayısı</label>
-                                                    <input class="form-control" name="home_page_colspan" type="number" value="1" min="1" max="3"/>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <label class="required form-label">Hizmetlerimiz Menüsünde Göster</label>
-                                                    <select name="is_show_service_page" class="form-control col-sm-4" required>
-                                                        <option selected value="1">Evet</option>
-                                                        <option value="0">Hayır</option>
-                                                    </select>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="form-label">Açıklama</label>
+                                                    <textarea class="form-control" name="category_page_detail" rows="2"></textarea>
+                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -130,10 +158,8 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                             <div class="tab-pane fade" id="search" role="tab-panel">
                                 <div class="d-flex flex-column gap-7 gap-lg-10">
                                     <div class="card card-flush pt-5">
@@ -156,7 +182,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="d-flex justify-content-end">
@@ -170,6 +195,7 @@
     </div>
 @endsection
 @section('script')
+    <script src="{{ asset('') }}assets/js/admin/media.js"></script>
     <script src="{{ asset('') }}assets/dragsort/dragsort.js"></script>
     <script>
         var input = document.querySelector('#inputTagify');
@@ -185,5 +211,42 @@
         function onDragEnd(elm){
             tagify.updateValueByDOMTags()
         }
+    </script>
+    <script>
+        $(document).ready(function() {
+            function checkAppointmentVisibility() {
+                var canBeAppointment = $('#can_be_appointment').find(':selected').val();
+                if (canBeAppointment === "1") {
+                    $('#appointment_times').show();
+                    $('#appointment_start_time').prop('required', true);
+                    $('#appointment_end_time').prop('required', true);
+                } else {
+                    $('#appointment_times').hide();
+                    $('#appointment_start_time').prop('required', false).val('');
+                    $('#appointment_end_time').prop('required', false).val('');
+                }
+            }
+            checkAppointmentVisibility();
+
+            $('#can_be_appointment').on('change', function() {
+                checkAppointmentVisibility();
+            });
+
+            function validateTimes() {
+                var startTime = $('#appointment_start_time').val();
+                var endTime = $('#appointment_end_time').val();
+
+                if (startTime && endTime) {
+                    if (startTime >= endTime) {
+                        alert('Başlangıç saati, bitiş saatinden büyük olamaz!');
+                        $('#appointment_start_time').val('');
+                    }
+                }
+            }
+
+            $('#appointment_start_time, #appointment_end_time').on('change', function() {
+                validateTimes();
+            });
+        });
     </script>
 @endsection

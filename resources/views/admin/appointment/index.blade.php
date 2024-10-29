@@ -1,4 +1,4 @@
-@section('title', 'Hizmet Kategori Listesi')
+@section('title', 'Randevu Yapılabilen Hizmetlerin Listesi')
 @extends('admin.layouts.master')
 @section('content')
     <div class="d-flex flex-column flex-column-fluid">
@@ -6,7 +6,7 @@
         <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
             <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
                 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hizmet Kategori Listesi</h1>
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Randevu Yapılabilen Hizmetlerin Listesi</h1>
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <li class="breadcrumb-item text-muted">
                             <a href="{{ route('dashboard') }}" class="text-muted text-hover-primary">Gösterge Paneli</a>
@@ -14,7 +14,7 @@
                         <li class="breadcrumb-item">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
-                        <li class="breadcrumb-item text-muted">Hizmet Kategori Listesi</li>
+                        <li class="breadcrumb-item text-muted">Randevu Yapılabilen Hizmetlerin Listesi</li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,6 @@
                             </div>
                         </div>
                         <div class="card-toolbar">
-                            <a href="{{ route('service-category.create') }}" class="btn btn-primary">Yeni Hizmet Kategorisi</a>
                         </div>
                     </div>
                     <div class="card-body pt-0">
@@ -52,39 +51,22 @@
                                     No
                                 </th>
                                 <th class="min-w-250px">Başlık</th>
-                                <th class="min-w-150px">Tip</th>
-                                <th class="min-w-150px">Anasayfada Göster</th>
-                                <th class="min-w-150px">Hizmetlerimizde Göster</th>
-                                <th class="min-w-150px">Durum</th>
+                                <th class="min-w-150px">Kategori</th>
                                 <th class="text-end min-w-70px">İşlemler</th>
                             </tr>
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
-                                @foreach ($serviceCategories as $serviceCategory)
-                                    <tr id="order-{{ $serviceCategory->id }}">
-                                        <td> {{ $loop->iteration }} </td>
-                                        <td><a href="{{ route('service-category.edit', $serviceCategory->id) }}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $serviceCategory->title }}</a></td>
-                                        <td> {{ $types[$serviceCategory->type] }} </td>
-                                        <td> @if($serviceCategory->is_show_home_page == 1) Evet @else Hayır @endif </td>
-                                        <td> @if($serviceCategory->is_show_service_page == 1) Evet @else Hayır @endif </td>
-                                        <td>
-                                            @if ($serviceCategory->is_active === 1)
-                                                <div class="badge badge-light-success">Aktif</div>
-                                            @else
-                                                <div class="badge badge-light-danger">Pasif</div>
-                                            @endif
-                                        </td>
-                                        <td class="text-end">
-                                            {{--<a href="{{ route('slug',$serviceCategory->slug) }}" data-toggle="tooltip" title="Görüntüle" class="btn btn-icon btn-light btn-hover-primary btn-sm" target="_blank"><i class="far fa-eye text-dark icon-lg"></i></a>--}}
-                                            <a href="{{ route('service-category.edit', $serviceCategory->id) }}" data-toggle="tooltip" title="Düzenle" class="btn btn-icon btn-light btn-hover-primary btn-sm"><i class="far fa-edit text-warning icon-lg"></i></a>
-                                            <a href="#" type="button" data-toggle="tooltip" title="Sil" class="btn btn-icon btn-light btn-hover-primary btn-sm"
-                                               data-url="{{ route('service-category.destroy',$serviceCategory->id) }}"
-                                               data-method="delete"
-                                               data-id="{{ $serviceCategory->id }}"
-                                               data-count="{{ $serviceCategory->services_count }}"><i class="far fas fa-trash-alt text-danger icon-lg"></i></a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                            @foreach ($services as $service)
+                                <tr id="order-{{ $service->id }}">
+                                    <td> {{ $loop->iteration }} </td>
+                                    <td><a href="{{ route('appointment.edit', $service->id) }}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $service->title }}</a></td>
+                                    <td> {{ $service->getCategory->title }} </td>
+                                    <td class="text-end">
+                                        {{--<a href="{{ route('slug',$service->slug) }}" data-toggle="tooltip" title="Görüntüle" class="btn btn-icon btn-light btn-hover-primary btn-sm" target="_blank"><i class="far fa-eye text-dark icon-lg"></i></a>--}}
+                                        <a href="{{ route('appointment.edit', $service->id) }}" data-toggle="tooltip" title="Düzenle" class="btn btn-icon btn-light btn-hover-primary btn-sm"><i class="far fa-edit text-warning icon-lg"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -96,5 +78,4 @@
 @section('script')
     <script src="{{ asset('') }}assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <script src="{{ asset('') }}assets/js/admin/datatable.js"></script>
-    <script src="{{ asset('') }}assets/js/admin/delete.js"></script>
 @endsection

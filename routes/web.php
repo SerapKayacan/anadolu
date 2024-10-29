@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
+use App\Http\Controllers\Admin\AppointmentController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->group(function () {
@@ -43,5 +44,11 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
         Route::get('/duzenle/{id}', [ServiceController::class, 'edit'])->name('edit');
         Route::put('/duzenle/{id}', [ServiceController::class, 'update'])->name('update');
         Route::delete('/sil/{id}', [ServiceController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('randevu')->name('appointment.')->group(function () {
+        Route::get('/', [AppointmentController::class, 'index'])->name('index');
+        Route::get('/duzenle/{id}', [AppointmentController::class, 'edit'])->name('edit');
+        Route::put('/duzenle/{id}', [AppointmentController::class, 'update'])->name('update');
     });
 });
