@@ -7,8 +7,8 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ServicesCategoryController;
 use App\Http\Controllers\Frontend\ServicesController;
-use App\Http\Controllers\Frontend\ServicesDetailController;
 use App\Http\Controllers\Frontend\OnlineDoctorController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +18,12 @@ Route::prefix('')->group(function () {
 
 });
 
-Route::prefix('services')->group(function () {
-    Route::get('/', [ServicesController::class, 'index'])->name('services.index');
+Route::prefix('services-category')->group(function () {
+    Route::get('/', [ServicesCategoryController::class, 'index'])->name('services-category.index');
 
 });
-Route::prefix('services-detail')->group(function () {
-    Route::get('/', [ServicesDetailController::class, 'index'])->name('services-detail.index');
+Route::prefix('services')->group(function () {
+    Route::get('/', [ServicesController::class, 'index'])->name('services.index');
 
 });
 Route::prefix('online-doctor')->group(function () {

@@ -1,0 +1,347 @@
+
+.services-search-text {
+    font-size: 38px;
+    font-weight: bold;
+    font-family: roboto;
+    color: #6E4EEF;
+    margin-left: 450px;
+    margin-top: 20px;
+}
+
+.search-bar{
+    width: 870px;
+    height:68px;
+    margin-left:200px;
+    margin-bottom:20px;
+    background-color: white;
+    border-radius:10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search-bar-input{
+    all: unset;
+    color: black;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+.search-bar-button{
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+
+/*//cards:*/
+.card-services {
+    border-radius: 15px;
+    width: 420px;
+    height: 500px;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-color: #a294ea;
+    padding-bottom:20px;
+    margin-bottom:30px;
+
+
+
+}
+
+.card-services-header:hover {
+    background-color: #543EBF;
+
+}
+
+
+.card-services-header {
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+    border-bottom: none;
+}
+
+
+.card-services-header:hover .card-top-text {
+    color: white;
+}
+
+.card-services-header:hover .card-middle-text {
+    color: white;
+}
+
+.card-services-header:hover .icon-box-services {
+    background-color: white;
+}
+
+.card-services-body {
+    border-radius: 15px; /* Ensure all child elements have the same border-radius */
+}
+
+
+.icon-card-services {
+    width: 40px;
+    margin-left: 8px;
+    margin-top: 12px;
+    color: deepskyblue;
+
+}
+
+.card-top-text {
+    font-size: 30px;
+    color: #373737;
+    font-weight: 700;
+    margin-top:80px;
+    margin-left:-10px;
+    line-height: 1.2;
+
+}
+
+.card-middle-text {
+    font-size: 15px;
+    margin-left:-10px;
+    color: dimgrey;
+    margin-top: 5px;
+    font-weight: 600;
+}
+.card-services-body{
+    padding-left:30px;
+    padding-right:30px;
+
+}
+.button-header {
+    color: grey;
+    font-size: 16px;
+    margin-top:-5px;
+}
+
+.card-link-line-services {
+    margin-top: -10px;
+
+}
+
+.card-link-text-services {
+    flex:30;
+    font-size: 18px;
+    font-weight:500;
+    text-align: left;
+    color: #2c2c2c;
+    margin-top: -8px;
+}
+
+.card-link-text-services:hover {
+    color: grey;
+}
+
+.card-services:hover .card-services-header {
+    background-color: #543EBF;
+}
+
+.card-services:hover .card-top-text {
+    color: white;
+}
+
+.card-services:hover .card-middle-text {
+    color: white;
+}
+
+.card-services:hover .icon-box-services {
+    background-color: white;
+}
+
+.card-link-icon-services {
+    flex: 1;
+    color: black;
+    margin-top: -10px;
+}
+
+.card-link-icon-services:hover {
+    color: grey;
+}
+
+.card-link-icon-services:hover .card-services-header {
+    background-color: #543EBF;
+}
+
+.card-link-bottom-services {
+    margin-top: -4px;
+    border: none;
+    background-color: white;
+}
+
+.card-link-bottom-services:hover {
+    opacity: 75%;
+}
+
+.card-link-bottom-text {
+    color: #6E4EEF;
+    font-size: 15px;
+    flex:15;
+    font-weight: bold;
+}
+
+.card-link-bottom-icon {
+    flex:1;
+    color: #6E4EEF;
+    margin-left: 10px;
+
+}
+/*////icon-box*/
+ .icon-turquoise {
+     fill: white;
+     color:#1DB1B5;
+     border-style: solid;
+     border-color: #91d4d6;
+     border-width: 1px
+}
+.icon-yellow{
+    fill: white;
+    color:#EFC02A;
+    border-style: solid;
+    border-color: #ecd286;
+    border-width: 1px;
+}
+.icon-purple {
+    fill: white;
+    color: #6E4EEF;
+    border-style: solid;
+    border-color: #9d89ea;
+    border-width: 1px;
+}
+
+.icon-blue {
+    fill: white;
+    color: #38ACFC;
+    border-style: solid;
+    border-color: #649ec6;
+    border-width: 1px;
+}
+
+
+.icon-green{
+    fill: white;
+    color: #69C140;
+    border-style: solid;
+    border-color: #96dc75;
+    border-width: 1px;
+}
+
+
+.icon-pink{
+    fill: white;
+    color: #FC555E;
+    border-style: solid;
+    border-color: #e6aaae;
+    border-width: 1px;
+
+}
+
+/*services*/
+.body-card-services-detail {
+    margin-top: 45px;
+    margin-bottom: 260px;
+
+}
+
+.card-image-text-box {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    background-color: #e9f8e9;
+    color: #38e338;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.card-services-detail {
+    width: 400px;
+    height: 350px;
+    margin-top: 10px;
+
+}
+
+
+.card-service-detail-image {
+    display: block;
+    width: 400px;
+    height: 350px;
+    margin-left: -17px;
+    margin-top: -20px;
+    margin-bottom: -15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.card-services-detail-body {
+    background-color: #F0EDFD;
+    width: 400px;
+    height: 350px;
+    margin-bottom: 40px;
+    margin-left: -1px;
+    padding-bottom: -30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+
+}
+
+.card-service-detail-header {
+    color: #372778;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -5px;
+    position: relative;
+    display: inline-block;
+
+
+}
+
+.card-image-text-box {
+    display: block;
+    margin-top: -50px;
+}
+
+.card-service-detail-middle-text {
+    color: dimgrey;
+    font-size: 16px;
+    margin-top: -8px;
+
+}
+
+.card-detail-price {
+    color: #6E4EEF;
+    font-size: 28px;
+    font-family: roboto, arial;
+    font-weight: 600;
+    margin-right: -40px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+}
+
+.card-service-detail-button {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #6E4EEF;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 55px;
+    margin-left: 90px;
+    margin-top: 20px;
+
+}
+@media (max-width: 1920px) and (min-width: 1366px) {
+
+
+}

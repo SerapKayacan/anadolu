@@ -1,72 +1,51 @@
 
-.icon-box-big {
-    width: 55px;
-    height: 55px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-left:10px;
-    background-color: white;
-    border-radius: 9px;
-    align-items: center;
-
-}
-
-.right-box-big {
-    width: 65px;
-    height: 30px;
-    background-color: white;
-    border-radius: 15px;
-    font-size:13px;
-    font-family:arial;
-    margin-left: 485px;
-    padding-right:6px;
-    padding-left:12px;
-    padding-top:6px;
-    padding-bottom:8px;
-    color: #6e6c6c;
-
-
-}
-.icon-box-small {
-    width: 55px;
-    height: 55px;
+.icon-box {
     display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    margin-bottom:60px;
+    width: 55px;
+    height: 55px;
+    padding:4px;
     background-color: white;
     border-radius: 9px;
-    margin-left: 0;
-    padding: 4px;
+
+
 }
 
-.right-box-small {
-    width: 65px;
-    height: 30px;
+.right-box{
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: inline-block;
+    width: auto;
+    height: auto;
     background-color: white;
-    border-radius: 15px;
-    font-size:13px;
-    font-family:arial;
-    margin-left: 165px;
-    padding-right:4px;
-    padding-left:9px;
-    padding-top:4px;
-    padding-bottom:8px;
+    border-radius: 18px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    padding: 8px ;
     color: #6e6c6c;
-
-
 }
 
+
+.card-header {
+    position: relative; /* Make this the reference point for absolute positioning */
+}
 .card-head{
     display: flex;
 }
 
 .middle-p-big {
     font-size: 30px;
-    font-family:arial;
     font-weight:bold;
     color: white;
-    margin-top:-10px;
     margin-right:20px;
+    margin-top:50px;
+    margin-left:-15px;
 }
 .bottom-p-big {
     font-size: 17px;
@@ -74,14 +53,14 @@
 
 }
 .middle-p-small{
-    color:black;
+    color: #595858;
     font-size:25px;
     font-weight:bold;
-    margin-top:-10px;
     margin-left:-15px;
-    margin-right:-100px;
+    margin-top:50px;
     margin-bottom:40px;
-    width:250px;
+    width:280px;
+
 }
 .bottom-p-small{
     color:grey;
@@ -95,10 +74,9 @@
 
 
 .card-1 {
-    width: 650px;
-    height: 280px;
+    width: auto; /* Allows width to adjust based on text */
+    height: auto; /* Removes fixed height */
     background-color: #372778;
-    display: flex;
     border-radius: 15px;
     padding-left: 15px;
     padding-right: 150px;
@@ -113,8 +91,8 @@
 .card-turquoise,.card-yellow,
 .card-purple,.card-blue,
 .card-green,.card-pink{
-    width: 320px;
-    height: 280px;
+    width: auto; /* Allows width to adjust based on text */
+    height: auto; /* Removes fixed height */
     border:none;
     display: flex;
     border-radius: 8px;
@@ -207,4 +185,35 @@
 }
 .card-pink:hover .bottom-p-small {
     color:white;
+}
+/*/////////*/
+.icon-box svg {
+    width: 30px;
+    height: 30px;
+}
+.card-1 .icon-box svg{
+    fill: #6E4EEF;
+}
+.card-turquoise .icon-box svg {
+    fill: #1DB1B5; /* Match card hover color */
+}
+
+.card-yellow .icon-box svg {
+    fill: #EFC02A; /* Match card hover color */
+}
+
+.card-purple .icon-box svg {
+    fill: #6E4EEF; /* Match card hover color */
+}
+
+.card-blue .icon-box svg {
+    fill: #38ACFC; /* Match card hover color */
+}
+
+.card-green .icon-box svg {
+    fill: #69C140; /* Match card hover color */
+}
+
+.card-pink .icon-box svg {
+    fill: #FC555E; /* Match card hover color */
 }

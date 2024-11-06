@@ -103,215 +103,45 @@
             </div>
         </div>
         <div class="main-wrapper-2">
-            @foreach ($serviceCategories as $serviceCategory)
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
+            <div class="container">
+                <div class="row" >
+                    @foreach ($serviceCategories as $serviceCategory)
+                        <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6
+                                @else col-lg-3
+                                @endif" style="margin-bottom:20px;">
                             <a href="" style=" text-decoration: none;">
-                                <div class="card card-1">
+                                @php
+                                    $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue',  'card-pink','card-green', ];
+                                @endphp
+                                <div class="card
+                                @if(  $serviceCategory->sort_order==0 ) card-1
+                               @else {{ $colors[($serviceCategory->sort_order -1 ) % count($colors)] }}
+                                @endif">
                                     <div class="card-head">
                                         <div style="flex:2">
-                                            {{--                                            <div class="box icon-box-big">i{{$serviceCategory->icon}}</div>--}}
+                                            <div class=" icon-box"> {!! $serviceCategory->icon !!}</div>
                                         </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-big">Online</div>
+                                        <div class="right-box" style="flex:9">
+                                            <div>  {{ $types[$serviceCategory->type] }} </div>
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <p class=" middle-p-big">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-big">{{$serviceCategory->category_page_detail }}</p>
+                                        <p class="
+                                        @if(  $serviceCategory->sort_order==0 ) middle-p-big
+                                        @else middle-p-small
+                                        @endif">{{ $serviceCategory->title }}</p>
+                                        <p class="
+                                       @if(  $serviceCategory->sort_order==0 ) bottom-p-big
+                                        @else bottom-p-small
+                                        @endif">
+                                            {{$serviceCategory->category_page_detail }}</p>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-3">
-                            <a href="{{ route('online-doctor.index') }}" style=" text-decoration: none;">
-                                <div class="card card-turquoise">
-                                    <div class="card-head">
-                                        <div style="flex:1">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:5">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-yellow">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-purple">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-turquoise">
-                                    <div class="card-head">
-                                        <div style="flex:1">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:5">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-pink">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-green">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-blue">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-yellow">
-                                    <div class="card-head">
-                                        <div style="flex:1">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:5">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-green">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="" style=" text-decoration: none;">
-                                <div class="card card-pink">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class="box icon-box-small">f</div>
-                                        </div>
-                                        <div style="flex:9">
-                                            <div class="box right-box-small">Online</div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class=" middle-p-small">{{ $serviceCategory->title}}</p>
-                                        <p class=" bottom-p-small">{{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
+            </div>
         </div>
         <div class="main-wrapper-2">
             <div class="container navbar-bottom">

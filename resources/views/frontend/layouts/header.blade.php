@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
     <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/home-card.css">
     <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/home.css">
-    <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/services.css">
+    <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/services-category.css">
     <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/online-doctor.css">
     <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/footer.css">
 
@@ -42,7 +42,7 @@
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('online-doctor.index') }}">Online Doktor Görüşmesi</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('services.index') }}">Hizmetlerimiz</a>
+                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('services-category.index') }}">Hizmetlerimiz</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="#">Hakkımızda</a>
