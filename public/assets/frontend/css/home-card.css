@@ -1,0 +1,210 @@
+
+.icon-box-big {
+    width: 55px;
+    height: 55px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left:10px;
+    background-color: white;
+    border-radius: 9px;
+    align-items: center;
+
+}
+
+.right-box-big {
+    width: 65px;
+    height: 30px;
+    background-color: white;
+    border-radius: 15px;
+    font-size:13px;
+    font-family:arial;
+    margin-left: 485px;
+    padding-right:6px;
+    padding-left:12px;
+    padding-top:6px;
+    padding-bottom:8px;
+    color: #6e6c6c;
+
+
+}
+.icon-box-small {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    background-color: white;
+    border-radius: 9px;
+    margin-left: 0;
+    padding: 4px;
+}
+
+.right-box-small {
+    width: 65px;
+    height: 30px;
+    background-color: white;
+    border-radius: 15px;
+    font-size:13px;
+    font-family:arial;
+    margin-left: 165px;
+    padding-right:4px;
+    padding-left:9px;
+    padding-top:4px;
+    padding-bottom:8px;
+    color: #6e6c6c;
+
+
+}
+
+.card-head{
+    display: flex;
+}
+
+.middle-p-big {
+    font-size: 30px;
+    font-family:arial;
+    font-weight:bold;
+    color: white;
+    margin-top:-10px;
+    margin-right:20px;
+}
+.bottom-p-big {
+    font-size: 17px;
+    color: #E2DCFC;
+
+}
+.middle-p-small{
+    color:black;
+    font-size:25px;
+    font-weight:bold;
+    margin-top:-10px;
+    margin-left:-15px;
+    margin-right:-100px;
+    margin-bottom:40px;
+    width:250px;
+}
+.bottom-p-small{
+    color:grey;
+    font-size:16px;
+    margin-left:-15px;
+    margin-right:-159px;
+    margin-top:-25px;
+    width:250px;
+}
+
+
+
+.card-1 {
+    width: 650px;
+    height: 280px;
+    background-color: #372778;
+    display: flex;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 150px;
+    padding-top: 15px;
+    padding-bottom:20px;
+
+}
+
+.card-1:hover {
+    background-color: #6E4EEF;
+}
+.card-turquoise,.card-yellow,
+.card-purple,.card-blue,
+.card-green,.card-pink{
+    width: 320px;
+    height: 280px;
+    border:none;
+    display: flex;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom:20px;
+
+
+}
+.card-turquoise {
+    background-color: #E8F7F8;
+}
+
+.card-turquoise:hover {
+    background-color: #1DB1B5;
+}
+.card-turquoise:hover .middle-p-small {
+    color:white;
+}
+.card-turquoise:hover .bottom-p-small {
+    color:white;
+}
+.card-yellow{
+    background-color: #FDF9E8;
+}
+
+.card-yellow:hover {
+    background-color: #EFC02A;
+}
+.card-yellow:hover .middle-p-small {
+    color:white;
+}
+.card-yellow:hover .bottom-p-small {
+    color:white;
+}
+.card-purple {
+    background-color: #F0EDFD;
+}
+
+.card-purple:hover {
+    background-color: #6E4EEF;
+}
+.card-purple:hover .middle-p-small {
+    color:white;
+}
+.card-purple:hover .bottom-p-small {
+    color:white;
+}
+
+.card-blue {
+    background-color: #EBF7FF;
+}
+
+.card-blue:hover {
+    background-color: #38ACFC;
+}
+.card-blue:hover .middle-p-small {
+    color:white;
+}
+.card-blue:hover .bottom-p-small {
+    color:white;
+}
+
+.card-green{
+    background-color: #F0F9EC;
+}
+
+.card-green:hover {
+    background-color:  #69C140;
+}
+.card-green:hover .middle-p-small {
+    color:white;
+}
+.card-green:hover .bottom-p-small {
+    color:white;
+}
+.card-pink{
+
+    background-color: #FFEEEF;
+
+
+}
+
+.card-pink:hover {
+    background-color: #FC555E;
+}
+.card-pink:hover .middle-p-small {
+    color:white;
+}
+.card-pink:hover .bottom-p-small {
+    color:white;
+}

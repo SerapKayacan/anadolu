@@ -6,7 +6,30 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\AppointmentController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ServicesController;
+use App\Http\Controllers\Frontend\ServicesDetailController;
+use App\Http\Controllers\Frontend\OnlineDoctorController;
 use Illuminate\Support\Facades\Route;
+
+Route::prefix('')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/services/{id}', [HomeController::class, 'show'])->name('services.show');
+
+});
+
+Route::prefix('services')->group(function () {
+    Route::get('/', [ServicesController::class, 'index'])->name('services.index');
+
+});
+Route::prefix('services-detail')->group(function () {
+    Route::get('/', [ServicesDetailController::class, 'index'])->name('services-detail.index');
+
+});
+Route::prefix('online-doctor')->group(function () {
+    Route::get('/', [OnlineDoctorController::class, 'index'])->name('online-doctor.index');
+
+});
 
 Route::prefix('auth')->group(function () {
     Route::get('/', [AuthController::class, 'loginPage'])->middleware('guest')->name('loginPage');
