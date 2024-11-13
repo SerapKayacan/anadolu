@@ -54,12 +54,16 @@
 }
 .middle-p-small{
     color: #595858;
-    font-size:25px;
+    font-size:27px;
     font-weight:bold;
     margin-left:-15px;
     margin-top:50px;
     margin-bottom:40px;
-    width:280px;
+    width:250px;
+
+    position: relative;
+    display: inline-block;
+    line-height: 1.2
 
 }
 .bottom-p-small{
@@ -74,14 +78,16 @@
 
 
 .card-1 {
-    width: auto; /* Allows width to adjust based on text */
-    height: auto; /* Removes fixed height */
+    width: auto;
+    height: 100%;
     background-color: #372778;
     border-radius: 15px;
     padding-left: 15px;
     padding-right: 150px;
     padding-top: 15px;
     padding-bottom:20px;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -91,8 +97,8 @@
 .card-turquoise,.card-yellow,
 .card-purple,.card-blue,
 .card-green,.card-pink{
-    width: auto; /* Allows width to adjust based on text */
-    height: auto; /* Removes fixed height */
+    width: auto;
+    height: 100%;
     border:none;
     display: flex;
     border-radius: 8px;
@@ -100,7 +106,7 @@
     padding-right: 20px;
     padding-top: 15px;
     padding-bottom:20px;
-
+    flex-direction: column;
 
 }
 .card-turquoise {

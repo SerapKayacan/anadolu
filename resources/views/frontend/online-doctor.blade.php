@@ -28,165 +28,42 @@
         </div>
         <div class="main-wrapper-2">
             <div class="container">
-                <div class="row online-doctor-row">
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-purple-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:2">
-                                        <div class="box icon-box-small">f</div>
+                <div class="row" >
+                    @foreach ($serviceCategories as $serviceCategory)
+                        <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6
+                                @else col-lg-3
+                                @endif" style="margin-bottom:20px;">
+                            <a href="" style=" text-decoration: none;">
+                                @php
+                                    $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue',  'card-pink','card-green', ];
+                                @endphp
+                                <div class="card
+                                @if(  $serviceCategory->sort_order==0 ) card-1
+                               @else {{ $colors[($serviceCategory->sort_order -1 ) % count($colors)] }}
+                                @endif">
+                                    <div class="card-head">
+                                        <div style="flex:2">
+                                            <div class=" icon-box"> {!! $serviceCategory->icon !!}</div>
+                                        </div>
+                                        <div class="right-box" style="flex:9">
+                                            <div>  {{ $types[$serviceCategory->type] }} </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="
+                                        @if(  $serviceCategory->sort_order==0 ) middle-p-big
+                                        @else middle-p-small
+                                        @endif">{{ $serviceCategory->title }}</p>
+                                        <p class="
+                                       @if(  $serviceCategory->sort_order==0 ) bottom-p-big
+                                        @else bottom-p-small
+                                        @endif">
+                                            {{$serviceCategory->category_page_detail }}</p>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Hemşirelik Hizmetleri</p>
-                                    <p class=" bottom-p-online-doctor">İhtiyacınız olan tedavi sürecini evinizin
-                                        konforunda,
-                                        uzman hemşirelerimizle gerçekleştirelim.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-turquoise-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:1">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Bakım Hizmetleri</p>
-                                    <p class=" bottom-p-online-doctor">Sağlık sorunlarınıza yönelik deneyimli sağlık
-                                        ekibimizden
-                                        profesyonel destek alın.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-pink-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:2">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Serum Hizmetleri</p>
-                                    <p class=" bottom-p-online-doctor">Evinizin konforunda ihtiyacınız olan serum tedavi
-                                        hizmetini gerçekleştirelim.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row online-doctor-row">
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-blue-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:2">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Laboratuvar Hizmetleri</p>
-                                    <p class=" bottom-p-online-doctor">Rutin Kontrol için veya doktor tavsiyesi
-                                        doğrultusunda
-                                        bulunduğunuz yere gelerek gerekli tahlilleri yapıyoruz.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-yellow-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:1">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Görüntüleme Hizmetleri</p>
-                                    <p class=" bottom-p-online-doctor">Kontrol amaçlı istediğiniz veya hekiminizin
-                                        hastalığın
-                                        tanısı ya da tedavi sürecinde talep ettiği tıbbi testleri uyguluyoruz.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-green-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:2">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Genetik Check-Up ve İnceleme</p>
-                                    <p class=" bottom-p-online-doctor">OLası genetik hastalıkların erken teşhisi
-                                        için
-                                        gerekli
-                                        check-up paketlerimi uyguluyoruz, sonuçlarını değerlendiriyoruz.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row online-doctor-row">
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-green-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:2">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Doktor Desteği</p>
-                                    <p class=" bottom-p-online-doctor">Uzman doktorlarımızla sağlık sorununuzun tespiti
-                                        ve
-                                        tedavisi için evinizin konforunda muayenenizi yaptırın.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-pink-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:2">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Check-up Hizmeti</p>
-                                    <p class=" bottom-p-online-doctor">Yaşınıza ve sağlık durumunuza uygun,kişiye özgü
-                                        check-up
-                                        paketlerimizi evinizde gerçekleştiriyoruz.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="" style=" text-decoration: none;">
-                            <div class="card card-yellow-online-doctor">
-                                <div class="card-head">
-                                    <div style="flex:1">
-                                        <div class="box icon-box-small">f</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class=" middle-p-online-doctor">Evde Görüntüleme Hizmetleri</p>
-                                    <p class=" bottom-p-online-doctor">Kontrol amaçlı istediğiniz veya hekiminizin
-                                        hastalığın
-                                        tanısı ya da tedavi sürecinde talep ettiği tıbbi testleri uyguluyoruz.</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

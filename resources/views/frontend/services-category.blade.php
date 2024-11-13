@@ -36,7 +36,7 @@
                                 @php
                                     $icon_colors = ['icon-turquoise', 'icon-yellow', 'icon-purple', 'icon-blue',  'icon-pink','icon-green', ];
                                 @endphp
-                                <div class="icon-box {{ $icon_colors[($serviceCategory->sort_order  ) % count( $icon_colors)] }}"> {!! $serviceCategory->icon !!}</div>
+                                <div class="icon-box-services {{ $icon_colors[($serviceCategory->sort_order  ) % count( $icon_colors)] }}"> {!! $serviceCategory->icon !!}</div>
                                 <div class="card-top-text">{{ $serviceCategory->title }}</div>
                                 <div class="card-middle-text">{{$serviceCategory->category_page_detail }}
                                 </div>
@@ -46,10 +46,12 @@
                                     <p>Hizmetler</p>
                                 </div>
                                 <hr class="card-link-line-services">
-                                <lu class="card-link" style="list-style-type: none;">
-                                    <li>
+                                @if ($serviceCategory->services->isNotEmpty())
+                                <ul class="card-link" style="list-style-type: none;">
+                                    @foreach ($serviceCategory->services->take(3) as $service)
+                                    <li style="list-style: none">
                                         <a href="" style="display:flex;text-decoration: none;">
-                                            <p class="card-link-text-services">Enjeksiyon Uygulaması</p>
+                                            <p class="card-link-text-services"> {{ $service->title }}</p>
                                             <i class="bi bi-caret-right card-link-icon-services">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em"
                                                      viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
@@ -60,36 +62,14 @@
                                             </i>
                                         </a>
                                     </li>
-                                    <hr class="card-link-line-services">
-                                    <li>
-                                        <a href="" style="display:flex;text-decoration: none;">
-                                            <p class="card-link-text-services">Enjeksiyon Uygulaması</p>
-                                            <i class="bi bi-caret-right card-link-icon-services">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em"
-                                                     viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
-                                                     focusable="false" class=""><title>arrow_forward_ios</title>
-                                                    <path
-                                                        d="M9.42 32l-2.84-2.84 13.16-13.16-13.16-13.16 2.84-2.84 16 16-16 16z"></path>
-                                                </svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <hr class="card-link-line-services">
-                                    <li>
-                                        <a href="" style="display:flex;text-decoration: none;">
-                                            <p class="card-link-text-services">Enjeksiyon Uygulaması</p>
-                                            <i class="bi bi-caret-right card-link-icon-services">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em"
-                                                     viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
-                                                     focusable="false" class=""><title>arrow_forward_ios</title>
-                                                    <path
-                                                        d="M9.42 32l-2.84-2.84 13.16-13.16-13.16-13.16 2.84-2.84 16 16-16 16z"></path>
-                                                </svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li style="display:flex;">
-                                        <a href="{{ route('services.index') }}"
+                                        <hr class="card-link-line-services">
+                                    @endforeach
+                                </ul>
+                                @else
+                                    <p>No services available for this category.</p>
+                                @endif
+                                    <div style="display:flex;">
+                                        <a href="{{ route('services.index')}}"
                                            style="display:flex;text-decoration:none;">
                                             <p class="card-link-bottom-text">Daha Fazlası</p>
                                             <i class="bi bi-arrow-right card-link-bottom-icon">
@@ -101,11 +81,11 @@
                                                 </svg>
                                             </i>
                                         </a>
-                                    </li>
-                                </lu>
+                                    </div>
                             </div>
                         </div>
                     </div>
+
                     @endforeach
                 </div>
             </div>

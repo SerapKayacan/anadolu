@@ -26,27 +26,29 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-services-1">
+        <div class="main-container-services-1">
             <div class="container main-container-services-1">
-                <div class="row  body-card-services-detail">
-                    @foreach ($services as $service)
+                <div class="row">
+                    @foreach ($serviceCategories as $serviceCategory)
+                        @foreach ($serviceCategory->services as $service)
                     <div class="col-lg-4">
                         <div class="card card-services-detail">
                             <div class="card-header card-services-detail-header">
-                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
-                                     class="card-service-detail-image">
-                                <div class="card-image-text-box">Evde / Yerinde Hizmet</div>
+                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt="" class="card-service-detail-image">
+                                <div class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
                             </div>
                             <div class="card-body card-services-detail-body">
                                 <p class="card-service-detail-header"> {{ $service->title}}</p>
-                                <p class="card-service-detail-middle-text">{{   $service->category_page_detail }}</p>
+                                <p class="card-service-detail-middle-text">{{$service->category_page_detail }}</p>
                                 <div style="display:flex;">
-{{--                                    <p class="card-detail-price">1250 TL</p>--}}
-                                    <button class="card-service-detail-button">Devamını Gör</button>
+                                    <button class="card-service-detail-button" onclick="window.location.href='{{ route('services-detail.index') }}'">
+                                        Devamını Gör
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        @endforeach
                     @endforeach
                 </div>
             </div>
