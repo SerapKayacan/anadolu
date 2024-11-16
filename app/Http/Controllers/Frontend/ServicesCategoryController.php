@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
+
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -21,4 +22,6 @@ class ServicesCategoryController extends Controller
             "services" => $services
         ]);
 
-}}
+    }
+
+}

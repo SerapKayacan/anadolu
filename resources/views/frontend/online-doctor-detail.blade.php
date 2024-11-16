@@ -6,6 +6,7 @@
                 <div class="card appointment-card">
                     <div class="card-body">
                         <div class="row">
+
                             <div class="col">
                                 <h5 class="card-title appointment-card-title">Online Randevu Al</h5>
                                 <div class="appointment-time-container">
@@ -56,7 +57,6 @@
                                             @foreach($days as $day => $times)
                                                 @php
                                                     $formattedDate = \Carbon\Carbon::parse($day);
-                                                    $uniqueTimes = collect($times)->unique('time'); // Get unique appointment times
                                                 @endphp
                                                 <div class="appointment-day-container">
                                                     <div class="appointment-day-header">
@@ -64,29 +64,21 @@
                                                         <h2 class="appointment-date">{{ $formattedDate->translatedFormat('d F') }}</h2>
                                                     </div>
                                                     <div>
-                                                        @if(!$noAppointments)
-                                                            @foreach($times as $time)
-                                                                <div>
-                                                                    @if ($time['is_available'])
-                                                                        <!-- Available time -->
-                                                                        <a href="https://wa.me/9005354694234" target="_blank">
-                                                                            <button class="appointment-time-button" style=" cursor: pointer;">
-                                                                                {{ $time['time'] }}
-                                                                            </button>
-                                                                        </a>
-                                                                    @else
-                                                                        <!-- Unavailable time -->
-                                                                        <button class="appointment-time-button" style="background-color: lightgrey; cursor: not-allowed; pointer-events: none;">
-                                                                            {{ $time['time'] }}
-                                                                        </button>
-                                                                    @endif
-                                                                </div>
-                                                            @endforeach
-                                                        @else
+                                                        @forelse($times as $time)
                                                             <div>
-                                                                <p>No appointments available.</p>
+                                                                <a href="https://wa.me/9005354694234" target="_blank">
+                                                                    <button
+                                                                        class="appointment-time-button">{{ $time['time'] }}</button>
+                                                                </a>
                                                             </div>
-                                                        @endif
+                                                        @empty
+                                                            <div>
+                                                                <a href="" target="">
+                                                                    <button
+                                                                        class="appointment-time-button" style="background-color:grey;">{{ $time['time'] }}</button>
+                                                                </a>
+                                                            </div>
+                                                        @endforelse
                                                     </div>
                                                 </div>
                                             @endforeach

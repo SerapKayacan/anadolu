@@ -28,29 +28,34 @@
         </div>
         <div class="main-container-services-1">
             <div class="container main-container-services-1">
-                <div class="row">
-                    @foreach ($serviceCategories as $serviceCategory)
-                        @foreach ($serviceCategory->services as $service)
-                    <div class="col-lg-4">
-                        <div class="card card-services-detail">
-                            <div class="card-header card-services-detail-header">
-                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt="" class="card-service-detail-image">
-                                <div class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
-                            </div>
-                            <div class="card-body card-services-detail-body">
-                                <p class="card-service-detail-header"> {{ $service->title}}</p>
-                                <p class="card-service-detail-middle-text">{{$service->category_page_detail }}</p>
-                                <div style="display:flex;">
-                                    <button class="card-service-detail-button" onclick="window.location.href='{{ route('services-detail.index') }}'">
-                                        Devamını Gör
-                                    </button>
+                @if (isset($serviceCategory))
+                    <div class="row">
+                        @foreach ($services as $service)
+                            <div class="col-lg-4">
+                                <div class="card card-services-detail">
+                                    <div class="card-header card-services-detail-header">
+                                        <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
+                                             class="card-service-detail-image">
+                                        <div
+                                            class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
+                                    </div>
+                                    <div class="card-body card-services-detail-body">
+                                        <p class="card-service-detail-header"> {{ $service->title}}</p>
+                                        <p class="card-service-detail-middle-text">{{$service->category_page_detail }}</p>
+                                        <div style="display:flex;">
+                                            <button class="card-service-detail-button"
+                                                    onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+                                                Devamını Gör
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                         @endforeach
-                    @endforeach
-                </div>
+                    </div>
+                @else
+                    <p>No category or services found.</p>
+                @endif
             </div>
         </div>
     </main>

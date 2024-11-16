@@ -28,43 +28,36 @@
         </div>
         <div class="main-wrapper-2">
             <div class="container">
-                <div class="row" >
-                    @foreach ($serviceCategories as $serviceCategory)
-                        <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6
-                                @else col-lg-3
-                                @endif" style="margin-bottom:20px;">
-                            <a href="" style=" text-decoration: none;">
-                                @php
-                                    $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue',  'card-pink','card-green', ];
-                                @endphp
-                                <div class="card
-                                @if(  $serviceCategory->sort_order==0 ) card-1
-                               @else {{ $colors[($serviceCategory->sort_order -1 ) % count($colors)] }}
-                                @endif">
-                                    <div class="card-head">
-                                        <div style="flex:2">
-                                            <div class=" icon-box"> {!! $serviceCategory->icon !!}</div>
+                @if (isset($serviceCategory))
+                    <div class="row">
+                        @php
+                            $icon_colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue', 'card-pink', 'card-green'];
+                        @endphp
+                        @foreach ($services as $index => $service)
+                            <div class="col-12 col-md-4 col-lg-4 col-xs-12" style="margin-bottom:20px;">
+                                <a href="{{ route('online-doctor-detail.show', ['id' => $serviceCategory->id]) }}"
+                                   style=" text-decoration: none;">
+                                    <div class="card {{ $icon_colors[$index % count($icon_colors)] }}">
+                                        <div class="card-head">
+                                            <div style="flex:2">
+                                                <div class="icon-box">{!! $serviceCategory->icon !!}</div>
+                                            </div>
+                                            <div class="right-box" style="flex:9">
+                                                <div>{{ $types[$serviceCategory->type] }}</div>
+                                            </div>
                                         </div>
-                                        <div class="right-box" style="flex:9">
-                                            <div>  {{ $types[$serviceCategory->type] }} </div>
+                                        <div class="card-body">
+                                            <p class="middle-p-small">{{ $service->title }}</p>
+                                            <p class="bottom-p-small">{{ $serviceCategory->category_page_detail }}</p>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="
-                                        @if(  $serviceCategory->sort_order==0 ) middle-p-big
-                                        @else middle-p-small
-                                        @endif">{{ $serviceCategory->title }}</p>
-                                        <p class="
-                                       @if(  $serviceCategory->sort_order==0 ) bottom-p-big
-                                        @else bottom-p-small
-                                        @endif">
-                                            {{$serviceCategory->category_page_detail }}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    <p>No services available for this category.</p>
+                @endif
             </div>
         </div>
     </main>

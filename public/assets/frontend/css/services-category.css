@@ -344,6 +344,7 @@
     font-size: 16px;
     margin-top: -8px;
     line-height: 1.3;
+
 }
 
 .card-service-detail-button {
@@ -362,7 +363,7 @@
 /*//services-detail-page*/
 .services-detail-page-img {
     width: 320px;
-    height: 255px;
+    height: 270px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
@@ -396,11 +397,107 @@
     padding: 20px;
     width: 900px;
     text-align: justify;
-    font-weight: 500;
+    font-weight: 400;
 
 }
 
 .services-detail-description strong {
-    color: #372778; /* Highlight color for key text */
+    color: #372778;
     font-weight: bold;
 }
+/*//appointment-card*/
+.appointment-card {
+    margin-right:-40px;
+    position: absolute;
+    top: 40px;
+    right:0;
+    width:440px;
+    min-height: 150px; /* Ensures the card doesn't get too small */
+    max-width: 100%; /* Ensures responsive width */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1; /* Ensures the card appears above other content */
+    /*overflow: hidden*/
+}
+.appointment-card-title{
+    color: #5e43cc;
+    text-align: center;
+    font-size:21px;
+
+}
+.appointment-time-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 550px; /* Define the scrollable height */
+    position: relative; /* Needed for sticky positioning to work */
+
+}
+.appointment-time-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.appointment-day-container {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+.appointment-day-header {
+    position: sticky;
+    top: 0;
+    background-color: white; /* Ensures it stands out when scrolling */
+    z-index: 2;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.appointment-day{
+    color: #372778;
+    font-size:17px;
+    flex:1;
+    text-align: center;
+    font-weight:500;
+    /*margin-left:12px;*/
+
+}
+.appointment-date{
+    color: #856ce6;
+    font-size:17px;
+    margin-top:-6px;
+    text-align: center;
+    font-weight:500;
+    margin-left:12px;
+
+}
+.appointment-time-button{
+    border:none;
+    margin-bottom:10px;
+    background-color:#F0EDFD;
+    color: #372778;
+    padding-right:30px;
+    padding-left:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:450;
+
+}
+
+
+
+
+
+
+/*@media (max-width: 991px) {*/
+/*    !* Revert to a static position for smaller screens *!*/
+/*    .custom-card-position {*/
+/*        position: static;*/
+/*        width: 100%;*/
+/*        margin-bottom: 20px;*/
+/*    }*/
+/*}*/

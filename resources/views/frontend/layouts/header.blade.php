@@ -39,7 +39,7 @@
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('home') }}">Ana Sayfa</a>
                 </li>
                 <li class="nav-item " style=" margin-left:50px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('online-doctor.index') }}">Online Doktor Görüşmesi</a>
+                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('onlineDoctor.byCategory', ['id' => $serviceCategory->id]) }}">Online Doktor Görüşmesi</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('services-category.index') }}">Hizmetlerimiz</a>
@@ -58,11 +58,11 @@
     </div>
     <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <ul class="nav justify-content-center " style="background-color:#45339E; font-size:15px;padding-top:15px;padding-bottom:15px;">
-            <li class="nav-item " style=" margin-left:60px;margin-right:6px;color:white; display:flex;align-items: center; ">
+            <li class="nav-item " style=" margin-left:60px;margin-right:6px;color:white; display:flex;align-items: center;margin-top:-4px; ">
                 Canlı desteğe isteğin zaman ve hızlı ulaş!
             </li>
-            <li class="nav-item " style=" margin-left:2px;margin-right:8px;">
-                <button style="background-color:#6E4EEF;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;">
+            <li class="nav-item " style=" margin-left:10px;margin-right:8px;">
+                <button style="background-color:#6E4EEF;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
                     <div style="color:white; margin-top:-5px;margin-left:-25px;flex:1;padding-left:-6px;">
                         <i style="background-color:white;font-size:10px; border-radius:8px; padding-right:-1px;padding-left:-1px;padding-bottom:1px ;padding-top:1px;margin-top:-3px;color:#45339E;"
                            class="bi bi-telephone-outbound">
@@ -81,7 +81,8 @@
                 style=" display:flex;align-items: center;color:white; weight:bold;font-family:arial;">
                 0535 469 42 34
             </li>
-            <li class="nav-item " style=" margin-left:40px;">
+            <li class="nav-item " style=" margin-left:20px;">
+                <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
                 <button style="background-color:#69C140;border-radius:15px;border:none;height:20px;width:90px;display:flex;">
                     <div style="color:white; margin-top:-5px;margin-left:-18px;flex:1">
                         <i class="bi bi-whatsapp"></i>
@@ -95,6 +96,7 @@
                         <p >7/24 Yazın</p>
                     </div>
                 </button>
+                </a>
             </li>
         </ul>
     </div>

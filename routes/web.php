@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\ServicesCategoryController;
 use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\Frontend\OnlineDoctorController;
 use App\Http\Controllers\Frontend\ServicesDetailController;
+use App\Http\Controllers\Frontend\OnlineDoctorDetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -19,23 +20,25 @@ Route::prefix('')->group(function () {
 
 Route::prefix('services-category')->group(function () {
     Route::get('/', [ServicesCategoryController::class, 'index'])->name('services-category.index');
-
 });
+
 Route::prefix('services')->group(function () {
-    Route::get('/', [ServicesController::class, 'index'])->name('services.index');
-
-
-
-
+    Route::get('/services-category/{id}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
 });
+
 Route::prefix('online-doctor')->group(function () {
-    Route::get('/', [OnlineDoctorController::class, 'index'])->name('online-doctor.index');
-
+    Route::get('/online-doctor/{id}', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
 });
+
 Route::prefix('services-detail')->group(function () {
-    Route::get('/', [ServicesDetailController::class, 'index'])->name('services-detail.index');
-
+    Route::get('/show/{id}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
 });
+
+Route::prefix('online-doctor-detail')->group(function () {
+    Route::get('/show/{id}', [OnlineDoctorDetailController::class, 'show'])->name('online-doctor-detail.show');
+});
+
+
 
 Route::prefix('auth')->group(function () {
     Route::get('/', [AuthController::class, 'loginPage'])->middleware('guest')->name('loginPage');

@@ -15,7 +15,7 @@
                                 duyduğunuz her an, evde sağlık hizmetlerimizle yanınızdayız.</p>
                             <div style="border-color:grey">
                                 <form class="search-bar" role="search" id="form"
-                                      style="width:500px;margin-left:0; border-style: solid;border-color:#9c9a9a;border-width:1px;">
+                                      style="width:600px;margin-left:0; border-style: solid;border-color:#9c9a9a;border-width:1px;">
                                     <input class="search-bar-input" type="search" id="query" name="q"
                                            placeholder="evde serum..."
                                            aria-label="Search through site content">
@@ -109,7 +109,7 @@
                         <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6
                                 @else col-lg-3
                                 @endif" style="margin-bottom:20px;">
-                            <a href="" style=" text-decoration: none;">
+                            <a href="{{ route('services.byCategory', ['id' => $serviceCategory->id]) }}" style=" text-decoration: none;">
                                 @php
                                     $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue',  'card-pink','card-green', ];
                                 @endphp

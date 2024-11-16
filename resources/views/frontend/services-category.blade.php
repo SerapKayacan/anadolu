@@ -50,7 +50,7 @@
                                 <ul class="card-link" style="list-style-type: none;">
                                     @foreach ($serviceCategory->services->take(3) as $service)
                                     <li style="list-style: none">
-                                        <a href="" style="display:flex;text-decoration: none;">
+                                        <a href="{{ route('services-detail.show', $service->id) }}" style="display:flex;text-decoration: none;">
                                             <p class="card-link-text-services"> {{ $service->title }}</p>
                                             <i class="bi bi-caret-right card-link-icon-services">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em"
@@ -69,7 +69,7 @@
                                     <p>No services available for this category.</p>
                                 @endif
                                     <div style="display:flex;">
-                                        <a href="{{ route('services.index')}}"
+                                        <a href="{{ route('services.byCategory', ['id' => $serviceCategory->id]) }}"
                                            style="display:flex;text-decoration:none;">
                                             <p class="card-link-bottom-text">Daha Fazlası</p>
                                             <i class="bi bi-arrow-right card-link-bottom-icon">
@@ -85,7 +85,6 @@
                             </div>
                         </div>
                     </div>
-
                     @endforeach
                 </div>
             </div>

@@ -9,13 +9,16 @@ use Illuminate\Http\Request;
 class OnlineDoctorController extends Controller
 
 {
-    public function index()
+     public function showByCategory($id)
     {
-        $serviceCategories = ServiceCategory::withCount('services')->orderBy('sort_order','ASC')->get();
+        $serviceCategory = ServiceCategory::with('services')->findOrFail($id); // Fetch the category and its services
         $types = ServiceCategory::types();
+
+
         return view('frontend.online-doctor', [
-            "serviceCategories" => $serviceCategories,
-            "types" => $types
+            'serviceCategory' => $serviceCategory,
+            'services' => $serviceCategory->services,
+            'types' => $types,
         ]);
     }
 

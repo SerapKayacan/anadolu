@@ -8,14 +8,15 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
-    public function index()
+    public function showByCategory($id)
     {
-        $serviceCategories = ServiceCategory::with('services')->orderBy('sort_order', 'ASC')->get();
+        $serviceCategory = ServiceCategory::with('services')->findOrFail($id); // Fetch the category and its services
         $types = ServiceCategory::types();
 
         return view('frontend.services', [
-            "serviceCategories" => $serviceCategories,
-            "types" => $types
+            'serviceCategory' => $serviceCategory,
+            'services' => $serviceCategory->services,
+            'types' => $types,
         ]);
     }
 

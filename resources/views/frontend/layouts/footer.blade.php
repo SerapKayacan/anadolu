@@ -155,6 +155,7 @@
                                 <h3 style="font-size:14px;color:#6E4EEF">veya</h3>
                             </div>
                             <div style="flex:2">
+                                <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
                                 <button
                                     style="background-color:#69C140;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
                                     <div style="color:white;  margin-top:1px;margin-left:1px;flex:2">
@@ -170,6 +171,7 @@
                                         <p>7/24 Yazın</p>
                                     </div>
                                 </button>
+                                </a>
                             </div>
                         </div>
                         <div style="margin-top:8px;">
