@@ -38,7 +38,7 @@ class Service extends Model implements HasMedia
     {
         return $this->belongsTo(ServiceCategory::class, 'category_id');
     }
-
+//buraya ihtiyac var
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('large')

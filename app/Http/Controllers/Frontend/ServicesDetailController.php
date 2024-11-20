@@ -20,7 +20,7 @@ class ServicesDetailController extends Controller
     public function show(string $id)
     {
         $serviceCategory = ServiceCategory::with('services')->findOrFail($id);
-        $services = Service::where('can_be_appointment', true)->where('is_active', true)->orderBy('sort_order','ASC')->get();
+        $services = Service::where('is_active', true)->orderBy('sort_order','ASC')->get();
         $service = Service::with('getCategory')->findOrFail($id); // Ensure related data is loaded
         $days = collect($this->appointmentService->getWeeklyAvailability($service))
             ->map(function ($times) {

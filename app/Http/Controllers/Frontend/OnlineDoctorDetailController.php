@@ -20,8 +20,6 @@ class OnlineDoctorDetailController extends Controller
 
     public function show(string $id)
     {
-        $serviceCategory = ServiceCategory::with('services')->findOrFail($id);
-        $services = Service::where('can_be_appointment', true)->where('is_active', true)->orderBy('sort_order','ASC')->get();
         $service = Service::with('getCategory')->findOrFail($id); // Ensure related data is loaded
         $days = collect($this->appointmentService->getWeeklyAvailability($service))
             ->map(function ($times) {
@@ -35,9 +33,7 @@ class OnlineDoctorDetailController extends Controller
         return view('frontend.online-doctor-detail', [
             "service" => $service,
             "days" => $days,
-            "services" => $services,
             "noAppointments" => $noAppointments, // Pass the flag to the view
-            'serviceCategory' => $serviceCategory,
         ]);
     }
 }

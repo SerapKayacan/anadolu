@@ -56,9 +56,11 @@
     padding-right: 200px;
 }
 
-
+.carousel slide{
+    width: 1000px;
+}
 .carousel-img{
-    width: 650px;
+    width: 1000px;
     height: 500px;
     border-radius: 15px;
 
@@ -109,6 +111,20 @@
 .tab-pane.show {
     display: flex;
 }
+
+
+
+/*.carousel-container {*/
+/*    position: sticky; !* Makes the element stick to a specific position *!*/
+/*    top: 0; !* Distance from the top of the viewport *!*/
+/*    z-index: 1000; !* Ensures the carousel stays above other elements *!*/
+/*    background-color: white; !* Optional: Ensures a background color to avoid transparency issues *!*/
+/*    padding: 10px; !* Optional: Adds some padding for a polished look *!*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* Optional: Adds a shadow for better visibility *!*/
+/*    margin-top:50px;*/
+/*}*/
+
+
 .navbar-bottom{
     padding-top:20px;
     padding-bottom:20px;
@@ -220,6 +236,37 @@
     margin-left:-30px;
     margin-top:8px;
 
+}
+/*//contact-card*/
+
+.contact-card-header{
+
+    width:1000px;
+}
+.contact-header{
+    color:#6E4EEF;
+    font-weight:600;
+    font-size:35px;
+    margin-left:500px;
+}
+.contact-bottom-header{
+    margin-top:-10px;
+    font-size:17px;
+    color:dimgrey;
+    margin-left:450px;
+}
+.contact-card{
+    width:1000px;
+     height:100%;
+    justify-items: center;
+    margin-left:200px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1; /* Ensures the card appears above other content */
+    /*overflow: hidden*/
 }
 
 @media (max-width: 1920px) and (min-width: 1366px) {

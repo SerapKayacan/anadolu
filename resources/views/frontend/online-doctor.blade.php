@@ -35,7 +35,7 @@
                         @endphp
                         @foreach ($services as $index => $service)
                             <div class="col-12 col-md-4 col-lg-4 col-xs-12" style="margin-bottom:20px;">
-                                <a href="{{ route('online-doctor-detail.show', ['id' => $serviceCategory->id]) }}"
+                                <a href="{{ route('online-doctor-detail.show', ['id' => $service->id]) }}"
                                    style=" text-decoration: none;">
                                     <div class="card {{ $icon_colors[$index % count($icon_colors)] }}">
                                         <div class="card-head">

@@ -406,8 +406,7 @@
     font-weight: bold;
 }
 /*//appointment-card*/
-.appointment-card {
-    margin-right:-40px;
+.appointment-card { margin-right:-40px;
     position: absolute;
     top: 40px;
     right:0;
@@ -421,6 +420,7 @@
     padding: 20px;
     z-index: 1; /* Ensures the card appears above other content */
     /*overflow: hidden*/
+
 }
 .appointment-card-title{
     color: #5e43cc;

@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\Frontend\OnlineDoctorController;
 use App\Http\Controllers\Frontend\ServicesDetailController;
 use App\Http\Controllers\Frontend\OnlineDoctorDetailController;
+use App\Http\Controllers\Frontend\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -27,7 +28,7 @@ Route::prefix('services')->group(function () {
 });
 
 Route::prefix('online-doctor')->group(function () {
-    Route::get('/online-doctor/{id}', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
+    Route::get('/online-doctor', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
 });
 
 Route::prefix('services-detail')->group(function () {
@@ -36,6 +37,9 @@ Route::prefix('services-detail')->group(function () {
 
 Route::prefix('online-doctor-detail')->group(function () {
     Route::get('/show/{id}', [OnlineDoctorDetailController::class, 'show'])->name('online-doctor-detail.show');
+});
+Route::prefix('contact')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('contact.index');
 });
 
 

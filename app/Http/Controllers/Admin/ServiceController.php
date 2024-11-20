@@ -55,7 +55,7 @@ class ServiceController extends Controller
             }
         }
         $service->tags()->sync($tagIds);
-
+//buraya ihtiyqc var
         if ($request->hasFile('banner_image')) {
             $service->clearMediaCollection('banner');
             $service->addMedia($request->banner_image)->usingFileName(SlugHelper::imageSlugName($request->banner_image))->toMediaCollection('banner');

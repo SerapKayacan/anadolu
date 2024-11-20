@@ -9,11 +9,10 @@ use Illuminate\Http\Request;
 class OnlineDoctorController extends Controller
 
 {
-     public function showByCategory($id)
+     public function showByCategory()
     {
-        $serviceCategory = ServiceCategory::with('services')->findOrFail($id); // Fetch the category and its services
+        $serviceCategory = ServiceCategory::with('services')->findOrFail(1); // Fetch the category and its services
         $types = ServiceCategory::types();
-
 
         return view('frontend.online-doctor', [
             'serviceCategory' => $serviceCategory,

@@ -39,7 +39,7 @@
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('home') }}">Ana Sayfa</a>
                 </li>
                 <li class="nav-item " style=" margin-left:50px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('onlineDoctor.byCategory', ['id' => $serviceCategory->id]) }}">Online Doktor Görüşmesi</a>
+                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('onlineDoctor.byCategory') }}">Online Doktor Görüşmesi</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('services-category.index') }}">Hizmetlerimiz</a>
@@ -51,7 +51,7 @@
                     <a class="nav-link active" style="color:#3F3094" aria-current="page" href="#">Blog</a>
                 </li>
                 <li class="nav-item " style=" margin-right:40px;margin-left:50px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="#">İletişim</a>
+                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('contact.index') }}">İletişim</a>
                 </li>
             </ul>
         </nav>
