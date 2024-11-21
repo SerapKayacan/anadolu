@@ -56,13 +56,11 @@
     padding-right: 200px;
 }
 
-.carousel slide{
-    width: 1000px;
-}
+
 .carousel-img{
     width: 1000px;
-    height: 500px;
-    border-radius: 15px;
+    height:1000px;
+
 
 }
 .carousel-slide-img{

@@ -17,6 +17,10 @@ class Tag extends Model
     {
         return $this->belongsToMany(Service::class, 'service_tags');
     }
+    public function carousels()
+    {
+        return $this->belongsToMany(Carousel::class, 'carousel_tags');
+    }
 
     public function serviceCategories()
     {

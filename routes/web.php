@@ -13,6 +13,7 @@ use App\Http\Controllers\Frontend\OnlineDoctorController;
 use App\Http\Controllers\Frontend\ServicesDetailController;
 use App\Http\Controllers\Frontend\OnlineDoctorDetailController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Admin\CarouselController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -42,6 +43,14 @@ Route::prefix('contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
 });
 
+Route::prefix('carousel')->group(function () {
+    Route::get('/', [CarouselController::class, 'index'])->name('carousel.index');
+    Route::get('/yeni', [CarouselController::class, 'create'])->name('carousel.create');
+    Route::post('/yeni', [CarouselController::class, 'store'])->name('carousel.store');
+    Route::get('/duzenle/{id}', [CarouselController::class, 'edit'])->name('carousel.edit');
+    Route::put('/duzenle/{id}', [CarouselController::class, 'update'])->name('carousel.update');
+    Route::delete('/sil/{id}', [CarouselController::class, 'destroy'])->name('carousel.destroy');
+});
 
 
 Route::prefix('auth')->group(function () {

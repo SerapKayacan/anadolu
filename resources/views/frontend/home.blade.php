@@ -1,106 +1,30 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-1">
-            <div class="container main-container-1">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="card card-top">
-                            <p style="color:#6E4EEF;font-size:45px;font-weight: bold;font-family:Roboto;">Sultan
-                                Park ile hem kliniğimizde <span
-                                    style="color:#372778">hem evlerinizde sizlerleyiz</span>
-                            </p>
-                            <p style="color:black;font-size:20px;margin-top:-10px;">Alanında uzman sağlık ekibimizle
-                                ihtiyaç
-                                duyduğunuz her an, evde sağlık hizmetlerimizle yanınızdayız.</p>
-                            <div style="border-color:grey">
-                                <form class="search-bar" role="search" id="form"
-                                      style="width:600px;margin-left:0; border-style: solid;border-color:#9c9a9a;border-width:1px;">
-                                    <input class="search-bar-input" type="search" id="query" name="q"
-                                           placeholder="evde serum..."
-                                           aria-label="Search through site content">
-                                    <button class="search-bar-button" style="border-width: 1px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
-                                             color=" #6E4EEF" viewBox="0 0 32 32" fill="currentColor"
-                                             aria-hidden="true" focusable="false" class=""><title>search</title>
-                                            <path
-                                                d="M23.031 23.033c0.536-0.536 1.404-0.536 1.939 0l6.626 6.626c0.536 0.536 0.536 1.404 0 1.939s-1.404 0.536-1.94 0l-6.626-6.626c-0.536-0.536-0.536-1.404 0-1.939z"></path>
-                                            <path
-                                                d="M0.001 14.628c0.001-8.079 6.55-14.628 14.628-14.628 0 0 0 0 0 0 8.079 0 14.628 6.549 14.628 14.628s-6.549 14.628-14.628 14.628c-8.078 0-14.627-6.548-14.628-14.626zM2.744 14.628c0 6.564 5.321 11.886 11.886 11.886s11.886-5.321 11.886-11.886c0-6.564-5.321-11.886-11.886-11.886s-11.885 5.322-11.886 11.886z"></path>
-                                        </svg>
-                                    </button>
-                                </form>
-                            </div>
-                            <div style="margin-top:-30px;">
-                                <button class="home-card-button">Evde Kan Alımı dfdhgjh ghghgj</button>
-                                <button class="home-card-button">Evde Kan Alımı</button>
-                                <button class="home-card-button">Evde Kan Alımı</button>
-                            </div>
-                        </div>
+        <div class="">
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('') }}assets/frontend/images/medical" class="d-block w-100" alt="...">
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="card card-top-2">
-                            <div id="carouselExampleCaptions" class="carousel slide">
-                                <div class="carousel-indicators" style="display:flex;">
-                                    <button style="flex:2;padding-left:25px;padding-right:25px;" type="button"
-                                            data-bs-target="#carouselExampleCaptions"
-                                            data-bs-slide-to="0" class="active" aria-current="true"
-                                            aria-label="Slide 1">
-                                        <img src="{{ asset('') }}assets/frontend/images/carousel-1.avif" alt=""
-                                             class="carousel-slide-img"></button>
-                                    <button style="flex:2;padding-left:25px;padding-right:25px;" type="button"
-                                            data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                                            class="active" aria-current="true" aria-label="Slide 2">
-                                        <img
-                                            src="{{ asset('') }}assets/frontend/images/yellow-flowers-3840x2160-17711.png"
-                                            alt=""
-                                            class="carousel-slide-img"></button>
-                                    <button style="flex:2;padding-left:25px;padding-right:25px;" type="button"
-                                            data-bs-target="#carouselExampleCaptions"
-                                            data-bs-slide-to="2" class="active" aria-current="true"
-                                            aria-label="Slide 3">
-                                        <img
-                                            src="{{ asset('') }}assets/frontend/images/carnation-red-3840x2160-15670.jpg"
-                                            alt=""
-                                            class="carousel-slide-img"></button>
-                                    <button style="flex:2;padding-left:25px;padding-right:25px;" type="button"
-                                            data-bs-target="#carouselExampleCaptions"
-                                            data-bs-slide-to="3" class="active" aria-current="true"
-                                            aria-label="Slide 4">
-                                        <img
-                                            src="{{ asset('') }}assets/frontend/images/vibrant-fold-phone-7680x7680-14467.jpg"
-                                            alt=""
-                                            class="carousel-slide-img"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="{{ asset('') }}assets/frontend/images/carousel-1.avif"
-                                             class="carousel-img"
-                                             alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img
-                                            src="{{ asset('') }}assets/frontend/images/yellow-flowers-3840x2160-17711.png"
-                                            class="carousel-img"
-                                            alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img
-                                            src="{{ asset('') }}assets/frontend/images/carnation-red-3840x2160-15670.jpg"
-                                            class="carousel-img" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img
-                                            src="{{ asset('') }}assets/frontend/images/vibrant-fold-phone-7680x7680-14467.jpg"
-                                            class="carousel-img"
-                                            alt="...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+
         </div>
         <div class="main-wrapper-2">
             <div class="container">
