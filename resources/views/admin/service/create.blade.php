@@ -1,6 +1,4 @@
 @section('title', 'Yeni Hizmet')
-@section('css')
-@endsection
 @extends('admin.layouts.master')
 @section('content')
     <div class="d-flex flex-column flex-column-fluid">
@@ -123,21 +121,21 @@
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kategori Sayfası Açıklama</label>
-                                                    <textarea class="form-control" name="category_page_detail" rows="2"></textarea>
+                                                    <textarea class="form-control ckeditors" id="category_page_detail" name="category_page_detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kısa Açıklama</label>
-                                                    <textarea class="form-control" name="sort_detail" rows="2"></textarea>
+                                                    <textarea class="form-control ckeditors" id="sort_detail" name="sort_detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Açıklama</label>
-                                                    <textarea class="form-control" name="detail" rows="2"></textarea>
+                                                    <textarea class="form-control ckeditors" id="detail" name="detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
@@ -197,6 +195,8 @@
 @section('script')
     <script src="{{ asset('') }}assets/js/admin/media.js"></script>
     <script src="{{ asset('') }}assets/dragsort/dragsort.js"></script>
+    <script src="{{ asset('') }}assets/plugins/custom/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('') }}assets/js/admin/ckeditor.js"></script>
     <script>
         var input = document.querySelector('#inputTagify');
         var tagify = new Tagify(input)

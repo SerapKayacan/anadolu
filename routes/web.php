@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\AppointmentController;
+use App\Http\Controllers\Admin\CKEditorController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ServicesCategoryController;
 use App\Http\Controllers\Frontend\ServicesController;
@@ -96,4 +97,6 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
         Route::get('/duzenle/{id}', [AppointmentController::class, 'edit'])->name('edit');
         Route::put('/duzenle/{id}', [AppointmentController::class, 'update'])->name('update');
     });
+
+    Route::post('/ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.upload');
 });

@@ -171,6 +171,8 @@
 @endsection
 @section('script')
     <script src="{{ asset('') }}assets/dragsort/dragsort.js"></script>
+    <script src="{{ asset('') }}assets/plugins/custom/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('') }}assets/js/admin/ckeditor.js"></script>
     <script>
         var input = document.querySelector('#inputTagify');
         var tagify = new Tagify(input)
