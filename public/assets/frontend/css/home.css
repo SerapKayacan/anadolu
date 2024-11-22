@@ -233,7 +233,7 @@
     width:1000px;
 }
 .contact-header{
-    color:#6E4EEF;
+    color:#dc6a38;
     font-weight:600;
     font-size:35px;
     margin-left:500px;
@@ -245,7 +245,7 @@
     margin-left:450px;
 }
 .contact-card{
-    width:1000px;
+    width:900px;
      height:100%;
     justify-items: center;
     margin-left:200px;
@@ -253,11 +253,78 @@
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 40px;
     z-index: 1; /* Ensures the card appears above other content */
     /*overflow: hidden*/
-}
 
+}
+.contact-card-headers{
+    font-size:15px;
+    color:#dc6a38;
+}
+.contact-card-address{
+    font-weight:400;
+    font-size:17px;
+}
+.contact-card-contact-number{
+    font-size:19px;
+    font-weight:400;
+}
+.contact-card-contact{
+    font-size:19px;
+    font-weight:400;
+
+}
+.contact-card-body-header{
+    font-size:24px;
+    color:#dc6a38;
+    font-weight:500;
+}
+.form-headers{
+    font-size:13px;
+}
+.contact-name-surname{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    flex:8;
+    font-size: 16px;
+    padding-top:16px;
+    padding-bottom:12px;
+    padding-left:10px;
+
+
+}
+.contact-select-box{
+    flex:1;
+}
+.contact-input-box{
+    flex:8;
+    border: none;
+    font-size: 18px;
+    width:300px;
+    padding-top:16px;
+    padding-bottom:12px;
+    border-radius:12px;
+}
+.area-code{
+    font-size:4px;
+    width:4px;
+}
+.contact-message-box{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 600px;
+    font-size: 16px;
+    padding-top:16px;
+    padding-bottom:12px;
+    padding-left:10px;
+    display:inline-block;
+    flex:12;
+
+}
 @media (max-width: 1920px) and (min-width: 1366px) {
 
     .main-wrapper-1 {

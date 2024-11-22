@@ -23,7 +23,7 @@
     <link rel="stylesheet"  type="text/css" href="{{ asset('') }}assets/frontend/css/footer.css">
 </head>
 <body style="margin:0;padding:0;box-sizing:border-box; " >
-<header>
+<header style="position: sticky; top: 0; z-index: 1000; background-color: white;">
     <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <nav class="navbar bg-body-tertiary ">
             <div class="container">
@@ -37,33 +37,33 @@
         <nav style="display:block">
             <ul class="nav justify-content-center" style=" font-size:16px;">
                 <li class="nav-item " style=" margin-left:100px; font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('home') }}">Ana Sayfa</a>
+                    <a class="nav-link active" style="color:#0c423e" aria-current="page" href="{{ route('home') }}">Ana Sayfa</a>
                 </li>
                 <li class="nav-item " style=" margin-left:50px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('onlineDoctor.byCategory') }}">Online Doktor Görüşmesi</a>
+                    <a class="nav-link active" style="color:#0c423e" aria-current="page" href="{{ route('onlineDoctor.byCategory') }}">Online Doktor Görüşmesi</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('services-category.index') }}">Hizmetlerimiz</a>
+                    <a class="nav-link active" style="color:#0c423e" aria-current="page" href="{{ route('services-category.index') }}">Hizmetlerimiz</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="#">Hakkımızda</a>
+                    <a class="nav-link active" style="color:#0c423e" aria-current="page" href="#">Hakkımızda</a>
                 </li>
                 <li class="nav-item " style=" margin-left:40px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="#">Blog</a>
+                    <a class="nav-link active" style="color:#0c423e" aria-current="page" href="#">Blog</a>
                 </li>
                 <li class="nav-item " style=" margin-right:40px;margin-left:50px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#3F3094" aria-current="page" href="{{ route('contact.index') }}">İletişim</a>
+                    <a class="nav-link active" style="color:#0c423e" aria-current="page" href="{{ route('contact.index') }}">İletişim</a>
                 </li>
             </ul>
         </nav>
     </div>
     <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <ul class="nav justify-content-center " style="background-color:#45339E; font-size:15px;padding-top:15px;padding-bottom:15px;">
+        <ul class="nav justify-content-center " style="background-color:#1e716c; font-size:15px;padding-top:15px;padding-bottom:15px;">
             <li class="nav-item " style=" margin-left:60px;margin-right:6px;color:white; display:flex;align-items: center;margin-top:-4px; ">
                 Canlı desteğe isteğin zaman ve hızlı ulaş!
             </li>
             <li class="nav-item " style=" margin-left:10px;margin-right:8px;">
-                <button style="background-color:#6E4EEF;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
+                <button style="background-color:#549dda;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
                     <div style="color:white; margin-top:-5px;margin-left:-25px;flex:1;padding-left:-6px;">
                         <i style="background-color:white;font-size:10px; border-radius:8px; padding-right:-1px;padding-left:-1px;padding-bottom:1px ;padding-top:1px;margin-top:-3px;color:#45339E;"
                            class="bi bi-telephone-outbound">
@@ -84,7 +84,7 @@
             </li>
             <li class="nav-item " style=" margin-left:20px;">
                 <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
-                <button style="background-color:#69C140;border-radius:15px;border:none;height:20px;width:90px;display:flex;">
+                <button style="background-color:#dc6a38;border-radius:15px;border:none;height:20px;width:90px;display:flex;">
                     <div style="color:white; margin-top:-5px;margin-left:-18px;flex:1">
                         <i class="bi bi-whatsapp"></i>
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white"

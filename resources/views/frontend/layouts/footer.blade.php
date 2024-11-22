@@ -139,7 +139,7 @@
                         <div style="display:flex; ">
                             <div style="flex:2; ">
                                 <button
-                                    style="background-color:#6E4EEF;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
+                                    style="background-color:#549dda;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
                                     <div style="color:white; margin-top:1px;flex:1;">
                                         <i style="background-color:white; border-radius:12px;padding-right:4px;padding-left:4px;padding-bottom:2px ;padding-top:1px;margin-top:-3px;margin-left:-5px;color:#45339E;"
                                            class="bi bi-telephone-outbound">
@@ -152,12 +152,12 @@
                                 </button>
                             </div>
                             <div style="flex:1;margin-top:3px;margin-right:-20px;">
-                                <h3 style="font-size:14px;color:#6E4EEF">veya</h3>
+                                <h3 style="font-size:14px;color:white;">veya</h3>
                             </div>
                             <div style="flex:2">
                                 <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
                                 <button
-                                    style="background-color:#69C140;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
+                                    style="background-color:#dc6a38;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
                                     <div style="color:white;  margin-top:1px;margin-left:1px;flex:2">
                                         <i class="bi bi-whatsapp" ></i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
@@ -193,9 +193,6 @@
                         <div>
                             <div>
                                 <p style="color:#E2DCFC;font-size:16px;font-weight:500;">Cihangir, Meşrutiyet Cd. No:65 D:b; <br>34315 Avcılar/İstanbul</p>
-                            </div>
-                            <div>
-                                <a style="color:#E2DCFC;font-size:16px;font-family:arial">info@360saglik.com</a>
                             </div>
                             <div style="margin-top:22px;margin-bottom:-20px;">
                                 <a style="text-decoration: none;background-color:#513AB8; border-radius:20px; ;padding-left:3px;padding-bottom:3px ;margin-left:5px;margin-top:-1px;margin-bottom:8px;color:white;"
