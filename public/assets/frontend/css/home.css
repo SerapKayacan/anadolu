@@ -57,22 +57,13 @@
 }
 
 
-.carousel-img{
-    width: 1000px;
-    height:1000px;
-
-
+.carousel-inner img {
+    height: 750px; /* Set your desired height */
+    object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
+    width: 100%; /* Ensures the image fills the width */
 }
-.carousel-slide-img{
-    width:120px;
-    height:60px;
-    margin-left:980px;
-    margin-right:6px;
-    margin-top:-50px;
-    border-radius: 10px;
 
 
-}
 
 .card-top {
     margin-top: 25px;
