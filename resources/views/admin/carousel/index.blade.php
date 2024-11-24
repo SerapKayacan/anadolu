@@ -1,4 +1,4 @@
-@section('title', 'Hizmet Listesi')
+@section('title', 'Slider Listesi')
 @extends('admin.layouts.master')
 @section('content')
     <div class="d-flex flex-column flex-column-fluid">
@@ -58,9 +58,9 @@
                             </thead>
                             <tbody class="fw-semibold text-gray-600">
                             @foreach ($carousels as $carousel)
-                                <tr id="order-{{ $carousel->id }}">
-                                    <td> {{ $loop->iteration }} </td>
-                                    <td><a href="{{ route('carousel.edit', $carousel->id) }}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $carousel->title }}</a></td>
+                                <tr id="order-{{  $carousel->id }}">
+                                    <td> {{ $loop->iteration  }} </td>
+                                    <td><a href="{{ route('carousel.edit', $carousel->id) }}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{!!$carousel->title !!} </a></td>
                                     <td>
                                         @if ($carousel->is_active === 1)
                                             <div class="badge badge-light-success">Aktif</div>

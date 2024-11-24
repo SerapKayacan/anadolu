@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Carousel</title>
+    <title>Yeni Slider</title>
 </head>
 <body>
-<h1>Manage Carousel</h1>
+    <h1>Yeni Slider</h1>
 
 <!-- Upload Form -->
 <form action="{{ route('carousel.store') }}" method="POST" enctype="multipart/form-data">
@@ -98,15 +98,65 @@
 
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
-                                                    <label class="required form-label">Başlık</label>
-                                                    <input class="form-control" name="title" value="" required/>
+                                                    <label class="required form-label"> Başlık</label>
+                                                    <textarea class="form-control ckeditors" id="title" name="title" rows="2"></textarea>
+                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="required form-label"> Açıklama</label>
+                                                    <textarea class="form-control ckeditors" id="description" name="description" rows="2"></textarea>
+                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="required form-label">Buton Yazısı</label>
+                                                    <input class="form-control" name="button_text" value="" required/>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
-                                                    <label class="required form-label">Açıklama</label>
-                                                    <input class="form-control" name="alt_text" value=""/>
+                                                    <label class="required form-label">Buton Linki</label>
+                                                    <input class="form-control" name="button_link" value="" required/>
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label class="required form-label" >Buton Yazısı Rengi</label>
+                                                    <input
+                                                        type="color"
+                                                        class="form-control"
+                                                        name="text_color"
+                                                        value="{{ old('text_color', $carousel->text_color ?? '#000000') }}"
+                                                        required
+                                                    />
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="required form-label">Buton Çerçeve Rengi</label>
+                                                    <input
+                                                        type="color"
+                                                        class="form-control"
+                                                        name="border_color"
+                                                        value="{{ old('border_color', $carousel->border_color ?? '#000000') }}"
+                                                        required
+                                                    />
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label class="required form-label">Buton Arka Plan Rengi</label>
+                                                    <input
+                                                        type="color"
+                                                        class="form-control"
+                                                        name="button_border_color"
+                                                        value="{{ old('background_color', $carousel->background_color ?? '#000000') }}"
+                                                        required
+                                                    />
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -164,6 +214,8 @@
 @section('script')
     <script src="{{ asset('') }}assets/js/admin/media.js"></script>
     <script src="{{ asset('') }}assets/dragsort/dragsort.js"></script>
+    <script src="{{ asset('') }}assets/plugins/custom/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('') }}assets/js/admin/ckeditor.js"></script>
     <script>
         var input = document.querySelector('#inputTagify');
         var tagify = new Tagify(input)

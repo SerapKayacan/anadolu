@@ -111,8 +111,6 @@ class ServiceController extends Controller
         if ($request->hasFile('banner_image')) {
             $service->clearMediaCollection('banner');
             $service->addMedia($request->banner_image)->usingFileName(SlugHelper::imageSlugName($request->banner_image))->toMediaCollection('banner');
-        } else {
-            $service->clearMediaCollection('banner');
         }
 
         return redirect()->to(route('service.index', $service->id));

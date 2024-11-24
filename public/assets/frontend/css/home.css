@@ -61,6 +61,7 @@
     height: 750px; /* Set your desired height */
     object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
     width: 100%; /* Ensures the image fills the width */
+    margin-bottom:-150px;
 }
 
 

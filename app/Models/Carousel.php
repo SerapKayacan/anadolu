@@ -15,9 +15,13 @@ class Carousel extends Model implements HasMedia
     use HasFactory, SoftDeletes, InteractsWithMedia;
     protected $fillable = [
         'title',
-        'slug',
+        'description',
         'sort_order',
-        'alt_text',
+        'button_text',
+        'button_link',
+        'background_color',
+        'text_color',
+        'border_color',
         'is_active'
     ];
     public function tags()
