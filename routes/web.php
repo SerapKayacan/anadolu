@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\ServicesDetailController;
 use App\Http\Controllers\Frontend\OnlineDoctorDetailController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Admin\CarouselController;
+use App\Http\Controllers\Admin\TabPanelController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -52,6 +53,15 @@ Route::prefix('carousel')->group(function () {
     Route::put('/duzenle/{id}', [CarouselController::class, 'update'])->name('carousel.update');
     Route::delete('/sil/{id}', [CarouselController::class, 'destroy'])->name('carousel.destroy');
 });
+Route::prefix('tab-panel')->group(function () {
+    Route::get('/', [TabPanelController::class, 'index'])->name('tab-panel.index');
+    Route::get('/yeni', [TabPanelController::class, 'create'])->name('tab-panel.create');
+    Route::post('/yeni', [TabPanelController::class, 'store'])->name('tab-panel.store');
+    Route::get('/duzenle/{id}', [TabPanelController::class, 'edit'])->name('tab-panel.edit');
+    Route::put('/duzenle/{id}', [TabPanelController::class, 'update'])->name('tab-panel.update');
+    Route::delete('/sil/{id}', [TabPanelController::class, 'destroy'])->name('tab-panel.destroy');
+});
+
 
 
 Route::prefix('auth')->group(function () {

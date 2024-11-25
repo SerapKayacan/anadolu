@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
-use App\Models\Service;
-use App\Models\ServiceCategory;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 

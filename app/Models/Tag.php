@@ -21,6 +21,10 @@ class Tag extends Model
     {
         return $this->belongsToMany(Carousel::class, 'carousel_tags');
     }
+    public function tab_panels()
+    {
+        return $this->belongsToMany(TabPanel::class, 'tab_panel_tags');
+    }
 
     public function serviceCategories()
     {
