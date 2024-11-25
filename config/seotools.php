@@ -49,7 +49,7 @@ return [
             'description' => 'Evde Bakım Hizmeti — Medical Center İle Tüm Sağlık ve Bakım Hizmetlerini Evinizin Konforunda Alın. Hemen Arayın. Lisanslı, Sertifikalı ve Uzman Sağlık Çalışanlarımız İle İstanbul\'un Her Yerindeyiz.', // set false to total remove
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => false,
-            'site_name'   => true,
+            'site_name'   => 'Özel Sultan Evde Sağlık Hizmetleri',
             'images'      => [],
         ],
     ],
