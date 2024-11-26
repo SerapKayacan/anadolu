@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
+use App\Models\TabPanel;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
@@ -12,7 +13,8 @@ class HomeController extends Controller
     public function index()
     {
         $serviceCategories = ServiceCategory::withCount('services')->orderBy('sort_order','ASC')->get();
-        $carusels = Carousel::orderBy('sort_order','ASC')->get();
+        $carousels = Carousel::orderBy('sort_order','ASC')->get();
+        $tabPanels = TabPanel::orderBy('sort_order','ASC')->get();
         $types = ServiceCategory::types();
 
         SEOTools::setTitle('Anasayfa'); // Dinamik olacak şekilde ayalanacak
@@ -24,7 +26,8 @@ class HomeController extends Controller
         return view('frontend.home', [
             "serviceCategories" => $serviceCategories,
             "types" => $types,
-             "carousels"=>$carusels
+             "carousels"=>$carousels,
+            "tabPanels" => $tabPanels
         ]);
     }
 

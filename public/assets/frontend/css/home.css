@@ -122,22 +122,23 @@
     border-radius:20px;
     height:680px;
 }
-.nav-button {
+.nav-button{
     width:300px;
     height:50px;
     background-color:white;
-    border-radius:30px;
-    color:white;
+    border-radius:30px !important;
+    color:white !important;
     border:none;
     margin-top:20px;
     margin-right:15px;
     display:flex;
+
 }
 .nav-button:hover{
     background-color: #c9bffa;
 }
 .nav-button:focus{
-    background-color:#4D37A7;
+    background-color:#4D37A7 !important;
 }
 .nav-button:focus .nav-button-icon{
     background-color:white;
@@ -152,20 +153,27 @@
     height:38px;
     color:white;
     flex:1;
-    margin-top:4px;
+    margin-bottom:0;
     margin-left:0;
-    margin-right:4px;
+    margin-right:3px;
     background-color:#4D37A7;
     border-radius:25px;
-    padding-left:-4px;
-    padding-right:-4px;
-    padding-top:1px;
+    padding-top:5px;
     padding-bottom:1px;
+    font-weight: bold;
 }
-.nav-button:active{
-    background-color:#4D37A7;
+.nav-button.active{
+    background-color:#4D37A7 !important;
+
 }
 
+.nav-button.active .nav-button-text{
+    color:white;
+}
+.nav-button.active .nav-button-icon{
+    background-color:white;
+    color:#4D37A7;
+}
 .nav-button-text{
     font-size:20px;
     font-family:arial;
@@ -173,7 +181,7 @@
     flex:6;
     color:#4D37A7;
     margin-left:-26px;
-    margin-top:7px;
+    margin-top:5px;
 }
 .nav-img{
     width:650px;
@@ -199,33 +207,40 @@
     margin-left:20px;
     margin-right:20px;
 }
-.navbar-bottom-button{
-    width:300px;
-    height:50px;
-    border:none;
-    border-radius:10px;
-    background-color:#6E4EEF;
-    color:white;
-    margin-left:20px;
-    margin-right:20px;
-
+.navbar-bottom-button {
+    position: absolute; /* Fix the button in relation to its container */
+    bottom: 20px; /* Distance from the bottom of the container */
+    left: 20px; /* Distance from the left of the container */
+    right: 20px; /* Allow flexibility with padding from the right */
+    border: none;
+    border-radius: 20px;
+    background-color: #6E4EEF;
+    color: white;
+    cursor: pointer !important;
+    padding: 10px 20px; /* Consistent padding for height and flexible width */
+    width: auto; /* Flexible width based on content */
+    max-width: 400px; /* Prevent overflow */
+    height: 50px; /* Consistent height */
+    display: flex; /* To align items inside */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out the text and icon */
+    box-sizing: border-box; /* Include padding in width and height calculation */
 }
+
+
 .navbar-bottom-button:hover{
     background-color:#4D37A7;
 }
 .navbar-bottom-button-text{
     color:white;
     font-size:20px;
-    flex:6;
-    margin-left:-15px;
-    margin-top:6px;
+    flex:1;
+    margin-bottom:-4px;
+    margin-top:4px;
 }
 .navbar-button-bottom-icon{
-    flex:2;
-    margin-right:-10px;
-    margin-left:-30px;
-    margin-top:8px;
-
+    margin-right:10px;
+    margin-left:-20px;
 }
 /*//contact-card*/
 
