@@ -123,7 +123,7 @@
                                             class="nav-img">
                                     </div>
                                     <div style="flex: 1; margin-left:30px;">
-                                        <p class="title"> {!! $tabPanel->title !!}</p>
+                                        <p class="title" style="line-height: 1;"> {!! $tabPanel->title !!}</p>
                                         <p class="description">{!! $tabPanel->description !!}</p>
                                         <div style="position: relative; height: 100px;"> <!-- Parent container -->
                                             <button class="navbar-bottom-button" style="display: flex;"

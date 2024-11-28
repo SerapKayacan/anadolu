@@ -139,7 +139,7 @@
                         <div style="display:flex; ">
                             <div style="flex:2; ">
                                 <button
-                                    style="background-color:#549dda;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
+                                    style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
                                     <div style="color:white; margin-top:1px;flex:1;">
                                         <i style="background-color:white; border-radius:12px;padding-right:4px;padding-left:4px;padding-bottom:2px ;padding-top:1px;margin-top:-3px;margin-left:-5px;color:#45339E;"
                                            class="bi bi-telephone-outbound">
@@ -157,7 +157,7 @@
                             <div style="flex:2">
                                 <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
                                 <button
-                                    style="background-color:#dc6a38;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
+                                    style="background-color:#2eb52e;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
                                     <div style="color:white;  margin-top:1px;margin-left:1px;flex:2">
                                         <i class="bi bi-whatsapp" ></i>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
@@ -177,8 +177,8 @@
                         <div style="margin-top:8px;">
                             <h2>
                                 <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0535 <span
-                                        style="color:#9983F4">469</span>
-                                    42<span style="color:#9983F4">34</span></p>
+                                        style="color:#549dda">469</span>
+                                    42<span style="color:#549dda">34</span></p>
                             </h2>
                         </div>
                         <div>
@@ -195,15 +195,15 @@
                                 <p style="color:#E2DCFC;font-size:16px;font-weight:500;">Cihangir, Meşrutiyet Cd. No:65 D:b; <br>34315 Avcılar/İstanbul</p>
                             </div>
                             <div style="margin-top:22px;margin-bottom:-20px;">
-                                <a style="text-decoration: none;background-color:#513AB8; border-radius:20px; ;padding-left:3px;padding-bottom:3px ;margin-left:5px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                <a style="text-decoration: none; border-radius:20px; ;padding-left:3px;padding-bottom:3px ;margin-left:5px;margin-top:-1px;margin-bottom:8px;color:white;"
                                    href=""><i class="bi bi-facebook">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false" class=""><title>facebook</title><path d="M32 16.097c0-8.891-7.163-16.097-16-16.097s-16 7.206-16 16.097c0 8.036 5.85 14.695 13.5 15.903v-11.249h-4.062v-4.655h4.062v-3.546c0-4.034 2.388-6.263 6.044-6.263 1.749 0 3.582 0.315 3.582 0.315v3.962h-2.019c-1.987 0-2.606 1.242-2.606 2.515v3.019h4.437l-0.709 4.653h-3.728v11.25c7.65-1.207 13.5-7.867 13.5-15.903z"></path></svg>
                                     </i></a>
-                                <a style="text-decoration: none;background-color:#513AB8; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
                                    href=""><i class="bi bi-instagram"></i>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false" class=""><title>instagram</title><path d="M16.009 2.882c4.276 0 4.782 0.019 6.464 0.094 1.563 0.069 2.407 0.331 2.969 0.55 0.744 0.288 1.282 0.638 1.838 1.194 0.563 0.563 0.906 1.094 1.194 1.838 0.219 0.563 0.481 1.413 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.464 0 4.276-0.019 4.782-0.094 6.464-0.069 1.563-0.331 2.407-0.55 2.969-0.288 0.744-0.638 1.281-1.194 1.838-0.563 0.563-1.094 0.906-1.838 1.194-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.464 0.094-4.276 0-4.782-0.019-6.464-0.094-1.563-0.069-2.407-0.331-2.969-0.55-0.744-0.288-1.282-0.638-1.838-1.194-0.563-0.563-0.906-1.094-1.194-1.838-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.464 0-4.276 0.019-4.782 0.094-6.464 0.069-1.563 0.331-2.407 0.55-2.969 0.288-0.744 0.638-1.282 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.194 0.563-0.219 1.413-0.481 2.969-0.55 1.682-0.075 2.188-0.094 6.464-0.094zM16.009 0c-4.345 0-4.888 0.019-6.595 0.094-1.7 0.075-2.869 0.35-3.882 0.744-1.056 0.413-1.95 0.956-2.838 1.85-0.894 0.888-1.438 1.782-1.85 2.832-0.394 1.019-0.669 2.182-0.744 3.882-0.075 1.713-0.094 2.257-0.094 6.601s0.019 4.888 0.094 6.595c0.075 1.7 0.35 2.869 0.744 3.882 0.413 1.056 0.956 1.95 1.85 2.838 0.888 0.888 1.782 1.438 2.832 1.844 1.019 0.394 2.182 0.669 3.882 0.744 1.707 0.075 2.25 0.094 6.595 0.094s4.888-0.019 6.595-0.094c1.7-0.075 2.869-0.35 3.882-0.744 1.050-0.406 1.944-0.956 2.832-1.844s1.438-1.782 1.844-2.832c0.394-1.019 0.669-2.182 0.744-3.882 0.075-1.707 0.094-2.25 0.094-6.595s-0.019-4.888-0.094-6.595c-0.075-1.7-0.35-2.869-0.744-3.882-0.394-1.063-0.938-1.957-1.832-2.844-0.888-0.888-1.782-1.438-2.832-1.844-1.019-0.394-2.182-0.669-3.882-0.744-1.713-0.081-2.257-0.1-6.601-0.1z"></path><path d="M16.009 7.783c-4.538 0-8.22 3.682-8.22 8.22s3.682 8.22 8.22 8.22c4.538 0 8.22-3.682 8.22-8.22s-3.682-8.22-8.22-8.22zM16.009 21.335c-2.944 0-5.332-2.388-5.332-5.332s2.388-5.332 5.332-5.332c2.944 0 5.332 2.388 5.332 5.332s-2.388 5.332-5.332 5.332z"></path><path d="M26.474 7.458c0 1.063-0.863 1.919-1.919 1.919-1.063 0-1.919-0.863-1.919-1.919 0-1.063 0.863-1.919 1.919-1.919s1.919 0.863 1.919 1.919z"></path></svg>
                                 </a>
-                                <a style="text-decoration: none;background-color:#513AB8; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
                                    href=""><i class="bi bi-twitter-x">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                              fill="currentColor"
@@ -212,7 +212,7 @@
                                                 d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                                         </svg>
                                     </i></a>
-                                <a style="text-decoration: none; background-color:#513AB8; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                <a style="text-decoration: none; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
                                    href=""><i class="bi bi-youtube">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                              fill="currentColor"

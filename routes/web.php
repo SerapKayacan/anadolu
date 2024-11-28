@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\OnlineDoctorDetailController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\TabPanelController;
+use App\Http\Controllers\Frontend\AboutUsController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -43,6 +44,9 @@ Route::prefix('online-doctor-detail')->group(function () {
 });
 Route::prefix('contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+});
+Route::prefix('about-us')->group(function () {
+    Route::get('/', [AboutUsController::class, 'index'])->name('about-us.index');
 });
 
 Route::prefix('carousel')->group(function () {

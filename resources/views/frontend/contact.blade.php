@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <div class="main-wrapper-1" style="background-color:#f3e1de">
-            <div class="container main-container-1" style=" height:100%;">
+            <div class="container main-container-1" style=" height:500px;">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="contact-card-header">
@@ -77,42 +77,167 @@
                             <hr>
                             <div class="contact-card-body">
                                 <p class="contact-card-body-header">Hemen Yazın</p>
-                                <form action="" style="display:flex;">
-                                    <div style="flex:1;">
-                                    <p class="form-headers">Adınız Soyadınız</p>
-                                    <input class="contact-name-surname" type="text" placeholder="Adınızı Soyadınızı Giriniz" required>
+                                <form action="" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                    <!-- Name Input -->
+                                    <div class="form-group" style="flex: 1; min-width: 300px;">
+                                        <p class="form-headers">Adınız Soyadınız</p>
+                                        <input class="contact-name-surname" type="text"
+                                               placeholder="Adınızı Soyadınızı Giriniz" required>
                                     </div>
-                                    <div style="flex:1;">
-                                    <p class="form-headers">Telefon Numarası</p>
-                                    <div style="display: flex; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; width: 300px;">
-                                        <!-- Country Code Dropdown -->
-                                        <select class="contact-select-box" name="phone-code" required style=" border: none; background: #f9f9f9; font-size: 16px;width:85px;">
-                                            <option value="+90" selected><span class="area-code">TR</span> +90</option> <!-- Default: Türkiye -->
-                                            <option value="+1"><span class="area-code">US</span> +1 (USA)</option>
-                                            <option value="+44"><span class="area-code">UK</span> +44 (United Kingdom)</option>
-                                            <option value="+49"><span class="area-code">DE</span> +49 (Germany)</option>
-                                            <option value="+33"><span class="area-code">FR</span> +33 (France)</option>
-                                            <option value="+91"><span class="area-code">IN</span> +91 (India)</option>
-                                            <option value="+81"><span class="area-code">JP</span> +81 (Japan)</option>
-                                            <option value="+61"><span class="area-code">AU</span> +61 (Australia)</option>
-                                            <option value="+55"><span class="area-code">BR</span> +55 (Brazil)</option>
-                                            <option value="+86"><span class="area-code">CN</span> +86 (China)</option>
-                                        </select>
-                                        <!-- Phone Number Input -->
-                                        <input class="contact-input-box"
-                                               type="tel"
-                                            placeholder="Telefon Numarası"
-                                            required
-                                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                            title="Lütfen geçerli bir telefon numarası girin (ör. 555-123-4567)">
+                                    <div class="form-group" style="flex: 1; min-width: 300px;">
+                                        <p class="form-headers">Telefon Numarası</p>
+                                        <div
+                                            style="display: flex; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
+                                            <select class="contact-select-box" name="phone-code" required
+                                                    style="border: none; background: #f9f9f9; font-size: 16px; width: 85px;">
+                                                <option value="+90" selected>TR +90</option>
+                                                <option value="+1">US +1</option>
+                                                <option value="+44">UK +44</option>
+                                                <option value="+49">DE +49</option>
+                                                <option value="+33">FR +33</option>
+                                                <option value="+91">IN +91</option>
+                                                <option value="+81">JP +81</option>
+                                                <option value="+61">AU +61</option>
+                                                <option value="+55">BR +55</option>
+                                                <option value="+86">CN +86</option>
+                                            </select>
+                                            <input class="contact-input-box" type="tel" placeholder="Telefon Numarası"
+                                                   required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                                   title="Lütfen geçerli bir telefon numarası girin (ör. 555-123-4567)">
+                                        </div>
                                     </div>
+                                    <div class="form-group" style="flex: 1 0 100%; min-width: 300px;">
+                                        <p class="form-headers">Mesajınız</p>
+                                        <textarea class="contact-message-box col-12" rows="4"
+                                                  placeholder="Mesajınızı Giriniz" required
+                                                  style="width: 100%;"></textarea>
                                     </div>
-                                    <div>
-                                    <p class="form-headers">Mesajınız</p>
-                                    <input class="contact-message-box col-12" type="text" placeholder="Mesajınızı Giriniz" required>
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" id="agreement" required>
+                                            <a style="text-decoration:none;color:#178c81;font-weight:bold;" href="#" id="showTerms">Aydınlatma
+                                                Metni</a>'ni okudum ve anladım.
+                                        </label>
                                     </div>
+                                    <button class="contact-button" type="submit">
+                                        Gönder
+                                    </button>
+
+                                    <div class="modal" id="termsModal">
+                                        <div class="modal-content">
+                                            <h3>Terms and Conditions</h3>
+                                            <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; background-color: #f9f9f9; border: 1px solid #ddd;">
+                                                <thead style="background-color: #007bff; color: white;">
+                                                <tr>
+                                                    <th style="text-align: left; padding: 10px; border: 1px solid #ddd;background-color:#178c81;">Başlık</th>
+                                                    <th style="text-align: left; padding: 10px; border: 1px solid #ddd;background-color:#dc6a38;">Açıklama</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">1. Veri Sorumlusu</td>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                                        Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu’nun (“KVKK”) 10. maddesi uyarınca, veri
+                                                        sorumlusu sıfatıyla [Şirket Adı / Organizasyon Adı] tarafından hazırlanmıştır.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">2. İşlenen Kişisel Veriler</td>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                                        Tarafımızca işlenebilecek kişisel verileriniz aşağıdaki gibidir:
+                                                        <ul>
+                                                            <li>Adınız ve soyadınız</li>
+                                                            <li>Telefon numaranız</li>
+                                                            <li>E-posta adresiniz</li>
+                                                            <li>İletişim formu aracılığıyla gönderdiğiniz mesaj ve içerikler</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">3. Kişisel Verilerin İşlenme Amaçları</td>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                                        Toplanan kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:
+                                                        <ul>
+                                                            <li>Tarafınıza daha iyi hizmet sunabilmek</li>
+                                                            <li>Sorularınıza veya geri bildirimlerinize yanıt verebilmek</li>
+                                                            <li>İlgili kanun ve düzenlemeler çerçevesinde hukuki yükümlülüklerin yerine getirilmesi</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">4. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi</td>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                                        Kişisel verileriniz, [web sitesi adı] üzerinden doldurduğunuz iletişim formları ve diğer dijital platformlar
+                                                        aracılığıyla toplanmaktadır. Bu işlem, KVKK’nın 5. maddesinde belirtilen aşağıdaki hukuki sebeplere dayanmaktadır:
+                                                        <ul>
+                                                            <li>Bir sözleşmenin kurulması veya ifası</li>
+                                                            <li>Veri sorumlusunun hukuki yükümlülüklerini yerine getirmesi</li>
+                                                            <li>Temel hak ve özgürlüklerinize zarar vermemek kaydıyla, veri sorumlusunun meşru menfaati</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">6. Veri Sahibi Olarak Haklarınız</td>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                                        KVKK’nın 11. maddesi uyarınca, kişisel verilerinizle ilgili olarak aşağıdaki haklara sahipsiniz:
+                                                        <ul>
+                                                            <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                                                            <li>İşlenen kişisel verileriniz hakkında bilgi talep etme</li>
+                                                            <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+                                                            <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme</li>
+                                                            <li>KVKK’nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+                                                            <li>Düzeltme, silme veya yok edilme taleplerinizin, kişisel verilerinizin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
+                                                            <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonuç ortaya çıkmasına itiraz etme</li>
+                                                            <li>Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">7. İletişim</td>
+                                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                                        Haklarınızı kullanmak veya kişisel verilerinizle ilgili sorularınızı iletmek için aşağıdaki iletişim
+                                                        kanallarından bize ulaşabilirsiniz:
+                                                        <ul>
+                                                            <li>Şirket Adı: [Şirket Adı]</li>
+                                                            <li>Adres: [Şirket Adresi]</li>
+                                                            <li>E-posta: [info@example.com]</li>
+                                                            <li>Telefon: [+90 555 123 4567]</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <button onclick="closeModal()">I Agree</button>
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        const showTermsLink = document.getElementById('showTerms');
+                                        const termsModal = document.getElementById('termsModal');
+                                        const agreementCheckbox = document.getElementById('agreement');
+
+                                        showTermsLink.addEventListener('click', function (e) {
+                                            e.preventDefault();
+                                            termsModal.style.display = 'flex';
+                                        });
+
+                                        function closeModal() {
+                                            termsModal.style.display = 'none';
+                                            agreementCheckbox.checked = true;
+                                        }
+
+                                        function checkAgreement() {
+                                            if (!agreementCheckbox.checked) {
+                                                alert('You must agree to the terms and conditions before submitting.');
+                                                return false;
+                                            }
+                                            return true;
+                                        }
+                                    </script>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 .footer{
-    background-color:#1e716c;
+    background-color: #063a68;
     height:500px;
     margin-top:30px;
     padding-top:70px;
@@ -43,12 +43,12 @@
     border-radius:30px;
     width:400px;
     height:360px;
-    background-color:#1e716c;
+    background-color: #063a68;
     padding-top:10px;
     padding-bottom:10px;
 }
 .footer-card-header{
-    background-color:#1e716c;
+    background-color: #063a68;
     margin-top:10px;
     margin-left:10px;
 }
@@ -56,7 +56,7 @@
     margin-top:-10px;
     margin-left:10px;
     margin-right:10px;
-    background-color:#1e716c;
+    background-color: #063a68;
 }
 
 @media (max-width: 1920px) and (min-width: 1366px) {
