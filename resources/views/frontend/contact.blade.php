@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-1" style="background-color:#f3e1de">
+        <div class="main-wrapper-1" style="background-color:#f6dae0">
             <div class="container main-container-1" style=" height:500px;">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -22,7 +22,7 @@
 
                                     <div class="contact-card-social-media">
                                         <div>
-                                            <a style="text-decoration: none;background-color:#dc6a38; border-radius:20px; ;padding-left:3px;padding-bottom:3px ;margin-left:5px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                            <a style="text-decoration: none;background-color:#ec4949; border-radius:20px; ;padding-left:3px;padding-bottom:3px ;margin-left:5px;margin-top:-1px;margin-bottom:8px;color:white;"
                                                href=""><i class="bi bi-facebook">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                                          viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
@@ -31,7 +31,7 @@
                                                             d="M32 16.097c0-8.891-7.163-16.097-16-16.097s-16 7.206-16 16.097c0 8.036 5.85 14.695 13.5 15.903v-11.249h-4.062v-4.655h4.062v-3.546c0-4.034 2.388-6.263 6.044-6.263 1.749 0 3.582 0.315 3.582 0.315v3.962h-2.019c-1.987 0-2.606 1.242-2.606 2.515v3.019h4.437l-0.709 4.653h-3.728v11.25c7.65-1.207 13.5-7.867 13.5-15.903z"></path>
                                                     </svg>
                                                 </i></a>
-                                            <a style="text-decoration: none;background-color:#dc6a38; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                            <a style="text-decoration: none;background-color:#ec4949; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
                                                href=""><i class="bi bi-instagram"></i>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                                      viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
@@ -44,7 +44,7 @@
                                                         d="M26.474 7.458c0 1.063-0.863 1.919-1.919 1.919-1.063 0-1.919-0.863-1.919-1.919 0-1.063 0.863-1.919 1.919-1.919s1.919 0.863 1.919 1.919z"></path>
                                                 </svg>
                                             </a>
-                                            <a style="text-decoration: none;background-color:#dc6a38; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                            <a style="text-decoration: none;background-color:#ec4949; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
                                                href=""><i class="bi bi-twitter-x">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                                          fill="currentColor"
@@ -53,7 +53,7 @@
                                                             d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                                                     </svg>
                                                 </i></a>
-                                            <a style="text-decoration: none; background-color:#dc6a38; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                                            <a style="text-decoration: none; background-color:#ec4949; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
                                                href=""><i class="bi bi-youtube">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                                          fill="currentColor"
@@ -129,8 +129,8 @@
                                             <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; background-color: #f9f9f9; border: 1px solid #ddd;">
                                                 <thead style="background-color: #007bff; color: white;">
                                                 <tr>
-                                                    <th style="text-align: left; padding: 10px; border: 1px solid #ddd;background-color:#178c81;">Başlık</th>
-                                                    <th style="text-align: left; padding: 10px; border: 1px solid #ddd;background-color:#dc6a38;">Açıklama</th>
+                                                    <th style="text-align: left; padding: 10px; border: 1px solid #ddd;background-color:#ec4949;">Başlık</th>
+                                                    <th style="text-align: left; padding: 10px; border: 1px solid #ddd;background-color:#4141b8;">Açıklama</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>

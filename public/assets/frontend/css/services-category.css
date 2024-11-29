@@ -337,6 +337,7 @@
     display: inline-block;
     line-height: 1.2;
     width: 350px;
+
 }
 
 .card-service-detail-middle-text {
@@ -368,18 +369,22 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
     display: inline-block;
-    margin-top: -130px;
+    position:sticky;
+    margin-top:-320px;
+    margin-left:0;
+
 }
 
 .services-detail-page-text {
     flex: 1;
     display: inline-block;
+
 }
 
 .services-detail-page-header {
     font-size: 37px;
     font-weight: bold;
-    color: #6E4EEF;
+    color: #ec4949;
     margin-left: 10px;
 }
 
@@ -395,9 +400,10 @@
     line-height: 1.6;
     color: #4e4d4d;
     padding: 20px;
-    width: 900px;
+    width:500px;
     text-align: justify;
     font-weight: 400;
+    margin-top:-100px;
 
 }
 
@@ -410,7 +416,7 @@
     position: absolute;
     top: 40px;
     right:0;
-    width:440px;
+    width:420px;
     min-height: 150px; /* Ensures the card doesn't get too small */
     max-width: 100%; /* Ensures responsive width */
     background-color: #ffffff;
@@ -423,7 +429,7 @@
 
 }
 .appointment-card-title{
-    color: #5e43cc;
+    color: #bd415e;
     text-align: center;
     font-size:21px;
 
@@ -447,16 +453,20 @@
 }
 .appointment-day-header {
     position: sticky;
+    left:0;
     top: 0;
     background-color: white; /* Ensures it stands out when scrolling */
     z-index: 2;
-    text-align: center;
     border-bottom: 1px solid #ddd;
+    margin-right: 20px;
+    text-align: left;
+    flex-shrink: 0;
+    padding-right:20px;
 }
 
 
 .appointment-day{
-    color: #372778;
+    color: #bd415e;
     font-size:17px;
     flex:1;
     text-align: center;
@@ -465,7 +475,7 @@
 
 }
 .appointment-date{
-    color: #856ce6;
+    color: #e66c97;
     font-size:17px;
     margin-top:-6px;
     text-align: center;
@@ -473,11 +483,12 @@
     margin-left:12px;
 
 }
+
 .appointment-time-button{
     border:none;
     margin-bottom:10px;
-    background-color:#F0EDFD;
-    color: #372778;
+    background-color: #eaacc1;
+    color: #bd415e;
     padding-right:30px;
     padding-left:30px;
     padding-top:10px;
@@ -485,10 +496,34 @@
     border-radius:10px;
     font-size:18px;
     font-weight:450;
+    margin-left:10px;
 
+}
+.appointment-day-date {
+    display: flex;
+    flex-direction: row; /* Arrange day and date horizontally */
+    align-items: center; /* Vertically align text */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold; /* Bold text for day/date */
+    margin-right: 20px; /* Space between day/date and times */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+.appointment-times {
+    display: flex;
+    gap: 10px; /* Space between time buttons */
+    flex-wrap: wrap; /* Allow times to wrap to the next line if needed */
 }
 
 
+.appointment-row {
+    display: flex;
+    align-items: center; /* Align day/date and times vertically centered */
+    margin-bottom: 20px; /* Space between rows */
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional: Border for styling */
+    border-radius: 8px; /* Optional: Rounded corners */
+    background-color: #f9f9f9; /* Optional: Background color */
+}
 
 
 

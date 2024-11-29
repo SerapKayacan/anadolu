@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-services-1" style="background-color:#F0EDFD">
+        <div class="main-wrapper-services-1" style="background-color:#fae5ec;;">
             <div class="container main-container-services-1" style="position:relative">
                 <div class="card appointment-card">
                     <div class="card-body">
@@ -53,17 +53,18 @@
                                                 </button>
                                             </div>
                                         @else
+                                            <div style="display: flex; flex-direction: column; gap: 20px;">
                                             @foreach($days as $day => $times)
                                                 @php
                                                     $formattedDate = \Carbon\Carbon::parse($day);
                                                     $uniqueTimes = collect($times)->unique('time'); // Get unique appointment times
                                                 @endphp
                                                 <div class="appointment-day-container">
-                                                    <div class="appointment-day-header">
-                                                        <h2 class="appointment-day">{{ $formattedDate->translatedFormat('l') }}</h2>
-                                                        <h2 class="appointment-date">{{ $formattedDate->translatedFormat('d F') }}</h2>
-                                                    </div>
-                                                    <div>
+                                                    <div style="display:flex;">
+                                                        <div class="appointment-day-header">
+                                                            <h2 class="appointment-day">{{ $formattedDate->translatedFormat('l') }}</h2>
+                                                            <h2 class="appointment-date">{{ $formattedDate->translatedFormat('d F') }}</h2>
+                                                        </div>
                                                         @if(!$noAppointments)
                                                             @foreach($times as $time)
                                                                 <div>
@@ -99,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-services-1" style="background-color:#F0EDFD">
+        <div class="main-wrapper-services-1" style="background-color:#fae5ec;margin-left:-150px;">
             <div class="container main-container-services-1">
                 <div class="row" style="padding-top:30px;padding-bottom:30px;">
                     <div class="col-12 col-md-12 col-lg-12 col-xs-12">
@@ -109,8 +110,8 @@
                             <div class="services-detail-page-text">
                                 <p class="services-detail-page-header">{{ $service->title }}</p>
                                 <ul>
-                                    <li>
-                                        {{  $service->sort_detail}}
+                                    <li style="margin-left:-20px;">
+                                        {!! $service->sort_detail !!}
                                     </li>
 
                                 </ul>
@@ -120,13 +121,13 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-services-1">
+        <div class="main-wrapper-services-1" style="margin-left:-150px;">
             <div class="container main-container-services-1">
                 <div class="row" style="padding-top:30px;padding-bottom:30px;">
                     <div class="col-12 col-md-12 col-lg-12 col-xs-12">
                         <div>
                             <div>
-                                <p class="services-detail-page-text-bottom"> {{  $service->detail}}</p>
+                                <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
                             </div>
                         </div>
                     </div>

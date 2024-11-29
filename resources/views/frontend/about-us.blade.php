@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-1" style="background-color:#ecccbb">
+        <div class="main-wrapper-1" style="background-color:#f6dae0">
             <div class="container main-container-1" style=" height:500px;">
                 <div class="row">
                   <p class="about-us-header-1">Sultan Park Evde Sağlık Hizmetleriyle Tanışın.</p>
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-2" style="background-color:#4ea898">
+        <div class="main-wrapper-2" style="background-color:#131333;margin-top:-40px;">
             <div class="container main-container-1" style="height:500px;">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -23,8 +23,8 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-2">
-            <div class="container main-container-1" style="height:500px;">
+        <div class="main-wrapper-2" >
+            <div class="container main-container-1" style="height:700px;width:1000px;background-color:#e47388;margin-top:-150px;border-radius:50px;">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <p class="about-us-header-3">
@@ -39,14 +39,6 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-2" style="background-color:#f3ca7f">
-            <div class="container main-container-1" style="height:500px;">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-xdvfbg
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </main>
 @endsection
