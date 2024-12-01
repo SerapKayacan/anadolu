@@ -43,7 +43,7 @@
 /*//cards:*/
 .card-services {
     border-radius: 15px;
-    width: 420px;
+    max-width: 420px;
     height: 500px;
     background-color: white;
     box-sizing: border-box;
@@ -286,16 +286,16 @@
     border-radius: 20px;
     font-size: 15px;
     font-weight: bold;
+    margin-top:8px;
 }
 
 .card-services-detail {
-    width: 400px;
+    max-width: 400px;
     height: 600px;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius:20px;
 }
 
 .card-body {
@@ -304,11 +304,8 @@
 
 .card-service-detail-image {
     display: block;
-    width: 400px;
-    height: 320px;
-    margin-left: -17px;
-    margin-top: -20px;
-    margin-bottom: -15px;
+    max-width: 400px;
+    height: 300px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
@@ -316,7 +313,7 @@
 
 .card-services-detail-body {
     background-color: #F0EDFD;
-    width: 400px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distributes space evenly */
@@ -336,7 +333,8 @@
     position: relative;
     display: inline-block;
     line-height: 1.2;
-    width: 350px;
+    max-width: 400px;
+    padding:0;
 
 }
 
@@ -384,7 +382,7 @@
 .services-detail-page-header {
     font-size: 37px;
     font-weight: bold;
-    color: #ec4949;
+    color: #bd415e;
     margin-left: 10px;
 }
 

@@ -31,7 +31,7 @@
                 @if (isset($serviceCategory))
                     <div class="row">
                         @php
-                            $icon_colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue', 'card-pink', 'card-green'];
+                            $icon_colors = ['card-turquoise-online-doctor', 'card-yellow-online-doctor', 'card-purple-online-doctor', 'card-blue-online-doctor', 'card-pink-online-doctor', 'card-green-online-doctor'];
                         @endphp
                         @foreach ($services as $index => $service)
                             <div class="col-12 col-md-4 col-lg-4 col-xs-12" style="margin-bottom:20px;">
@@ -47,8 +47,8 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <p class="middle-p-small">{{ $service->title }}</p>
-                                            <p class="bottom-p-small">{{ $serviceCategory->category_page_detail }}</p>
+                                            <p class="middle-p-online-doctor">{{ $service->title }}</p>
+                                            <p class="bottom-p-online-doctor">{{ $serviceCategory->category_page_detail }}</p>
                                         </div>
                                     </div>
                                 </a>

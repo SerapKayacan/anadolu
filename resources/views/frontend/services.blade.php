@@ -33,12 +33,10 @@
                         @foreach ($services as $service)
                             <div class="col-lg-4">
                                 <div class="card card-services-detail">
-                                    <div class="card-header card-services-detail-header">
                                         <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
                                              class="card-service-detail-image">
                                         <div
                                             class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
-                                    </div>
                                     <div class="card-body card-services-detail-body">
                                         <p class="card-service-detail-header"> {{ $service->title}}</p>
                                         <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>

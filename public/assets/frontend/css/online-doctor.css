@@ -3,7 +3,7 @@
     color: #616060;
     font-size:30px;
     font-weight:600;
-    margin-top:-20px;
+    margin-top:40px;
     margin-left:-15px;
 
 }
@@ -16,7 +16,8 @@
 .card-turquoise-online-doctor,.card-yellow-online-doctor,
 .card-purple-online-doctor,.card-blue-online-doctor,
 .card-green-online-doctor,.card-pink-online-doctor{
-    width: 420px;
+    max-width: 420px;
+    min-width:360px;
     height: 290px;
     border:none;
     display: flex;

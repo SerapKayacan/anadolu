@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-services-1" style="background-color:#F0EDFD">
+        <div class="main-wrapper-services-1" style="background-color:#fae5ec;">
             <div class="container main-container-services-1" style="position:relative">
                 <div class="card appointment-card">
                     <div class="card-body">
