@@ -11,15 +11,15 @@ class ServicesCategoryController extends Controller
 {
     public function index()
     {
-        $serviceCategories = ServiceCategory::with('services')->get(); // Make sure to eager load the services
+        $serviceCategories = ServiceCategory::with('services')->where('is_active', true)->orderBy('sort_order', 'ASC')->get();
         $types = ServiceCategory::types();
-        $services = Service::with('getCategory')->orderBy('sort_order', 'ASC')->get();
+
 
         // Pass the serviceCategories to the view
         return view('frontend.services-category', [
             'serviceCategories' => $serviceCategories,
             "types" => $types,
-            "services" => $services
+
         ]);
 
     }

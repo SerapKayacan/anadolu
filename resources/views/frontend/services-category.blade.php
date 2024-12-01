@@ -1,11 +1,11 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-services-1" style="background-color:#F0EDFD">
+        <div class="main-wrapper-services-1" style="background-color:#fae5ec">
             <div class="container main-container-services-1">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12 col-xs-12">
-                        <p class="services-search-text">Sağlığı <span style="color:#372778">Eve Getiriyoruz</span>
+                        <p class="services-search-text">Sağlığı <span style="color:#c62121">Eve Getiriyoruz</span>
                         </p>
                         <form class="search-bar" role="search" id="form">
                             <input class="search-bar-input" type="search" id="query" name="q"
@@ -50,6 +50,7 @@
                                 <ul class="card-link" style="list-style-type: none;">
                                     @foreach ($serviceCategory->services->take(3) as $service)
                                     <li style="list-style: none">
+                                        @if($service['is_active'])
                                         <a href="{{ route('services-detail.show', $service->id) }}" style="display:flex;text-decoration: none;">
                                             <p class="card-link-text-services"> {{ $service->title }}</p>
                                             <i class="bi bi-caret-right card-link-icon-services">
@@ -61,6 +62,7 @@
                                                 </svg>
                                             </i>
                                         </a>
+                                            @endif
                                     </li>
                                         <hr class="card-link-line-services">
                                     @endforeach

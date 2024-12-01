@@ -7,7 +7,7 @@
     font-size: 38px;
     font-weight: bold;
     font-family: roboto;
-    color: #6E4EEF;
+    color: #e14f4f;
     margin-left: 450px;
     margin-top: 20px;
 }
@@ -48,7 +48,7 @@
     background-color: white;
     box-sizing: border-box;
     overflow: hidden;
-    border-color: #a294ea;
+    border-color: #bd4c5d !important;
     padding-bottom: 20px;
     margin-bottom: 30px;
 
@@ -56,7 +56,7 @@
 }
 
 .card-services-header:hover {
-    background-color: #543EBF;
+    background-color:#c51e23 !important;
 
 }
 
@@ -169,7 +169,7 @@
 }
 
 .card-services:hover .card-services-header {
-    background-color: #543EBF;
+    background-color: #c51e23;
 }
 
 .card-services:hover .card-top-text {
@@ -195,7 +195,7 @@
 }
 
 .card-link-icon-services:hover .card-services-header {
-    background-color: #543EBF;
+    background-color: #c51e23;
 }
 
 .card-link-bottom-services {
@@ -209,7 +209,7 @@
 }
 
 .card-link-bottom-text {
-    color: #6E4EEF;
+    color:#c51e23;
     font-size: 15px;
     flex: 15;
     font-weight: bold;
@@ -217,7 +217,7 @@
 
 .card-link-bottom-icon {
     flex: 1;
-    color: #6E4EEF;
+    color: #c51e23;
     margin-left: 10px;
 
 }
@@ -312,7 +312,7 @@
 }
 
 .card-services-detail-body {
-    background-color: #F0EDFD;
+    background-color:#fae5ec;
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -326,7 +326,7 @@
 }
 
 .card-service-detail-header {
-    color: #372778;
+    color: #c11132;
     font-size: 30px;
     font-weight: bold;
     margin-top: -5px;
@@ -350,7 +350,7 @@
     font-size: 18px;
     font-weight: bold;
     color: white;
-    background-color: #6E4EEF;
+    background-color: #da2137;
     border: none;
     border-radius: 8px;
     width: 200px;
@@ -401,7 +401,7 @@
     width:500px;
     text-align: justify;
     font-weight: 400;
-    /*margin-top:-100px;*/
+
 
 }
 
