@@ -23,9 +23,6 @@ class ServicesDetailController extends Controller
         $service = Service::where('is_active', true)->orderBy('sort_order','ASC')->with('getCategory')->findOrFail($id);
         $days = $this->appointmentService->getWeeklyAvailability($service);
 
-
-
-
         return view('frontend.services-detail', [
             "service" => $service,
             "days" => $days,

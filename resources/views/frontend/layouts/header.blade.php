@@ -27,7 +27,7 @@
     <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <nav class="navbar bg-body-tertiary ">
             <div class="container">
-                <a class="navbar-brand" style=" margin-left: 650px; align-items: center;" href="#">
+                <a class="navbar-brand" style=" margin-left: 600px; align-items: center;" href="#">
                     <img src="{{ asset('') }}assets/frontend/images/sultanparkkk%20(1).png" class="justify-content-center " alt="Bootstrap" width="50" height="45">
                 </a>
             </div>

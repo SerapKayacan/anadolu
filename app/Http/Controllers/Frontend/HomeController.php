@@ -12,9 +12,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $serviceCategories = ServiceCategory::withCount('services')->orderBy('sort_order','ASC')->get();
-        $carousels = Carousel::orderBy('sort_order','ASC')->get();
-        $tabPanels = TabPanel::orderBy('sort_order','ASC')->get();
+        $serviceCategories = ServiceCategory::where('is_active', true)->withCount('services')->orderBy('sort_order','ASC')->get();
+        $carousels = Carousel::where('is_active', true)->orderBy('sort_order','ASC')->get();
+        $tabPanels = TabPanel::where('is_active', true)->orderBy('sort_order','ASC')->get();
         $types = ServiceCategory::types();
 
         SEOTools::setTitle('Anasayfa'); // Dinamik olacak şekilde ayalanacak

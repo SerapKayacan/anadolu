@@ -5,7 +5,7 @@
             <div class="container main-container-services-1">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12 col-xs-12">
-                        <p class="services-search-text">Sağlığı <span style="color:#c62121">Eve Getiriyoruz</span>
+                        <p class="services-search-text">Sağlığı <span style="color:rgba(115,18,111,0.78)">Eve Getiriyoruz</span>
                         </p>
                         <form class="search-bar" role="search" id="form">
                             <input class="search-bar-input" type="search" id="query" name="q"
@@ -38,7 +38,7 @@
                                 @endphp
                                 <div class="icon-box-services {{ $icon_colors[($serviceCategory->sort_order  ) % count( $icon_colors)] }}"> {!! $serviceCategory->icon !!}</div>
                                 <div class="card-top-text">{{ $serviceCategory->title }}</div>
-                                <div class="card-middle-text">{{$serviceCategory->category_page_detail }}
+                                <div class="card-middle-text">{!! $serviceCategory->category_page_detail !!}
                                 </div>
                             </div>
                             <div class="card-body card-services-body">

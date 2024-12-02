@@ -10,7 +10,7 @@ class ServicesController extends Controller
 {
     public function showByCategory($id)
     {
-        $serviceCategory = ServiceCategory::with('services')->findOrFail($id); // Fetch the category and its services
+        $serviceCategory = ServiceCategory::where('is_active', true)->with('services')->findOrFail($id); // Fetch the category and its services
         $types = ServiceCategory::types();
 
         return view('frontend.services', [

@@ -1,11 +1,11 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="main-wrapper-services-1" style="background-color:#F0EDFD">
+        <div class="main-wrapper-services-1" style="background-color:#fae5ec">
             <div class="container main-container-services-1">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12 col-xs-12">
-                        <p class="services-search-text">Sağlığı <span style="color:#372778">Eve Getiriyoruz</span>
+                        <p class="services-search-text">Sağlığı <span style="color:rgba(115,18,111,0.78)">Eve Getiriyoruz</span>
                         </p>
                         <form class="search-bar" role="search" id="form">
                             <input class="search-bar-input" type="search" id="query" name="q"
@@ -35,7 +35,7 @@
                         @endphp
                         @foreach ($services as $index => $service)
                             <div class="col-12 col-md-4 col-lg-4 col-xs-12" style="margin-bottom:20px;">
-                                <a href="{{ route('online-doctor-detail.show', ['id' => $service->id]) }}"
+                                <a href="{{ route('services-detail.show', $service->id) }}"
                                    style=" text-decoration: none;">
                                     <div class="card {{ $icon_colors[$index % count($icon_colors)] }}">
                                         <div class="card-head">

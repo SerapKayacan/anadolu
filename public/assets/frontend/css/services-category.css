@@ -7,7 +7,7 @@
     font-size: 38px;
     font-weight: bold;
     font-family: roboto;
-    color: #e14f4f;
+    color: #d162b7;
     margin-left: 450px;
     margin-top: 20px;
 }
@@ -43,12 +43,13 @@
 /*//cards:*/
 .card-services {
     border-radius: 15px;
+    border-width: 2px;
     max-width: 420px;
     height: 500px;
     background-color: white;
     box-sizing: border-box;
     overflow: hidden;
-    border-color: #bd4c5d !important;
+    border-color: rgba(115,18,111,0.78) !important;
     padding-bottom: 20px;
     margin-bottom: 30px;
 
@@ -56,7 +57,7 @@
 }
 
 .card-services-header:hover {
-    background-color:#c51e23 !important;
+    background-color:rgba(115,18,111,0.78)!important;
 
 }
 
@@ -66,7 +67,6 @@
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
-    padding-bottom: 20px;
     border-radius: 15px;
     border-bottom: none;
 }
@@ -169,7 +169,7 @@
 }
 
 .card-services:hover .card-services-header {
-    background-color: #c51e23;
+    background-color: rgba(115,18,111,0.78);
 }
 
 .card-services:hover .card-top-text {
@@ -195,7 +195,7 @@
 }
 
 .card-link-icon-services:hover .card-services-header {
-    background-color: #c51e23;
+    background-color: rgba(115,18,111,0.78);
 }
 
 .card-link-bottom-services {
@@ -209,7 +209,7 @@
 }
 
 .card-link-bottom-text {
-    color:#c51e23;
+    color:rgba(115,18,111,0.78);
     font-size: 15px;
     flex: 15;
     font-weight: bold;
@@ -217,7 +217,7 @@
 
 .card-link-bottom-icon {
     flex: 1;
-    color: #c51e23;
+    color: rgba(115,18,111,0.78);
     margin-left: 10px;
 
 }
@@ -326,7 +326,7 @@
 }
 
 .card-service-detail-header {
-    color: #c11132;
+    color: rgba(115,18,111,0.78);
     font-size: 30px;
     font-weight: bold;
     margin-top: -5px;
@@ -350,7 +350,7 @@
     font-size: 18px;
     font-weight: bold;
     color: white;
-    background-color: #da2137;
+    background-color: rgba(115,18,111,0.78);
     border: none;
     border-radius: 8px;
     width: 200px;
