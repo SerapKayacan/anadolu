@@ -79,7 +79,7 @@
 
 .card-1 {
     width: auto;
-    min-width:400px;
+    min-width:500px;
     height: 100%;
     background-color: #372778;
     border-radius: 15px;
@@ -100,7 +100,6 @@
 .card-green,.card-pink{
     width: auto;
     min-width:275px;
-    max-width:275px;
     height: 100%;
     border:none;
     display: flex;
@@ -133,10 +132,10 @@
     background-color: #EFC02A;
 }
 .card-yellow:hover .middle-p-small {
-    color:white;
+    color:white !important;
 }
 .card-yellow:hover .bottom-p-small {
-    color:white;
+    color:white !important;
 }
 .card-purple {
     background-color: #F0EDFD;
@@ -146,10 +145,10 @@
     background-color: #6E4EEF;
 }
 .card-purple:hover .middle-p-small {
-    color:white;
+    color:white !important;
 }
 .card-purple:hover .bottom-p-small {
-    color:white;
+    color:white !important;
 }
 
 .card-blue {

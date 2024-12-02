@@ -68,7 +68,7 @@
                                        @if(  $serviceCategory->sort_order==0 ) bottom-p-big
                                         @else bottom-p-small
                                         @endif">
-                                            {{$serviceCategory->category_page_detail }}</p>
+                                            {!!  $serviceCategory->home_page_detail !!} </p>
                                     </div>
                                 </div>
                             </a>
