@@ -121,7 +121,7 @@
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kategori Sayfası Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="category_page_detail" name="category_page_detail" rows="2"></textarea>
+                                                    <textarea class="form-control" id="category_page_detail" name="category_page_detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
