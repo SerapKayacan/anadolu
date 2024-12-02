@@ -18,7 +18,7 @@
 .card-green-online-doctor,.card-pink-online-doctor{
     max-width: 420px;
     min-width:360px;
-    height: 290px;
+    height: 100%;
     border:none;
     display: flex;
     border-radius: 20px;
@@ -112,4 +112,28 @@
 }
 .card-pink-online-doctor:hover .bottom-p-online-doctor{
     color:white;
+}
+/*icon colors*/
+.card-turquoise-online-doctor .icon-box svg {
+    fill: #1DB1B5; /* Match card hover color */
+}
+
+.card-yellow-online-doctor .icon-box svg {
+    fill: #EFC02A; /* Match card hover color */
+}
+
+.card-purple-online-doctor .icon-box svg {
+    fill: #6E4EEF; /* Match card hover color */
+}
+
+.card-blue-online-doctor .icon-box svg {
+    fill: #38ACFC; /* Match card hover color */
+}
+
+.card-green-online-doctor .icon-box svg {
+    fill: #69C140; /* Match card hover color */
+}
+
+.card-pink-online-doctor .icon-box svg {
+    fill: #FC555E; /* Match card hover color */
 }
