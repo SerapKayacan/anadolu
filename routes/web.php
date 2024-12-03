@@ -17,6 +17,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\TabPanelController;
 use App\Http\Controllers\Frontend\AboutUsController;
+use App\Http\Controllers\Frontend\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -65,6 +66,11 @@ Route::prefix('tab-panel')->group(function () {
     Route::put('/duzenle/{id}', [TabPanelController::class, 'update'])->name('tab-panel.update');
     Route::delete('/sil/{id}', [TabPanelController::class, 'destroy'])->name('tab-panel.destroy');
 });
+
+
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+
 
 
 

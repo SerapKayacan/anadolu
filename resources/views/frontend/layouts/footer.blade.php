@@ -138,6 +138,7 @@
                     <div class="card-header footer-card-header" >
                         <div style="display:flex; ">
                             <div style="flex:2; ">
+                                <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
                                 <button
                                     style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:140px;display:flex;">
                                     <div style="color:white; margin-top:1px;flex:1;">
@@ -150,6 +151,7 @@
                                         <p>7/24 Arayın</p>
                                     </div>
                                 </button>
+                                </a>
                             </div>
                             <div style="flex:1;margin-top:3px;margin-right:-20px;">
                                 <h3 style="font-size:14px;color:white;">veya</h3>

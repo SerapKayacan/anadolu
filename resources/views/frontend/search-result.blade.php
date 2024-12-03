@@ -26,38 +26,30 @@
                 </div>
             </div>
         </div>
-        <div class="main-wrapper-2">
-            <div class="container">
-                @if (isset($serviceCategory))
+        <div class="main-container-services-1">
+            <div class="container main-container-services-1">
                     <div class="row">
-                        @php
-                            $card_colors = ['card-turquoise-online-doctor', 'card-yellow-online-doctor', 'card-purple-online-doctor', 'card-blue-online-doctor', 'card-pink-online-doctor', 'card-green-online-doctor'];
-                        @endphp
-                        @foreach ($services as $index => $service)
-                            <div class="col-12 col-md-4 col-lg-4 col-xs-12" style="margin-bottom:20px;">
-                                <a href="{{ route('services-detail.show', $service->id) }}"
-                                   style=" text-decoration: none;">
-                                    <div class="card {{ $card_colors[$index % count($card_colors)] }}">
-                                        <div class="card-head">
-                                            <div style="flex:2">
-                                                <div class="icon-box">{!! $serviceCategory->icon !!}</div>
-                                            </div>
-                                            <div class="right-box" style="flex:9">
-                                                <div>{{ $types[$serviceCategory->type] }}</div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="middle-p-online-doctor">{{ $service->title }}</p>
-                                            <p class="bottom-p-online-doctor">{{ $serviceCategory->category_page_detail }}</p>
+                        @foreach ($services as $service)
+                            <div class="col-lg-4">
+                                <div class="card card-services-detail">
+                                    <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
+                                         class="card-service-detail-image">
+                                    <div
+                                        class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
+                                    <div class="card-body card-services-detail-body">
+                                        <p class="card-service-detail-header"> {{ $service->title}}</p>
+                                        <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
+                                        <div style="display:flex;">
+                                            <button class="card-service-detail-button"
+                                                    onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+                                                Devamını Gör
+                                            </button>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         @endforeach
                     </div>
-                @else
-                    <p>No services available for this category.</p>
-                @endif
             </div>
         </div>
     </main>

@@ -63,6 +63,7 @@
                 Canlı desteğe isteğin zaman ve hızlı ulaş!
             </li>
             <li class="nav-item " style=" margin-left:10px;margin-right:8px;">
+                <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
                 <button style="background-color:#ec4949;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
                     <div style="color:white; margin-top:-5px;margin-left:-25px;flex:1;padding-left:-6px;">
                         <i style="background-color:white;font-size:10px; border-radius:8px; padding-right:-1px;padding-left:-1px;padding-bottom:1px ;padding-top:1px;margin-top:-2px;color:#45339E;"
@@ -77,6 +78,7 @@
                         <p >7/24 Arayın</p>
                     </div>
                 </button>
+                </a>
             </li>
             <li class="nav-item "
                 style=" display:flex;align-items: center;color:white; weight:bold;font-family:arial;">

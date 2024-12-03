@@ -7,8 +7,8 @@
                     <div class="col-12 col-md-12 col-lg-12 col-xs-12">
                         <p class="services-search-text">Sağlığı <span style="color:rgba(115,18,111,0.78)">Eve Getiriyoruz</span>
                         </p>
-                        <form class="search-bar" role="search" id="form">
-                            <input class="search-bar-input" type="search" id="query" name="q"
+                        <form action="{{ route('search') }}" method="GET" class="search-bar"  role="search" id="form">
+                            <input class="search-bar-input" type="search" name="query"
                                    placeholder="evde serum..."
                                    aria-label="Search through site content">
                             <button class="search-bar-button">
