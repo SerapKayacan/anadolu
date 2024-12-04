@@ -28,7 +28,7 @@
                                                                 <div>
                                                                     @if ($time['is_available'])
                                                                         <!-- Available time -->
-                                                                        <a href="https://wa.me/9005354694234"
+                                                                        <a href="https://wa.me/9005354694234?text={{ $formattedDate->translatedFormat('d F l').' '.$time['time'] }}%20Randevu%20oluşturmak%20istiyorum"
                                                                            target="_blank">
                                                                             <button class="appointment-time-button"
                                                                                     style=" cursor: pointer;">
