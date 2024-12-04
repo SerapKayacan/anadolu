@@ -1,14 +1,13 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($carousels as $carousel)
-                        <div class="carousel-item active">
+                        <div class="carousel-item active ">
                             <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class=""
                                  alt="...">
-                            <div class="carousel-caption " style="position:relative; bottom:250px;left:40px;">
+                            <div class="carousel-caption" style="position:relative; bottom:250px;left:40px;">
                                 <h5>{!! $carousel->title !!}  </h5>
                                 <p>{!!  $carousel->description !!} </p>
                                 <a
@@ -23,18 +22,17 @@
                         </div>
                     @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         <div class="main-wrapper-2">
             <div class="container">
                 <div class="row">
@@ -109,47 +107,53 @@
                         <div class="tab-content" id="pills-tabContent">
                             @foreach ($tabPanels as $index => $tabPanel)
                                 <div
-                                    class="tab-pane fade {{ $index === 0 ? 'show ' : '' }}"
+                                    class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}"
                                     id="pills-content-{{ $index }}"
                                     role="tabpanel"
                                     aria-labelledby="pills-tab-{{ $index }}"
-                                    tabindex="0"
-                                    style="display: flex;">
-                                    <!-- Left Content: Image -->
-                                    <div style="flex: 1;">
-                                        <img
-                                            src="{{ $tabPanel->getFirstMediaUrl('banner', 'large') }}"
-                                            alt=""
-                                            class="nav-img">
-                                    </div>
-                                    <div style="flex: 1; margin-left:30px;">
-                                        <p class="title" style="line-height: 1;"> {!! $tabPanel->title !!}</p>
-                                        <p class="description">{!! $tabPanel->description !!}</p>
-                                        <div style="position: relative; height: 100px;"> <!-- Parent container -->
-                                            <button class="navbar-bottom-button" style="display: flex;"
-                                                    onclick="location.href='{{ $tabPanel->button_link }}';">
-                                                <div class="navbar-bottom-button-text">
-                                                    <p>{{ $tabPanel->button_text }}</p>
-                                                </div>
-                                                <div class="navbar-button-bottom-icon">
-                                                    <i class="bi bi-arrow-right navbar-button-bottom-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                                             viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
-                                                             focusable="false" class="">
-                                                            <path
-                                                                d="M24.35 18h-24.35v-4h24.35l-11.2-11.2 2.85-2.8 16 16-16 16-2.85-2.8 11.2-11.2z"></path>
-                                                        </svg>
-                                                    </i>
-                                                </div>
-                                            </button>
+                                    tabindex="0">
+
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-8">
+
+                                            <img
+                                                src="{{ $tabPanel->getFirstMediaUrl('banner', 'large') }}"
+                                                alt=""
+                                                class="img-fluid rounded-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="title" style="line-height: 1;"> {!! $tabPanel->title !!}</p>
+                                            <p class="description">{!! $tabPanel->description !!}</p>
+                                            <div style="position: relative; height: 100px;"> <!-- Parent container -->
+                                                <button class="navbar-bottom-button" style="display: flex;"
+                                                        onclick="location.href='{{ $tabPanel->button_link }}';">
+                                                    <div class="navbar-bottom-button-text">
+                                                        <p>{{ $tabPanel->button_text }}</p>
+                                                    </div>
+                                                    <div class="navbar-button-bottom-icon">
+                                                        <i class="bi bi-arrow-right navbar-button-bottom-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                                 viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
+                                                                 focusable="false" class="">
+                                                                <path
+                                                                    d="M24.35 18h-24.35v-4h24.35l-11.2-11.2 2.85-2.8 16 16-16 16-2.85-2.8 11.2-11.2z"></path>
+                                                            </svg>
+                                                        </i>
+                                                    </div>
+                                                </button>
+                                            </div>
+
                                         </div>
                                     </div>
+
+
                                 </div>
-                            @endforeach
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
 
