@@ -363,33 +363,22 @@
 .services-detail-page-img {
     width: 320px;
     height: 270px;
+    margin-left:20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
-    display: inline-block;
-    position:sticky;
-    margin-top:-320px;
-    margin-left:0;
-
 }
 
-.services-detail-page-text {
-    flex: 1;
-    display: inline-block;
-
-}
 
 .services-detail-page-header {
     font-size: 37px;
     font-weight: bold;
     color: #bd415e;
-    margin-left: 10px;
 }
 
 .services-detail-page-text li {
     color: #4e4d4d;
     font-size: 16px;
-    width: 500px;
+    width: 700px;
 
 }
 
@@ -399,10 +388,8 @@
     color: #4e4d4d;
     padding: 20px;
     width:500px;
-    text-align: justify;
     font-weight: 400;
-
-
+    justify-content: start;
 }
 
 .services-detail-description strong {
@@ -412,8 +399,8 @@
 /*//appointment-card*/
 .appointment-card { margin-right:-40px;
     position: absolute;
-    top: 40px;
-    right:0;
+    top: 200px;
+    right:55px;
     width:420px;
     min-height: 150px; /* Ensures the card doesn't get too small */
     max-width: 100%; /* Ensures responsive width */

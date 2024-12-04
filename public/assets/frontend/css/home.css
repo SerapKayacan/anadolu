@@ -90,6 +90,7 @@
     border-radius: 20px;
     height: auto;
 }
+
 .nav-button {
     width: 300px;
     height: 50px;
@@ -160,7 +161,7 @@
     margin-bottom: 20px;
     margin-left: 20px;
     border-radius: 15px;
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .navbar-text-top {
@@ -180,7 +181,7 @@
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top:-10px;
+    margin-top: -10px;
 }
 
 .navbar-bottom-button {
@@ -218,7 +219,7 @@
 
 .navbar-button-bottom-icon {
     margin-right: 10px;
-    margin-left:0;
+    margin-left: 0;
     margin-top: -4px;
 }
 
@@ -235,37 +236,42 @@
 /*//contact-card*/
 
 .contact-card-header {
-
     width: 1000px;
+
 }
 
 .contact-header {
     color: #ec4949;
     font-weight: 600;
     font-size: 35px;
-    margin-left: 500px;
+    justify-items: center;
+    text-align: center;
 }
 
 .contact-bottom-header {
     margin-top: -10px;
     font-size: 17px;
     color: dimgrey;
-    margin-left: 450px;
+    justify-items: center;
+    text-align: center;
 }
 
 .contact-card {
     width: 900px;
     height: 100%;
-    justify-items: center;
-    margin-left: 200px;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    z-index: 1; /* Ensures the card appears above other content */
-    /*overflow: hidden*/
+    z-index: 1;
 
+
+}
+.contact-card-all{
+    align-items: center;
+    justify-content: center;
+    justify-items:center;
 }
 
 .contact-card-headers {
@@ -417,126 +423,56 @@ body.modal-open {
 }
 
 /*//about-us*/
-.about-us-header-1, .about-us-header-2 ,.about-us-header-3 {
+.about-us-header-1, .about-us-header-2, .about-us-header-3 {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-top:30px;
+    margin-top: 30px;
 
 }
-.about-us-header-1{
+
+.about-us-header-1 {
     color: #dc445a;
 }
-.about-us-header-2{
+
+.about-us-header-2 {
     color: #709dc1;
-    margin-left:470px;
-}
-.about-us-header-3{
-    color: #a31429;
-    margin-left:400px;
+    margin-left: 470px;
 }
 
-.about-us-detail-1, .about-us-detail-2,.about-us-detail-3 {
+.about-us-header-3 {
+    color: #a31429;
+    margin-left: 400px;
+}
+
+.about-us-detail-1, .about-us-detail-2, .about-us-detail-3 {
     font-size: 20px;
     text-align: center;
 }
-.about-us-detail-1{
-    margin-left:100px;
+
+.about-us-detail-1 {
+    margin-left: 100px;
     width: 1000px;
 }
-.about-us-detail-2{
-    margin-left:150px;
+
+.about-us-detail-2 {
+    margin-left: 150px;
     width: 900px;
 }
-.about-us-detail-2,.about-us-detail-3{
+
+.about-us-detail-2, .about-us-detail-3 {
     color: #e1dbdb;
 
 }
-.about-us-detail-3{
-    margin-left:100px;
+
+.about-us-detail-3 {
+    margin-left: 100px;
     width: 800px;
 }
-.about-us-img{
-    width:600px;
-    border-radius:30px;
-    margin-left:160px;
+
+.about-us-img {
+    width: 600px;
+    border-radius: 30px;
+    margin-left: 160px;
 }
 
-@media (max-width: 1920px) and (min-width: 1366px) {
-
-    .main-wrapper-1 {
-        padding-left: 20px;
-        padding-right: 20px;
-        background-color: #F0EDFD;
-
-    }
-
-    .main-wrapper-2 {
-        margin-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .carousel-img {
-        width: 650px;
-        height: 450px;
-    }
-
-    .card-top {
-        width: 650px;
-        height: 450px;
-    }
-
-    .card-top-2 {
-
-        width: 650px;
-        height: 450px;
-
-    }
-}
-
-@media (max-width: 768px) {
-
-    .main-wrapper-1 {
-        padding-left: 0;
-        padding-right: 0;
-        background-color: #F0EDFD;
-
-    }
-
-    .main-wrapper-2 {
-        margin-top: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-}
-
-/*@media (max-width: 480px) {*/
-
-/*    .main-wrapper-1 {*/
-/*        padding-left: 20px;*/
-/*        padding-right: 20px;*/
-/*        background-color: #F0EDFD;*/
-
-/*    }*/
-
-/*    .main-wrapper-2 {*/
-/*        margin-top: 20px;*/
-/*        padding-left: 20px;*/
-/*        padding-right: 20px;*/
-/*    }*/
-
-/*}*/
-/*@media (min-width: 361px) and (max-width: 768px){*/
-/*    .carousel-img{*/
-/*        width:300px;*/
-/*        height:auto;*/
-/*    }*/
-/*}*/
-/*@media (max-width: 360px){*/
-/*    .carousel-img{*/
-/*        width:300px;*/
-/*        height:auto;*/
-/*    }*/
-/*}*/
