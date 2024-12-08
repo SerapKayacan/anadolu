@@ -30,9 +30,9 @@
                  alt="Bootstrap" width="50" height="45">
         </a>
     </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-end ">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center ">
         <nav class="navbar navbar-expand-lg navbar-light position-relative" style="width:auto; padding-right: 0;">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
