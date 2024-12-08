@@ -81,12 +81,18 @@
                             <hr>
                             <div class="contact-card-body">
                                 <p class="contact-card-body-header">Hemen Yazın</p>
-                                <form action="" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                @if(session('success'))
+                                    <p style="color: green">{{ session('success') }}</p>
+                                @endif
+                                <form  action="{{ route('contact.submit') }}" method="POST" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                    @csrf
                                     <!-- Name Input -->
                                     <div class="form-group" style="flex: 1; min-width: 300px;">
                                         <p class="form-headers">Adınız Soyadınız</p>
-                                        <input class="contact-name-surname" type="text"
-                                               placeholder="Adınızı Soyadınızı Giriniz" required>
+                                        <input class="contact-name-surname" type="text" name="name"
+                                               placeholder="Adınızı Soyadınızı Giriniz" required>   @error('name')
+                                        <span style="color: red">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group" style="flex: 1; min-width: 300px;">
                                         <p class="form-headers">Telefon Numarası</p>
@@ -106,14 +112,13 @@
                                                 <option value="+86">CN +86</option>
                                             </select>
                                             <input class="contact-input-box" type="tel" placeholder="Telefon Numarası"
-                                                   required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                                    title="Lütfen geçerli bir telefon numarası girin (ör. 555-123-4567)">
                                         </div>
                                     </div>
                                     <div class="form-group" style="flex: 1 0 100%; min-width: 300px;">
                                         <p class="form-headers">Mesajınız</p>
                                         <textarea class="contact-message-box col-12" rows="4"
-                                                  placeholder="Mesajınızı Giriniz" required
+                                                  placeholder="Mesajınızı Giriniz" name="message" required
                                                   style="width: 100%;"></textarea>
                                     </div>
                                     <div class="form-group">
@@ -261,7 +266,7 @@
                                                 </tbody>
                                             </table>
 
-                                            <button onclick="closeModal()">I Agree</button>
+                                            <button onclick="closeModal()">Okudum Kabul Ediyorum</button>
                                         </div>
                                     </div>
 

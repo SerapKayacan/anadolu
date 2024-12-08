@@ -24,42 +24,49 @@
 </head>
 <body>
 <header style="position: sticky; top: 0; z-index: 1000; background-color: white;">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto py-2">
         <a href="{{ route('home') }}">
             <img src="{{ asset('') }}assets/frontend/images/sultanparkkk%20(1).png"
                  alt="Bootstrap" width="50" height="45">
         </a>
     </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
-        <nav style="display:block">
-            <ul class="nav" style="font-size:16px;">
-                <li class="nav-item" style="font-weight: 700;">
-                    <a class="nav-link active" style="color:#244daa" aria-current="page" href="{{ route('home') }}">Ana
-                        Sayfa</a>
-                </li>
-                <li class="nav-item" style="margin-left:30px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#244daa" aria-current="page"
-                       href="{{ route('onlineDoctor.byCategory') }}">Online Doktor Görüşmesi</a>
-                </li>
-                <li class="nav-item " style="margin-left:30px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#244daa" aria-current="page"
-                       href="{{ route('services-category.index') }}">Hizmetlerimiz</a>
-                </li>
-                <li class="nav-item " style="margin-left:30px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#244daa" aria-current="page"
-                       href="{{ route('about-us.index') }}">Hakkımızda</a>
-                </li>
-                <li class="nav-item " style="margin-left:30px;font-weight: 700;">
-                    <a class="nav-link active" style="color:#244daa" aria-current="page" href="#">Blog</a>
-                </li>
-                <li class="nav-item " style="margin-left:30px;font-weight:700;">
-                    <a class="nav-link active" style="color:#244daa" aria-current="page"
-                       href="{{ route('contact.index') }}">İletişim</a>
-                </li>
-            </ul>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-end ">
+        <nav class="navbar navbar-expand-lg navbar-light position-relative" style="width:auto; padding-right: 0;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" style="font-size:16px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}" style="font-weight: 700; color:#244daa;">Ana
+                            Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('onlineDoctor.byCategory') }}"
+                           style="font-weight: 700; color:#244daa;">Online Doktor Görüşmesi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('services-category.index') }}"
+                           style="font-weight: 700; color:#244daa;">Hizmetlerimiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('about-us.index') }}"
+                           style="font-weight: 700; color:#244daa;">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="font-weight: 700; color:#244daa;">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact.index') }}"
+                           style="font-weight: 700; color:#244daa;">İletişim</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center" style="background-color:#3b79ac;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center"
+         style="background-color:#3b79ac;">
         <ul class="nav justify-content-center align-items-center  "
             style="font-size:15px;padding-top:15px;padding-bottom:15px;">
             <li class="nav-item "

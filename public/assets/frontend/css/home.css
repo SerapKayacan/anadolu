@@ -268,10 +268,11 @@
 
 
 }
-.contact-card-all{
+
+.contact-card-all {
     align-items: center;
     justify-content: center;
-    justify-items:center;
+    justify-items: center;
 }
 
 .contact-card-headers {
@@ -425,53 +426,60 @@ body.modal-open {
 .about-us-header-1, .about-us-header-2, .about-us-header-3 {
     font-size: 30px;
     font-weight: bold;
-    text-align: center;
     margin-top: 30px;
 
 }
 
 .about-us-header-1 {
     color: #dc445a;
+    line-height:1.3;
 }
 
 .about-us-header-2 {
     color: #709dc1;
-    margin-left: 470px;
 }
 
 .about-us-header-3 {
     color: #a31429;
-    margin-left: 400px;
-}
-
-.about-us-detail-1, .about-us-detail-2, .about-us-detail-3 {
-    font-size: 20px;
-    text-align: center;
-}
-
-.about-us-detail-1 {
-    margin-left: 100px;
-    width: 1000px;
-}
-
-.about-us-detail-2 {
-    margin-left: 150px;
-    width: 900px;
 }
 
 .about-us-detail-2, .about-us-detail-3 {
     color: #e1dbdb;
-
 }
 
-.about-us-detail-3 {
-    margin-left: 100px;
-    width: 800px;
+.third-row {
+    background-color: #e47388;
+    border-radius: 50px;
+    max-width: 1400px;
+    margin: auto;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 2; /* Ensure it's above the previous section */
+    transform: translateY(-150px); /* Shift it upwards */
 }
 
+@media (min-width: 576px) {
+    .font-size-md {
+        font-size: 18px;
+    }
+}
+
+/* Font size for large screens */
+@media (min-width: 992px) {
+    .font-size-md {
+        font-size: 20px;
+    }
+}
+
+/* Font size for extra large screens */
+@media (min-width: 1200px) {
+    .font-size-md {
+        font-size: 22px;
+    }
+}
 .about-us-img {
-    width: 600px;
+
     border-radius: 30px;
-    margin-left: 160px;
+
 }
 
