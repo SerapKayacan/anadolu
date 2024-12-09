@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <main>
-        <div class="row justify-content-center px-4" style="background-color:#f6dae0;">
+    <main style="margin-bottom:-150px;">
+        <div class="row justify-content-center px-4 pb-0" style="background-color:#f6dae0;">
             <div class="col-lg-8 col-md-8 col-sm-12 text-center mb-4">
                 <p class="about-us-header-1">Sultan Park Evde Sağlık Hizmetleriyle Tanışın.</p>
                 <p class="about-us-detail-1 font-size-md">
@@ -34,7 +34,7 @@
                 </p>
             </div>
         </div>
-        <div class="row justify-content-center mb-4 third-row px-4">
+        <div class="row justify-content-center mb-4 third-row px-0 ">
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <p class="about-us-header-3 text-center">Misyonumuz</p>
                 <p class="about-us-detail-3 text-center font-size-md">

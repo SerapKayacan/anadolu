@@ -16,6 +16,7 @@
 .card-turquoise-online-doctor,.card-yellow-online-doctor,
 .card-purple-online-doctor,.card-blue-online-doctor,
 .card-green-online-doctor,.card-pink-online-doctor{
+    margin-top: 30px;
     max-width: 420px;
     min-width:360px;
     height: 100%;

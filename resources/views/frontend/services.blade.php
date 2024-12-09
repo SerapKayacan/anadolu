@@ -1,15 +1,16 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="row px-3" style="background-color:#fae5ec">
-            <div class="col-12 col-md-12 col-lg-12 col-xs-12">
+        <div class="row px-4" style="background-color:#fae5ec">
+            <div class="col-12 text-center py-4 ms-20 d-flex flex-column align-items-center">
                 <p class="services-search-text">Sağlığı <span style="color:rgba(115,18,111,0.78)">Eve Getiriyoruz</span>
                 </p>
-                <form action="{{ route('search') }}" method="GET" class="search-bar" role="search" id="form">
+                <form action="{{ route('search') }}" method="GET" class="search-bar justify-content-center mx-3"
+                      role="search" id="form">
                     <input class="search-bar-input" type="search" name="query"
                            placeholder="evde serum..."
                            aria-label="Search through site content">
-                    <button class="search-bar-button">
+                    <button class="search-bar-button px-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.5em" color=" #6E4EEF"
                              viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"
                              class=""><title>search</title>
@@ -22,36 +23,34 @@
                 </form>
             </div>
         </div>
-
-        <div class="main-container-services-1">
-            <div class="container main-container-services-1">
-                @if (isset($serviceCategory))
-                    <div class="row">
-                        @foreach ($services as $service)
-                            <div class="col-lg-4">
-                                <div class="card card-services-detail">
-                                    <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
-                                         class="card-service-detail-image">
-                                    <div
-                                        class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
-                                    <div class="card-body card-services-detail-body">
-                                        <p class="card-service-detail-header"> {{ $service->title}}</p>
-                                        <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
-                                        <div style="display:flex;">
-                                            <button class="card-service-detail-button"
-                                                    onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
-                                                Devamını Gör
-                                            </button>
-                                        </div>
+        <div class="container main-container-services-1 ">
+            @if (isset($serviceCategory))
+                <div class="row py-3">
+                    @foreach ($services as $service)
+                        <div class="col-lg-4">
+                            <div class="card card-services-detail">
+                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
+                                     class="card-service-detail-image">
+                                <div
+                                    class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
+                                <div class="card-body card-services-detail-body">
+                                    <p class="card-service-detail-header"> {{ $service->title}}</p>
+                                    <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
+                                    <div style="display:flex;">
+                                        <button class="card-service-detail-button"
+                                                onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+                                            Devamını Gör
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                @else
-                    <p>No category or services found.</p>
-                @endif
-            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p>No category or services found.</p>
+            @endif
         </div>
+
     </main>
 @endsection

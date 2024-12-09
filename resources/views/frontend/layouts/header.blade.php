@@ -54,9 +54,9 @@
                         <a class="nav-link" href="{{ route('about-us.index') }}"
                            style="font-weight: 700; color:#244daa;">Hakkımızda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-weight: 700; color:#244daa;">Blog</a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="#" style="font-weight: 700; color:#244daa;">Blog</a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact.index') }}"
                            style="font-weight: 700; color:#244daa;">İletişim</a>
