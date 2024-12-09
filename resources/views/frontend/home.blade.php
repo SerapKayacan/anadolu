@@ -1,40 +1,35 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            @foreach ($carousels as $carousel)
-                                <div class="carousel-item active ">
-                                    <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class=""
-                                         alt="...">
-                                    <div class="carousel-caption" style="position:relative; bottom:250px;left:40px;">
-                                        <h5>{!! $carousel->title !!}  </h5>
-                                        <p>{!!  $carousel->description !!} </p>
-                                        <a
-                                            href="{{ $carousel->button_link }}"
-                                            class="btn p-3"
-                                            target="_blank"
-                                            style="color: {{ $carousel->text_color }};background-color: {{ $carousel->background_color }};border: 1px solid {{ $carousel->border_color }};border-radius:23px; font-weight:bold;">
-                                            {{ $carousel->button_text }}
-                                        </a>
-                                    </div>
+        <div class="row justify-content-center align-items-center mb-5">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach ($carousels as $index => $carousel)
+                        <div class="carousel-item @if ($index == 0) active @endif">
+                            <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-flex justify-content-center align-items-center" style="bottom: 30px;">
+                                <div class="text-center">
+                                    <h5>{!! $carousel->title !!}</h5>
+                                    <p>{!! $carousel->description !!}</p>
+                                    <a href="{{ $carousel->button_link }}"
+                                       class="btn p-3"
+                                       target="_blank"
+                                       style="color: {{ $carousel->text_color }}; background-color: {{ $carousel->background_color }}; border: 1px solid {{ $carousel->border_color }}; border-radius: 23px; font-weight: bold;">
+                                        {{ $carousel->button_text }}
+                                    </a>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    @endforeach
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
         <div class="container">
