@@ -46,10 +46,12 @@
     margin-right:20px;
     margin-top:50px;
     margin-left:-15px;
+    width:100%;
 }
 .bottom-p-big {
     font-size: 17px;
     color: #E2DCFC;
+    width:100%;
 
 }
 .middle-p-small{
@@ -59,8 +61,7 @@
     margin-left:-15px;
     margin-top:50px;
     margin-bottom:40px;
-    width:250px;
-
+    width:100%;
     position: relative;
     display: inline-block;
     line-height: 1.2
@@ -72,15 +73,15 @@
     margin-left:-15px;
     margin-right:-159px;
     margin-top:-25px;
-    width:250px;
+    width:100%;
 }
 
 
 
 .card-1 {
-    width: auto;
-    min-width:500px;
-    height: 100%;
+    width: 100%;
+    /*min-width:500px;*/
+    height:  100%;
     background-color: #372778;
     border-radius: 15px;
     padding-left: 15px;
@@ -98,8 +99,7 @@
 .card-turquoise,.card-yellow,
 .card-purple,.card-blue,
 .card-green,.card-pink{
-    width: auto;
-    min-width:275px;
+    width: 100%;
     height: 100%;
     border:none;
     display: flex;
@@ -179,10 +179,7 @@
     color:white;
 }
 .card-pink{
-
     background-color: #FFEEEF;
-
-
 }
 
 .card-pink:hover {
@@ -225,3 +222,55 @@
 .card-pink .icon-box svg {
     fill: #FC555E; /* Match card hover color */
 }
+/* Make the row horizontally scrollable when the screen is small */
+/* Apply only to the service-category-cards container */
+.service-category-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Ensure cards scroll horizontally only within the service-category-cards container on small screens */
+@media (max-width: 768px) {
+    .service-category-cards {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        padding-bottom: 20px; /* Optional: Add some padding at the bottom for visual comfort */
+    }
+
+    .service-category-cards .col {
+        flex: 0 0 auto; /* Prevent columns from stretching */
+        margin-right: 10px; /* Optional: Add space between cards */
+    }
+
+    /* Optional: Fix height for cards */
+    .service-category-cards .card {
+        height: 100%;
+    }
+}
+
+/* Ensure card layout remains the same */
+.service-category-cards .card {
+    display: flex;
+    padding-left:2px;
+    padding-right:2px;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.service-category-cards .card-body {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-category-cards .card-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
