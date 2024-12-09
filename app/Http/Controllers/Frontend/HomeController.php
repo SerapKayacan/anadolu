@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
+use App\Models\Service;
 use App\Models\TabPanel;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class HomeController extends Controller
         $carousels = Carousel::where('is_active', true)->orderBy('sort_order','ASC')->get();
         $tabPanels = TabPanel::where('is_active', true)->orderBy('sort_order','ASC')->get();
         $types = ServiceCategory::types();
+        $services = Service::where('is_active', true)->orderBy('sort_order','ASC')->get();
 
         SEOTools::setTitle('Anasayfa'); // Dinamik olacak şekilde ayalanacak
         SEOTools::setDescription('Özel Sultan Evde Sağlık Hizmetleri'); // Dinamik olacak şekilde ayalanacak
@@ -27,7 +29,8 @@ class HomeController extends Controller
             "serviceCategories" => $serviceCategories,
             "types" => $types,
              "carousels"=>$carousels,
-            "tabPanels" => $tabPanels
+            "tabPanels" => $tabPanels,
+            "services" => $services
         ]);
     }
 

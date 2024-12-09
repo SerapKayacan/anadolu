@@ -6,8 +6,10 @@
                 <div class="carousel-inner">
                     @foreach ($carousels as $index => $carousel)
                         <div class="carousel-item @if ($index == 0) active @endif">
-                            <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-flex justify-content-center align-items-center" style="bottom: 30px;">
+                            <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class="d-block w-100"
+                                 alt="...">
+                            <div class="carousel-caption d-flex justify-content-center align-items-center"
+                                 style="bottom: 30px;">
                                 <div class="text-center">
                                     <h5>{!! $carousel->title !!}</h5>
                                     <p>{!! $carousel->description !!}</p>
@@ -22,11 +24,13 @@
                         </div>
                     @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -70,6 +74,40 @@
                         </a>
                     </div>
                 @endforeach
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="services-carousel-header">
+                    <!-- Header at the top of the carousel -->
+                    <h2 class="services-carousel-slider-header">Our Services</h2> <!-- Adjust the text here as needed -->
+                    <div class="services-carousel-slider-box">
+                        <div class="services-carousel">
+                            @if (isset($serviceCategory) && count($services) > 0)
+                                @foreach ($services as $service)
+                                    <div class="services-carousel-item">
+                                        <div class="services-carousel-card">
+                                            <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
+                                                 class="services-carousel-image">
+                                            <div
+                                                class="card-image-carousel-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
+                                            <div class="services-carousel-body align-items-center justify-content-center px-2 ">
+                                                <p class="card-service-detail-header"> {{ $service->title}}</p>
+                                                <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
+                                                <button class="card-service-detail-button"
+                                                        onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+                                                    Devamını Gör
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <p>No category or services found.</p>
+                            @endif
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -145,5 +183,50 @@
                 </div>
             </div>
         </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const carousel = document.querySelector(".services-carousel");
+                const prevButton = document.querySelector(".services-carousel-prev");
+                const nextButton = document.querySelector(".services-carousel-next");
+                const scrollAmount = 300; // Adjust as needed
+                let autoScrollInterval;
+
+                // Scroll Left
+                prevButton.addEventListener("click", () => {
+                    carousel.scrollBy({left: -scrollAmount, behavior: "smooth"});
+                });
+
+                // Scroll Right
+                nextButton.addEventListener("click", () => {
+                    carousel.scrollBy({left: scrollAmount, behavior: "smooth"});
+                });
+
+                // Automatic Scrolling
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(() => {
+                        carousel.scrollBy({left: scrollAmount, behavior: "smooth"});
+
+                        // Reset to the start if the carousel reaches the end
+                        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+                            carousel.scrollTo({left: 0, behavior: "smooth"});
+                        }
+                    }, 3000); // Adjust interval as needed
+                }
+
+                function stopAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                }
+
+                // Start auto-scroll on load
+                startAutoScroll();
+
+                // Pause auto-scroll on hover
+                carousel.addEventListener("mouseenter", stopAutoScroll);
+                carousel.addEventListener("mouseleave", startAutoScroll);
+            });
+
+        </script>
     </main>
 @endsection
