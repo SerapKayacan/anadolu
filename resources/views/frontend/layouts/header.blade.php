@@ -24,6 +24,8 @@
 </head>
 <body>
 <header style="position: sticky; top: 0; z-index:1020; background-color: white;">
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-a39c40da-09a5-4fed-b5f4-64c72ac7321e" data-elfsight-app-lazy></div>
     <div class="row justify-content-center align-items-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto py-2">
             <a href="{{ route('home') }}">

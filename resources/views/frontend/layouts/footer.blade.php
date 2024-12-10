@@ -96,7 +96,7 @@
                                 </i>
                             </a>
                             <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
-                               href="https://instagram.com/sultanevdesaglikhizmetleri?utm_medium=copy_link"><i class="bi bi-instagram"></i>
+                               href="https://www.instagram.com/sultansaglikk"><i class="bi bi-instagram"></i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                      viewBox="0 0 32 32"
                                      fill="currentColor" aria-hidden="true" focusable="false" class=""><title>

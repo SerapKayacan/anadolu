@@ -1,6 +1,9 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-a39c40da-09a5-4fed-b5f4-64c72ac7321e"></div>
+
         <div class="row justify-content-center align-items-center mb-5">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
