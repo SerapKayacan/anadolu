@@ -10,10 +10,10 @@ class WebhookGitHub extends Controller
 {
     public function handle(Request $request)
     {
-        $folder = "/home/osman.ustalar@perakende.medya.local/public_html/sultan-park";
-        shell_exec('git config --global --add safe.directory '.$folder);
+        $folder = env('PROJECT_FOLDER');
         $output = shell_exec('cd '.$folder.' && git pull 2>&1');
         dd($output);
+//        test
         $signature = $request->header('X-Hub-Signature-256');
         $payload = $request->getContent();
         $secret = env('GITHUB_WEBHOOK_SECRET');
