@@ -453,6 +453,7 @@ body.modal-open {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
+    width:17%;
     margin-bottom: 20px; /* Adjust space between header and carousel */
     color: #38e338; /* Set a color for the header */
 }
@@ -461,7 +462,7 @@ body.modal-open {
     overflow: hidden;
     width: 100vw;
     padding: 20px 0;
-    background: #252525;
+    background: #141450;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -502,7 +503,7 @@ body.modal-open {
 
 .services-carousel-image {
     width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
@@ -518,32 +519,9 @@ body.modal-open {
 .services-carousel-body {
     padding: 1rem;
     flex-grow: 1;
+    height:auto;
 }
 
-.services-carousel-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.services-carousel-description {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.services-carousel-button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-    width: 100%;
-}
 
 /* Hover Effects */
 .services-carousel-card:hover {
@@ -566,4 +544,68 @@ body.modal-open {
     font-size: 15px;
     font-weight: bold;
     z-index: 1; /* Ensure it stays above the image */
+}
+
+.card-service-carousel-detail-header {
+    color: rgba(115,18,111,0.78);
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: -5px;
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+    max-width: 400px;
+    padding:0;
+
+}
+
+.card-service-detail-carousel-middle-text {
+    color: dimgrey;
+    margin-top: -8px;
+    word-wrap: break-word;
+    white-space: normal;
+    font-size: 0.9rem; /* Adjust size for better readability on smaller screens */
+    line-height: 1.4; /* Improve spacing between lines */
+}
+
+.card-service-carousel-detail-button {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(115,18,111,0.78);
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 55px;
+    margin-top: auto;
+
+}
+
+.carousel-widget-body{
+    height:auto;
+}
+@media (max-width: 768px) {
+    /* Stack header and slider */
+   .services-carousel-slider-header{
+       width:14vh;
+       font-size:20px;
+   }
+    .services-carousel-card {
+        width:95%;
+    }
+    .card-service-carousel-detail-header{
+        font-size: 25px;
+        width:95%;
+    }
+    .card-service-detail-carousel-middle-text{
+        width:40px;
+        font-size:11px;
+    }
+    .card-service-carousel-detail-button {
+
+        width: 120px;
+        height: 35px;
+        font-size:12px;
+
+    }
 }

@@ -35,7 +35,7 @@
                                     class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
                                 <div class="card-body card-services-detail-body">
                                     <p class="card-service-detail-header"> {{ $service->title}}</p>
-                                    <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
+                                    <p class="card-service-detail-middle-text">{{ $service->category_page_detail }}</p>
                                     <div style="display:flex;">
                                         <button class="card-service-detail-button"
                                                 onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">

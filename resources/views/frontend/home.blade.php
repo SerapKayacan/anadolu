@@ -78,26 +78,26 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="services-carousel-header">
-                    <!-- Header at the top of the carousel -->
-                    <h2 class="services-carousel-slider-header">Our Services</h2> <!-- Adjust the text here as needed -->
+                <div class="services-carousel-header rounded-4 px-1 my-3 py-4">
+                    <h2 class="services-carousel-slider-header">Sultan Park Evde Sağlık Hizmetleri: Siz ve Sevdikleriniz Bize Sevgiyle Emanet &#10084; </h2> <!-- Adjust the text here as needed -->
                     <div class="services-carousel-slider-box">
-                        <div class="services-carousel">
+                        <div class="services-carousel px-2 py-3">
                             @if (isset($serviceCategory) && count($services) > 0)
                                 @foreach ($services as $service)
                                     <div class="services-carousel-item">
                                         <div class="services-carousel-card">
                                             <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
                                                  class="services-carousel-image">
-                                            <div
-                                                class="card-image-carousel-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
-                                            <div class="services-carousel-body align-items-center justify-content-center px-2 ">
-                                                <p class="card-service-detail-header"> {{ $service->title}}</p>
-                                                <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
-                                                <button class="card-service-detail-button"
+                                            <div class="carousel-widget-body">
+                                            <div class="card-image-carousel-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
+                                            <div class="services-carousel-body align-items-center justify-content-center ">
+                                                <p class="card-service-carousel-detail-header"> {{ $service->title}}</p>
+                                                <p class="card-service-detail-carousel-middle-text px-0 text-start w-auto">{{ $service->category_page_detail }}</p>
+                                                <button class="card-service-carousel-detail-button"
                                                         onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
                                                     Devamını Gör
                                                 </button>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
