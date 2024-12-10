@@ -57,16 +57,16 @@
                                         </div>
                                     @endforeach
                                 @else
-                                    <div>
+                                    <div class="row px-4 justify-content-center align-items-center text-center">
                                         <p style="text-align: center;" class="no-appointments-message">
                                             Uygun
                                             Randevu Saati
                                             Belirtilmemiştir.</p>
-                                        <div style="display:flex;">
-                                            <div style="flex:1; ">
-                                                <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
+
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-2 px-2">
+                                            <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
                                                 <button
-                                                    style="background-color:#cc4b6a;border-radius:15px;border:none;height:60px;width:140px;display:flex;margin-right:20px;">
+                                                    style="background-color:#cc4b6a;border-radius:15px;border:none;height:60px;width:100%;display:flex;">
                                                     <div style="color:white; margin-top:15px;flex:1;">
                                                         <i style="background-color:white; border-radius:12px;padding-right:4px;padding-left:4px;padding-bottom:2px ;padding-top:1px;color:#cc4b6a;"
                                                            class="bi bi-telephone-outbound">
@@ -87,12 +87,14 @@
                                                         <p>Bizi Arayın</p>
                                                     </div>
                                                 </button>
-                                                </a>
-                                            </div>
-                                            <div style="flex:1">
-                                                <a style="text-decoration: none;" href="https://wa.me/9005354694234?text={{ $service->title.' ' }} %20Hizmetine%20uygun%20randevu%20bulunmamakta%20yardımcı%20olur%20musunuz?" target="_blank">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 px-2 ">
+                                            <a style="text-decoration: none;"
+                                               href="https://wa.me/9005354694234?text={{ $service->title.' ' }} %20Hizmetine%20uygun%20randevu%20bulunmamakta%20yardımcı%20olur%20musunuz?"
+                                               target="_blank">
                                                 <button
-                                                    style="background-color:#69C140;border-radius:15px;border:none;height:60px;width:140px;display:flex;">
+                                                    style="background-color:#69C140;border-radius:15px;border:none;height:60px;width:100%;display:flex;">
                                                     <div
                                                         style="color:white;  margin-top:15px;margin-left:-4px;flex:2">
                                                         <i class="bi bi-whatsapp"></i>
@@ -111,10 +113,10 @@
                                                         <p>Whatsapp'tan Destek Al</p>
                                                     </div>
                                                 </button>
-                                                </a>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
+
                                 @endif
                             </div>
                         </div>
@@ -126,11 +128,11 @@
             g
         </div>
         <div class="mt-5">
-        <div class="row mx-5 my-5 mt-10">
-            <div class="col-md-12 col-lg-12 col-xs-12">
-                <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
+            <div class="row mx-5 my-5 mt-10">
+                <div class="col-md-12 col-lg-12 col-xs-12">
+                    <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
+                </div>
             </div>
-        </div>
         </div>
     </main>
 
