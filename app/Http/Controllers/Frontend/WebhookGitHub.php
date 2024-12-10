@@ -11,7 +11,6 @@ class WebhookGitHub extends Controller
     public function handle(Request $request)
     {
         $folder = env('PROJECT_FOLDER');
-        shell_exec('git config --global --add safe.directory '.$folder);
         $output = shell_exec('cd '.$folder.' && git pull 2>&1');
         dd($output);
 //        test
