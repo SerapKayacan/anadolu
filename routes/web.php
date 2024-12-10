@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\TabPanelController;
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\Frontend\WebhookGitHub;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
@@ -71,7 +72,7 @@ Route::prefix('tab-panel')->group(function () {
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
-
+Route::get('/webhook/github', [WebhookGitHub::class, 'handle']);
 
 
 Route::prefix('auth')->group(function () {
