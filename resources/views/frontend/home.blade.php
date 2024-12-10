@@ -147,14 +147,14 @@
                                 aria-labelledby="pills-tab-{{ $index }}"
                                 tabindex="0">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-8">
+                                    <div class="col-sm-12 col-md-7">
                                         <img
                                             src="{{ $tabPanel->getFirstMediaUrl('banner', 'large') }}"
                                             alt=""
                                             class="img-fluid rounded-4">
                                     </div>
-                                    <div class="col-md-4">
-                                        <p class="title ms-0" style="line-height:1;"> {!! $tabPanel->title !!}</p>
+                                    <div class="col-md-5">
+                                        <p class="title " style="line-height:1;"> {!! $tabPanel->title !!}</p>
                                         <p class="description">{!! $tabPanel->description !!}</p>
                                         <div style="position: relative; height: 100px;"> <!-- Parent container -->
                                             <button class="navbar-bottom-button" style="display: flex;"

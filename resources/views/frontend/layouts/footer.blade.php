@@ -14,10 +14,10 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Şirket</h2>
-            <a class="footer-link" href="#">Hakkımızda</a>
+            <a class="footer-link" href="{{ route('about-us.index') }}">Hakkımızda</a>
             <a class="footer-link" href="#">Anlaşmalı Kurumlar</a>
             <a class="footer-link" href="#">Yönetim Kurulu</a>
-            <a class="footer-link" href="#">İletişim</a>
+            <a class="footer-link" href="{{ route('contact.index') }}">İletişim</a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  py-4 card footer-card py-3 px-3  ">
             <div class="card-header footer-card-header ">
@@ -85,7 +85,7 @@
                         </div>
                         <div style="margin-top:22px;margin-bottom:-20px;">
                             <a style="text-decoration: none; border-radius:20px;padding-left:3px;padding-bottom:3px ;margin-left:5px;color:white;"
-                               href=""><i class="bi bi-facebook">
+                               href="https://www.facebook.com/Sultanevdesa%C4%9Fl%C4%B1khizmetleri-113262357798636/"><i class="bi bi-facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          viewBox="0 0 32 32"
                                          fill="currentColor" aria-hidden="true" focusable="false" class=""><title>
@@ -96,7 +96,7 @@
                                 </i>
                             </a>
                             <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
-                               href=""><i class="bi bi-instagram"></i>
+                               href="https://instagram.com/sultanevdesaglikhizmetleri?utm_medium=copy_link"><i class="bi bi-instagram"></i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                      viewBox="0 0 32 32"
                                      fill="currentColor" aria-hidden="true" focusable="false" class=""><title>
