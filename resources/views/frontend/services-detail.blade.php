@@ -1,9 +1,20 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div style="background-color:#f6d5db; padding: 20px;">
-            <div class="row" style="padding-top:30px; padding-bottom:30px; align-items: center;">
-                <div class="col-lg-4 col-md-6 col-sm-12 card appointment-card">
+        <div class="row justify-content-center  px-5" style="background-color:#f8dfe4;">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 d-flex justify-content-center pt-4 pb-2">
+                <img class="services-detail-page-img"
+                     src="{{ $service->getFirstMediaUrl('banner', 'large') }}"
+                     alt="Service Banner">
+            </div>
+            <div class="col-lg-5 services-detail-page-text col-lg-5 pt-4 pb-2">
+                <h1 class="services-detail-page-header">{{ $service->title }}</h1>
+                <p>
+                    {!! $service->sort_detail !!}
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 position-relative ">
+                <div class=" card appointment-card mt-4 mb-2 position-absolute top-0 end-0 ">
                     <div class="card-body">
                         <h5 class="card-title appointment-card-title">Online Randevu Al</h5>
                         <div class="appointment-time-container">
@@ -25,7 +36,7 @@
                                                     <div>
                                                         @if ($time['is_available'])
                                                             <!-- Available time -->
-                                                            <a href="https://wa.me/9005354694234?text={{ $formattedDate->translatedFormat('d F l').' '.$time['time'] }}%20Randevu%20oluşturmak%20istiyorum"
+                                                            <a href="https://wa.me/9005354694234?text={{ $service->title.' ' .' hizmetine '. $formattedDate->translatedFormat('d F l').' '.$time['time'] }}%20Randevu%20oluşturmak%20istiyorum"
                                                                target="_blank">
                                                                 <button class="appointment-time-button"
                                                                         style=" cursor: pointer;">
@@ -53,6 +64,7 @@
                                             Belirtilmemiştir.</p>
                                         <div style="display:flex;">
                                             <div style="flex:1; ">
+                                                <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
                                                 <button
                                                     style="background-color:#cc4b6a;border-radius:15px;border:none;height:60px;width:140px;display:flex;margin-right:20px;">
                                                     <div style="color:white; margin-top:15px;flex:1;">
@@ -75,8 +87,10 @@
                                                         <p>Bizi Arayın</p>
                                                     </div>
                                                 </button>
+                                                </a>
                                             </div>
                                             <div style="flex:1">
+                                                <a style="text-decoration: none;" href="https://wa.me/9005354694234?text={{ $service->title.' ' }} %20Hizmetine%20uygun%20randevu%20bulunmamakta%20yardımcı%20olur%20musunuz?" target="_blank">
                                                 <button
                                                     style="background-color:#69C140;border-radius:15px;border:none;height:60px;width:140px;display:flex;">
                                                     <div
@@ -97,46 +111,27 @@
                                                         <p>Whatsapp'tan Destek Al</p>
                                                     </div>
                                                 </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 @endif
                             </div>
-
                         </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 d-flex justify-content-center">
-                    <img class="services-detail-page-img"
-                         src="{{ $service->getFirstMediaUrl('banner', 'large') }}"
-                         alt="Service Banner">
-                </div>
-                <div class="col-lg-5">
-                    <div class="services-detail-page-text">
-                        <p class="services-detail-page-header">{{ $service->title }}</p>
-                        <ul>
-                            <li >
-                                {!! $service->sort_detail !!}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="row" style=" margin-left:20px;padding-top:10px;padding-bottom:30px;">
-            <div class="col-12 col-md-12 col-lg-12 col-xs-12">
-                <div>
-                    <div>
-                        <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
                     </div>
                 </div>
             </div>
         </div>
-
-
+        <div class="item d-block d-md-none mx-5" style="margin-top:530px;">
+            g
+        </div>
+        <div class="mt-5">
+        <div class="row mx-5 my-5 mt-10">
+            <div class="col-md-12 col-lg-12 col-xs-12">
+                <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
+            </div>
+        </div>
+        </div>
     </main>
 
 @endsection

@@ -358,11 +358,9 @@
 .services-detail-page-img {
     width: 320px;
     height: 270px;
-    margin-left:20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .services-detail-page-header {
     font-size: 37px;
@@ -373,7 +371,7 @@
 .services-detail-page-text li {
     color: #4e4d4d;
     font-size: 16px;
-    width: 700px;
+
 
 }
 
@@ -392,21 +390,16 @@
     font-weight: bold;
 }
 /*//appointment-card*/
-.appointment-card { margin-right:-40px;
-    position: absolute;
-    top: 200px;
-    right:55px;
-    width:420px;
+
+.appointment-card {
+    max-width:420px;
     min-height: 150px; /* Ensures the card doesn't get too small */
-    max-width: 100%; /* Ensures responsive width */
+   width: 100%; /* Ensures responsive width */
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    z-index: 1; /* Ensures the card appears above other content */
-    /*overflow: hidden*/
-
 }
 .appointment-card-title{
     color: #bd415e;
@@ -507,12 +500,9 @@
 
 
 
-
-/*@media (max-width: 991px) {*/
-/*    !* Revert to a static position for smaller screens *!*/
-/*    .custom-card-position {*/
-/*        position: static;*/
-/*        width: 100%;*/
-/*        margin-bottom: 20px;*/
-/*    }*/
-/*}*/
+@media (max-width: 768px) {
+   .appointment-card {
+        position: relative; /* Remove absolute positioning for small screens */
+        margin-top: 20px;  /* Push the card down */
+    }
+}
