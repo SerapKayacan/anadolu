@@ -550,7 +550,6 @@ body.modal-open {
     color: rgba(115,18,111,0.78);
     font-size: 30px;
     font-weight: bold;
-    margin-top: -5px;
     position: relative;
     display: inline-block;
     line-height: 1.2;
@@ -594,8 +593,8 @@ body.modal-open {
         width:95%;
     }
     .card-service-carousel-detail-header{
-        font-size: 25px;
-        width:95%;
+        font-size: 20px;
+        width:100%;
     }
     .card-service-detail-carousel-middle-text{
         width:40px;
