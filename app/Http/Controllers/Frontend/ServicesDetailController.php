@@ -18,22 +18,26 @@ class ServicesDetailController extends Controller
         $this->appointmentService = $appointmentService;
     }
 
-    public function show(string $id)
+    public function show(string $slug)
     {
-        $serviceCategory = ServiceCategory::with('services')->findOrFail($id);
-        $service = Service::where('is_active', true)->orderBy('sort_order','ASC')->with('getCategory')->findOrFail($id);
-        $days = $this->appointmentService->getWeeklyAvailability($service);
 
+        $service = Service::with('getCategory')
+            ->where('is_active', true)
+            ->where('slug', $slug)
+            ->orderBy('sort_order', 'ASC')
+            ->firstOrFail();
+
+        $days = $this->appointmentService->getWeeklyAvailability($service);
         SEOTools::setTitle($service->title); // Dinamik olacak şekilde ayalanacak
         SEOTools::setDescription($service->meta_description); // Dinamik olacak şekilde ayalanacak
         SEOTools::opengraph()->addProperty('type', 'article'); // Hizmet detay sayfasında type article olarak güncellenecek
         SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray()); // Dinamik olacak şekilde ayalanacak
         SEOTools::addImages($service->getFirstMediaUrl('banner', 'large')); // Dinamik olacak şekilde ayalanacak
-        
+
         return view('frontend.services-detail', [
             "service" => $service,
             "days" => $days,
-            'serviceCategory' => $serviceCategory,
+
         ]);
     }
 

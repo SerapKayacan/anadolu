@@ -38,7 +38,7 @@
                                     <p class="card-service-detail-middle-text">{{ $service->category_page_detail }}</p>
                                     <div style="display:flex;">
                                         <button class="card-service-detail-button"
-                                                onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+                                                onclick="window.location.href='{{ route('services-detail.show', ['slug' => $service->slug]) }}'">
                                             Devamını Gör
                                         </button>
                                     </div>

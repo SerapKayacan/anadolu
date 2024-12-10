@@ -30,7 +30,7 @@ Route::prefix('services-category')->group(function () {
 });
 
 Route::prefix('services')->group(function () {
-    Route::get('/services-category/{id}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
+    Route::get('/services-category/{slug}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
 });
 
 Route::prefix('online-doctor')->group(function () {
@@ -38,12 +38,9 @@ Route::prefix('online-doctor')->group(function () {
 });
 
 Route::prefix('services-detail')->group(function () {
-    Route::get('/show/{id}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
+    Route::get('/show/{slug}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
 });
 
-Route::prefix('online-doctor-detail')->group(function () {
-    Route::get('/show/{id}', [OnlineDoctorDetailController::class, 'show'])->name('online-doctor-detail.show');
-});
 Route::prefix('contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
 });
