@@ -67,7 +67,7 @@
                                     <p>No services available for this category.</p>
                                 @endif
                                     <div style="display:flex;">
-                                        <a href="{{ route('services.byCategory', ['id' => $serviceCategory->id]) }}"
+                                        <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}"
                                            style="display:flex;text-decoration:none;">
                                             <p class="card-link-bottom-text">Daha Fazlası</p>
                                             <i class="bi bi-arrow-right card-link-bottom-icon">

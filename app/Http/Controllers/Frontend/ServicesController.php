@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
-    public function showByCategory($id)
+    public function showByCategory($slug)
     {
-        $serviceCategory = ServiceCategory::where('is_active', true)->with('services')->findOrFail($id); // Fetch the category and its services
+        $serviceCategory = ServiceCategory::where('is_active', true)->where('slug', $slug)->with('services')->firstOrFail(); // Fetch the category and its services
         $types = ServiceCategory::types();
 
         SEOTools::setTitle($serviceCategory->title ); // Dinamik olacak şekilde ayalanacak

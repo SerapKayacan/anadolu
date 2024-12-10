@@ -42,7 +42,7 @@
                     <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6 col-md-6 col-sm-12 col-xs-12
                         @else col-lg-3 col-md-3 col-sm-3 col-xs-3
                         @endif" style="margin-bottom:20px; ">
-                        <a href="{{ route('services.byCategory', ['id' => $serviceCategory->id]) }}"
+                        <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}"
                            style=" text-decoration: none;">
                             @php
                                 $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue',  'card-pink','card-green', ];
@@ -94,7 +94,7 @@
                                                 <p class="card-service-carousel-detail-header"> {{ $service->title}}</p>
                                                 <p class="card-service-detail-carousel-middle-text px-0 text-start w-auto">{{ $service->category_page_detail }}</p>
                                                 <button class="card-service-carousel-detail-button"
-                                                        onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+                                                        onclick="window.location.href='{{ route('services-detail.show', ['slug' => $service->slug]) }}'">
                                                     Devamını Gör
                                                 </button>
                                             </div>
