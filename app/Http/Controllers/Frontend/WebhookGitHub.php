@@ -14,6 +14,7 @@ class WebhookGitHub extends Controller
         shell_exec('git config --global --add safe.directory '.$folder);
         $output = shell_exec('cd '.$folder.' && git pull 2>&1');
         dd($output);
+//        test
         $signature = $request->header('X-Hub-Signature-256');
         $payload = $request->getContent();
         $secret = env('GITHUB_WEBHOOK_SECRET');
