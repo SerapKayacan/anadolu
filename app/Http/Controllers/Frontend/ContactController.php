@@ -22,24 +22,26 @@ class ContactController extends Controller
     }
     public function submit(Request $request)
     {
-
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required|string|max:255',
             'phone-code' => 'required|string|max:10',
-            'phone' => 'required|string|regex:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/',
+            'phone' => 'required|string|min:5|max:25',
             'message' => 'required|string|max:1000',
             'agreement' => 'accepted',
         ]);
 
+        Mail::send('frontend.mail', [
+                'name' => $request->get('name'),
+                'phoneCode' => $request->get('phone-code'),
+                'phone' => $request->get('phone'),
+                'messageDetail' => $request->get('message'),
+            ], function ($mail) use ($request) {
+                $mail->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+                $mail->subject(env('MAIL_SUBJECT'));
+                $mail->to(env('MAIL_TO_ADDRESS'));
+            }
+        );
 
-        Mail::raw($validated['message'], function ($mail) use ($validated) {
-            $mail->from('kayacan.serap@gmail.com', 'Your Website');
-            $mail->to('kayacan.serap@gmail.com');
-            $mail->subject('New Contact Form Submission');
-            $mail->replyTo($validated['phone-code'] . ' ' . $validated['phone'], $validated['name']);
-        });
-
-        // Provide feedback to the user
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 }

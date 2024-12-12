@@ -43,7 +43,7 @@ Route::prefix('services-detail')->group(function () {
 
 Route::prefix('contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
-    Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
+    Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
 });
 Route::prefix('about-us')->group(function () {
     Route::get('/', [AboutUsController::class, 'index'])->name('about-us.index');
@@ -70,7 +70,7 @@ Route::prefix('tab-panel')->group(function () {
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
-Route::get('/webhook/github', [WebhookGitHub::class, 'handle']);
+Route::post('/webhook/github', [WebhookGitHub::class, 'handle']);
 
 
 Route::prefix('auth')->group(function () {

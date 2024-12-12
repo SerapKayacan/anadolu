@@ -75,9 +75,6 @@
                 <hr>
                 <div class="contact-card-body">
                     <p class="contact-card-body-header">Hemen Yazın</p>
-                    @if(session('success'))
-                        <p style="color: green">{{ session('success') }}</p>
-                    @endif
                     <form action="{{ route('contact.submit') }}" method="POST" style="display: flex; flex-wrap: wrap; gap: 20px;">
                         @csrf
 
@@ -140,14 +137,20 @@
                     </form>
 
                     @if(session('success'))
-                        <?php
-                            dd(1);
-                        ?>
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
 
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                 </div>
             </div>
