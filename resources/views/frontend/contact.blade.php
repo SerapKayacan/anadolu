@@ -4,7 +4,7 @@
         <div class="row align-items-center justify-content-center text-center px-3"
              style="background-color:#f6dae0; height:auto;">
             <div class="col-12 contact-card-header">
-                <p class="contact-header">Bizimle İletişime Geçin</p>
+                <p class="contact-header">Bizimle İletişime Geçin 1</p>
                 <p class="contact-bottom-header">Sultan Park ile hem kliniğimizde hem evlerinizde
                     sizlerleyiz</p>
             </div>

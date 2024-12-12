@@ -142,7 +142,5 @@
 <script type='text/javascript' src='{{ asset('') }}assets/frontend/js/chaty-settings.js' id='chaty-front-end-js-extra'></script>
 <script type='text/javascript' src='{{ asset('') }}assets/frontend/js/jquery3-6-0.min.js' id='jquery-core-js'></script>
 <script type='text/javascript' src='{{ asset('') }}assets/frontend/js/chaty-front.js' id='chaty-front-end-js'></script>
-<!-- test 3 -->
-3
 </body>
 </html>
