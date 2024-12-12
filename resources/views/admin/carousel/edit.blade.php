@@ -32,7 +32,6 @@
                 </div>
             </div>
         </div>
-
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <form class="form d-flex flex-column flex-lg-row" action="{{ route('carousel.update', $carousel->id) }}"
@@ -48,7 +47,6 @@
                             </li>
 
                         </ul>
-
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="generalInformation" role="tab-panel">
                                 <div class="d-flex flex-column gap-7 gap-lg-10">
