@@ -23,7 +23,7 @@
             <div class="card-header footer-card-header ">
                 <div class="row justify-content-center align-items-center ">
                     <div class="col-5">
-                        <a style="text-decoration: none;" href="tel:05354694234" target="_blank">
+                        <a style="text-decoration: none;" href="tel:02125910911" target="_blank">
                             <button
                                 style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:white; margin-top:1px;flex:1;">
@@ -68,10 +68,10 @@
                         </a>
                     </div>
                 </div>
-                <a style="text-decoration: none;" href="tel:05354694234" target="_blank">
-                <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0535 <span
-                        style="color:#549dda">469</span>
-                    42<span style="color:#549dda">34</span></p>
+                <a style="text-decoration: none;" href="tel:02125910911" target="_blank">
+                <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0212 <span
+                        style="color:#549dda">591</span>
+                    09<span style="color:#549dda">11</span></p>
                 </a>
                 <p style="color:#E2DCFC;font-size:16px;font-family:arial">Canlı desteğe istediğin zaman ve
                     hızla
