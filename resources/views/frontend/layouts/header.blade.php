@@ -26,15 +26,15 @@
 <body>
 <header style="position: sticky; top: 0; z-index:1020; background-color: white;">
     <div class="row justify-content-center align-items-center">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto py-2">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto py-2  px-0">
             <a href="{{ route('home') }}">
                 <img src="{{ asset('') }}assets/frontend/images/sultanparkkk%20(1).png"
                      alt="Bootstrap" width="50" height="45">
             </a>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center ">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center  px-0">
             <nav class="navbar navbar-expand-lg navbar-light position-relative" style="width:auto; padding-right: 0;">
-                <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler justify-content-end px-0 mx-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -68,7 +68,7 @@
                 </div>
             </nav>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center"
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center px-0"
              style="background-color:#3b79ac;">
             <ul class="nav justify-content-center align-items-center  "
                 style="font-size:15px;padding-top:15px;padding-bottom:15px;">

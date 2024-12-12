@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="container-fluid px-0 mx-0 ">
+        <div class="container-fluid px-0  ">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($carousels as $index => $carousel)
