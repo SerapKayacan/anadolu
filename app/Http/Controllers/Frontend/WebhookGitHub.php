@@ -19,14 +19,11 @@ class WebhookGitHub extends Controller
 
         if (!hash_equals($computedSignature, $signature)) {
             return response()->json(['message' => 'Invalid signature']);
-//            Log::error('Git pull output hatası:', [$computedSignature]);
         }
 
         $data = json_decode($payload, true);
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/master') {
             $output = shell_exec('cd '.$folder.' && git pull 2>&1');
-//            Log::info('Git pull output:', [$output]);
-            //test
             return response()->json(['message' => $output]);
         } else {
             return response()->json(['message' => 'Geçersiz Branch']);
