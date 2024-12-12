@@ -62,9 +62,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#generalInformation">Genel Bilgiler</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#search">Arama Motoru</a>
-                            </li>
+
                         </ul>
 
                         <div class="tab-content">
