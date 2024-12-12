@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="container" style="margin-top:30px;">
-            <div class="row align-items-stretch justify-content-center service-category-cards mx-2">
+            <div class="row align-items-stretch justify-content-center service-category-cards mx-0">
                 @foreach ($serviceCategories as $serviceCategory)
                     <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6 col-md-6 col-sm-12 col-xs-12
                         @else col-lg-3 col-md-3 col-sm-12 col-xs-12
