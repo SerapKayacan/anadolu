@@ -78,7 +78,7 @@
                     Canlı desteğe isteğin zaman ve hızlı ulaş!
                 </li>
                 <li class="nav-item" style="margin-right:8px;">
-                    <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
+                    <a style="text-decoration: none;" href="tel:05354694234" target="_blank">
                         <button
                             style="background-color:#ec4949;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
                             <div style="color:white; margin-top:-5px;margin-left:-25px;flex:1;padding-left:-6px;">
@@ -97,10 +97,10 @@
                         </button>
                     </a>
                 </li>
-                <li class="nav-item "
-                    style=" display:flex;align-items: center;color:white; weight:bold;font-family:arial;">
-                    0535 469 42 34
+                <li class="nav-item ">
+                    <a style="text-decoration: none;  display:flex;align-items: center;color:white; weight:bold;font-family:arial;" href="tel:05354694234" target="_blank">0535 469 42 34</a>
                 </li>
+                </a>
                 <li class="nav-item" style=" margin-left:20px;">
                     <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
                         <button
