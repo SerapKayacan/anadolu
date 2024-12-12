@@ -10,21 +10,56 @@
 .main-wrapper-2 {
     margin-top: 40px;
 }
-
-
-.carousel-inner img {
-    height: 78vh; /* Ensures the image height takes up the full viewport height */
-    width: 100%; /* Ensures the image fills the width */
-    object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
-}
-.carousel-inner {
-    padding: 0;
+body, html {
     margin: 0;
+    padding-left: 0;
+    padding-right:0;
+    overflow-x: hidden;
+}
+.row {
+    margin: 0;
+    padding-left: 0;
+    padding-right:0;
+    width: 100%;
 }
 
+
+/* Ensure images fill the carousel correctly */
+.carousel {
+    width: 100%;
+}
+
+/* Prevent extra spacing or wrapping for carousel items */
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    width: 100%;
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Ensure images fit correctly */
+.carousel-inner img {
+    width: 100%; /* Fill the width of the container */
+    height: 79vh; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container without distortion */
+}
+
+/* Each carousel item should fit perfectly inside the carousel */
 .carousel-item {
     padding: 0;
     margin: 0;
+    width: 100%; /* Makes each slide fill the full width */
+}
+
+/* Fix carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 2; /* Ensure controls stay above images */
+}
+
+/* Remove unwanted scrollbars */
+body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 

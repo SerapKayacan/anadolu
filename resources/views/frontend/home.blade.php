@@ -1,24 +1,17 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-        <div class="elfsight-app-a39c40da-09a5-4fed-b5f4-64c72ac7321e"></div>
-
-        <div class="row justify-content-center align-items-center mb-5">
+        <div class="container-fluid px-0 ">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($carousels as $index => $carousel)
                         <div class="carousel-item @if ($index == 0) active @endif">
-                            <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class="d-block w-100"
-                                 alt="...">
-                            <div class="carousel-caption d-flex justify-content-center align-items-center"
-                                 style="bottom: 30px;">
+                            <img src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}" class="d-block w-100" alt="Carousel Image">
+                            <div class="carousel-caption d-flex justify-content-center align-items-center">
                                 <div class="text-center">
                                     <h5>{!! $carousel->title !!}</h5>
                                     <p>{!! $carousel->description !!}</p>
-                                    <a href="{{ $carousel->button_link }}"
-                                       class="btn p-3"
-                                       target="_blank"
+                                    <a href="{{ $carousel->button_link }}" class="btn p-3"
                                        style="color: {{ $carousel->text_color }}; background-color: {{ $carousel->background_color }}; border: 1px solid {{ $carousel->border_color }}; border-radius: 23px; font-weight: bold;">
                                         {{ $carousel->button_text }}
                                     </a>
@@ -27,23 +20,22 @@
                         </div>
                     @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </div>
-        <div class="container">
-            <div class="row align-items-stretch justify-content-center service-category-cards mx-4 ">
+
+        <div class="container" style="margin-top:30px;">
+            <div class="row align-items-stretch justify-content-center service-category-cards mx-4">
                 @foreach ($serviceCategories as $serviceCategory)
                     <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6 col-md-6 col-sm-12 col-xs-12
-                        @else col-lg-3 col-md-3 col-sm-3 col-xs-3
+                        @else col-lg-3 col-md-3 col-sm-12 col-xs-12
                         @endif" style="margin-bottom:20px; ">
                         <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}"
                            style=" text-decoration: none;">
@@ -78,6 +70,7 @@
                     </div>
                 @endforeach
             </div>
+
         </div>
         <div class="container">
             <div class="row">
