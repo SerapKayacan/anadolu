@@ -18,6 +18,7 @@ class WebhookGitHub extends Controller
         $computedSignature = 'sha256=' . hash_hmac('sha256', $payload, $secret);
 
         if (!hash_equals($computedSignature, $signature)) {
+            Log::error('Git pull output hatası:', [$computedSignature]);
             abort(403, 'Invalid signature');
         }
 
@@ -25,6 +26,8 @@ class WebhookGitHub extends Controller
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/master') {
             $output = shell_exec('cd '.$folder.' && git pull 2>&1');
             Log::info('Git pull output:', [$output]);
+        } else {
+            Log::warning('Gereksiz branch push oldu' , $data);
         }
 
         return response()->json(['message' => 'Webhook handled successfully']);
