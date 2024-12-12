@@ -26,6 +26,7 @@ class WebhookGitHub extends Controller
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/master') {
             $output = shell_exec('cd '.$folder.' && git pull 2>&1');
 //            Log::info('Git pull output:', [$output]);
+            //test
             return response()->json(['message' => $output]);
         } else {
             return response()->json(['message' => 'Geçersiz Branch']);
