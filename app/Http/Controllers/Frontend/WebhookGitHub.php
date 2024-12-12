@@ -29,7 +29,6 @@ class WebhookGitHub extends Controller
 //            Log::info('Git pull output:', [$output]);
             return response()->json(['message' => $output]);
         } else {
-//            Log::warning('Gereksiz branch push oldu' , $data);
             return response()->json(['message' => 'Geçersiz Branch']);
         }
 
