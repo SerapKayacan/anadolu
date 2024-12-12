@@ -78,21 +78,26 @@
                     @if(session('success'))
                         <p style="color: green">{{ session('success') }}</p>
                     @endif
-                    <form action="" method="POST" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <form action="{{ route('contact.submit') }}" method="POST" style="display: flex; flex-wrap: wrap; gap: 20px;">
                         @csrf
-                        <div class="form-group" style="flex: 1; min-width: 300px; width:100%">
+
+                        <!-- Name Input -->
+                        <div class="form-group" style="flex: 1; min-width: 300px; width: 100%;">
                             <h1 class="form-headers">Adınız Soyadınız</h1>
                             <input class="contact-name-surname" type="text" name="name"
-                                   placeholder="Adınızı Soyadınızı Giriniz" required> @error('name')
-                            <span style="color: red">{{ $message }}</span>
+                                   placeholder="Adınızı Soyadınızı Giriniz" required aria-label="Adınız Soyadınız">
+                            @error('name')
+                            <span style="color: red;">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="form-group" style="flex: 1; min-width: 300px;width:100%">
+
+                        <!-- Phone Number Input -->
+                        <div class="form-group" style="flex: 1; min-width: 300px; width: 100%;">
                             <h1 class="form-headers">Telefon Numarası</h1>
-                            <div
-                                style="display: flex; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
+                            <div style="display: flex; border: 1px solid #ccc; border-radius: 10px; overflow: hidden;">
                                 <select class="contact-select-box" name="phone-code" required
-                                        style="border: none; background: #f9f9f9; font-size: 16px; width: 85px;">
+                                        style="border: none; background: #f9f9f9; font-size: 16px; width: 85px;"
+                                        aria-label="Ülke Kodu">
                                     <option value="+90" selected>TR +90</option>
                                     <option value="+1">US +1</option>
                                     <option value="+44">UK +44</option>
@@ -104,28 +109,46 @@
                                     <option value="+55">BR +55</option>
                                     <option value="+86">CN +86</option>
                                 </select>
-                                <input class="contact-input-box" type="tel" placeholder="Telefon Numarası"
-                                       title="Lütfen geçerli bir telefon numarası girin (ör. 555-123-4567)">
+                                <input class="contact-input-box" type="tel" name="phone"
+                                       placeholder="Telefon Numarası" required
+                                       title="Lütfen geçerli bir telefon numarası girin (ör. 555-123-4567)"
+                                       aria-label="Telefon Numarası">
                             </div>
                         </div>
+
+                        <!-- Message Input -->
                         <div class="form-group" style="flex: 1 0 100%; min-width: 300px;">
                             <h1 class="form-headers">Mesajınız</h1>
-                            <textarea class="contact-message-box col-12" rows="4"
-                                      placeholder="Mesajınızı Giriniz" name="message" required
-                                      style="width: 100%;"></textarea>
+                            <textarea class="contact-message-box col-12" name="message" rows="4"
+                                      placeholder="Mesajınızı Giriniz" required style="width: 100%;" aria-label="Mesajınız"></textarea>
                         </div>
+
+                        <!-- Agreement Checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" id="agreement" required>
-                                <a style="text-decoration:none;color:#178c81;font-weight:bold;" href="#"
-                                   id="showTerms">Aydınlatma
-                                    Metni</a>'ni okudum ve anladım.
+                                <input type="checkbox" id="agreement" name="agreement" required aria-label="Aydınlatma Metni Onayı">
+                                <a style="text-decoration: none; color: #178c81; font-weight: bold;" href="#" id="showTerms">
+                                    Aydınlatma Metni
+                                </a>'ni okudum ve anladım.
                             </label>
                         </div>
-                        <button class="contact-button" type="submit">
+
+                        <!-- Submit Button -->
+                        <button class="contact-button" type="submit" style="padding: 10px 20px; font-size: 16px;">
                             Gönder
                         </button>
                     </form>
+
+                    @if(session('success'))
+                        <?php
+                            dd(1);
+                        ?>
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+
                 </div>
             </div>
         </div>

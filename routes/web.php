@@ -43,6 +43,7 @@ Route::prefix('services-detail')->group(function () {
 
 Route::prefix('contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
 });
 Route::prefix('about-us')->group(function () {
     Route::get('/', [AboutUsController::class, 'index'])->name('about-us.index');
