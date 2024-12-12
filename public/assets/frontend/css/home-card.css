@@ -248,6 +248,7 @@
     .service-category-cards .card {
         height: 100%;
     }
+
 }
 
 /* Ensure card layout remains the same */
@@ -271,5 +272,56 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+/* For larger screens, display all the cards in a grid */
+.service-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-card {
+    width: 23%; /* Show 4 cards per row on large screens */
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    /* On mobile screens, show only one card at a time */
+    .service-cards-wrapper {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .service-card {
+        width: 100%;
+        flex-shrink: 0;
+        transition: transform 0.5s ease;
+    }
+
+    /* Show navigation buttons on mobile */
+    .prev-btn, .next-btn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
 }
 
