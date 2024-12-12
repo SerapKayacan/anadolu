@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/services-category.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/online-doctor.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/chaty-front.min.css">
 </head>
 <body>
 <header style="position: sticky; top: 0; z-index:1020; background-color: white;">
