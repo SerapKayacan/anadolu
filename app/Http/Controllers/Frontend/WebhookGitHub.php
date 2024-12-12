@@ -20,7 +20,6 @@ class WebhookGitHub extends Controller
         if (!hash_equals($computedSignature, $signature)) {
             return response()->json(['message' => 'Invalid signature']);
 //            Log::error('Git pull output hatası:', [$computedSignature]);
-            abort(403, '');
         }
 
         $data = json_decode($payload, true);
