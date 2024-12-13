@@ -7,23 +7,27 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-inline-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Hizmetler</h2>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-laboratuvar-hizmetleri/">Laboratuvar Hizmetleri</a>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-goruntuleme-hizmetleri">Görüntüleme Hizmetleri</a>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/check-up-hizmeti">Check-Up</a>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/genetik-check-up-ve-inceleme">Genetik Tanı Hizmetleri</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-laboratuvar-hizmetleri/"
+               title="Laboratuvar Hizmetleri hizmetlerini görüntülemek için tıklayın">Laboratuvar Hizmetleri</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-goruntuleme-hizmetleri"
+               title="Görüntüleme Hizmetleri< hizmetlerini görüntülemek için tıklayın">Görüntüleme Hizmetleri</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/check-up-hizmeti"
+               title="Check-Up Hizmetleri hizmetlerini görüntülemek için tıklayın">Check-Up</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/genetik-check-up-ve-inceleme"
+               title="Genetik Tanı Hizmetleri hizmetlerini görüntülemek için tıklayın">Genetik Tanı Hizmetleri</a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Şirket</h2>
-            <a class="footer-link" href="{{ route('about-us.index') }}">Hakkımızda</a>
-            <a class="footer-link" href="#">Anlaşmalı Kurumlar</a>
-            <a class="footer-link" href="#">Yönetim Kurulu</a>
-            <a class="footer-link" href="{{ route('contact.index') }}">İletişim</a>
+            <a class="footer-link" title="Hakkımızda sayfasını görüntülemek için tıklayın" href="{{ route('about-us.index') }}">Hakkımızda</a>
+            <a class="footer-link" title="Anlaşmalı Kurumlar sayfasını görüntülemek için tıklayın" href="#">Anlaşmalı Kurumlar</a>
+            <a class="footer-link" title="Yönetim Kurulu< sayfasını görüntülemek için tıklayın" href="#">Yönetim Kurulu</a>
+            <a class="footer-link" title="İletişim sayfasını görüntülemek için tıklayın" href="{{ route('contact.index') }}">İletişim</a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  py-4 card footer-card py-3 px-3  ">
             <div class="card-header footer-card-header ">
                 <div class="row justify-content-center align-items-center ">
                     <div class="col-5">
-                        <a style="text-decoration: none;" href="tel:02125910911" target="_blank">
+                        <a style="text-decoration: none;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">
                             <button
                                 style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:white; margin-top:1px;flex:1;">
@@ -44,11 +48,11 @@
                             </button>
                         </a>
                     </div>
-                    <div class="col-2 text-center mt-2">
+                    <div class="col-2 text-center pt-2">
                         <p style="font-size:16px;color:white;">veya</p>
                     </div>
                     <div class="col-5">
-                        <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
+                        <a style="text-decoration: none;"  title="WhatsApp'tan bizimle iletişime geçin!"  href="https://wa.me/9005354694234" target="_blank">
                             <button
                                 style="background-color:#2eb52e;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:white;flex:2">
@@ -68,7 +72,7 @@
                         </a>
                     </div>
                 </div>
-                <a style="text-decoration: none;" href="tel:02125910911" target="_blank">
+                <a style="text-decoration: none;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">
                 <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0212 <span
                         style="color:#549dda">591</span>
                     09<span style="color:#549dda">11</span></p>
@@ -86,7 +90,7 @@
                                 <br>34315 Avcılar/İstanbul</p>
                         </div>
                         <div style="margin-top:22px;margin-bottom:-20px;">
-                            <a style="text-decoration: none; border-radius:20px;padding-left:3px;padding-bottom:3px ;margin-left:5px;color:white;"
+                            <a style="text-decoration: none; border-radius:20px;padding-left:3px;padding-bottom:3px ;margin-left:5px;color:white;" title="Facebook sayfamızı ziyaret edin!"
                                href="https://www.facebook.com/Sultanevdesa%C4%9Fl%C4%B1khizmetleri-113262357798636/"><i class="bi bi-facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          viewBox="0 0 32 32"
@@ -97,7 +101,7 @@
                                     </svg>
                                 </i>
                             </a>
-                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;" title="İnstagram sayfamızı ziyaret edin!"
                                href="https://www.instagram.com/sultansaglikk"><i class="bi bi-instagram"></i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                      viewBox="0 0 32 32"
@@ -111,7 +115,7 @@
                                         d="M26.474 7.458c0 1.063-0.863 1.919-1.919 1.919-1.063 0-1.919-0.863-1.919-1.919 0-1.063 0.863-1.919 1.919-1.919s1.919 0.863 1.919 1.919z"></path>
                                 </svg>
                             </a>
-                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;" title="Twitter sayfamızı ziyaret edin!"
                                href=""><i class="bi bi-twitter-x">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          fill="currentColor"
@@ -121,7 +125,7 @@
                                     </svg>
                                 </i>
                             </a>
-                            <a style="text-decoration: none; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                            <a style="text-decoration: none; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;" title="Youtube sayfamızı ziyaret edin!"
                                href=""><i class="bi bi-youtube">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          fill="currentColor"
@@ -132,7 +136,7 @@
                                 </i>
                             </a>
                         </div>
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>
