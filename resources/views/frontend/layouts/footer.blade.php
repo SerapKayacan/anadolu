@@ -7,52 +7,56 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-inline-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Hizmetler</h2>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-laboratuvar-hizmetleri/"
+            <a class="footer-link"
+               href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-laboratuvar-hizmetleri/"
                title="Laboratuvar Hizmetleri hizmetlerini görüntülemek için tıklayın">Laboratuvar Hizmetleri</a>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-goruntuleme-hizmetleri"
+            <a class="footer-link"
+               href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-goruntuleme-hizmetleri"
                title="Görüntüleme Hizmetleri< hizmetlerini görüntülemek için tıklayın">Görüntüleme Hizmetleri</a>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/check-up-hizmeti"
+            <a class="footer-link"
+               href="https://sultanevdesaglikhizmetleri.com/services/services-category/check-up-hizmeti"
                title="Check-Up Hizmetleri hizmetlerini görüntülemek için tıklayın">Check-Up</a>
-            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/genetik-check-up-ve-inceleme"
+            <a class="footer-link"
+               href="https://sultanevdesaglikhizmetleri.com/services/services-category/genetik-check-up-ve-inceleme"
                title="Genetik Tanı Hizmetleri hizmetlerini görüntülemek için tıklayın">Genetik Tanı Hizmetleri</a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Şirket</h2>
-            <a class="footer-link" title="Hakkımızda sayfasını görüntülemek için tıklayın" href="{{ route('about-us.index') }}">Hakkımızda</a>
-            <a class="footer-link" title="Anlaşmalı Kurumlar sayfasını görüntülemek için tıklayın" href="#">Anlaşmalı Kurumlar</a>
-            <a class="footer-link" title="Yönetim Kurulu< sayfasını görüntülemek için tıklayın" href="#">Yönetim Kurulu</a>
-            <a class="footer-link" title="İletişim sayfasını görüntülemek için tıklayın" href="{{ route('contact.index') }}">İletişim</a>
+            <a class="footer-link" title="Hakkımızda sayfasını görüntülemek için tıklayın"
+               href="{{ route('about-us.index') }}">Hakkımızda</a>
+            <a class="footer-link" title="Anlaşmalı Kurumlar sayfasını görüntülemek için tıklayın" href="#">Anlaşmalı
+                Kurumlar</a>
+            <a class="footer-link" title="Yönetim Kurulu< sayfasını görüntülemek için tıklayın" href="#">Yönetim
+                Kurulu</a>
+            <a class="footer-link" title="İletişim sayfasını görüntülemek için tıklayın"
+               href="{{ route('contact.index') }}">İletişim</a>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  py-4 card footer-card py-3 px-3  ">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 card footer-card py-3 mx-0 justify-content-center">
             <div class="card-header footer-card-header ">
-                <div class="row justify-content-center align-items-center ">
-                    <div class="col-5">
-                        <a style="text-decoration: none;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">
+                <div class="row justify-content-center align-items-center mx-0 ">
+                    <div class="col-5 mx-0 ">
+                        <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!"
+                           href="https://wa.me/9005354694234" target="_blank">
                             <button
                                 style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
-                                <div style="color:white; margin-top:1px;flex:1;">
-                                    <i style="background-color:white; border-radius:12px;padding-right:4px;padding-left:4px;padding-bottom:2px ;padding-top:1px;margin-top:-3px;margin-left:-5px;color:#45339E;"
-                                       class="bi bi-telephone-outbound">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                             viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
-                                             focusable="false" class=""><title>call</title>
-                                            <path
-                                                d="M24.512 31.997c-0.443 0-0.904-0.035-1.365-0.124-5.143-0.975-10.374-3.919-14.736-8.281s-7.306-9.611-8.281-14.736c-0.443-2.323 0.266-4.664 1.88-6.277l1.153-1.153c1.897-1.897 5.001-1.897 6.898 0l2.075 2.075c1.578 1.578 1.507 4.132-0.142 5.799l-1.454 1.454c0.993 2.27 2.518 4.469 4.38 6.331 1.88 1.88 4.079 3.405 6.348 4.398l1.596-1.614c1.507-1.507 4.132-1.507 5.639 0l2.075 2.075c1.897 1.897 1.897 5.001 0 6.898l-1.153 1.153c-1.294 1.294-3.068 2.004-4.912 2.004zM6.62 2.649c-0.585 0-1.153 0.231-1.561 0.656l-1.153 1.153c-0.993 0.993-1.419 2.447-1.135 3.901 0.869 4.628 3.547 9.363 7.536 13.353s8.725 6.668 13.353 7.537c1.454 0.284 2.908-0.16 3.901-1.135l1.153-1.153c0.869-0.869 0.869-2.27 0-3.139l-2.075-2.075c-0.514-0.514-1.365-0.514-1.88 0l-1.596 1.596c-0.762 0.78-1.951 1.011-2.944 0.567-2.571-1.135-5.054-2.855-7.164-4.965s-3.813-4.575-4.947-7.164c-0.426-0.993-0.213-2.163 0.567-2.944l1.454-1.454c0.638-0.638 0.692-1.49 0.142-2.039l-2.075-2.075c-0.426-0.426-0.975-0.656-1.561-0.656l-0.018 0.035z"></path>
-                                        </svg>
+                                <div style="color:#ec4949; background-color:white;flex:1;border-radius:15px;">
+                                    <i class="bi bi-whatsapp " style="border-radius:25px;"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false" class=" my-0 mx-1 "><title>call</title><path d="M24.512 31.997c-0.443 0-0.904-0.035-1.365-0.124-5.143-0.975-10.374-3.919-14.736-8.281s-7.306-9.611-8.281-14.736c-0.443-2.323 0.266-4.664 1.88-6.277l1.153-1.153c1.897-1.897 5.001-1.897 6.898 0l2.075 2.075c1.578 1.578 1.507 4.132-0.142 5.799l-1.454 1.454c0.993 2.27 2.518 4.469 4.38 6.331 1.88 1.88 4.079 3.405 6.348 4.398l1.596-1.614c1.507-1.507 4.132-1.507 5.639 0l2.075 2.075c1.897 1.897 1.897 5.001 0 6.898l-1.153 1.153c-1.294 1.294-3.068 2.004-4.912 2.004zM6.62 2.649c-0.585 0-1.153 0.231-1.561 0.656l-1.153 1.153c-0.993 0.993-1.419 2.447-1.135 3.901 0.869 4.628 3.547 9.363 7.536 13.353s8.725 6.668 13.353 7.537c1.454 0.284 2.908-0.16 3.901-1.135l1.153-1.153c0.869-0.869 0.869-2.27 0-3.139l-2.075-2.075c-0.514-0.514-1.365-0.514-1.88 0l-1.596 1.596c-0.762 0.78-1.951 1.011-2.944 0.567-2.571-1.135-5.054-2.855-7.164-4.965s-3.813-4.575-4.947-7.164c-0.426-0.993-0.213-2.163 0.567-2.944l1.454-1.454c0.638-0.638 0.692-1.49 0.142-2.039l-2.075-2.075c-0.426-0.426-0.975-0.656-1.561-0.656l-0.018 0.035z"></path></svg>
                                     </i>
                                 </div>
                                 <div
-                                    style="color:white;font-size:17px;flex:4;margin-top:1px;font-weight:600;">
+                                    style="color:white;font-size:17px;flex:6;font-weight:600;">
                                     <p>7/24 Arayın</p>
                                 </div>
                             </button>
                         </a>
                     </div>
-                    <div class="col-2 text-center pt-2">
-                        <p style="font-size:16px;color:white;">veya</p>
+                    <div class="col-2 text-center px-2 pt-2">
+                        <p style="font-size:17px;color:white;">veya</p>
                     </div>
-                    <div class="col-5">
-                        <a style="text-decoration: none;"  title="WhatsApp'tan bizimle iletişime geçin!"  href="https://wa.me/9005354694234" target="_blank">
+                    <div class="col-5 mx-0 ">
+                        <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!"
+                           href="https://wa.me/9005354694234" target="_blank">
                             <button
                                 style="background-color:#2eb52e;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:white;flex:2">
@@ -73,9 +77,9 @@
                     </div>
                 </div>
                 <a style="text-decoration: none;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">
-                <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0212 <span
-                        style="color:#549dda">591</span>
-                    09<span style="color:#549dda">11</span></p>
+                    <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0212 <span
+                            style="color:#549dda">591</span>
+                        09<span style="color:#549dda">11</span></p>
                 </a>
                 <p style="color:#E2DCFC;font-size:16px;font-family:arial">Canlı desteğe istediğin zaman ve
                     hızla
@@ -90,8 +94,10 @@
                                 <br>34315 Avcılar/İstanbul</p>
                         </div>
                         <div style="margin-top:22px;margin-bottom:-20px;">
-                            <a style="text-decoration: none; border-radius:20px;padding-left:3px;padding-bottom:3px ;margin-left:5px;color:white;" title="Facebook sayfamızı ziyaret edin!"
-                               href="https://www.facebook.com/Sultanevdesa%C4%9Fl%C4%B1khizmetleri-113262357798636/"><i class="bi bi-facebook">
+                            <a style="text-decoration: none; border-radius:20px;padding-left:3px;padding-bottom:3px ;margin-left:5px;color:white;"
+                               title="Facebook sayfamızı ziyaret edin!"
+                               href="https://www.facebook.com/Sultanevdesa%C4%9Fl%C4%B1khizmetleri-113262357798636/"><i
+                                    class="bi bi-facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          viewBox="0 0 32 32"
                                          fill="currentColor" aria-hidden="true" focusable="false" class=""><title>
@@ -101,7 +107,8 @@
                                     </svg>
                                 </i>
                             </a>
-                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;" title="İnstagram sayfamızı ziyaret edin!"
+                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                               title="İnstagram sayfamızı ziyaret edin!"
                                href="https://www.instagram.com/sultansaglikk"><i class="bi bi-instagram"></i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                      viewBox="0 0 32 32"
@@ -115,7 +122,8 @@
                                         d="M26.474 7.458c0 1.063-0.863 1.919-1.919 1.919-1.063 0-1.919-0.863-1.919-1.919 0-1.063 0.863-1.919 1.919-1.919s1.919 0.863 1.919 1.919z"></path>
                                 </svg>
                             </a>
-                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;" title="Twitter sayfamızı ziyaret edin!"
+                            <a style="text-decoration: none; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                               title="Twitter sayfamızı ziyaret edin!"
                                href=""><i class="bi bi-twitter-x">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          fill="currentColor"
@@ -125,7 +133,8 @@
                                     </svg>
                                 </i>
                             </a>
-                            <a style="text-decoration: none; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;" title="Youtube sayfamızı ziyaret edin!"
+                            <a style="text-decoration: none; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
+                               title="Youtube sayfamızı ziyaret edin!"
                                href=""><i class="bi bi-youtube">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
                                          fill="currentColor"
@@ -136,14 +145,15 @@
                                 </i>
                             </a>
                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
-<script type='text/javascript' src='{{ asset('') }}assets/frontend/js/chaty-settings.js' id='chaty-front-end-js-extra'></script>
+<script type='text/javascript' src='{{ asset('') }}assets/frontend/js/chaty-settings.js'
+        id='chaty-front-end-js-extra'></script>
 <script type='text/javascript' src='{{ asset('') }}assets/frontend/js/jquery3-6-0.min.js' id='jquery-core-js'></script>
 <script type='text/javascript' src='{{ asset('') }}assets/frontend/js/chaty-front.js' id='chaty-front-end-js'></script>
 </body>
