@@ -42,6 +42,6 @@ class ContactController extends Controller
             }
         );
 
-        return redirect()->back()->with('success', 'Your message has been sent successfully!');
+        return redirect()->back()->with('success', 'Mesajınız Gönderildi!');
     }
 }

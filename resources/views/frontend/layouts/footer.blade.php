@@ -7,10 +7,10 @@
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-inline-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Hizmetler</h2>
-            <a class="footer-link" href="#">Laboratuvar Hizmetleri</a>
-            <a class="footer-link" href="#">Görüntüleme Hizmetleri</a>
-            <a class="footer-link" href="#">Check-Up</a>
-            <a class="footer-link" href="#">Genetik Tanı Hizmetleri</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-laboratuvar-hizmetleri/">Laboratuvar Hizmetleri</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-goruntuleme-hizmetleri">Görüntüleme Hizmetleri</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/check-up-hizmeti">Check-Up</a>
+            <a class="footer-link" href="https://sultanevdesaglikhizmetleri.com/services/services-category/genetik-check-up-ve-inceleme">Genetik Tanı Hizmetleri</a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Şirket</h2>
