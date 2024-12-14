@@ -222,45 +222,42 @@
 .card-pink .icon-box svg {
     fill: #FC555E; /* Match card hover color */
 }
-/* Make the row horizontally scrollable when the screen is small */
-/* Apply only to the service-category-cards container */
-.service-category-cards {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-/* Ensure cards scroll horizontally only within the service-category-cards container on small screens */
+
+
+/* For mobile screens (or any specific screen size) */
 @media (max-width: 768px) {
     .service-category-cards {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        padding-bottom: 20px; /* Optional: Add some padding at the bottom for visual comfort */
+        display: block;
+        overflow-x: auto; /* Horizontal scrolling */
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: 500px; /* Set a max-height for mobile */
+        -webkit-overflow-scrolling: touch;
     }
 
     .service-category-cards .col {
-        flex: 0 0 auto; /* Prevent columns from stretching */
-        margin-right: 10px; /* Optional: Add space between cards */
+        width: auto; /* Allow automatic width adjustment */
+        margin-right: 10px;
     }
 
-    /* Optional: Fix height for cards */
     .service-category-cards .card {
-        height: 100%;
+        width: 100%;
+        margin-bottom: 20px;
     }
-
 }
 
-/* Ensure card layout remains the same */
+
+/* Ensuring proper card layout */
 .service-category-cards .card {
+    min-height: 300px;
     display: flex;
-    padding-left:2px;
-    padding-right:2px;
     flex-direction: column;
-    height: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
     border-radius: 10px;
 }
 
+/* Adding flexbox to card body */
 .service-category-cards .card-body {
     flex-grow: 1;
     display: flex;
@@ -268,60 +265,11 @@
     justify-content: space-between;
 }
 
+/* Card Header Flexbox */
 .service-category-cards .card-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-/* For larger screens, display all the cards in a grid */
-.service-cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.service-card {
-    width: 23%; /* Show 4 cards per row on large screens */
-    margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    /* On mobile screens, show only one card at a time */
-    .service-cards-wrapper {
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
-        width: 100%;
-        position: relative;
-    }
-
-    .service-card {
-        width: 100%;
-        flex-shrink: 0;
-        transition: transform 0.5s ease;
-    }
-
-    /* Show navigation buttons on mobile */
-    .prev-btn, .next-btn {
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    .prev-btn {
-        left: 10px;
-    }
-
-    .next-btn {
-        right: 10px;
-    }
-}
 

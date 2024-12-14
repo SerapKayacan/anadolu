@@ -35,18 +35,17 @@
     <div class="container" style="margin-top:30px;">
         <div class="row align-items-stretch justify-content-center service-category-cards mx-0">
             @foreach ($serviceCategories as $serviceCategory)
-                <div class="col @if(  $serviceCategory->home_page_colspan==2 ) col-lg-6 col-md-6 col-sm-12 col-xs-12
-                        @else col-lg-3 col-md-3 col-sm-12 col-xs-12
-                        @endif" style="margin-bottom:20px; ">
-                    <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}"
-                       style=" text-decoration: none;">
+                <div class="@if(  $serviceCategory->home_page_colspan==2 ) col-lg-6 col-md-6 col-sm-12 col-xs-12
+                        @else col-lg-3 col-md-3
+                        @endif" style="margin-bottom:20px;">
+                    <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" style=" text-decoration: none;">
                         @php
-                            $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue',  'card-pink','card-green', ];
+                            $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue', 'card-pink','card-green'];
                         @endphp
                         <div class="card px-3
-                        @if(  $serviceCategory->sort_order==0 ) card-1
+                    @if(  $serviceCategory->sort_order==0 ) card-1
                         @else {{ $colors[($serviceCategory->sort_order -1 ) % count($colors)] }}
-                        @endif">
+                    @endif">
                             <div class="card-head">
                                 <div style="flex:2">
                                     <div class=" icon-box"> {!! $serviceCategory->icon !!}</div>
@@ -56,15 +55,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <p class="
-                                @if(  $serviceCategory->sort_order==0 ) middle-p-big
-                                @else middle-p-small
-                                @endif">{{ $serviceCategory->title }}</p>
-                                <p class="
-                               @if(  $serviceCategory->sort_order==0 ) bottom-p-big
-                                @else bottom-p-small
-                                @endif">
-                                    {!!  $serviceCategory->home_page_detail !!} </p>
+                                <p class=" @if(  $serviceCategory->sort_order==0 ) middle-p-big @else middle-p-small @endif">
+                                    {{ $serviceCategory->title }}
+                                </p>
+                                <p class=" @if(  $serviceCategory->sort_order==0 ) bottom-p-big @else bottom-p-small @endif">
+                                    {!!  $serviceCategory->home_page_detail !!}
+                                </p>
                             </div>
                         </div>
                     </a>
@@ -72,7 +68,7 @@
             @endforeach
         </div>
     </div>
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="services-carousel-header rounded-4 px-1 my-3 py-4">
                 <div class="row ">
