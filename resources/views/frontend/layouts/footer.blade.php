@@ -35,8 +35,8 @@
             <div class="card-header footer-card-header ">
                 <div class="row justify-content-center align-items-center mx-0 ">
                     <div class="col-5 mx-0 ">
-                        <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!"
-                           href="https://wa.me/9005354694234" target="_blank">
+                        <a style="text-decoration: none;" title="Bizi hemen arayın!"
+                           href="tel:02125910911" target="_blank">
                             <button
                                 style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:#ec4949; background-color:white;flex:1;border-radius:15px;">
