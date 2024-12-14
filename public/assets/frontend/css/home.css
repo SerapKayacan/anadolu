@@ -566,8 +566,15 @@ body.modal-open {
     position: relative; /* Ensure the card is a positioned element */
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-
+.services-carousel-card .services-carousel-body{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .card-image-carousel-text-box {
     position: absolute;
     top: 10px; /* Adjust top spacing inside the card */
@@ -582,15 +589,14 @@ body.modal-open {
 }
 
 .card-service-carousel-detail-header {
-    color: rgba(115,18,111,0.78);
-    font-size: 30px;
+    color: rgba(115, 18, 111, 0.78);
+    font-size: 25px;
     font-weight: bold;
-    position: relative;
-    display: inline-block;
     line-height: 1.2;
-    max-width: 400px;
-    padding:0;
-
+    word-wrap: break-word; /* Ensure long words break to fit */
+    white-space: normal; /* Allow wrapping to the next line */
+    overflow: hidden; /* Prevent overflowing content */
+    text-overflow: ellipsis; /* Optional: Add ellipsis for clipped text */
 }
 
 .card-service-detail-carousel-middle-text {
@@ -648,13 +654,13 @@ body.modal-open {
     }
 
     .card-service-detail-carousel-middle-text {
-        font-size: 11px;
+        font-size: 15px;
     }
 
     .card-service-carousel-detail-button {
-        width: 120px;
-        height: 35px;
-        font-size: 12px;
+        width: 150px;
+        height: 40px;
+        font-size: 15px;
     }
 }
 
