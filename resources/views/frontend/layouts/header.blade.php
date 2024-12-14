@@ -29,7 +29,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto py-2  px-0">
             <a href="{{ route('home') }}">
                 <img src="{{ asset('') }}assets/frontend/images/sultanparkkk%20(1).png"
-                     alt="Bootstrap" width="50" height="45">
+                     alt="Sultan Park Logo" width="50" height="45">
             </a>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center  px-0">
@@ -42,26 +42,28 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto" style="font-size:16px;">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}" style="font-weight: 700; color:#244daa;">Ana
+                            <a class="nav-link" title="Ana Sayfayı görüntülemek için tıklayın"
+                               href="{{ route('home') }}" style="font-weight: 700; color:#244daa;">Ana
                                 Sayfa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('onlineDoctor.byCategory') }}"
+                            <a class="nav-link" title="Online Doktor Görüşmesi için tıklayın"
+                               href="{{ route('onlineDoctor.byCategory') }}"
                                style="font-weight: 700; color:#244daa;">Online Doktor Görüşmesi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('services-category.index') }}"
+                            <a class="nav-link"  title="Hizmetlerimiz için tıklayın"
+                               href="{{ route('services-category.index') }}"
                                style="font-weight: 700; color:#244daa;">Hizmetlerimiz</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('about-us.index') }}"
+                            <a class="nav-link" title="Hakkımızda için tıklayın"
+                               href="{{ route('about-us.index') }}"
                                style="font-weight: 700; color:#244daa;">Hakkımızda</a>
                         </li>
-                        {{--                    <li class="nav-item">--}}
-                        {{--                        <a class="nav-link" href="#" style="font-weight: 700; color:#244daa;">Blog</a>--}}
-                        {{--                    </li>--}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact.index') }}"
+                            <a class="nav-link" title="Hakkımızda için tıklayın"
+                               href="{{ route('contact.index') }}"
                                style="font-weight: 700; color:#244daa;">İletişim</a>
                         </li>
                     </ul>
@@ -77,7 +79,7 @@
                     Canlı desteğe isteğin zaman ve hızlı ulaş!
                 </li>
                 <li class="nav-item" style="margin-right:8px;">
-                    <a style="text-decoration: none;" href="tel:02125910911" target="_blank">
+                    <a style="text-decoration: none;" title="Bizi hemen arayın!"  href="tel:02125910911" target="_blank">
                         <button
                             style="background-color:#ec4949;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
                             <div style="color:white; margin-top:-5px;margin-left:-25px;flex:1;padding-left:-6px;">
@@ -97,11 +99,11 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a style="text-decoration: none;  display:flex;align-items: center;color:white; weight:bold;font-family:arial;" href="tel:02125910911" target="_blank">0212 591 09 11</a>
+                    <a style="text-decoration: none;  display:flex;align-items: center;color:white; weight:bold;font-family:arial;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">0212 591 09 11</a>
                 </li>
                 </a>
                 <li class="nav-item" style=" margin-left:20px;">
-                    <a style="text-decoration: none;" href="https://wa.me/9005354694234" target="_blank">
+                    <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/9005354694234" target="_blank">
                         <button
                             style="background-color:#42b842;border-radius:15px;border:none;height:20px;width:90px;display:flex;">
                             <div style="color:white; margin-top:-5px;margin-left:-18px;flex:1">
