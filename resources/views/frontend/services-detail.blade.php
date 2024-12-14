@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 position-relative ">
-                <div class=" card appointment-card mt-4 mb-2 position-absolute top-0 end-0 ">
+                <div class=" card appointment-card mt-4 mb-2  top-0 end-0 ">
                     <div class="card-body">
                         <h5 class="card-title appointment-card-title">Online Randevu Al</h5>
                         <div class="appointment-time-container">
@@ -124,12 +124,9 @@
                 </div>
             </div>
         </div>
-        <div class="item d-block d-md-none mx-5" style="margin-top:530px;">
-            g
-        </div>
-        <div class="mt-5">
-            <div class="row mx-5 my-5 mt-10">
-                <div class="col-md-12 col-lg-12 col-xs-12">
+        <div>
+            <div class="row mt-7 px-2">
+                <div class="col-md-12 col-lg-12 col-xs-12 mx-2">
                     <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
                 </div>
             </div>

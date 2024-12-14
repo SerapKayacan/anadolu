@@ -392,14 +392,15 @@
 /*//appointment-card*/
 
 .appointment-card {
-    max-width:420px;
-    min-height: 150px; /* Ensures the card doesn't get too small */
-   width: 100%; /* Ensures responsive width */
+    max-width:460px;
+    width: 100%; /* Ensures responsive width */
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding-left: 20px;
+    padding-right:10px;
+    position:absolute;
 }
 .appointment-card-title{
     color: #bd415e;
@@ -500,9 +501,20 @@
 
 
 
-@media (max-width: 768px) {
-   .appointment-card {
-        position: relative; /* Remove absolute positioning for small screens */
-        margin-top: 20px;  /* Push the card down */
+@media (max-width: 768px) { /* Adjust the max-width as per your requirement */
+    .appointment-day-container {
+        display: block !important;
     }
+    .appointment-day-header {
+        display: block !important;
+    }
+    .appointment-time-container {
+        display: block !important;
+    }
+    .appointment-card {
+        width:120%;
+        position:relative;
+        margin-left:-20px;
+    }
+
 }
