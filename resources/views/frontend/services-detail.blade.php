@@ -125,7 +125,7 @@
             </div>
         </div>
         <div>
-            <div class="row mt-7 px-2">
+            <div class="row my-5 px-2">
                 <div class="col-md-12 col-lg-12 col-xs-12 mx-2">
                     <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
                 </div>
