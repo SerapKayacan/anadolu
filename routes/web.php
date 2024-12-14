@@ -25,12 +25,12 @@ Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 
-Route::prefix('servis-kategorileri')->group(function () {
+Route::prefix('hizmet-kategorileri')->group(function () {
     Route::get('/', [ServicesCategoryController::class, 'index'])->name('services-category.index');
 
 });
 
-Route::prefix('servisler')->group(function () {
+Route::prefix('hizmetler')->group(function () {
     Route::get('/{slug}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
 });
 
@@ -38,7 +38,7 @@ Route::prefix('online-doktor')->group(function () {
     Route::get('/', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
 });
 
-Route::prefix('servis-detayı')->group(function () {
+Route::prefix('hizmet-detayı')->group(function () {
     Route::get('/{slug}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
 });
 
