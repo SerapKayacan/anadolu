@@ -488,7 +488,7 @@ body.modal-open {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    width:17%;
+    width:100%;
     margin-bottom: 20px; /* Adjust space between header and carousel */
     color: #38e338; /* Set a color for the header */
 }
@@ -619,27 +619,46 @@ body.modal-open {
     height:auto;
 }
 @media (max-width: 768px) {
-    /* Stack header and slider */
-   .services-carousel-slider-header{
-       width:14vh;
-       font-size:20px;
-   }
-    .services-carousel-card {
-        width:95%;
+    /* Horizontal carousel container */
+    .services-carousel {
+        display: flex;
+        overflow-x: auto; /* Allow horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Enable snap scrolling */
+        gap: 10px; /* Space between cards */
+        padding: 0 15px; /* Padding for carousel container */
     }
-    .card-service-carousel-detail-header{
-        font-size: 20px;
-        width:100%;
-    }
-    .card-service-detail-carousel-middle-text{
-        width:40px;
-        font-size:11px;
-    }
-    .card-service-carousel-detail-button {
 
+    /* Each card item */
+    .services-carousel-item {
+        flex: 0 0 300px; /* Fixed width for cards */
+        scroll-snap-align: start; /* Align card to start of viewport */
+    }
+
+    /* Card styles */
+    .services-carousel-card {
+        width: 100%; /* Take full width of the item */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff; /* Example background color */
+    }
+
+    .card-service-carousel-detail-header {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .card-service-detail-carousel-middle-text {
+        font-size: 11px;
+    }
+
+    .card-service-carousel-detail-button {
         width: 120px;
         height: 35px;
-        font-size:12px;
-
+        font-size: 12px;
     }
 }
+
+
+
+
+
