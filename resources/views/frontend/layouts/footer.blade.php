@@ -8,16 +8,16 @@
         <div class="col-lg-2 col-md-2 col-sm-6 d-inline-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Hizmetler</h2>
             <a class="footer-link"
-               href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-laboratuvar-hizmetleri/"
+               href="https://sultanevdesaglikhizmetleri.com/hizmetler/evde-laboratuvar-hizmetleri"
                title="Laboratuvar Hizmetleri hizmetlerini görüntülemek için tıklayın">Laboratuvar Hizmetleri</a>
             <a class="footer-link"
-               href="https://sultanevdesaglikhizmetleri.com/services/services-category/evde-goruntuleme-hizmetleri"
+               href="https://sultanevdesaglikhizmetleri.com/hizmetler/evde-goruntuleme-hizmetleri"
                title="Görüntüleme Hizmetleri< hizmetlerini görüntülemek için tıklayın">Görüntüleme Hizmetleri</a>
             <a class="footer-link"
-               href="https://sultanevdesaglikhizmetleri.com/services/services-category/check-up-hizmeti"
+               href="https://sultanevdesaglikhizmetleri.com/hizmetler/check-up-hizmeti"
                title="Check-Up Hizmetleri hizmetlerini görüntülemek için tıklayın">Check-Up</a>
             <a class="footer-link"
-               href="https://sultanevdesaglikhizmetleri.com/services/services-category/genetik-check-up-ve-inceleme"
+               href="https://sultanevdesaglikhizmetleri.com/hizmetler/genetik-check-up-ve-inceleme"
                title="Genetik Tanı Hizmetleri hizmetlerini görüntülemek için tıklayın">Genetik Tanı Hizmetleri</a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
