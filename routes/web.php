@@ -25,27 +25,28 @@ Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 
-Route::prefix('services-category')->group(function () {
+Route::prefix('servis-kategorileri')->group(function () {
     Route::get('/', [ServicesCategoryController::class, 'index'])->name('services-category.index');
+
 });
 
-Route::prefix('services')->group(function () {
-    Route::get('/services-category/{slug}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
+Route::prefix('servisler')->group(function () {
+    Route::get('/{slug}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
 });
 
-Route::prefix('online-doctor')->group(function () {
-    Route::get('/online-doctor', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
+Route::prefix('online-doktor')->group(function () {
+    Route::get('/', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
 });
 
-Route::prefix('services-detail')->group(function () {
-    Route::get('/show/{slug}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
+Route::prefix('servis-detayı')->group(function () {
+    Route::get('/{slug}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
 });
 
-Route::prefix('contact')->group(function () {
+Route::prefix('iletişim')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
-    Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
+    Route::post('/gönder', [ContactController::class, 'submit'])->name('contact.submit');
 });
-Route::prefix('about-us')->group(function () {
+Route::prefix('hakkımızda')->group(function () {
     Route::get('/', [AboutUsController::class, 'index'])->name('about-us.index');
 });
 
@@ -68,7 +69,7 @@ Route::prefix('tab-panel')->group(function () {
 
 
 
-Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/ara', [SearchController::class, 'search'])->name('search');
 
 Route::post('/webhook/github', [WebhookGitHub::class, 'handle']);
 
