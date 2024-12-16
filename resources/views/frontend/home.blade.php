@@ -11,7 +11,7 @@
                             <div class="text-center">
                                 <h5>{!! $carousel->title !!}</h5>
                                 <p>{!! $carousel->description !!}</p>
-                                <a href="{{ $carousel->button_link }}" class="btn p-3"
+                                <a href="{{ $carousel->button_link }}" title="Hizmeti Görüntüleyin" class="btn p-3"
                                    style="color: {{ $carousel->text_color }}; background-color: {{ $carousel->background_color }}; border: 1px solid {{ $carousel->border_color }}; border-radius: 23px; font-weight: bold;">
                                     {{ $carousel->button_text }}
                                 </a>
@@ -38,7 +38,7 @@
                 <div class="@if(  $serviceCategory->home_page_colspan==2 ) col-lg-6 col-md-6 col-sm-12 col-xs-12
                         @else col-lg-3 col-md-3
                         @endif" style="margin-bottom:20px;">
-                    <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" style=" text-decoration: none;">
+                    <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" title="Hizmeti Görüntüleyin" style=" text-decoration: none;">
                         @php
                             $colors = ['card-turquoise', 'card-yellow', 'card-purple', 'card-blue', 'card-pink','card-green'];
                         @endphp
@@ -92,7 +92,7 @@
                                                         class="services-carousel-body align-items-center justify-content-center ">
                                                         <p class="card-service-carousel-detail-header"> {{ $service->title}}</p>
                                                         <p class="card-service-detail-carousel-middle-text px-0 text-start w-auto">{{ $service->category_page_detail }}</p>
-                                                        <button class="card-service-carousel-detail-button"
+                                                        <button class="card-service-carousel-detail-button" title="Hizmeti Görüntüleyin"
                                                                 onclick="window.location.href='{{ route('services-detail.show', ['slug' => $service->slug]) }}'">
                                                             Devamını Gör
                                                         </button>
@@ -102,7 +102,7 @@
                                         </div>
                                     @endforeach
                                 @else
-                                    <p>No category or services found.</p>
+                                    <p>Hizmet Bulunamadı.</p>
                                 @endif
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                                     <p class="title " style="line-height:1;"> {!! $tabPanel->title !!}</p>
                                     <p class="description">{!! $tabPanel->description !!}</p>
                                     <div style="position: relative; height: 100px;"> <!-- Parent container -->
-                                        <button class="navbar-bottom-button" style="display: flex;"
+                                        <button class="navbar-bottom-button" title="Hizmeti Görüntüleyin" style="display: flex;"
                                                 onclick="location.href='{{ $tabPanel->button_link }}';">
                                             <div class="navbar-bottom-button-text">
                                                 <p>{{ $tabPanel->button_text }}</p>
