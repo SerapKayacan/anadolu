@@ -32,7 +32,7 @@
                         @endphp
                         @foreach ($services as $index => $service)
                             <div class="col-12 col-md-4 col-lg-4 col-xs-12" style="margin-bottom:20px;">
-                                <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"
+                                <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}" title="Hizmet Detayını Görüntüleyin"
                                    style=" text-decoration: none;">
                                     <div class="card {{ $card_colors[$index % count($card_colors)] }}">
                                         <div class="card-head">
@@ -53,7 +53,7 @@
                         @endforeach
                     </div>
                 @else
-                    <p>No services available for this category.</p>
+                    <p>Hizmet Bulunamadı.</p>
                 @endif
             </div>
         </div>
