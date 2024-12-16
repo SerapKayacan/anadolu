@@ -83,7 +83,7 @@
                                     @foreach ($services as $service)
                                         <div class="services-carousel-item">
                                             <div class="services-carousel-card">
-                                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
+                                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt="Service image"
                                                      class="services-carousel-image">
                                                 <div class="carousel-widget-body">
                                                     <div
@@ -151,7 +151,7 @@
                                 <div class="col-sm-12 col-md-7">
                                     <img
                                         src="{{ $tabPanel->getFirstMediaUrl('banner', 'large') }}"
-                                        alt=""
+                                        alt="Tab panel image"
                                         class="img-fluid rounded-4">
                                 </div>
                                 <div class="col-md-5">

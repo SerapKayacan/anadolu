@@ -29,7 +29,7 @@
                     @foreach ($services as $service)
                         <div class="col-lg-4">
                             <div class="card card-services-detail">
-                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
+                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt="Service image"
                                      class="card-service-detail-image">
                                 <div
                                     class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
@@ -37,7 +37,7 @@
                                     <p class="card-service-detail-header"> {{ $service->title}}</p>
                                     <p class="card-service-detail-middle-text">{{ $service->category_page_detail }}</p>
                                     <div style="display:flex;">
-                                        <button class="card-service-detail-button"
+                                        <button class="card-service-detail-button" title="Hizmet Detayını Görüntüleyin."
                                                 onclick="window.location.href='{{ route('services-detail.show', ['slug' => $service->slug]) }}'">
                                             Devamını Gör
                                         </button>

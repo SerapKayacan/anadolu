@@ -45,7 +45,7 @@
                                                             </a>
                                                         @else
                                                             <!-- Unavailable time -->
-                                                            <button class="appointment-time-button"
+                                                            <button class="appointment-time-button" title="Randevu Almak İçin Tıklayın"
                                                                     style="background-color: lightgrey; cursor: not-allowed; pointer-events: none;">
                                                                 {{ $time['time'] }}
                                                             </button>
@@ -64,7 +64,7 @@
                                             Belirtilmemiştir.</p>
 
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 my-2 px-2">
-                                            <a style="text-decoration: none;" href="tel:+9005354694234" target="_blank">
+                                            <a style="text-decoration: none;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">
                                                 <button
                                                     style="background-color:#cc4b6a;border-radius:15px;border:none;height:60px;width:100%;display:flex;">
                                                     <div style="color:white; margin-top:15px;flex:1;">
@@ -90,7 +90,7 @@
                                             </a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 px-2 ">
-                                            <a style="text-decoration: none;"
+                                            <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!"
                                                href="https://wa.me/9005354694234?text={{ $service->title.' ' }} %20Hizmetine%20uygun%20randevu%20bulunmamakta%20yardımcı%20olur%20musunuz?"
                                                target="_blank">
                                                 <button

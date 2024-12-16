@@ -36,7 +36,7 @@
                                 <p class="card-service-detail-header"> {{ $service->title}}</p>
                                 <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
                                 <div style="display:flex;">
-                                    <button class="card-service-detail-button"
+                                    <button class="card-service-detail-button" title="Hizmeti Detayını Görüntüleyin"
                                             onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
                                         Devamını Gör
                                     </button>
