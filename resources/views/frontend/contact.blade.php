@@ -16,10 +16,12 @@
                             <p class="contact-card-address">Cihangir, Meşrutiyet Cd. No:65 D:b; <br>34315
                                 Avcılar/İstanbul</p>
                             <h1 class="contact-card-headers">İletişim</h1>
-                            <p class="contact-card-contact-number">0535 469 42 34</p>
+                            <a style="text-decoration: none; color:black" title="Bizi hemen arayın!"  href="tel:02125910911" target="_blank">
+                            <p class="contact-card-contact-number">0212 591 09 11</p>
+                            </a>
                             <h1 class="contact-card-headers">Sosyal Medya</h1>
                             <a style="text-decoration: none;background-color:#ec4949; border-radius:20px; ;padding-left:3px;padding-bottom:3px ;margin-left:5px;margin-top:-1px;margin-bottom:8px;color:white;"
-                               href=""><i class="bi bi-facebook">
+                               href="" title="Facebook sayfamızı ziyaret edin!"><i class="bi bi-facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                          viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
                                          focusable="false" class=""><title>facebook</title>
@@ -28,7 +30,8 @@
                                     </svg>
                                 </i></a>
                             <a style="text-decoration: none;background-color:#ec4949; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
-                               href=""><i class="bi bi-instagram"></i>
+                               href="https://www.instagram.com/sultansaglikk"
+                               title="İnstagram sayfamızı ziyaret edin!"><i class="bi bi-instagram"></i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                      viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
                                      focusable="false" class=""><title>instagram</title>
@@ -41,7 +44,8 @@
                                 </svg>
                             </a>
                             <a style="text-decoration: none;background-color:#ec4949; border-radius:15px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
-                               href=""><i class="bi bi-twitter-x">
+                               href=""     title="Twitter sayfamızı ziyaret edin!">
+                                <i class="bi bi-twitter-x">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                          fill="currentColor"
                                          class="bi bi-twitter-x" viewBox="0 0 16 16">
@@ -51,7 +55,8 @@
                                 </i>
                             </a>
                             <a style="text-decoration: none; background-color:#ec4949; border-radius:15px; padding-right:3px;padding-left:3px;padding-bottom:3px ;margin-left:8px;margin-top:-1px;margin-bottom:8px;color:white;"
-                               href=""><i class="bi bi-youtube">
+                               href=""  title="Youtube sayfamızı ziyaret edin!">
+                                <i class="bi bi-youtube">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                          fill="currentColor"
                                          class="bi bi-youtube" viewBox="0 0 16 16">
@@ -131,7 +136,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button class="contact-button" type="submit" style="padding: 10px 20px; font-size: 16px;">
+                        <button class="contact-button" title="Gönder" type="submit" style="padding: 10px 20px; font-size: 16px;">
                             Gönder
                         </button>
                     </form>
