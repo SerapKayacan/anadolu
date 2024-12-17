@@ -38,15 +38,15 @@ Route::prefix('online-doktor')->group(function () {
     Route::get('/', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
 });
 
-Route::prefix('hizmet-detayı')->group(function () {
+Route::prefix('hizmet-detayi')->group(function () {
     Route::get('/{slug}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
 });
 
-Route::prefix('iletişim')->group(function () {
+Route::prefix('iletisim')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
-    Route::post('/gönder', [ContactController::class, 'submit'])->name('contact.submit');
+    Route::post('/gonder', [ContactController::class, 'submit'])->name('contact.submit');
 });
-Route::prefix('hakkımızda')->group(function () {
+Route::prefix('hakkimizda')->group(function () {
     Route::get('/', [AboutUsController::class, 'index'])->name('about-us.index');
 });
 
