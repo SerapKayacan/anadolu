@@ -19,15 +19,22 @@ class SearchController extends Controller
             return redirect()->back()->with('error', 'Please enter a search term.');
         }
 
-        // Perform the search query on your models
+        $tags = Tag::where('name', 'LIKE', "%{$query}%")->get();
+        $tagIds = $tags->pluck('id');
+
+
         $services = Service::where('title', 'LIKE', "%{$query}%")
             ->orWhere('detail', 'LIKE', "%{$query}%")
+            ->orWhereHas('tags', function ($queryBuilder) use ($tagIds) {
+                $queryBuilder->whereIn('tags.id', $tagIds);
+            })
             ->get();
-        $tags = Tag::where('name', 'LIKE', "%{$query}%")->get();
 
 
-        // Pass the results to the view
-        return view('frontend.search-result', compact('services', 'query' , 'tags'));
+        return view('frontend.search-result', compact('services', 'tags', 'query'));
+
+
+
     }
 
 
