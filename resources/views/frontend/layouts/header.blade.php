@@ -7,6 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {!! SEO::generate() !!}
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TC692324');</script>
+    <!-- End Google Tag Manager -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -22,8 +29,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/online-doctor.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/footer.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/chaty-front.min.css">
+
+
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TC692324"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <header style="position: sticky; top: 0; z-index:1020; background-color: white;">
     <div class="row justify-content-center align-items-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center mt-auto py-2  px-0">
