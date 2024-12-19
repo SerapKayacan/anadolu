@@ -225,7 +225,7 @@
         <a href="#" style="cursor: inherit"
            class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100"
            data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="">
-            <span class="btn-label">Sultan Park v1.0.0</span>
+            <span class="btn-label">UstaRenovasyon&Epoxy v1.0.0</span>
             <span class="svg-icon btn-icon svg-icon-2 m-0">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.3"
