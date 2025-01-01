@@ -1,8 +1,8 @@
 <footer class="footer">
     <div class="row justify-content-center align-items-center py-4">
         <div
-            class="col-lg-2 col-md-2 col-sm-12 py-3 footer-logo text-center align-items-center">
-            <img src="{{ asset('assets/frontend/images/sultanpark-white-logo.png') }}"
+            class="col-lg-2 col-md-2 col-sm-12 py-0 footer-logo text-center align-items-center">
+            <img src="{{ asset('assets/frontend/images/freepik-colorful-hand-drawn-handyman-high-quality-services-logo-20241223125212TcCP - Kopya.jpeg') }}"
                  alt="Sultan Park Logo" class="footer-logo-img justify-content-center">
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-inline-flex flex-column footer-categories align-items-center">
@@ -36,7 +36,7 @@
                 <div class="row justify-content-center align-items-center mx-0 ">
                     <div class="col-5 mx-0 ">
                         <a style="text-decoration: none;" title="Bizi hemen arayın!"
-                           href="tel:02125910911" target="_blank">
+                           href="tel:05447258125" target="_blank">
                             <button
                                 style="background-color:#ec4949;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:#ec4949; background-color:white;flex:1;border-radius:15px;">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-5 mx-0 ">
                         <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!"
-                           href="https://wa.me/9005354694234" target="_blank">
+                           href="https://wa.me/905447258125" target="_blank">
                             <button
                                 style="background-color:#2eb52e;border-radius:15px;border:none;height:30px;width:100%;min-width:130px;display:flex;">
                                 <div style="color:white;flex:2">
@@ -77,9 +77,9 @@
                     </div>
                 </div>
                 <a style="text-decoration: none;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">
-                    <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0212 <span
-                            style="color:#549dda">591</span>
-                        09<span style="color:#549dda">11</span></p>
+                    <p style=" text-decoration: none; color:#E2DCFC;font-size:36px;" href="">0544 <span
+                            style="color:#549dda">725</span>
+                        81<span style="color:#549dda"> 25</span></p>
                 </a>
                 <p style="color:#E2DCFC;font-size:16px;font-family:arial">Canlı desteğe istediğin zaman ve
                     hızla

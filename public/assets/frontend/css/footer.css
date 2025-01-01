@@ -1,11 +1,10 @@
 .footer{
     background-color: #063a68;
     height:auto;
-    margin-top:30px;
 }
 .footer-logo-img {
-    width: 85px;
-    height: 75px;
+    width: 250px;
+    height: 220px;
 }
 .categories-title{
     color:white;

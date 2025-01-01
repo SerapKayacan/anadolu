@@ -64,177 +64,65 @@ body {
 
 
 
-.card-top {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 650px;
-    height: 500px;
+/*home-card*/
+
+
+.home-card {
+    height: 100%; /* Ensures the card container spans the available height */
+    width: 100%; /* Ensures the width stays consistent */
+    border-width: 4px;
+    border-color: orangered;
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Ensures proper spacing for content */
+    padding: 20px;
+
 }
 
-.card-top-2 {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    width: 650px;
-    height: 500px;
-    margin-left: 10px;
-}
-
-.navbar-bottom {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #b3d9f8;
-    border-radius: 20px;
-    height: auto;
-}
-
-.nav-button {
-    width: 300px;
-    height: 50px;
-    background-color: white;
-    border-radius: 30px !important;
-    color: white !important;
-    border: none;
-    margin-top: 20px;
-    margin-right: 15px;
+.home-card-body {
+    flex-grow: 1; /* Makes the body take up remaining space */
     display: flex;
-
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced out */
+    position: relative;
 }
 
-.nav-button:hover {
-    background-color: #0e4e81;
+.home-card-img {
+    width: 100%;
+    height: 300px; /* Fixes image height */
+    object-fit: cover; /* Ensures images fill the area without distortion */
+    border-bottom: 4px solid orangered; /* Adds a separator line */
 }
 
-.nav-button:hover .nav-button-text {
-    color: white;
-}
-
-.nav-button:hover .nav-button-icon {
-    background-color: white;
-    color: #0e4e81;
-}
-
-.nav-button-icon {
-    width: 18px;
-    height: 38px;
-    color: white;
-    flex: 1;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 3px;
-    background-color: #0e4e81;
-    border-radius: 25px;
-    padding-top: 5px;
-    padding-bottom: 1px;
+.home-card-title {
+    font-size: 25px; /* Scaled font size */
     font-weight: bold;
+    color: orangered;
+    margin: 10px 0;
+    text-align: center; /* Centers the title */
 }
 
-.nav-button.active {
-    background-color: #0e4e81 !important;
-}
-
-.nav-button.active .nav-button-text {
-    color: white !important;
-}
-
-.nav-button.active .nav-button-icon {
-    background-color: white;
-    color: #0e4e81;
-}
-
-.nav-button-text {
-    font-size: 20px;
-    font-family: arial;
-    font-weight: bold;
-    flex: 6;
-    color: #0e4e81;
-    margin-left: -26px;
-    margin-top: 5px;
-}
-
-.nav-img {
-    width: 650px;
-    height: 60vh;
+.home-card-detail {
+    text-align: center;
+    font-size: 16px;
     margin-bottom: 20px;
-    margin-left: 20px;
-    border-radius: 15px;
-    margin-top: 40px;
+    color:dimgrey;
 }
 
-.navbar-text-top {
-    font-size: 50px;
-    font-family: arial;
-    font-weight: bold;
-    color: #0e4e81;
-    margin-top: -20px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    margin-right: 60px;
-}
-
-.navbar-text-middle {
-    font-size: 20px;
-    color: #403f3f;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: -10px;
-}
-
-.navbar-bottom-button {
-    position: absolute; /* Fix the button in relation to its container */
-    bottom: 40px; /* Distance from the bottom of the container */
-    left: 20px; /* Distance from the left of the container */
-    right: 20px; /* Allow flexibility with padding from the right */
-    border-radius: 20px;
-    border-color: #0e4e81;
-    background-color: #0e4e81;
+.home-card-button {
+    align-self: center; /* Centers the button */
+    background-color: orangered;
     color: white;
-    cursor: pointer !important;
-    padding: 10px 20px; /* Consistent padding for height and flexible width */
-    width: auto; /* Flexible width based on content */
-    max-width: 400px; /* Prevent overflow */
-    height: 50px; /* Consistent height */
-    display: flex; /* To align items inside */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out the text and icon */
-    box-sizing: border-box; /* Include padding in width and height calculation */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-
-.navbar-bottom-button:hover {
-    background-color: #c0ddf1 !important;
+.home-card-button:hover {
+    background-color: darkred;
 }
-
-.navbar-bottom-button-text {
-    color: white;
-    font-size: 20px;
-    flex: 1;
-    margin-bottom: -5px;
-    margin-top: 5px;
-}
-
-.navbar-button-bottom-icon {
-    margin-right: 10px;
-    margin-left: 0;
-    margin-top: -4px;
-}
-
-
-.navbar-bottom-button:hover .navbar-bottom-button-text {
-    color: #0e4e81;
-}
-
-.navbar-bottom-button:hover .navbar-button-bottom-icon {
-    color: #0e4e81;
-}
-
-
 /*//contact-card*/
 
 .contact-card-header {
@@ -483,186 +371,8 @@ body.modal-open {
     border-radius: 30px;
 
 }
-/* General Styles */
-.services-carousel-slider-header {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    width:100%;
-    margin-bottom: 20px; /* Adjust space between header and carousel */
-    color: #38e338; /* Set a color for the header */
-}
-
-.services-carousel-header {
-    overflow: hidden;
-    width: 100vw;
-    padding: 20px 0;
-    background: #141450;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.services-carousel-slider-box {
-    width: 90%;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent items from wrapping */
-    position: relative;
-}
-
-/* Carousel */
-
-.services-carousel {
-    display: inline-flex;
-    gap: 1rem;
-    scroll-behavior: smooth; /* Smooth scrolling */
-    padding-bottom: 10px;
-}
-
-.services-carousel-item {
-    flex: 0 0 auto; /* Prevent items from shrinking */
-    width: 300px; /* Fixed card width */
-    height: auto;
-}
-
-.services-carousel-card {
-    background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.services-carousel-image {
-    width: 100%;
-   height:200px;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-}
-
-.services-carousel-image-text {
-    text-align: center;
-    font-weight: bold;
-    background: #007bff;
-    color: white;
-    padding: 5px;
-}
-
-.services-carousel-body {
-    padding: 1rem;
-    flex-grow: 1;
-    height:auto;
-}
 
 
-/* Hover Effects */
-.services-carousel-card:hover {
-    transform: scale(1.05);
-}
-.services-carousel-card {
-    position: relative; /* Ensure the card is a positioned element */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.services-carousel-card .services-carousel-body{
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.card-image-carousel-text-box {
-    position: absolute;
-    top: 10px; /* Adjust top spacing inside the card */
-   right: 10px; /* Position it inside the card */
-    background-color: #e9f8e9;
-    color: #38e338;
-    padding: 4px 8px;
-    border-radius: 20px;
-    font-size: 15px;
-    font-weight: bold;
-    z-index: 1; /* Ensure it stays above the image */
-}
-
-.card-service-carousel-detail-header {
-    color: rgba(115, 18, 111, 0.78);
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 1.2;
-    word-wrap: break-word; /* Ensure long words break to fit */
-    white-space: normal; /* Allow wrapping to the next line */
-    overflow: hidden; /* Prevent overflowing content */
-    text-overflow: ellipsis; /* Optional: Add ellipsis for clipped text */
-}
-
-.card-service-detail-carousel-middle-text {
-    color: dimgrey;
-    margin-top: -8px;
-    word-wrap: break-word;
-    white-space: normal;
-    font-size: 0.9rem; /* Adjust size for better readability on smaller screens */
-    line-height: 1.4; /* Improve spacing between lines */
-}
-
-.card-service-carousel-detail-button {
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background-color: rgba(115,18,111,0.78);
-    border: none;
-    border-radius: 8px;
-    width: 200px;
-    height: 55px;
-    margin-top: auto;
-
-}
-
-.carousel-widget-body{
-    height:auto;
-}
-@media (max-width: 768px) {
-    /* Horizontal carousel container */
-    .services-carousel {
-        display: flex;
-        overflow-x: auto; /* Allow horizontal scrolling */
-        scroll-snap-type: x mandatory; /* Enable snap scrolling */
-        gap: 10px; /* Space between cards */
-        padding: 0 15px; /* Padding for carousel container */
-    }
-
-    /* Each card item */
-    .services-carousel-item {
-        flex: 0 0 300px; /* Fixed width for cards */
-        scroll-snap-align: start; /* Align card to start of viewport */
-    }
-
-    /* Card styles */
-    .services-carousel-card {
-        width: 100%; /* Take full width of the item */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        background-color: #fff; /* Example background color */
-    }
-
-    .card-service-carousel-detail-header {
-        font-size: 20px;
-        width: 100%;
-    }
-
-    .card-service-detail-carousel-middle-text {
-        font-size: 15px;
-    }
-
-    .card-service-carousel-detail-button {
-        width: 150px;
-        height: 40px;
-        font-size: 15px;
-    }
-}
 
 
 

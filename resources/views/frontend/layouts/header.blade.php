@@ -79,7 +79,7 @@
                    Bize isteğin zaman ve hızlı ulaş!
                 </li>
                 <li class="nav-item" style="margin-right:8px;">
-                    <a style="text-decoration: none;" title="Bizi hemen arayın!"  href="tel:02125910911" target="_blank">
+                    <a style="text-decoration: none;" title="Bizi hemen arayın!"  href="tel:05447258125" target="_blank">
                         <button
                             style="background-color:#ec4949;border-radius:15px;border:none;height:20px;width:90px;display:flex;margin-right:4px;padding-right:6px;">
                             <div style="color:white; margin-top:-5px;margin-left:-25px;flex:1;padding-left:-6px;">
@@ -98,14 +98,9 @@
                         </button>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a style="text-decoration: none;  display:flex;align-items: center;color:white; weight:bold;font-family:arial;" title="Bizi hemen arayın!" href="tel:02125910911" target="_blank">0212 591 09 11</a>
-                </li>
-
-                <li class="nav-item" style=" margin-left:20px;">
-                    <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/9005354694234" target="_blank">
-                        <button
-                            style="background-color:#42b842;border-radius:15px;border:none;height:20px;width:90px;display:flex;">
+                <li class="nav-item" >
+                    <a style="text-decoration: none;" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125" target="_blank">
+                        <button style="background-color:#42b842;border-radius:15px;border:none;height:20px;width:90px;display:flex;">
                             <div style="color:white; margin-top:-5px;margin-left:-18px;flex:1">
                                 <i class="bi bi-whatsapp"></i>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="white"

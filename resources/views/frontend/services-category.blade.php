@@ -1,13 +1,11 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="row px-4" style="background-color:#fae5ec">
+        <div class="row px-4" style="background-color:#f8caca">
             <div class="col-12 text-center py-4 ms-20 d-flex flex-column align-items-center">
-                <p class="services-search-text">Sağlığı <span style="color:rgba(115,18,111,0.78)">Eve Getiriyoruz</span>
-                </p>
                 <form action="{{ route('search') }}" method="GET" class="search-bar justify-content-center mx-3" role="search" id="form">
                     <input class="search-bar-input" type="search" name="query"
-                           placeholder="evde serum..."
+                           placeholder="Epoxy-PVC..."
                            aria-label="Search through site content">
                     <button class="search-bar-button px-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.5em" color=" #6E4EEF"
@@ -27,12 +25,9 @@
                 <div class="row">
                     @foreach ($serviceCategories as $serviceCategory)
                     <div class="col-12 col-md-4 col-lg-4 col-xs-12">
-                        <div class="card card-services">
+                        <div class="card card-services rounded-5 border-4">
                             <div class="card-header card-services-header">
-                                @php
-                                    $icon_colors = ['icon-turquoise', 'icon-yellow', 'icon-purple', 'icon-blue',  'icon-pink','icon-green', ];
-                                @endphp
-                                <div class="icon-box-services {{ $icon_colors[($serviceCategory->sort_order  ) % count( $icon_colors)] }}"> {!! $serviceCategory->icon !!}</div>
+                                <div class="icon-box-services"> {!! $serviceCategory->icon !!}</div>
                                 <div class="card-top-text">{{ $serviceCategory->title }}</div>
                                 <div class="card-middle-text">{!! $serviceCategory->category_page_detail !!}
                                 </div>
