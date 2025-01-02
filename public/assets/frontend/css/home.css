@@ -319,33 +319,45 @@ body.modal-open {
 
 }
 
-.about-us-header-1 {
-    color: #dc445a;
+.about-us-header-1,.about-us-header-3  {
+    color: #E15A6C;
     line-height:1.3;
 }
 
 .about-us-header-2 {
-    color: #709dc1;
+    color: #bcdcf8;
+}
+.about-us-detail-1{
+    color:dimgrey;
+    font-weight: 600;
 }
 
-.about-us-header-3 {
-    color: #a31429;
-}
-
-.about-us-detail-2, .about-us-detail-3 {
+.about-us-detail-2 {
     color: #e1dbdb;
+    font-weight: 600;
 }
-
+.about-us-detail-3{
+    color: white;
+}
+.first-row{
+    background-color: rgba(251, 199, 68, 0.59);
+}
 .third-row {
-    background-color: #e47388;
+    background-color: #FFC22B;
     border-radius: 50px;
     max-width: 1200px;
     margin: auto;
     padding-bottom: 40px;
     position: relative;
     z-index: 2; /* Ensure it's above the previous section */
-    transform: translateY(-150px); /* Shift it upwards */
+    transform: translateY(-190px); /* Shift it upwards */
 }
+.about-us-img {
+    border-radius: 30px;
+    max-height:400px;
+    width:100%;
+}
+
 
 @media (min-width: 576px) {
     .font-size-md {
@@ -365,11 +377,6 @@ body.modal-open {
     .font-size-md {
         font-size: 22px;
     }
-}
-.about-us-img {
-
-    border-radius: 30px;
-
 }
 
 

@@ -1,36 +1,26 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main style="margin-bottom:-150px;">
-        <div class="row justify-content-center px-4 pb-0" style="background-color:#f6dae0;">
+        <div class="row justify-content-center first-row px-4 pb-0">
             <div class="col-lg-8 col-md-8 col-sm-12 text-center mb-4">
-                <p class="about-us-header-1">Sultan Park Evde Sağlık Hizmetleriyle Tanışın.</p>
+                <p class="about-us-header-1">Usta Renovasyon ve Epoxy ile Tanışın.</p>
                 <p class="about-us-detail-1 font-size-md">
-                    Sultan Evde Sağlık Hizmetleri olarak, yaşam kalitesini artırmaya ve bireylerin sağlıklı bir hayat
-                    sürmesine destek olmaya odaklanıyoruz.
-                    Evde bakım ve sağlık hizmetlerimiz, uzman doktorlardan hemşirelere, hasta bakıcılardan diğer sağlık
-                    profesyonellerine kadar geniş bir ekip
-                    çalışmasıyla sunulmaktadır. Hizmetlerimiz, bireyin mahremiyetine ve ihtiyaçlarına saygı göstererek
-                    güvenli bir bakım ortamı yaratmayı hedefler.
-                    Trakeostomi, glutatyon tedavisi, pansuman, enjeksiyon gibi kapsamlı tıbbi bakım hizmetlerinden,
-                    yenidoğan bakımı ve refakatçi hizmetlerine kadar birçok
-                    alanda profesyonel destek sağlıyoruz. Tüm hizmetlerimizde etik değerlere bağlı ve hasta haklarını ön
-                    planda tutarak kaliteli ve eşit erişilebilir
-                    bir sağlık hizmeti sunuyoruz.
-                </p>
+                    Firmamız, Epoksi ve PVC Döşeme, Boya/Badana, Tadilat ve Isı Yalıtımı ile Mantolama alanlarında uzmanlaşmış bir kuruluş olarak,
+                    sektörde yılların getirdiği tecrübe ve güvenle faaliyet göstermektedir. Müşteri memnuniyetini ön planda tutarak, her projede kaliteli
+                    işçilik ve yenilikçi çözümler sunmayı ilke edindik. Her biri alanında deneyimli ve uzman kadromuzla, estetik ve fonksiyonelliği bir araya
+                    getirerek yaşam ve çalışma alanlarınızı daha konforlu, dayanıklı ve modern hale getiriyoruz.
+                    Hedefimiz, sadece hizmet sunmak değil, aynı zamanda müşterilerimizin hayallerini gerçekleştirmelerine destek olmaktır.
             </div>
         </div>
         <div class="row justify-content-center px-4"
-             style="background-color:#131333; min-height:550px; position:relative; z-index:1;">
+             style="background-color:#143866; min-height:550px; position:relative; z-index:1;">
             <div class="col-lg-8 col-md-8 col-sm-12 text-center text-white ">
                 <p class="about-us-header-2">Vizyonumuz</p>
                 <p class="about-us-detail-2 text-center font-size-md">
-                    Evde bakım ve sağlık hizmetlerinde sektörde öncü bir kuruluş olarak tanınmak, sağlık alanında
-                    yenilikçi ve hasta odaklı çözümlerle fark yaratmak istiyoruz.
-                    Sultan Evde Sağlık Hizmetleri, etik değerleri gözeten, teknolojiyi etkin kullanan ve sürdürülebilir
-                    hizmet anlayışıyla Türkiye’nin dört bir yanında daha fazla bireye
-                    ulaşmayı hedeflemektedir. Toplumun her kesimine eşit, erişilebilir ve yüksek kaliteli sağlık
-                    hizmetleri sunarak, evde bakım alanında güvenilir bir marka olarak
-                    ulusal ve uluslararası ölçekte örnek teşkil etmek vizyonumuzdur.
+                    Yenilikçi ve sürdürülebilir çözümlerle sektörde fark yaratmak, inşaat ve tadilat sektöründe lider konuma gelerek müşterilerimizin ilk
+                    tercihi olmak. Hem bireysel hem de kurumsal müşterilerimize sunduğumuz hizmetlerde, kalite ve güvenilirliği bir arada sunarak uzun vadeli
+                    iş birlikleri kurmayı hedefliyoruz.
+                    Teknolojiyi yakından takip ederek ve sürekli gelişime açık bir yapıyla, sektörde öncü bir marka olmayı amaçlıyoruz.
                 </p>
             </div>
         </div>
@@ -38,16 +28,26 @@
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <p class="about-us-header-3 text-center">Misyonumuz</p>
                 <p class="about-us-detail-3 text-center font-size-md">
-                    Hastalarımızın yaşam kalitesini artırmak için evde güvenilir, hızlı ve profesyonel sağlık hizmetleri
-                    sunmayı amaçlıyoruz. Mahremiyet, güvenlik ve bireysel ihtiyaçlara
-                    duyduğumuz saygı ile sağlık hizmetlerini herkes için erişilebilir kılmayı hedefliyoruz.
-                    Multidisipliner yaklaşımımız sayesinde, ekip çalışmasının gücünü en üst düzeyde
-                    kullanarak hastalarımıza en iyi bakım deneyimini sağlıyoruz. Her bireyin hak ettiği kaliteli sağlık
-                    hizmetine ulaşabilmesi için yenilikçi çözümler geliştiren ve insan
-                    odaklı bir yaklaşımı benimseyen bir kuruluş olarak çalışıyoruz.
+                    Müşteri ihtiyaçlarını en iyi şekilde analiz ederek, beklentilerin ötesine geçen hizmetler sunmak.
+                    Çalışmalarımızda kalite standartlarından asla ödün vermeden, çevre dostu malzeme ve teknikler kullanarak
+                    projelerimizi hayata geçiriyoruz. Her projeye özel çözümler üreterek, müşteri memnuniyetini en üst seviyede tutmayı
+                    hedefliyoruz. Aynı zamanda çalışanlarımızın gelişimine katkı sağlayarak, profesyonel ve güçlü bir ekip ruhu ile sektöre değer katıyoruz.
+                    Sizin için en iyisini hedefleyen bir anlayışla, mekanlarınıza değer katmaya ve yaşam kalitenizi yükseltmeye devam ediyoruz.
                 </p>
-                <img src="{{ asset('assets/frontend/images/hero-img.jpg') }}" alt="About Us Image"
+                <div class="row">
+                    <div class="col-lg-6">
+                <img src="{{ asset('assets/frontend/images/img-1.jpeg') }}" alt="About Us Image"
                      class="about-us-img img-fluid mt-3">
+                    </div>
+                    <div class="col-lg-6">
+                <img src="{{ asset('assets/frontend/images/img-2.jpeg') }}" alt="About Us Image"
+                     class="about-us-img img-fluid mt-3">
+                    </div>
+                    <div class="col-lg-12">
+                <img src="{{ asset('assets/frontend/images/img-3.jpeg') }}" alt="About Us Image"
+                     class="about-us-img img-fluid mt-3">
+                    </div>
+                </div>
             </div>
         </div>
     </main>

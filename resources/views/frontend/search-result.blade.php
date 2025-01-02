@@ -1,14 +1,12 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="row px-4" style="background-color:#fae5ec">
+        <div class="row px-4" style="background-color:#f8caca">
             <div class="col-12 text-center py-4 ms-20 d-flex flex-column align-items-center">
-                <p class="services-search-text">Sağlığı <span style="color:rgba(115,18,111,0.78)">Eve Getiriyoruz</span>
-                </p>
                 <form action="{{ route('search') }}" method="GET" class="search-bar justify-content-center mx-3"
                       role="search" id="form">
                     <input class="search-bar-input" type="search" name="query"
-                           placeholder="evde serum..."
+                           placeholder="Epoxy-PVC..."
                            aria-label="Search through site content">
                     <button class="search-bar-button px-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.5em" color=" #6E4EEF"
@@ -23,28 +21,26 @@
                 </form>
             </div>
         </div>
-        <div class="container main-container-services-1 mt-5">
-            <div class="row">
-                @foreach ($services as $service)
-                    <div class="col-lg-4">
-                        <div class="card card-services-detail">
-                            <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt=""
-                                 class="card-service-detail-image">
-                            <div
-                                class="card-image-text-box"> {{ $types[$service->getCategory->type] ?? 'Unknown Type' }}</div>
-                            <div class="card-body card-services-detail-body">
-                                <p class="card-service-detail-header"> {{ $service->title}}</p>
-                                <p class="card-service-detail-middle-text">{!! $service->category_page_detail !!}</p>
-                                <div style="display:flex;">
-                                    <button class="card-service-detail-button" title="Hizmeti Detayını Görüntüleyin"
-                                            onclick="window.location.href='{{ route('services-detail.show', $service->id) }}'">
+        <div class="main-wrapper-services-1" style="margin-top:40px;margin-bottom:40px;">
+            <div class="container main-container-services-1">
+                <div class="row justify-content-center p-4 ">
+                    @foreach ($services as $service)
+                        <div class="col-lg-4 mb-4">
+                            <div class="card home-card rounded-5 ">
+                                <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt="Service image"
+                                     class="home-card-img rounded-5">
+                                <div class="card-body home-card-body">
+                                    <p class="home-card-title"> {{ $service->title}}</p>
+                                    <p class="home-card-detail">{{ $service->category_page_detail }}</p>
+                                    <button class="home-card-button" title="Devamını Gör."
+                                            onclick="window.location.href='{{ route('services-detail.show', ['slug' => $service->slug]) }}'">
                                         Devamını Gör
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </main>

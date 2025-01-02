@@ -9,16 +9,16 @@
             <h2 class="categories-title">Hizmetler</h2>
             <a class="footer-link"
                href="https://sultanevdesaglikhizmetleri.com/hizmetler/evde-laboratuvar-hizmetleri"
-               title="Laboratuvar Hizmetleri hizmetlerini görüntülemek için tıklayın">Laboratuvar Hizmetleri</a>
+               title="Laboratuvar Hizmetleri hizmetlerini görüntülemek için tıklayın">Epoxy ve PVC Döşeme</a>
             <a class="footer-link"
                href="https://sultanevdesaglikhizmetleri.com/hizmetler/evde-goruntuleme-hizmetleri"
-               title="Görüntüleme Hizmetleri< hizmetlerini görüntülemek için tıklayın">Görüntüleme Hizmetleri</a>
+               title="Görüntüleme Hizmetleri< hizmetlerini görüntülemek için tıklayın">Boya/Badana</a>
             <a class="footer-link"
                href="https://sultanevdesaglikhizmetleri.com/hizmetler/check-up-hizmeti"
-               title="Check-Up Hizmetleri hizmetlerini görüntülemek için tıklayın">Check-Up</a>
+               title="Check-Up Hizmetleri hizmetlerini görüntülemek için tıklayın">Tadilat</a>
             <a class="footer-link"
                href="https://sultanevdesaglikhizmetleri.com/hizmetler/genetik-check-up-ve-inceleme"
-               title="Genetik Tanı Hizmetleri hizmetlerini görüntülemek için tıklayın">Genetik Tanı Hizmetleri</a>
+               title="Genetik Tanı Hizmetleri hizmetlerini görüntülemek için tıklayın">Isı Yalıtım ve Mantolama</a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
             <h2 class="categories-title">Şirket</h2>
@@ -81,18 +81,16 @@
                             style="color:#549dda">725</span>
                         81<span style="color:#549dda"> 25</span></p>
                 </a>
-                <p style="color:#E2DCFC;font-size:16px;font-family:arial">Canlı desteğe istediğin zaman ve
-                    hızla
-                    ulaş!</p>
+
                 <hr style="color:#9983F4; margin-top:-10px;margin-left:20px;margin-right:20px;">
                 <div class="card-body footer-card-body"
                      style="">
                     <div>
-                        <div>
-                            <p style="color:#E2DCFC;font-size:16px;font-weight:500;">Cihangir, Meşrutiyet Cd. No:65
-                                D:b;
-                                <br>34315 Avcılar/İstanbul</p>
-                        </div>
+{{--                        <div>--}}
+{{--                            <p style="color:#E2DCFC;font-size:16px;font-weight:500;">Cihangir, Meşrutiyet Cd. No:65--}}
+{{--                                D:b;--}}
+{{--                                <br>34315 Avcılar/İstanbul</p>--}}
+{{--                        </div>--}}
                         <div style="margin-top:22px;margin-bottom:-20px;">
                             <a style="text-decoration: none; border-radius:20px;padding-left:3px;padding-bottom:3px ;margin-left:5px;color:white;"
                                title="Facebook sayfamızı ziyaret edin!"

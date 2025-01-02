@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/footer.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/chaty-front.min.css">
 
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
 </head>
 <body>
