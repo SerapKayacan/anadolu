@@ -56,17 +56,14 @@
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                          <span class="input-group-btn">
-                                                             <a class="uploadImage btn btn-primary text-white btn-sm">
-                                                                 <i class="far fa-file-image"></i> Seç
-                                                             </a>
-                                                             <!-- Input field for multiple images -->
-                                                                     <input type="file" accept="image/jpeg, image/png, image/jpg"
-                                                                        name="banner_image[]" class="d-none" multiple>
-
-                                                             <!-- Button to remove all selected images -->
-                    <a class="removeAllImages btn btn-danger text-white btn-sm">
-                        <i class="fa fa-trash"></i> Kaldır
-                    </a>
+                                                            <a class="uploadImage btn btn-primary text-white btn-sm">
+                                                               <i class="far fa-file-image"></i> Seç
+                                                            </a>
+                                                               <input type="file" accept="image/jpeg, image/png, image/jpg" name="banner_image" class="d-none">
+                                                            <a data-input="thumbnail" data-preview="holder"
+                                                               class="removeImage btn btn-danger text-white btn-sm">
+                                                               <i class="fa fa-trash"></i> Kaldır
+                                                            </a>
                                                             <div class="row col-md-12 thumb-output p-2">
                                                                 <img class="thumb img-thumbnail" src="">
                                                             </div>
