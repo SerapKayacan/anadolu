@@ -30,8 +30,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/footer.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}assets/frontend/css/chaty-front.min.css">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -63,13 +61,14 @@
                         <li class="nav-item">
                             <a class="nav-link" title="Hakkımızda için tıklayın" href="{{ route('about-us.index') }}" style="font-weight: 700; color:#e26a29;">Hakkımızda</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" title="Hakkımızda için tıklayın" href="{{ route('contact.index') }}" style="font-weight: 700;color:#e26a29;">İletişim</a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" title="Hakkımızda için tıklayın" href="{{ route('contact.index') }}" style="font-weight: 700;color:#e26a29;">İletişim</a>--}}
+{{--                        </li>--}}
                     </ul>
                 </div>
             </nav>
         </div>
+
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center px-0"
              style="background-color:#3b79ac;">

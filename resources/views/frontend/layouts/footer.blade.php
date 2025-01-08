@@ -20,17 +20,17 @@
                href="https://sultanevdesaglikhizmetleri.com/hizmetler/genetik-check-up-ve-inceleme"
                title="Genetik Tanı Hizmetleri hizmetlerini görüntülemek için tıklayın">Isı Yalıtım ve Mantolama</a>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">
-            <h2 class="categories-title">Şirket</h2>
-            <a class="footer-link" title="Hakkımızda sayfasını görüntülemek için tıklayın"
-               href="{{ route('about-us.index') }}">Hakkımızda</a>
-            <a class="footer-link" title="Anlaşmalı Kurumlar sayfasını görüntülemek için tıklayın" href="#">Anlaşmalı
-                Kurumlar</a>
-            <a class="footer-link" title="Yönetim Kurulu< sayfasını görüntülemek için tıklayın" href="#">Yönetim
-                Kurulu</a>
-            <a class="footer-link" title="İletişim sayfasını görüntülemek için tıklayın"
-               href="{{ route('contact.index') }}">İletişim</a>
-        </div>
+{{--        <div class="col-lg-2 col-md-2 col-sm-6 d-flex flex-column footer-categories align-items-center">--}}
+{{--            <h2 class="categories-title">Şirket</h2>--}}
+{{--            <a class="footer-link" title="Hakkımızda sayfasını görüntülemek için tıklayın"--}}
+{{--               href="{{ route('about-us.index') }}">Hakkımızda</a>--}}
+{{--            <a class="footer-link" title="Anlaşmalı Kurumlar sayfasını görüntülemek için tıklayın" href="#">Anlaşmalı--}}
+{{--                Kurumlar</a>--}}
+{{--            <a class="footer-link" title="Yönetim Kurulu< sayfasını görüntülemek için tıklayın" href="#">Yönetim--}}
+{{--                Kurulu</a>--}}
+{{--            <a class="footer-link" title="İletişim sayfasını görüntülemek için tıklayın"--}}
+{{--               href="{{ route('contact.index') }}">İletişim</a>--}}
+{{--        </div>--}}
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 card footer-card py-3 mx-0 justify-content-center">
             <div class="card-header footer-card-header ">
                 <div class="row justify-content-center align-items-center mx-0 ">
