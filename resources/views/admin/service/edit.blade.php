@@ -82,11 +82,25 @@
                                                                          src="{{ $image->getUrl() }}"
                                                                          alt="Service Image"
                                                                          style="width: 120px; height: 120px;">
+
+                                                                    <!-- Input for Image Title -->
+                                                                    <input
+                                                                        type="text"
+                                                                        name="image_titles[{{ $image->id }}]"
+                                                                        class="form-control mb-2"
+                                                                        placeholder="Görsel başlığını girin"
+                                                                        value="{{ $image->getCustomProperty('image_title') }}"
+                                                                    >
+
+                                                                    <!-- Input for Image Description -->
                                                                     <textarea
                                                                         name="image_descriptions[{{ $image->id }}]"
                                                                         class="form-control"
                                                                         rows="2"
-                                                                        placeholder="Görsel açıklaması girin">{{ $image->image_description }}</textarea>
+                                                                        placeholder="Görsel açıklaması girin">
+                {{ $image->getCustomProperty('image_description') }}
+            </textarea>
+
                                                                     <a href="#"
                                                                        class="remove-preview btn btn-danger btn-sm mt-2">Kaldır</a>
                                                                 </div>

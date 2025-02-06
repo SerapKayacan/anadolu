@@ -9,6 +9,17 @@
                              src="{{ $image->getUrl('large') }}"
                              alt="Service Image">
                     </div>
+                    <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 services-detail-page-text col-lg-5 pt-4 pb-2">
+                        <h5 class="image_title">
+                            {{ $image->getCustomProperty('image_title') ?? 'No Title Available' }}
+                        </h5>
+
+                        <!-- Image Description -->
+                        <p class="image_description">
+                            {{ $image->getCustomProperty('image_description') ?? 'No Description Available' }}
+                        </p>
+                    </div>
+
                 @endforeach
                 <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 services-detail-page-text col-lg-5 pt-4 pb-2">
                     <h1 class="services-detail-page-header">{{ $service->title }}</h1>

@@ -59,24 +59,24 @@
                                                     <label class="form-label">Görsel Seçin</label>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                <span class="input-group-btn">
-                    <a class="uploadImage btn btn-primary text-white btn-sm">
-                        <i class="far fa-file-image"></i> Seç
-                    </a>
-                    <input type="file" accept="image/jpeg, image/png, image/jpg"
-                           name="images[]" id="image-input" class="d-none" multiple>
-                    <a data-input="thumbnail" data-preview="holder"
-                       class="removeImage btn btn-danger text-white btn-sm">
-                        <i class="fa fa-trash"></i> Kaldır
-                    </a>
-                </span>
+                    <span class="input-group-btn">
+                        <a class="uploadImage btn btn-primary text-white btn-sm">
+                            <i class="far fa-file-image"></i> Seç
+                        </a>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg"
+                               name="images[]" id="image-input" class="d-none" multiple>
+                        <a data-input="thumbnail" data-preview="holder"
+                           class="removeImage btn btn-danger text-white btn-sm">
+                            <i class="fa fa-trash"></i> Kaldır
+                        </a>
+                    </span>
                                                         </div>
-                                                        <div class="row col-md-12 thumb-output p-2"
-                                                             id="thumb-output"></div>
+                                                        <div class="row col-md-12 thumb-output p-2" id="thumb-output"></div>
                                                     </div>
                                                     <div class="text-muted fs-7">Medya görseli ekleyin.</div>
                                                 </div>
                                             </div>
+
 
                                             <div class="mb-10 row">
                                                 <div class="col-sm-4">
@@ -216,35 +216,58 @@
     <script src="{{ asset('') }}assets/js/admin/ckeditor.js"></script>
 
     <script>
-        document.getElementById("image-input").addEventListener("change", function (event) {
-            let output = document.getElementById("thumb-output");
-            output.innerHTML = ""; // Clear any previous previews
+        // Handle image selection and display preview
+        document.getElementById('image-input').addEventListener('change', function(e) {
+            const files = e.target.files;
+            const previewContainer = document.getElementById('thumb-output');
+            previewContainer.innerHTML = ''; // Clear any previous previews
 
-            Array.from(event.target.files).forEach((file, index) => {
-                let reader = new FileReader();
-                reader.onload = function (e) {
-                    let div = document.createElement("div");
-                    div.classList.add("col-md-4", "image-preview-container", "mb-3");
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
 
-                    // Append image preview and description textarea
-                    div.innerHTML = `
-                <img src="${e.target.result}" class="img-thumbnail mb-2" style="width: 120px; height: 120px; display: block;">
-                <textarea name="image_descriptions[]" class="form-control" rows="3" placeholder="Görsel açıklaması girin"></textarea>
-                <a href="#" class="remove-preview btn btn-danger btn-sm" style="margin-top: 5px;">Kaldır</a>
-            `;
+                reader.onload = function(event) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = event.target.result;
+                    imgElement.classList.add('thumb', 'img-thumbnail', 'mb-2');
+                    imgElement.style.width = '120px';
+                    imgElement.style.height = '120px';
 
-                    output.appendChild(div);
+                    const imagePreviewContainer = document.createElement('div');
+                    imagePreviewContainer.classList.add('col-md-4', 'image-preview-container', 'mb-3');
 
-                    // Add a click event listener for the remove button
-                    div.querySelector(".remove-preview").addEventListener("click", function (e) {
+                    const titleInput = document.createElement('input');
+                    titleInput.type = 'text';
+                    titleInput.name = `image_titles[]`;
+                    titleInput.classList.add('form-control', 'mb-2');
+                    titleInput.placeholder = 'Görsel başlığını girin';
+
+                    const descriptionInput = document.createElement('textarea');
+                    descriptionInput.name = `image_descriptions[]`;
+                    descriptionInput.classList.add('form-control');
+                    descriptionInput.rows = 2;
+                    descriptionInput.placeholder = 'Görsel açıklaması girin';
+
+                    const removeButton = document.createElement('a');
+                    removeButton.href = '#';
+                    removeButton.classList.add('remove-preview', 'btn', 'btn-danger', 'btn-sm', 'mt-2');
+                    removeButton.textContent = 'Kaldır';
+                    removeButton.addEventListener('click', function(e) {
                         e.preventDefault();
-                        div.remove(); // Remove the image preview and description
+                        imagePreviewContainer.remove();
                     });
-                };
-                reader.readAsDataURL(file);
-            });
-        });
 
+                    imagePreviewContainer.appendChild(imgElement);
+                    imagePreviewContainer.appendChild(titleInput);
+                    imagePreviewContainer.appendChild(descriptionInput);
+                    imagePreviewContainer.appendChild(removeButton);
+
+                    previewContainer.appendChild(imagePreviewContainer);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
     </script>
 
     <script>

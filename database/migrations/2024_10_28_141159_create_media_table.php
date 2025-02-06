@@ -12,7 +12,6 @@ return new class extends Migration
             $table->id();
 
             $table->morphs('model');
-            $table->text('image_description')->nullable();
             $table->uuid('uuid')->nullable()->unique();
             $table->string('collection_name');
             $table->string('name');

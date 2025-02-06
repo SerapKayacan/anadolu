@@ -69,18 +69,20 @@ class ServiceController extends Controller
         // Handle image uploads and descriptions
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $index => $image) {
-                // Save the image to the media collection
-                $media = $service->addMedia($image)
+                $uploadedImage = $service->addMedia($image)
                     ->usingFileName(SlugHelper::imageSlugName($image))
                     ->toMediaCollection('images');
 
-                // Update the `image_description` column directly in the `media` table
-                if ($request->has('image_descriptions') && isset($request->image_descriptions[$index])) {
-                    $description = $request->image_descriptions[$index];
-
-                    // Update media record
-                    $media->update(['image_description' => $description]);
+                // Store the image title and description as custom properties
+                if (isset($request->image_titles[$index])) {
+                    $uploadedImage->setCustomProperty('image_title', $request->image_titles[$index]);
                 }
+
+                if (isset($request->image_descriptions[$index])) {
+                    $uploadedImage->setCustomProperty('image_description', $request->image_descriptions[$index]);
+                }
+
+                $uploadedImage->save();
             }
         }
 
@@ -118,6 +120,7 @@ class ServiceController extends Controller
     {
         $service = Service::findOrFail($id);
 
+        // Update general service attributes
         if ($service->title !== $request->title) {
             $service->slug = SlugHelper::generateUniqueSlug(Service::class, $request->title);
         }
@@ -159,8 +162,7 @@ class ServiceController extends Controller
             }
         }
 
-        // Handle Regular Images
-        // Handle Regular Images
+        // Handle Regular Images and Update Descriptions and Titles
         if ($request->hasFile('images')) {
             // Clear all old images before uploading new ones
             $service->clearMediaCollection('images');
@@ -173,28 +175,40 @@ class ServiceController extends Controller
                         ->toMediaCollection('images');
 
                     // Check if there's a description for the current image
-                    $imageDescription = $request->input("image_descriptions.{$image->id}");
+                    $imageDescription = $request->input("image_descriptions.{$media->id}");
+                    $imageTitle = $request->input("image_titles.{$media->id}");
+
                     if ($imageDescription) {
-                        // Update the custom property
+                        // Update the custom property (image description)
                         $media->setCustomProperty('image_description', $imageDescription)->save();
+                    }
+
+                    if ($imageTitle) {
+                        // Update the custom property (image title)
+                        $media->setCustomProperty('image_title', $imageTitle)->save();
                     }
                 }
             }
         }
 
-
-        // **Update Image Descriptions**
-        if ($request->has('image_descriptions')) {
+        // **Update Existing Image Descriptions and Titles**
+        if ($request->has('image_descriptions') || $request->has('image_titles')) {
             foreach ($request->image_descriptions as $imageId => $description) {
                 $image = $service->getMedia('images')->where('id', $imageId)->first();
                 if ($image) {
-                    // Directly update the image description field in the media table
-                    $image->image_description = $description;
-                    $image->save();
+                    // Update the custom property for image description
+                    $image->setCustomProperty('image_description', $description)->save();
+                }
+            }
+
+            foreach ($request->image_titles as $imageId => $title) {
+                $image = $service->getMedia('images')->where('id', $imageId)->first();
+                if ($image) {
+                    // Update the custom property for image title
+                    $image->setCustomProperty('image_title', $title)->save();
                 }
             }
         }
-
 
         return redirect()->route('service.index', $service->id);
     }
