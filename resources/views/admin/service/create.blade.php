@@ -17,7 +17,8 @@
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
                         <li class="breadcrumb-item text-muted">
-                            <a href="{{ route('service-category.index') }}" class="text-muted text-hover-primary">Hizmet Listesi</a>
+                            <a href="{{ route('service-category.index') }}" class="text-muted text-hover-primary">Hizmet
+                                Listesi</a>
                         </li>
                         <li class="breadcrumb-item">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
@@ -32,17 +33,20 @@
 
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <div id="kt_app_content_container" class="app-container container-xxl">
-                <form class="form d-flex flex-column flex-lg-row" action="{{ route('service.store') }}" method="POST" id="form" enctype="multipart/form-data">
+                <form class="form d-flex flex-column flex-lg-row" action="{{ route('service.store') }}" method="POST"
+                      id="form" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
                     <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-12">
 
                         <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-n2">
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#generalInformation">Genel Bilgiler</a>
+                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab"
+                                   href="#generalInformation">Genel Bilgiler</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#search">Arama Motoru</a>
+                                <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#search">Arama
+                                    Motoru</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -55,55 +59,65 @@
                                                     <label class="form-label">Görsel Seçin</label>
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                         <span class="input-group-btn">
-                                                            <a class="uploadImage btn btn-primary text-white btn-sm">
-                                                               <i class="far fa-file-image"></i> Seç
-                                                            </a>
-                                                               <input type="file" accept="image/jpeg, image/png, image/jpg" name="banner_image" class="d-none">
-                                                            <a data-input="thumbnail" data-preview="holder"
-                                                               class="removeImage btn btn-danger text-white btn-sm">
-                                                               <i class="fa fa-trash"></i> Kaldır
-                                                            </a>
-                                                            <div class="row col-md-12 thumb-output p-2">
-                                                                <img class="thumb img-thumbnail" src="">
-                                                            </div>
-                                                        </span>
+                <span class="input-group-btn">
+                    <a class="uploadImage btn btn-primary text-white btn-sm">
+                        <i class="far fa-file-image"></i> Seç
+                    </a>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg"
+                           name="images[]" id="image-input" class="d-none" multiple>
+                    <a data-input="thumbnail" data-preview="holder"
+                       class="removeImage btn btn-danger text-white btn-sm">
+                        <i class="fa fa-trash"></i> Kaldır
+                    </a>
+                </span>
                                                         </div>
+                                                        <div class="row col-md-12 thumb-output p-2"
+                                                             id="thumb-output"></div>
                                                     </div>
                                                     <div class="text-muted fs-7">Medya görseli ekleyin.</div>
                                                 </div>
                                             </div>
+
                                             <div class="mb-10 row">
                                                 <div class="col-sm-4">
                                                     <label class="required form-label">Kategori</label>
                                                     <select name="category_id" class="form-control col-sm-4" required>
                                                         @foreach($categories as $category)
-                                                            <option value="{{$category->id}}">{{ $category->title }}</option>
+                                                            <option
+                                                                value="{{$category->id}}">{{ $category->title }}</option>
                                                         @endforeach
                                                     </select>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <label class="required form-label">Randevulu</label>
-                                                    <select name="can_be_appointment" id="can_be_appointment" class="form-control" required>
+                                                    <select name="can_be_appointment" id="can_be_appointment"
+                                                            class="form-control" required>
                                                         <option value="1">Evet</option>
                                                         <option selected value="0">Hayır</option>
                                                     </select>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                                 <div class="col-sm-4" style="display: none;" id="appointment_times">
-                                                    <label class="required form-label">Randevu Başlangıç / Bitiş Saatleri</label>
+                                                    <label class="required form-label">Randevu Başlangıç / Bitiş
+                                                        Saatleri</label>
                                                     <div class="d-flex">
-                                                        <select class="form-control me-2" id="appointment_start_time" name="appointment_start_time">
+                                                        <select class="form-control me-2" id="appointment_start_time"
+                                                                name="appointment_start_time">
                                                             @foreach (range(0, 23) as $hour)
-                                                                <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
-                                                                <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
+                                                                <option
+                                                                    value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
+                                                                <option
+                                                                    value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
                                                             @endforeach
                                                         </select>
-                                                        <select class="form-control" id="appointment_end_time" name="appointment_end_time">
+                                                        <select class="form-control" id="appointment_end_time"
+                                                                name="appointment_end_time">
                                                             @foreach (range(0, 23) as $hour)
-                                                                <option value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
-                                                                <option value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
+                                                                <option
+                                                                    value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
+                                                                <option
+                                                                    value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -120,28 +134,32 @@
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kategori Sayfası Açıklama</label>
-                                                    <textarea class="form-control" id="category_page_detail" name="category_page_detail" rows="2"></textarea>
+                                                    <textarea class="form-control" id="category_page_detail"
+                                                              name="category_page_detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kısa Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="sort_detail" name="sort_detail" rows="2"></textarea>
+                                                    <textarea class="form-control ckeditors" id="sort_detail"
+                                                              name="sort_detail" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="detail" name="detail" rows="2"></textarea>
+                                                    <textarea class="form-control ckeditors" id="detail" name="detail"
+                                                              rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <label class="required form-label">Sıra Sayısı</label>
-                                                    <input class="form-control" name="sort_order" type="number" value="1" min="0" max="99"/>
+                                                    <input class="form-control" name="sort_order" type="number"
+                                                           value="1" min="0" max="99"/>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                                 <div class="col-sm-3">
@@ -196,23 +214,56 @@
     <script src="{{ asset('') }}assets/dragsort/dragsort.js"></script>
     <script src="{{ asset('') }}assets/plugins/custom/ckeditor/ckeditor.js"></script>
     <script src="{{ asset('') }}assets/js/admin/ckeditor.js"></script>
+
+    <script>
+        document.getElementById("image-input").addEventListener("change", function (event) {
+            let output = document.getElementById("thumb-output");
+            output.innerHTML = ""; // Clear any previous previews
+
+            Array.from(event.target.files).forEach((file, index) => {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let div = document.createElement("div");
+                    div.classList.add("col-md-4", "image-preview-container", "mb-3");
+
+                    // Append image preview and description textarea
+                    div.innerHTML = `
+                <img src="${e.target.result}" class="img-thumbnail mb-2" style="width: 120px; height: 120px; display: block;">
+                <textarea name="image_descriptions[]" class="form-control" rows="3" placeholder="Görsel açıklaması girin"></textarea>
+                <a href="#" class="remove-preview btn btn-danger btn-sm" style="margin-top: 5px;">Kaldır</a>
+            `;
+
+                    output.appendChild(div);
+
+                    // Add a click event listener for the remove button
+                    div.querySelector(".remove-preview").addEventListener("click", function (e) {
+                        e.preventDefault();
+                        div.remove(); // Remove the image preview and description
+                    });
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+    </script>
+
     <script>
         var input = document.querySelector('#inputTagify');
         var tagify = new Tagify(input)
 
         var dragsort = new DragSort(tagify.DOM.scope, {
-            selector: '.'+tagify.settings.classNames.tag,
+            selector: '.' + tagify.settings.classNames.tag,
             callbacks: {
                 dragEnd: onDragEnd
             }
         })
 
-        function onDragEnd(elm){
+        function onDragEnd(elm) {
             tagify.updateValueByDOMTags()
         }
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             function checkAppointmentVisibility() {
                 var canBeAppointment = $('#can_be_appointment').find(':selected').val();
                 if (canBeAppointment === "1") {
@@ -225,9 +276,10 @@
                     $('#appointment_end_time').prop('required', false).val('');
                 }
             }
+
             checkAppointmentVisibility();
 
-            $('#can_be_appointment').on('change', function() {
+            $('#can_be_appointment').on('change', function () {
                 checkAppointmentVisibility();
             });
 
@@ -243,9 +295,32 @@
                 }
             }
 
-            $('#appointment_start_time, #appointment_end_time').on('change', function() {
+            $('#appointment_start_time, #appointment_end_time').on('change', function () {
                 validateTimes();
             });
         });
     </script>
+    {{--    <script>document.getElementById("image-input").addEventListener("change", function(event) {--}}
+    {{--            const thumbOutput = document.getElementById("thumb-output");--}}
+    {{--            thumbOutput.innerHTML = ""; // Clear previous thumbnails--}}
+    {{--            const files = event.target.files; // Get selected files--}}
+
+    {{--            if (files) {--}}
+    {{--                Array.from(files).forEach(file => {--}}
+    {{--                    if (file.type.startsWith("image/")) { // Check if file is an image--}}
+    {{--                        const reader = new FileReader();--}}
+    {{--                        reader.onload = function(e) {--}}
+    {{--                            const img = document.createElement("img");--}}
+    {{--                            img.src = e.target.result; // Set image source--}}
+    {{--                            img.className = "thumb img-thumbnail m-2"; // Add styling classes--}}
+    {{--                            img.style.maxWidth = "150px"; // Set thumbnail size--}}
+    {{--                            img.style.maxHeight = "150px";--}}
+    {{--                            thumbOutput.appendChild(img); // Add to the output div--}}
+    {{--                        };--}}
+    {{--                        reader.readAsDataURL(file); // Read the file as data URL--}}
+    {{--                    }--}}
+    {{--                });--}}
+    {{--            }--}}
+    {{--        });--}}
+    {{--    </script>--}}
 @endsection

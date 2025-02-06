@@ -110,6 +110,9 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
         Route::get('/duzenle/{id}', [ServiceController::class, 'edit'])->name('edit');
         Route::put('/duzenle/{id}', [ServiceController::class, 'update'])->name('update');
         Route::delete('/sil/{id}', [ServiceController::class, 'destroy'])->name('destroy');
+
+
+
     });
 
     Route::prefix('randevu')->name('appointment.')->group(function () {

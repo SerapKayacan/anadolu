@@ -9,7 +9,7 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "Özel Sultan Evde Sağlık Hizmetleri", // set false to total remove
+            'title'        => "Usta Renovasyon", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description'  => 'Evde Bakım Hizmeti — Medical Center İle Tüm Sağlık ve Bakım Hizmetlerini Evinizin Konforunda Alın. Hemen Arayın. Lisanslı, Sertifikalı ve Uzman Sağlık Çalışanlarımız İle İstanbul\'un Her Yerindeyiz.', // set false to total remove
             'separator'    => ' - ',

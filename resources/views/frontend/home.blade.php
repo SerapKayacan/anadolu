@@ -35,11 +35,13 @@
     <div class="row justify-content-center  p-4 ">
         @foreach ($services as $service)
             <div class="col-lg-4 mb-4">
-                <div class="card home-card ">
-                    <img src="{{ $service->getFirstMediaUrl('banner', 'large') }}" alt="Service image"
+                <div class="card home-card">
+                    <img src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
+                         alt="Service Image"
                          class="home-card-img">
+
                     <div class="card-body home-card-body">
-                        <p class="home-card-title"> {{ $service->title}}</p>
+                        <p class="home-card-title">{{ $service->title }}</p>
                         <p class="home-card-detail">{{ $service->category_page_detail }}</p>
                         <button class="home-card-button" title="Devamını Gör."
                                 onclick="window.location.href='{{ route('services-detail.show', ['slug' => $service->slug]) }}'">
@@ -47,6 +49,7 @@
                         </button>
                     </div>
                 </div>
+
             </div>
         @endforeach
 

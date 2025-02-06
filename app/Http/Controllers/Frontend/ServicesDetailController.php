@@ -32,7 +32,7 @@ class ServicesDetailController extends Controller
         SEOTools::setDescription($service->meta_description); // Dinamik olacak şekilde ayalanacak
         SEOTools::opengraph()->addProperty('type', 'article'); // Hizmet detay sayfasında type article olarak güncellenecek
         SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray()); // Dinamik olacak şekilde ayalanacak
-        SEOTools::addImages($service->getFirstMediaUrl('banner', 'large')); // Dinamik olacak şekilde ayalanacak
+//        SEOTools::addImages($service->getFirstMediaUrl('banner', 'large')); // Dinamik olacak şekilde ayalanacak
 
         return view('frontend.services-detail', [
             "service" => $service,

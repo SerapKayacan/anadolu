@@ -51,7 +51,6 @@
                                     Motoru</a>
                             </li>
                         </ul>
-
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="generalInformation" role="tab-panel">
                                 <div class="d-flex flex-column gap-7 gap-lg-10">
@@ -64,28 +63,44 @@
                                                         <div class="input-group">
                                                             <span class="input-group-btn">
                                                                 <a class="uploadImage btn btn-primary text-white btn-sm">
-                                                                   <i class="far fa-file-image"></i> Seç
+                                                                  <i class="far fa-file-image"></i> Seç
                                                                 </a>
                                                                    <input type="file"
                                                                           accept="image/jpeg, image/png, image/jpg"
-                                                                          name="banner_image" class="d-none">
-                                                                   <input type="text" name="uploaded_banner_image"
-                                                                          class="d-none"
-                                                                          value="{{ $service->getFirstMediaUrl('banner', 'large') }}">
-                                                                <a data-input="thumbnail" data-preview="holder"
-                                                                   class="removeImage btn btn-danger text-white btn-sm">
+                                                                          name="images[]"
+                                                                          id="image-input" class="d-none" multiple>
+                                                                 <a data-input="thumbnail" data-preview="holder"
+                                                                    class="removeImage btn btn-danger text-white btn-sm">
                                                                    <i class="fa fa-trash"></i> Kaldır
-                                                                </a>
-                                                                <div class="row col-md-12 thumb-output p-2">
-                                                                    <img class="thumb img-thumbnail"
-                                                                         src="{{ $service->getFirstMediaUrl('banner', 'large') }}">
-                                                                </div>
+                                                                        </a>
                                                             </span>
                                                         </div>
+                                                        <div class="row col-md-12 thumb-output p-2" id="thumb-output">
+                                                            @foreach ($service->getMedia('images') as $image)
+                                                                <div class="col-md-4 image-preview-container mb-3">
+                                                                    <img class="thumb img-thumbnail mb-2"
+                                                                         src="{{ $image->getUrl() }}"
+                                                                         alt="Service Image"
+                                                                         style="width: 120px; height: 120px;">
+                                                                    <textarea
+                                                                        name="image_descriptions[{{ $image->id }}]"
+                                                                        class="form-control"
+                                                                        rows="2"
+                                                                        placeholder="Görsel açıklaması girin">{{ $image->image_description }}</textarea>
+                                                                    <a href="#"
+                                                                       class="remove-preview btn btn-danger btn-sm mt-2">Kaldır</a>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+
+
                                                     </div>
-                                                    <div class="text-muted fs-7">Medya görseli ekleyin.</div>
+                                                    <div class="text-muted fs-7">Medya görseli ekleyin ve açıklamalarını
+                                                        düzenleyin.
+                                                    </div>
                                                 </div>
                                             </div>
+
                                             <div class="mb-10 row">
                                                 <div class="col-sm-4">
                                                     <label class="required form-label">Kategori</label>
@@ -147,14 +162,18 @@
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kategori Sayfası Açıklama</label>
-                                                    <textarea class="form-control " id="category_page_detail" name="category_page_detail" rows="2">{!! $service->category_page_detail !!}</textarea>
+                                                    <textarea class="form-control " id="category_page_detail"
+                                                              name="category_page_detail"
+                                                              rows="2">{!! $service->category_page_detail !!}</textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Kısa Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="sort_detail" name="sort_detail" rows="2">{!! $service->sort_detail !!}</textarea>
+                                                    <textarea class="form-control ckeditors" id="sort_detail"
+                                                              name="sort_detail"
+                                                              rows="2">{!! $service->sort_detail !!}</textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
@@ -283,5 +302,35 @@
                 validateTimes();
             });
         });
+    </script>
+    <script>
+        document.getElementById("image-input").addEventListener("change", function (event) {
+            let output = document.getElementById("thumb-output");
+
+            Array.from(event.target.files).forEach((file, index) => {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let div = document.createElement("div");
+                    div.classList.add("col-md-4", "image-preview-container", "mb-3");
+
+                    // Create preview image, description input, and remove button
+                    div.innerHTML = `
+                <img src="${e.target.result}" class="img-thumbnail mb-2" style="width: 120px; height: 120px;">
+                <textarea name="new_image_descriptions[]" class="form-control" rows="2" placeholder="Görsel açıklaması girin"></textarea>
+                <a href="#" class="remove-preview btn btn-danger btn-sm mt-2">Kaldır</a>
+            `;
+
+                    output.appendChild(div);
+
+                    // Handle image removal
+                    div.querySelector(".remove-preview").addEventListener("click", function (e) {
+                        e.preventDefault();
+                        div.remove();
+                    });
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
     </script>
 @endsection

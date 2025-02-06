@@ -27,6 +27,7 @@ class Service extends Model implements HasMedia
         'appointment_start_time',
         'appointment_end_time',
         'is_active'
+
     ];
 
     public function tags()
@@ -41,10 +42,14 @@ class Service extends Model implements HasMedia
 //buraya ihtiyac var
     public function registerMediaConversions(Media $media = null): void
     {
-        $this->addMediaConversion('large')
-            ->fit(Manipulations::FIT_MAX, 770, 442);
+        $this->addMediaConversion('thumb')
+            ->width(300)
+            ->height(300)
+            ->sharpen(10);
 
-        $this->addMediaConversion('medium')
-            ->fit(Manipulations::FIT_MAX, 350, 247);
+        $this->addMediaConversion('large') // Adding 'large' conversion
+        ->width(1200)
+            ->height(600)
+            ->sharpen(10);
     }
 }
