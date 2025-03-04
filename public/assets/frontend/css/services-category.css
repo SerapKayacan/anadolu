@@ -292,8 +292,15 @@
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.image_title{
+    font-weight: bold;
+    color: #ec4949;
+    font-size:25px;
+}
 .image_description{
-
+    font-weight: bold;
+    color: #2c9bf6;
+    font-size:20px;
 }
 .services-detail-page-header {
     font-size: 37px;
