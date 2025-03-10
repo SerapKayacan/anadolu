@@ -31,10 +31,10 @@ class Carousel extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('large')
-            ->fit(Manipulations::FIT_MAX, 770, 442);
+            ->fit(Manipulations::FIT_MAX, 1920, 1080);
 
         $this->addMediaConversion('medium')
-            ->fit(Manipulations::FIT_MAX, 350, 247);
+            ->fit(Manipulations::FIT_MAX, 1920, 1080);
     }
 
 }

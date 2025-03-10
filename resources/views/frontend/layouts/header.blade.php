@@ -23,7 +23,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-TC692324');</script>
     <!-- End Google Tag Manager -->
     <!-- Favicon -->
-    <link href="public/assets/frontend/img/favicon.ico" rel="icon">
+    <link href="{{asset('assets/frontend/img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

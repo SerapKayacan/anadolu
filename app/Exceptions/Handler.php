@@ -27,4 +27,14 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    public function render($request, Throwable $exception)
+    {
+        // Check if it's a 404 error
+        if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+            // Redirect to the home page
+            return redirect('http://localhost/anadolu/public/');
+        }
+
+        return parent::render($request, $exception);
+    }
 }
