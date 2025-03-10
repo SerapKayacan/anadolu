@@ -34,9 +34,6 @@ Route::prefix('hizmetler')->group(function () {
     Route::get('/{slug}', [ServicesController::class, 'showByCategory'])->name('services.byCategory');
 });
 
-Route::prefix('online-doktor')->group(function () {
-    Route::get('/', [OnlineDoctorController::class, 'showByCategory'])->name('onlineDoctor.byCategory');
-});
 
 Route::prefix('hizmet-detayi')->group(function () {
     Route::get('/{slug}', [ServicesDetailController::class, 'show'])->name('services-detail.show');
