@@ -1,43 +1,46 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <main>
-        <div class="container rounded-bottom-5 pb-5 px-5" style="background-color:#f8dbdb">
-            <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 services-detail-page-text col-lg-5 pt-4 pb-2">
-                <h1 class="services-detail-page-header justify-content-center text-center">{{ $service->title }}</h1>
-                <p>
-                    {!! $service->sort_detail !!}
-                </p>
-            </div>
-            <div class="row justify-content-center ">
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $service->title }}</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">{{ $serviceCategory->title }}</li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">{{ $service->title }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+{{--            <div class="section-title text-center">--}}
+{{--                <h1 class="display-5 mb-5">{{ $service->title }}</h1>--}}
+{{--            </div>--}}
+            <div class="row g-4">
                 @foreach ($service->getMedia('images') as $image)
-                    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 d-flex justify-content-center pt-4 pb-2">
-                        <img class="services-detail-page-img"
-                             src="{{ $image->getUrl('large') }}"
-                             alt="Service Image">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden position-relative">
+                            <img class="img-fluid" src="{{ $image->getUrl('large') }}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center border border-5 border-light border-top-0 p-4">
+                            <h5 class="mb-0"> {{ $image->getCustomProperty('image_title') ?? 'No Title Available' }}</h5>
+                            <small>  {{ $image->getCustomProperty('image_description') ?? 'No Description Available' }}</small>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 services-detail-page-text col-lg-5 pt-4 pb-2">
-                        <h5 class="image_title">
-                            {{ $image->getCustomProperty('image_title') ?? 'No Title Available' }}
-                        </h5>
-
-                        <!-- Image Description -->
-                        <p class="image_description">
-                            {{ $image->getCustomProperty('image_description') ?? 'No Description Available' }}
-                        </p>
-                    </div>
-
-                @endforeach
-
-            </div>
-        </div>
-        <div class="container pb-5 px-5">
-            <div class="row justify-content-center mx-4">
-                <div class="col-md-12 col-lg-12 col-xs-12 mx-2">
-                    <p class="services-detail-page-text-bottom"> {!! $service->detail !!} </p>
                 </div>
+                @endforeach
             </div>
         </div>
-
-    </main>
-
+    </div>
+    <!-- Team End -->
 @endsection

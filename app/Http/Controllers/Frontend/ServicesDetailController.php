@@ -27,18 +27,21 @@ class ServicesDetailController extends Controller
             ->orderBy('sort_order', 'ASC')
             ->firstOrFail();
 
+        $serviceCategory = $service->getCategory; // Retrieve the category from the relationship
+
         $days = $this->appointmentService->getWeeklyAvailability($service);
-        SEOTools::setTitle($service->title); // Dinamik olacak şekilde ayalanacak
-        SEOTools::setDescription($service->meta_description); // Dinamik olacak şekilde ayalanacak
-        SEOTools::opengraph()->addProperty('type', 'article'); // Hizmet detay sayfasında type article olarak güncellenecek
-        SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray()); // Dinamik olacak şekilde ayalanacak
-//        SEOTools::addImages($service->getFirstMediaUrl('banner', 'large')); // Dinamik olacak şekilde ayalanacak
+
+        SEOTools::setTitle($service->title);
+        SEOTools::setDescription($service->meta_description);
+        SEOTools::opengraph()->addProperty('type', 'article');
+        SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray());
 
         return view('frontend.services-detail', [
             "service" => $service,
+            "serviceCategory" => $serviceCategory, // Pass the category to the view
             "days" => $days,
-
         ]);
+
     }
 
 

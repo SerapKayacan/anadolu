@@ -122,7 +122,7 @@
         </div>
     </div>
     <!-- About End -->
-    
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('frontend.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\anadolu\resources\views/frontend/about-us.blade.php ENDPATH**/ ?>
