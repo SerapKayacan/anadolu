@@ -141,34 +141,6 @@
     </div>
     <!-- About End -->
 
-
-    <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Hizmetlerimiz</h1>
-            </div>
-            <div class="row g-4">
-                @foreach ($services as $service)
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img
-                                    src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
-                                    alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">{{ $service->title }}</h4>
-                                <p>{{ $service->category_page_detail }}</p>
-                                <a class="fw-medium" href="">Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
@@ -178,32 +150,36 @@
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
                         <li class="mx-2 active" data-filter="*">All</li>
-                        <li class="mx-2" data-filter=".first">General Carpentry</li>
-                        <li class="mx-2" data-filter=".second">Custom Carpentry</li>
+                        @foreach ($serviceCategories as $serviceCategory)
+                            <li class="mx-2" data-filter=".category-{{ $serviceCategory->id }}">
+                                {{ $serviceCategory->title }}
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
             <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="rounded overflow-hidden">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100"  src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-square btn-outline-light mx-1" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <img class="img-fluid w-100"  src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" alt="">
+                                <div class="portfolio-overlay">
+                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="border border-5 border-light border-top-0 p-4">
+                                <p class="text-primary fw-medium mb-2">{{ $service->title }}</p>
+                                <h5 class="lh-base mb-0">{{ $service->category_page_detail }}</h5>
                             </div>
                         </div>
-                        <div class="border border-5 border-light border-top-0 p-4">
-                            <p class="text-primary fw-medium mb-2">Custom Carpentry</p>
-                            <h5 class="lh-base mb-0">Wooden Furniture Manufacturing And Remodeling</a>
-                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </div>
+
     <!-- Projects End -->
 
 
@@ -337,4 +313,39 @@
     window.addEventListener("load", function () {
         document.getElementById("spinner").style.display = "none";
     });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const filters = document.querySelectorAll("#portfolio-flters li");
+        const items = document.querySelectorAll(".portfolio-item");
+
+        filters.forEach(filter => {
+            filter.addEventListener("click", function() {
+                // Remove active class from all filters
+                filters.forEach(f => f.classList.remove("active"));
+                this.classList.add("active");
+
+                const filterValue = this.getAttribute("data-filter");
+
+                if (filterValue === "*") {
+                    // Show all items when "All" is clicked
+                    items.forEach(item => {
+                        item.style.display = "block";
+                    });
+                } else {
+                    // Hide all items first
+                    items.forEach(item => {
+                        item.style.display = "none";
+                    });
+
+                    // Show only items that match the selected category
+                    document.querySelectorAll(filterValue).forEach(item => {
+                        item.style.display = "block";
+                    });
+                }
+            });
+        });
+    });
+
+
 </script>
