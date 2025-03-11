@@ -28,7 +28,7 @@ class HomeController extends Controller
         return view('frontend.home', [
             "serviceCategories" => $serviceCategories,
             "types" => $types,
-             "carousels"=>$carousels,
+            "carousels"=>$carousels,
             "tabPanels" => $tabPanels,
             "services" => $services
         ]);

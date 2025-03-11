@@ -12,6 +12,7 @@ class ServicesCategoryController extends Controller
 {
     public function index()
     {
+
         $serviceCategories = ServiceCategory::with('services')->where('is_active', true)->orderBy('sort_order', 'ASC')->get();
         $types = ServiceCategory::types();
         foreach ($serviceCategories as $serviceCategory) {

@@ -12,7 +12,6 @@
                     <li class="breadcrumb-item text-white active" aria-current="page">{{ $serviceCategory->title }}</li>
                 </ol>
             </nav>
-            @endforeach
         </div>
     </div>
     <!-- Page Header End -->

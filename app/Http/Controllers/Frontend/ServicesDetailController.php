@@ -20,7 +20,7 @@ class ServicesDetailController extends Controller
 
     public function show(string $slug)
     {
-
+        $serviceCategories = ServiceCategory::where('is_active', true)->get();
         $service = Service::with('getCategory')
             ->where('is_active', true)
             ->where('slug', $slug)
@@ -37,6 +37,7 @@ class ServicesDetailController extends Controller
         SEOTools::metatags()->setKeywords($service->tags->pluck('name')->toArray());
 
         return view('frontend.services-detail', [
+            'serviceCategories' => $serviceCategories,
             "service" => $service,
             "serviceCategory" => $serviceCategory, // Pass the category to the view
             "days" => $days,

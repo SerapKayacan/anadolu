@@ -56,9 +56,6 @@
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<header>
-
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
         <div class="row gx-0 d-none d-lg-flex">
@@ -88,7 +85,6 @@
     </div>
     <!-- Topbar End -->
 
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -99,38 +95,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('home') }}" class="nav-item nav-link active">Ana Sayfa</a>
-                <a href="{{ route('about-us.index') }}" class="nav-item nav-link">Hakkımızda</a>
-                {{--                <a href="service.html" class="nav-item nav-link">Service</a>--}}
-                {{--                <a href="project.html" class="nav-item nav-link">Project</a>--}}
+                <a href="{{ route('home') }}" class="nav-item nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}">Ana Sayfa</a>
+                <a href="{{ route('about-us.index') }}" class="nav-item nav-link {{ Route::currentRouteName() == 'about-us.index' ? 'active' : '' }}">Hakkımızda</a>
                 <div class="nav-item dropdown">
-                    <a href="{{ route('services-category.index') }}" class="nav-link">Hizmetler</a>
+                    <a href="" class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'services-category.index' ? 'active' : '' }}" data-bs-toggle="dropdown">Hizmetler</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="feature.html" class="dropdown-item">Epoksi ve PVC Döşeme</a>
-                        <a href="quote.html" class="dropdown-item">Boya/Badana</a>
-                        <a href="team.html" class="dropdown-item">Tadilat</a>
-                        <a href="testimonial.html" class="dropdown-item">Isı Yalıtım ve Mantolama</a>
+                        @foreach ($serviceCategories as $serviceCategory)
+                            <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" class="dropdown-item">
+                                {{ $serviceCategory->title }}
+                            </a>
+                        @endforeach
+
                     </div>
                 </div>
-                {{--                <a href="{{ route('contact.index') }}" class="nav-item nav-link">Contact</a>--}}
             </div>
-            <a href="tel:05447258125" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
-                Bizi Arayın
+            <a href="tel:05447258125" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Bizi Arayın
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.1-.24 11.36 11.36 0 003.57.57 1 1 0 011 1v3.59a1 1 0 01-1 1A19 19 0 013 4a1 1 0 011-1h3.59a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.24 1.1z" fill="white"/>
                 </svg>
             </a>
-
-
-
-
-
         </div>
     </nav>
     <!-- Navbar End -->
-</header>
-<script>
-    window.addEventListener("load", function () {
-        document.getElementById("spinner").style.display = "none";
-    });
-</script>
+
