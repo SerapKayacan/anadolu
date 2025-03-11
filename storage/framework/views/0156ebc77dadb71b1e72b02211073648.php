@@ -85,7 +85,7 @@
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Başlık</label>
-                                                    <textarea class="form-control ckeditors" id="title" name="title"
+                                                    <textarea class="form-control " id="title" name="title"
                                                               rows="2"><?php echo e($carousel->title); ?></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
@@ -94,18 +94,10 @@
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label"> Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="description"
+                                                    <textarea class="form-control " id="description"
                                                               name="description"
                                                               rows="2"><?php echo e($carousel->description); ?></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="required form-label">Buton Yazısı</label>
-                                                    <input class="form-control" name="button_text"
-                                                           value="<?php echo e($carousel->button_text); ?>" required/>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
@@ -116,45 +108,6 @@
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <label class="required form-label">Buton Yazısı Rengi</label>
-                                                    <input
-                                                        type="color"
-                                                        class="form-control"
-                                                        name="text_color"
-                                                        value="<?php echo e(old('text_color', $carousel->text_color ?? '#000000')); ?>"
-                                                        required
-                                                    />
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-
-                                                <div class="col-sm-3">
-                                                    <label class="required form-label">Buton Çerçeve Rengi</label>
-                                                    <input
-                                                        type="color"
-                                                        class="form-control"
-                                                        name="border_color"
-                                                        value="<?php echo e(old('border_color', $carousel->border_color ?? '#000000')); ?>"
-                                                        required
-                                                    />
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-
-                                                <div class="col-sm-3">
-                                                    <label class="required form-label">Buton Arka Plan Rengi</label>
-                                                    <input
-                                                        type="color"
-                                                        class="form-control"
-                                                        name="background_color"
-                                                        value="<?php echo e(old('background_color', $carousel->background_color ?? '#000000')); ?>"
-                                                        required
-                                                    />
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                            </div>
-
-
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <label class="required form-label">Sıra Sayısı</label>

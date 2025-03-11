@@ -315,6 +315,8 @@
 .service-item img {
     transition: .5s;
     max-height: 300px;
+
+
 }
 
 .service-item:hover img {

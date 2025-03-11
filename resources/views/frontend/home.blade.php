@@ -9,7 +9,7 @@
                     <img class="img-fluid" src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}"
                          alt="Carousel Image">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                         style="background: rgba(53, 53, 53, .7);">
+                         style="background: rgba(53, 53, 53, 0.3);">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-lg-8 text-center">
@@ -17,7 +17,6 @@
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">{!! $carousel->description !!}</p>
                                     <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Devamını
                                         Oku</a>
-                                    <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Bilgi</a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +85,7 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg"
+                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/about-us.jpg') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>
@@ -144,12 +143,12 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Our Projects</h1>
+                <h1 class="display-5 mb-5">Hizmetlerimiz</h1>
             </div>
             <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">All</li>
+                        <li class="mx-2 active" data-filter="*">Hepsi</li>
                         @foreach ($serviceCategories as $serviceCategory)
                             <li class="mx-2" data-filter=".category-{{ $serviceCategory->id }}">
                                 {{ $serviceCategory->title }}
@@ -163,7 +162,7 @@
                     <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100"  src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" alt="">
+                                <img class="img-fluid w-100 h-auto"  src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" alt="">
                                 <div class="portfolio-overlay">
                                     <a class="btn btn-square btn-outline-light mx-1" href="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                                     <a class="btn btn-square btn-outline-light mx-1" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"><i class="fa fa-link"></i></a>
@@ -255,7 +254,7 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg"
+                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/why-us.jpg') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>

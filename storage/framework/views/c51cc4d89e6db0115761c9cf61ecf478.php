@@ -3,13 +3,15 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Hizmetlerimiz</h1>
+            <?php $__currentLoopData = $serviceCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $serviceCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <h1 class="display-3 text-white mb-3 animated slideInDown"><?php echo e($serviceCategory->title); ?></h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-white" href="#">Ana Sayfa</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">Hizmetlerimiz</li>
+                    <li class="breadcrumb-item text-white active" aria-current="page"><?php echo e($serviceCategory->title); ?></li>
                 </ol>
             </nav>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
     <!-- Page Header End -->
