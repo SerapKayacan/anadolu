@@ -44,7 +44,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/style.css') }}">
@@ -58,9 +58,10 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="icon-bar call-icon">
-    <a href="#" class="whatsapp"><i class="fa fa-phone"></i></a>
-    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-    <a href="#" class="linkedin"><i class="fa fa-whatsapp"></i></a>
+    <a title="Bizi hemen arayın!" href="tel:05447258125" class="phone"><i class="fas fa-phone-alt text-white"></i></a>
+    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+    <a title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
 </div>
 
     <!-- Topbar Start -->
@@ -82,9 +83,9 @@
                     <small>+90 544 725 81 25</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    {{--                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>--}}
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -116,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <a href="tel:05447258125" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Bizi Arayın
+            <a title="Bizi hemen arayın!"  href="tel:05447258125" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Bizi Arayın
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.1-.24 11.36 11.36 0 003.57.57 1 1 0 011 1v3.59a1 1 0 01-1 1A19 19 0 013 4a1 1 0 011-1h3.59a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.24 1.1z" fill="white"/>
                 </svg>
