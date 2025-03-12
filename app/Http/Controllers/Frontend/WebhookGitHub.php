@@ -22,7 +22,7 @@ class WebhookGitHub extends Controller
         }
 
         $data = json_decode($payload, true);
-        if (isset($data['ref']) && $data['ref'] === 'refs/heads/master') {
+        if (isset($data['ref']) && $data['ref'] === 'refs/heads/main') {
             $output = shell_exec('cd '.$folder.' && git pull 2>&1');
             return response()->json(['message' => $output]);
         } else {
