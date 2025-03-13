@@ -17,16 +17,17 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Hizmetlerimiz</h4>
-                    <a class="btn btn-link" href="">Epoksi ve PVC Döşeme</a>
-                    <a class="btn btn-link" href="">Boya/Badana</a>
-                    <a class="btn btn-link" href="">Tadilat</a>
-                    <a class="btn btn-link" href="">Isı Yalıtım ve Mantolama</a>
+                    @foreach ($serviceCategories as $serviceCategory)
+                        <a  title="{{ $serviceCategory->title }} Görüntüle" href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" class="btn btn-link">
+                            {{ $serviceCategory->title }}
+                        </a>
+                    @endforeach
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Alt Menü</h4>
-                    <a class="btn btn-link" href="">Hakkımızda</a>
+                    <a class="btn btn-link" title="Hakkimizda Görüntüle" href="">Hakkımızda</a>
 {{--                    <a class="btn btn-link" href="">Contact Us</a>--}}
-                    <a class="btn btn-link" href="">Hizmetlerimiz</a>
+                    <a class="btn btn-link" title="Hizmetlerimizi Görüntüle" href="">Hizmetlerimiz</a>
                 </div>
 
             </div>

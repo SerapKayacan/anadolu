@@ -17,16 +17,18 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Hizmetlerimiz</h4>
-                    <a class="btn btn-link" href="">Epoksi ve PVC Döşeme</a>
-                    <a class="btn btn-link" href="">Boya/Badana</a>
-                    <a class="btn btn-link" href="">Tadilat</a>
-                    <a class="btn btn-link" href="">Isı Yalıtım ve Mantolama</a>
+                    <?php $__currentLoopData = $serviceCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $serviceCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a  title="<?php echo e($serviceCategory->title); ?> Görüntüle" href="<?php echo e(route('services.byCategory', ['slug' => $serviceCategory->slug])); ?>" class="btn btn-link">
+                            <?php echo e($serviceCategory->title); ?>
+
+                        </a>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Alt Menü</h4>
-                    <a class="btn btn-link" href="">Hakkımızda</a>
+                    <a class="btn btn-link" title="Hakkimizda Görüntüle" href="">Hakkımızda</a>
 
-                    <a class="btn btn-link" href="">Hizmetlerimiz</a>
+                    <a class="btn btn-link" title="Hizmetlerimizi Görüntüle" href="">Hizmetlerimiz</a>
                 </div>
 
             </div>
