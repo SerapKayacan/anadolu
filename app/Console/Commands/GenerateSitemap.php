@@ -8,14 +8,14 @@ use Spatie\Sitemap\Tags\Url;
 
 class GenerateSitemap extends Command
 {
-    protected $signature = 'sitemap:generate';
+    protected $signature = 'sitemap:refresh';
 
-    protected $description = 'Generate sitemap';
+    protected $description = 'Generate Regenerate the sitemap.xml file';
 
     public function handle()
     {
         // The Crawler
-        SitemapGenerator::create('https://sultanevdesaglikhizmetleri.com/')
+        SitemapGenerator::create('https://anadolutadilat.com/')
             ->hasCrawled(function (Url $url) {
                 // Some logic here
                 return $url;
