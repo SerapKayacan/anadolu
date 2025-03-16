@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+[2025-03-16 01:27:36] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:28:05] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:28:26] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:28:46] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:29:06] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:30:29] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:30:43] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:30:54] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:31:07] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:31:23] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:31:48] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:32:11] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:32:34] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+[2025-03-16 01:32:57] local.DEBUG: Request Image Descriptions: {"descriptions":null} 
+=======
 [2025-03-10 01:50:36] local.ERROR: syntax error, unexpected end of file {"view":{"view":"C:\\xampp\\htdocs\\anadolu\\resources\\views\\frontend\\services-category.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-517185853 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#375</a><samp data-depth=1 class=sf-dump-expanded>
   #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
 </samp>}
@@ -11801,3 +11817,4 @@
 #64 C:\\xampp\\htdocs\\anadolu\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #65 {main}
 "} 
+>>>>>>> fd762a723ad65f7070791e54ab3b5fff016d6734
