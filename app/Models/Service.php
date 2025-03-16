@@ -48,8 +48,8 @@ class Service extends Model implements HasMedia
             ->sharpen(10);
 
         $this->addMediaConversion('large') // Adding 'large' conversion
-        ->width(1200)
-            ->height(600)
+        ->width(1920)
+            ->height(1920)
             ->sharpen(10);
     }
 }
