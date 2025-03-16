@@ -21,7 +21,7 @@
                 @foreach ($service->getMedia('images') as $image)
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ $image->getUrl('large') }}"
+                        <img class="position-absolute img-fluid w-100 h-100" title="{{ $service->title }}" src="{{ $image->getUrl('large') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>

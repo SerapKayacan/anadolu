@@ -109,7 +109,7 @@
                     <a href="" class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'services-category.index' ? 'active' : '' }}" data-bs-toggle="dropdown">Hizmetler</a>
                     <div class="dropdown-menu fade-up m-0">
                         @foreach ($serviceCategories as $serviceCategory)
-                            <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" class="dropdown-item">
+                            <a title="{{ $serviceCategory->title }} Görüntüle" href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" class="dropdown-item">
                                 {{ $serviceCategory->title }}
                             </a>
                         @endforeach

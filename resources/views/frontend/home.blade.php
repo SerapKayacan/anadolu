@@ -13,9 +13,9 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-lg-8 text-center">
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">{!! $carousel->title !!}</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{!! $carousel->description !!}</p>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Devamını
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->title }}</h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{{$carousel->description }} </p>
+                                    <a href="{{$carousel->title }} Görüntüle " class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Devamını
                                         Oku</a>
                                 </div>
                             </div>
@@ -101,8 +101,19 @@
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid w-100 h-auto"  src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" alt="">
                                 <div class="portfolio-overlay">
-                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-square btn-outline-light mx-1" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"><i class="fa fa-link"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1"
+                                       href="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
+                                       data-lightbox="portfolio"
+                                       title=" {{ $service->title }} Görüntüle">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                    </a>
+
+                                    <a class="btn btn-square btn-outline-light mx-1"
+                                       href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"
+                                       title="{{ $service->title }} Görüntüle">
+                                        <i class="fa fa-link" aria-hidden="true"></i>
+                                    </a>
+
                                 </div>
                             </div>
                             <div class="border border-5 border-light border-top-0 p-4">
@@ -123,7 +134,7 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/about-us.jpg') }}"
+                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/about-us.jpeg') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>
@@ -250,7 +261,7 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/why-us.jpg') }}"
+                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/why-us.jpeg') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>
