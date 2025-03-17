@@ -99,7 +99,7 @@
                     <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100 h-auto"
+                                <img class="img-fluid w-100 h-100"
                                      src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
                                      alt="">
                                 <div class="portfolio-overlay">
