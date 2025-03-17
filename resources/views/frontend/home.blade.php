@@ -110,7 +110,7 @@
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
                                     <p class="text-primary fw-medium fs-3 mb-2">{{ $service->title }}</p>
                                 </a>
-                                <p class="lh-base fs-4 mb-0">{{ $service->category_page_detail }}</p>
+                                <h5 class="lh-base mb-0">{{ $service->category_page_detail }}</h5 >
                                 <a class="fw-medium" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
