@@ -117,8 +117,8 @@
                                 </div>
                             </div>
                             <div class="border border-5 border-light border-top-0 p-4">
-                                <h5 class="text-primary fw-medium mb-2">{{ $service->title }}</h5>
-                                <p class="lh-base mb-0">{{ $service->category_page_detail }}</p>
+                                <h4 class="mb-3">{{ $service->title }}</h4>
+                                <p>{{ $service->category_page_detail }}</p>
                             </div>
                         </div>
                     </div>
