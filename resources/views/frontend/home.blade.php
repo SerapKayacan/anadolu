@@ -94,27 +94,27 @@
                     </ul>
                 </div>
             </div>
-            <div class="row g-4 portfolio-container d-flex align-items-stretch">
+            <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
                     <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid w-100 h-auto"
                                      src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
-                                     alt="{{ $service->title }}">
+                                     alt="">
                             </div>
-                            <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1 h-100">
+                            <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
                                 <p class="text-primary fw-medium fs-3 mb-2">{{ $service->title }}</p>
                                 <h5 class="lh-base mb-0">{{ $service->category_page_detail }}</h5>
-                                <a class="fw-medium" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
+                                <a class="fw-medium" href="">Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
-
         </div>
     </div>
+
 
     <!-- About Start -->
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
