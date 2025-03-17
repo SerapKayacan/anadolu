@@ -97,8 +97,8 @@
             <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
                     <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded overflow-hidden h-100 d-flex flex-column">
-                            <div class="position-relative  h-100 overflow-hidden">
+                        <div class="rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
                                 <img class="img-fluid w-100 h-auto"
                                      src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
                                      alt="">
@@ -117,14 +117,16 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
+                            <!-- Added h-100, d-flex, flex-column -->
+                            <div class="border border-5 border-light border-top-0 p-4 h-100 d-flex flex-column">
                                 <p class="text-primary fw-medium fs-3 mb-2">{{ $service->title }}</p>
-                                <h5 class="lh-base mb-0">{{ $service->category_page_detail }}</h5>
+                                <h5 class="lh-base mb-0 flex-grow-1">{{ $service->category_page_detail }}</h5>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
+
         </div>
     </div>
 
