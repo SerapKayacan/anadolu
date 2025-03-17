@@ -118,7 +118,7 @@
                                 </div>
                             </div>
                             <!-- Ensures equal height for content inside each column -->
-                            <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
+                            <div class="border border-5 border-light p-4 d-flex flex-column flex-grow-1">
                                 <p class="text-primary fw-medium fs-3 mb-2">{{ $service->title }}</p>
                                 <h5 class="lh-base mb-0 flex-grow-1">{{ $service->category_page_detail }}</h5>
                             </div>
