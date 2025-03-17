@@ -105,7 +105,7 @@
                             </div>
                             <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
                                 <p class="text-primary fw-medium fs-4 mb-2">{{ $service->title }}</p>
-                                <h5 class="lh-base mb-0">{{ $service->category_page_detail }}</h5>
+                                <h6 class="lh-base mb-0">{{ $service->category_page_detail }}</h6>
                                 <a class="fw-medium" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
