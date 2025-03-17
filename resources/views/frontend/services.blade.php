@@ -30,7 +30,7 @@
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">{{ $service->title}}</h4>
                             <p>{{ $service->category_page_detail }}</p>
-                            <a class="fw-medium" title="{{ $service->title }}" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}" >Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                            <a class="fw-medium" title="{{ $service->title }}" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}" >Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
