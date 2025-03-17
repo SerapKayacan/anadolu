@@ -236,4 +236,5 @@ class ServiceController extends Controller
         return response()->json(['success' => false, 'message' => 'Image not found'], 404);
     }
 
+
 }

@@ -327,24 +327,56 @@
                     let div = document.createElement("div");
                     div.classList.add("col-md-4", "image-preview-container", "mb-3");
 
-                    // Create preview image, description input, and remove button
+                    // Create preview image, title input, description input, and remove button
                     div.innerHTML = `
-                <img src="${e.target.result}" class="img-thumbnail mb-2" style="width: 120px; height: 120px;">
-                <textarea name="new_image_descriptions[]" class="form-control" rows="2" placeholder="Görsel açıklaması girin"></textarea>
-                <a href="#" class="remove-preview btn btn-danger btn-sm mt-2">Kaldır</a>
-            `;
+                    <img src="${e.target.result}" class="img-thumbnail mb-2" style="width: 120px; height: 120px;">
+                    <!-- Image title input -->
+                    <input type="text" name="new_image_titles[]" class="form-control mb-2" placeholder="Görsel başlığını girin">
+                    <!-- Image description input -->
+                    <textarea name="new_image_descriptions[]" class="form-control" rows="2" placeholder="Görsel açıklaması girin"></textarea>
+                    <a href="#" class="remove-preview btn btn-danger btn-sm mt-2">Kaldır</a>
+                `;
 
                     output.appendChild(div);
 
                     // Handle image removal
                     div.querySelector(".remove-preview").addEventListener("click", function (e) {
                         e.preventDefault();
-                        div.remove();
+
+                        // Get the media ID or some identifier for the image
+                        const mediaId = div.querySelector('img').dataset.mediaId;
+
+                        // AJAX call to delete the image
+                        if (mediaId) {
+                            fetch(`/service/delete-image/${mediaId}`, {
+                                method: 'DELETE',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                                }
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        // Remove the image from the preview container
+                                        div.remove();
+                                    } else {
+                                        alert('Error removing image');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                        } else {
+                            div.remove();
+                        }
                     });
                 };
                 reader.readAsDataURL(file);
             });
         });
-
     </script>
+
+
+
 @endsection
