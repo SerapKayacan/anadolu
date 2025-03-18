@@ -301,17 +301,17 @@
         });
     });
 </script>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        // Select all portfolio items with the class 'wow fadeInUp'
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+{{--<script>--}}
+{{--    window.addEventListener('DOMContentLoaded', () => {--}}
+{{--        // Select all portfolio items with the class 'wow fadeInUp'--}}
+{{--        const portfolioItems = document.querySelectorAll('.portfolio-item');--}}
 
-        // Loop through each portfolio item and apply a dynamic delay
-        portfolioItems.forEach((item, index) => {
-            // Create a dynamic delay for each item. For example, use the index to set a delay.
-            const delay = (index + 0.01) * 0.01; // Increase delay by 0.2s for each item
-            item.setAttribute('data-wow-delay', `${delay}s`);
-        });
-    });
+{{--        // Loop through each portfolio item and apply a dynamic delay--}}
+{{--        portfolioItems.forEach((item, index) => {--}}
+{{--            // Create a dynamic delay for each item. For example, use the index to set a delay.--}}
+{{--            const delay = (index + 0.01) * 0.01; // Increase delay by 0.2s for each item--}}
+{{--            item.setAttribute('data-wow-delay', `${delay}s`);--}}
+{{--        });--}}
+{{--    });--}}
 
-</script>
+{{--</script>--}}
