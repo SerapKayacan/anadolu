@@ -102,7 +102,7 @@
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
                                     <img class="img-fluid w-100 h-auto"
                                          src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
-                                         alt="">
+                                         alt="{{ $service->title}}">
                                 </a>
 
                             </div>
