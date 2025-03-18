@@ -345,6 +345,11 @@
             });
         });
     });
-
-
+</script>
+<script>
+    const elements = document.querySelectorAll('.wow');
+    elements.forEach(function(element, index) {
+        const timeBasedDelay = (index + 1) * 0.2; // Custom delay based on the index
+        element.setAttribute('data-wow-delay', timeBasedDelay + 's');
+    });
 </script>
