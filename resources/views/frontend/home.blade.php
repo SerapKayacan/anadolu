@@ -96,7 +96,7 @@
             </div>
             <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
-                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp " data-wow-delay="{{ ($index + 1) * 0.2 }}s" >
+                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp " >
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
@@ -300,4 +300,18 @@
             });
         });
     });
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // Select all portfolio items with the class 'wow fadeInUp'
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        // Loop through each portfolio item and apply a dynamic delay
+        portfolioItems.forEach((item, index) => {
+            // Create a dynamic delay for each item. For example, use the index to set a delay.
+            const delay = (index + 0.1) * 0.1; // Increase delay by 0.2s for each item
+            item.setAttribute('data-wow-delay', `${delay}s`);
+        });
+    });
+
 </script>
