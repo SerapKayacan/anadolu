@@ -309,7 +309,7 @@
         // Loop through each portfolio item and apply a dynamic delay
         portfolioItems.forEach((item, index) => {
             // Create a dynamic delay for each item. For example, use the index to set a delay.
-            const delay = (index + 0.1) * 0.1; // Increase delay by 0.2s for each item
+            const delay = (index + 0.01) * 0.01; // Increase delay by 0.2s for each item
             item.setAttribute('data-wow-delay', `${delay}s`);
         });
     });
