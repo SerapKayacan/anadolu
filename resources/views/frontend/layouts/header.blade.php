@@ -95,9 +95,10 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary">AnadoluTadilat</h2>
+        <a href="{{ route('home') }}" class="navbar-brand logo-top-left d-flex align-items-center">
+            <img src="{{ asset('assets/frontend/img/logo.png') }}" alt="Logo" >
         </a>
+
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>

@@ -1,3 +1,38 @@
+.logo-top-left {
+    top: 5px; /* Reduce top spacing */
+    left: 5px; /* Reduce left spacing */
+}
+
+.logo-top-left img {
+   height: 50px; /* Smaller logo for tablets */
+}
+
+/* Adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+    .logo-top-left {
+        top: 5px; /* Reduce top spacing */
+        left: 5px; /* Reduce left spacing */
+    }
+
+    .logo-top-left img {
+        max-height: 50px; /* Smaller logo for tablets */
+    }
+}
+
+/* Adjustments for very small screens (mobile phones) */
+@media (max-width: 480px) {
+    .logo-top-left {
+        top: 3px;
+        left: 3px;
+    }
+
+    .logo-top-left img {
+        max-height: 40px; /* Even smaller logo for mobile */
+        max-width:300px;
+    }
+}
+
+
 .call-icon {
     position: fixed;
     top: 56%;
