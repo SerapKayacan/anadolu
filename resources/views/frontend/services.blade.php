@@ -40,3 +40,17 @@
     </div>
     <!-- Service End -->
 @endsection
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // Select all portfolio items with the class 'wow fadeInUp'
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        // Loop through each portfolio item and apply a dynamic delay
+        portfolioItems.forEach((item, index) => {
+            // Create a dynamic delay for each item. For example, use the index to set a delay.
+            const delay = (index + 1) * 0.2; // Increase delay by 0.2s for each item
+            item.setAttribute('data-wow-delay', `${delay}s`);
+        });
+    });
+
+</script>
