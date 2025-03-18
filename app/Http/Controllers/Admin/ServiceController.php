@@ -229,12 +229,14 @@ class ServiceController extends Controller
         $image = Media::find($id);
 
         if ($image) {
+            // Delete the image from the media collection
             $image->delete();
             return response()->json(['success' => true]);
         }
 
         return response()->json(['success' => false, 'message' => 'Image not found'], 404);
     }
+
 
 
 }

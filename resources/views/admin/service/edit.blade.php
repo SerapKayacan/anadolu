@@ -318,61 +318,35 @@
         });
     </script>
     <script>
-        document.getElementById("image-input").addEventListener("change", function (event) {
-            let output = document.getElementById("thumb-output");
+        // Remove image on button click
+        document.querySelectorAll('.remove-preview').forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
 
-            Array.from(event.target.files).forEach((file, index) => {
-                let reader = new FileReader();
-                reader.onload = function (e) {
-                    let div = document.createElement("div");
-                    div.classList.add("col-md-4", "image-preview-container", "mb-3");
+                // Get the parent div containing the image
+                const imagePreviewContainer = button.closest('.image-preview-container');
+                const mediaId = imagePreviewContainer.getAttribute('data-media-id');
 
-                    // Create preview image, title input, description input, and remove button
-                    div.innerHTML = `
-                    <img src="${e.target.result}" class="img-thumbnail mb-2" style="width: 120px; height: 120px;">
-                    <!-- Image title input -->
-                    <input type="text" name="new_image_titles[]" class="form-control mb-2" placeholder="Görsel başlığını girin">
-                    <!-- Image description input -->
-                    <textarea name="new_image_descriptions[]" class="form-control" rows="2" placeholder="Görsel açıklaması girin"></textarea>
-                    <a href="#" class="remove-preview btn btn-danger btn-sm mt-2">Kaldır</a>
-                `;
-
-                    output.appendChild(div);
-
-                    // Handle image removal
-                    div.querySelector(".remove-preview").addEventListener("click", function (e) {
-                        e.preventDefault();
-
-                        // Get the media ID or some identifier for the image
-                        const mediaId = div.querySelector('img').dataset.mediaId;
-
-                        // AJAX call to delete the image
-                        if (mediaId) {
-                            fetch(`/service/delete-image/${mediaId}`, {
-                                method: 'DELETE',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                                }
-                            })
-                                .then(response => response.json())
-                                .then(data => {
-                                    if (data.success) {
-                                        // Remove the image from the preview container
-                                        div.remove();
-                                    } else {
-                                        alert('Error removing image');
-                                    }
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                });
+                // AJAX request to delete the image
+                fetch(`/service/delete-image/${mediaId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Image deleted successfully, remove from DOM
+                            imagePreviewContainer.remove();
                         } else {
-                            div.remove();
+                            alert('Image deletion failed');
                         }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
                     });
-                };
-                reader.readAsDataURL(file);
             });
         });
     </script>
