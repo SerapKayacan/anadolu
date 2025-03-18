@@ -6,8 +6,8 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">Hakkımızda</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Ana Sayfa</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">Hakkımızda</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page"><a class="text-white" href="{{ route('about-us.index') }}">Hakkımızda</a></li>
                 </ol>
             </nav>
         </div>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="ms-3">
                                         <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="fw-medium mb-0">Bitirilmiş roje</p>
+                                        <p class="fw-medium mb-0">Bitirilmiş Proje</p>
                                     </div>
                                 </div>
                             </div>

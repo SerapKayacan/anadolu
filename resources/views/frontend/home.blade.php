@@ -170,7 +170,7 @@
                                     </div>
                                     <div class="ms-3">
                                         <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="fw-medium mb-0">Bitirilmiş roje</p>
+                                        <p class="fw-medium mb-0">Bitirilmiş Proje</p>
                                     </div>
                                 </div>
                             </div>
