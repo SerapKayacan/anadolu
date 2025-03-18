@@ -1,6 +1,6 @@
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-auto pt-5 pb-3  ">
+    <div class="container-fluid bg-dark text-light footer mt-auto pt-5 pb-3">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
