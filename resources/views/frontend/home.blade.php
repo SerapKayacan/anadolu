@@ -15,7 +15,7 @@
                                 <div class="col-12 col-lg-8 text-center">
                                     <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->title }}</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">{{$carousel->description }} </p>
-                                    <a href="{{$carousel->title }} Görüntüle " class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Devamını
+                                    <a href="{{ $carousel->button_link }}"  title="{{$carousel->title }} Görüntüle " class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Devamını
                                         Oku</a>
                                 </div>
                             </div>
