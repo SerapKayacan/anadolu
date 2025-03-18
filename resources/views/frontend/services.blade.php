@@ -23,7 +23,7 @@
             </div>
             <div class="row g-4">
                 @foreach ($services as $index => $service)
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="{{ ($index + 1) * 0.2 }}s">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="{{ ($index + 0.1) * 0.1 }}s">
                         <div class="service-item">
                             <div class="overflow-hidden">
                                 <img src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}" alt="{{ $service->title }}">
