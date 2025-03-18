@@ -6,8 +6,8 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $service->title }}</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Ana Sayfa</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">{{ $serviceCategory->title }}</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page"><a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}">{{ $serviceCategory->title }}</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">{{ $service->title }}</li>
                 </ol>
             </nav>
