@@ -1,6 +1,6 @@
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn sticky-bottom pb-0 mb-0 " data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark text-light footer mt-auto pt-5 pb-3  ">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
@@ -35,6 +35,8 @@
 
     </div>
     <!-- Footer End -->
+
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
