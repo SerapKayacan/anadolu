@@ -43,7 +43,7 @@
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         // Select all portfolio items with the class 'wow fadeInUp'
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const portfolioItems = document.querySelectorAll('.service-item');
 
         // Loop through each portfolio item and apply a dynamic delay
         portfolioItems.forEach((item, index) => {
