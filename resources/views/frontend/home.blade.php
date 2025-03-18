@@ -262,51 +262,6 @@
         </div>
     </div>
 
-{{--    <!-- Testimonial Start -->--}}
-{{--    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">--}}
-{{--        <div class="container">--}}
-{{--            <div class="section-title text-center">--}}
-{{--                <h1 class="display-5 mb-5">Memnuniyet</h1>--}}
-{{--            </div>--}}
-{{--            <div class="owl-carousel testimonial-carousel">--}}
-{{--                <div class="testimonial-item text-center">--}}
-{{--                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg"--}}
-{{--                         style="width: 90px; height: 90px;">--}}
-{{--                    <div class="testimonial-text text-center p-4">--}}
-{{--                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna--}}
-{{--                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea--}}
-{{--                            clita.</p>--}}
-{{--                        <h5 class="mb-1">Client Name</h5>--}}
-{{--                        <span class="fst-italic">Profession</span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="testimonial-item text-center">--}}
-{{--                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-2.jpg"--}}
-{{--                         style="width: 90px; height: 90px;">--}}
-{{--                    <div class="testimonial-text text-center p-4">--}}
-{{--                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna--}}
-{{--                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea--}}
-{{--                            clita.</p>--}}
-{{--                        <h5 class="mb-1">Client Name</h5>--}}
-{{--                        <span class="fst-italic">Profession</span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="testimonial-item text-center">--}}
-{{--                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-3.jpg"--}}
-{{--                         style="width: 90px; height: 90px;">--}}
-{{--                    <div class="testimonial-text text-center p-4">--}}
-{{--                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna--}}
-{{--                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea--}}
-{{--                            clita.</p>--}}
-{{--                        <h5 class="mb-1">Client Name</h5>--}}
-{{--                        <span class="fst-italic">Profession</span>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- Testimonial End -->--}}
-
 @endsection
 <script>
     window.addEventListener("load", function () {
@@ -347,9 +302,16 @@
     });
 </script>
 <script>
-    const elements = document.querySelectorAll('.wow');
-    elements.forEach(function(element, index) {
-        const timeBasedDelay = (index + 1) * 0.2; // Custom delay based on the index
-        element.setAttribute('data-wow-delay', timeBasedDelay + 's');
+    window.addEventListener('DOMContentLoaded', () => {
+        // Select all portfolio items with the class 'wow fadeInUp'
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        // Loop through each portfolio item and apply a dynamic delay
+        portfolioItems.forEach((item, index) => {
+            // Create a dynamic delay for each item. For example, use the index to set a delay.
+            const delay = (index + 1) * 0.2; // Increase delay by 0.2s for each item
+            item.setAttribute('data-wow-delay', `${delay}s`);
+        });
     });
+
 </script>
