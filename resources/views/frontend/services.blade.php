@@ -8,7 +8,7 @@
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-white" href="{{ route('home') }}">Ana Sayfa</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}">Hizmetlerimiz</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="">Hizmetlerimiz</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">{{ $serviceCategory->title }}</li>
                 </ol>
             </nav>
