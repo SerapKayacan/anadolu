@@ -96,7 +96,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="{{ route('home') }}" class="navbar-brand logo-top-left d-flex align-items-center">
-            <img src="{{ asset('assets/frontend/img/logo.png') }}" alt="Logo" >
+            <img src="{{ asset('assets/frontend/img/logo.png') }}" alt="Anadolu Tadilat Logo" >
         </a>
 
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
