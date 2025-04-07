@@ -82,7 +82,7 @@
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Hizmetlerimiz</h1>
             </div>
-            <div class="row mt-n2">
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
                         <li class="mx-2 active" data-filter="*">Hepsi</li>
@@ -96,7 +96,7 @@
             </div>
             <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
-                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp " >
+                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} " >
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
