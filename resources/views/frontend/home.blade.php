@@ -96,7 +96,7 @@
             </div>
             <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
-                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} " >
+                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp " >
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
