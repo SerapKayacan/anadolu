@@ -96,7 +96,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="{{ route('home') }}" class="navbar-brand logo-top-left d-flex align-items-center ms-3">
+        <a href="{{ route('home') }}" class="navbar-brand logo-top-left d-flex align-items-center ms-4">
             <img src="{{ asset('assets/frontend/img/logo-4.png') }}" alt="Anadolu Tadilat Logo" >
         </a>
 
