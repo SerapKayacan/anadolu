@@ -6,7 +6,7 @@
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Bize Ulaşın</h4>
 {{--                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>--}}
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+90 544 725 81 25</p>
+                    <a class="phone" title="Bizi hemen arayın!" href="tel:05447258125"> <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+90 544 725 81 25</p></a>
 {{--                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>--}}
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
