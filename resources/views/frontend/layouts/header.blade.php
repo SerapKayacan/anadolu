@@ -58,10 +58,11 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="icon-bar call-icon">
-    <a title="Bizi hemen arayın!" href="tel:05447258125" class="phone"><i class="fas fa-phone-alt text-white"></i></a>
-    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-    <a title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+    <a class="phone" title="Bizi hemen arayın!" href="tel:05447258125" ><i class="fas fa-phone-alt text-white"></i></a>
+    <a class="instagram" title="İnstagramdan'tan bizimle iletişime geçin!" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw==" ><i class="fab fa-instagram"></i></a>
+    <a class="whatsapp" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125" ><i class="fab fa-whatsapp"></i></a>
+    <a class="facebook" title="Facebook'tan bizimle iletişime geçin!" href="https://m.facebook.com/profile.php?id=61575540899975" ><i class="fab fa-facebook"></i></a>
+    <a class="linkedin" title="Linkendl'den bizimle iletişime geçin!" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr" ><i class="fab fa-linkedin"></i></a>
 </div>
 
     <!-- Topbar Start -->
@@ -84,9 +85,9 @@
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square bg-white text-primary me-1" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" title="Facebook'tan bizimle iletişime geçin!" href="https://m.facebook.com/profile.php?id=61575540899975"><i class="fab fa-facebook"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" title="Linkendl'den bizimle iletişime geçin!" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0" title="İnstagramdan'tan bizimle iletişime geçin!" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw=="><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>

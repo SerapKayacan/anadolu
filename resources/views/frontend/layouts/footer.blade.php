@@ -9,10 +9,10 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+90 544 725 81 25</p>
 {{--                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>--}}
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="Facebook'tan bizimle iletişime geçin!" href="https://m.facebook.com/profile.php?id=61575540899975"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="Linkendl'den bizimle iletişime geçin!" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="İnstagramdan'tan bizimle iletişime geçin!" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw=="><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
