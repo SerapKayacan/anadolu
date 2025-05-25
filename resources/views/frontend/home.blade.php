@@ -103,9 +103,9 @@
                                 $translation = $serviceCategory->translations->firstWhere('locale', app()->getLocale());
                             @endphp
                             @if ($translation)
-                            <li class="mx-2" data-filter=".category-{{ $serviceCategory->id }}">
-                                {{ $serviceCategory->translations->first()?->title ?? 'Default Title' }}
-                            </li>
+                                <li class="mx-2" data-filter=".category-{{ $serviceCategory->id }}">
+                                    {{ $serviceCategory->translations->first()?->title ?? 'Default Title' }}
+                                </li>
                             @endif
                         @endforeach
                     </ul>
@@ -113,29 +113,35 @@
             </div>
             <div class="row g-4 portfolio-container">
                 @foreach ($services as $service)
-                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp " >
+                    <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp ">
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
                                 @if (!empty($service) && !empty($service->slug))
-                                <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
-                                    <img class="img-fluid w-100 h-auto"
-                                         src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
-                                         alt="{{ $service->translations->first()?->title ?? 'Default Title' }}">
-                                </a>
+                                    <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
+                                        <img class="img-fluid w-100 h-auto"
+                                             src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
+                                             alt="{{ $service->translations->first()?->title ?? 'Default Title' }}">
+                                    </a>
                                 @endif
 
                             </div>
                             <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
-                                 @php
-                                $translation = $service->translations->where('locale', app()->getLocale())->first();
-                                 @endphp
-                                <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
-                                    <p class="text-primary fw-medium fs-3 mb-2">  {{ $service->translations->first()?->title ?? 'Default Title' }}</p>
-                                </a>
+                                @php
+                                    $translation = $service->translations->where('locale', app()->getLocale())->first();
+                                @endphp
+                                @if (!empty($service) && !empty($service->slug))
+                                    <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
+                                        <p class="text-primary fw-medium fs-3 mb-2">  {{ $service->translations->first()?->title ?? 'Default Title' }}</p>
+                                    </a>
+                                @endif
                                 <h5 class="lh-base mb-0">
                                     {{ $service->translations->first()?->category_page_detail ?? 'Default Title' }}
                                 </h5>
-                                <a class="fw-medium" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"> {{ __('messages.see_more') }}<i class="fa fa-arrow-right ms-2"></i></a>
+                                @if (!empty($service) && !empty($service->slug))
+                                    <a class="fw-medium"
+                                       href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"> {{ __('messages.see_more') }}
+                                        <i class="fa fa-arrow-right ms-2"></i></a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -151,7 +157,8 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/about-us.jpeg') }}"
+                        <img class="position-absolute img-fluid w-100 h-100"
+                             src="{{ asset('assets/frontend/img/about-us.jpeg') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>
@@ -165,32 +172,32 @@
                             <h1 class="display-5 mb-4">{{ __('messages.mission_title') }}</h1>
                         </div>
                         <p class="mb-4 pb-2">{{ __('messages.mission_text') }}
-{{--                        <div class="row g-4 mb-4 pb-2">--}}
-{{--                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">--}}
-{{--                                <div class="d-flex align-items-center">--}}
-{{--                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"--}}
-{{--                                         style="width: 60px; height: 60px;">--}}
-{{--                                        <i class="fa fa-users fa-2x text-primary"></i>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="ms-3">--}}
-{{--                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>--}}
-{{--                                        <p class="fw-medium mb-0">Mutlu Müşteri</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">--}}
-{{--                                <div class="d-flex align-items-center">--}}
-{{--                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"--}}
-{{--                                         style="width: 60px; height: 60px;">--}}
-{{--                                        <i class="fa fa-check fa-2x text-primary"></i>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="ms-3">--}}
-{{--                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>--}}
-{{--                                        <p class="fw-medium mb-0">Bitirilmiş Proje</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="row g-4 mb-4 pb-2">--}}
+                        {{--                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">--}}
+                        {{--                                <div class="d-flex align-items-center">--}}
+                        {{--                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"--}}
+                        {{--                                         style="width: 60px; height: 60px;">--}}
+                        {{--                                        <i class="fa fa-users fa-2x text-primary"></i>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="ms-3">--}}
+                        {{--                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>--}}
+                        {{--                                        <p class="fw-medium mb-0">Mutlu Müşteri</p>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">--}}
+                        {{--                                <div class="d-flex align-items-center">--}}
+                        {{--                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"--}}
+                        {{--                                         style="width: 60px; height: 60px;">--}}
+                        {{--                                        <i class="fa fa-check fa-2x text-primary"></i>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="ms-3">--}}
+                        {{--                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>--}}
+                        {{--                                        <p class="fw-medium mb-0">Bitirilmiş Proje</p>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -262,7 +269,8 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/frontend/img/why-us.jpeg') }}"
+                        <img class="position-absolute img-fluid w-100 h-100"
+                             src="{{ asset('assets/frontend/img/why-us.jpeg') }}"
                              style="object-fit: cover;" alt="">
                     </div>
                 </div>
@@ -277,12 +285,12 @@
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const filters = document.querySelectorAll("#portfolio-flters li");
         const items = document.querySelectorAll(".portfolio-item");
 
         filters.forEach(filter => {
-            filter.addEventListener("click", function() {
+            filter.addEventListener("click", function () {
                 // Remove active class from all filters
                 filters.forEach(f => f.classList.remove("active"));
                 this.classList.add("active");
