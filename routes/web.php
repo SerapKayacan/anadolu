@@ -76,7 +76,7 @@ Route::post('/language/change', function (Illuminate\Http\Request $request) {
     return redirect()->back();
 })->name('language.change');
 
-Route::get('/add-translations', function () {
+Route::post('/add-translations', function () {
     $category = ServiceCategory::find(1); // change to your actual ID
 
     $category->setTranslation('title', 'en', 'Painting Services');
