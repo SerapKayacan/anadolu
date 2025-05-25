@@ -114,98 +114,62 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @php
+                                                $locales = ['tr' => 'Türkçe', 'en' => 'English', 'fr' => 'Français'];
+                                            @endphp
 
                                             <div class="mb-10 row">
                                                 <div class="col-sm-4">
                                                     <label class="required form-label">Kategori</label>
                                                     <select name="category_id" class="form-control col-sm-4" required>
                                                         @foreach($categories as $category)
-                                                            <option @if($category->id == $service->category_id) selected
-                                                                    @endif value="{{$category->id}}">{{ $category->title }}</option>
+                                                            <option @if($category->id == $service->category_id) selected @endif value="{{ $category->id }}">
+                                                                {{ $category->title }}
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <label class="required form-label">Randevulu</label>
-                                                    <select name="can_be_appointment" id="can_be_appointment"
-                                                            class="form-control" required>
-                                                        <option @if ($service->can_be_appointment == 1) selected
-                                                                @endif value="1">Evet
-                                                        </option>
-                                                        <option @if ($service->can_be_appointment == 0) selected
-                                                                @endif value="0">Hayır
-                                                        </option>
-                                                    </select>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                                <div class="col-sm-4" style="display: none;" id="appointment_times">
-                                                    <label class="required form-label">Randevu Başlangıç / Bitiş
-                                                        Saatleri</label>
-                                                    <div class="d-flex">
-                                                        <select class="form-control me-2" id="appointment_start_time"
-                                                                name="appointment_start_time">
-                                                            @foreach (range(0, 23) as $hour)
-                                                                <option value="{{ sprintf('%02d:00', $hour) }}"
-                                                                        @if(\Carbon\Carbon::parse($service->appointment_start_time)->format('H:i') == sprintf('%02d:00', $hour)) selected @endif>{{ sprintf('%02d:00', $hour) }}</option>
-                                                                <option value="{{ sprintf('%02d:30', $hour) }}"
-                                                                        @if(\Carbon\Carbon::parse($service->appointment_start_time)->format('H:i') == sprintf('%02d:30', $hour)) selected @endif>{{ sprintf('%02d:30', $hour) }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        <select class="form-control" id="appointment_end_time"
-                                                                name="appointment_end_time">
-                                                            @foreach (range(0, 23) as $hour)
-                                                                <option value="{{ sprintf('%02d:00', $hour) }}"
-                                                                        @if(\Carbon\Carbon::parse($service->appointment_end_time)->format('H:i')  == sprintf('%02d:00', $hour)) selected @endif>{{ sprintf('%02d:00', $hour) }}</option>
-                                                                <option value="{{ sprintf('%02d:30', $hour) }}"
-                                                                        @if(\Carbon\Carbon::parse($service->appointment_end_time)->format('H:i')  == sprintf('%02d:30', $hour)) selected @endif>{{ sprintf('%02d:30', $hour) }}</option>
-                                                            @endforeach
-                                                        </select>
+                                            </div>
+
+                                            @foreach ($locales as $locale => $language)
+                                                @php
+                                                    $translation = $service->translations->where('locale', $locale)->first();
+                                                @endphp
+
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="required form-label">Başlık ({{ strtoupper($locale) }} - {{ $language }})</label>
+                                                        <input class="form-control"
+                                                               name="translations[{{ $locale }}][title]"
+                                                               value="{{ old("translations.$locale.title", $translation?->title) }}"
+                                                               required />
+                                                        <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                     </div>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="required form-label">Başlık</label>
-                                                    <input class="form-control" name="title"
-                                                           value="{{ $service->title }}" required/>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Kategori Sayfası Açıklama ({{ strtoupper($locale) }} - {{ $language }})</label>
+                                                        <textarea class="form-control"
+                                                                  name="translations[{{ $locale }}][category_page_detail]"
+                                                                  rows="2">{{ old("translations.$locale.category_page_detail", $translation?->category_page_detail) }}</textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Kategori Sayfası Açıklama</label>
-                                                    <textarea class="form-control " id="category_page_detail"
-                                                              name="category_page_detail"
-                                                              rows="2">{!! $service->category_page_detail !!}</textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Açıklama ({{ strtoupper($locale) }} - {{ $language }})</label>
+                                                        <textarea class="form-control"
+                                                                  name="translations[{{ $locale }}][detail]"
+                                                                  rows="2">{{ old("translations.$locale.detail", $translation?->detail) }}</textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Kısa Açıklama</label>
-                                                    <textarea class="form-control " id="sort_detail"
-                                                              name="sort_detail"
-                                                              rows="2">{!! $service->sort_detail !!}</textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Genel Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="detail" name="detail"
-                                                              rows="2">{{ $service->detail }}</textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
+                                            @endforeach
+
                                             <div class="row">
-                                                <div class="col-sm-3">
-                                                    <label class="required form-label">Sıra Sayısı</label>
-                                                    <input class="form-control" name="sort_order" type="number"
-                                                           value="{{ $service->sort_order }}" min="0" max="99"/>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
                                                 <div class="col-sm-3">
                                                     <label class="required form-label">Durum</label>
                                                     <select name="is_active" class="form-control col-sm-3" required>

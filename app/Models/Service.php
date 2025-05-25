@@ -17,15 +17,10 @@ class Service extends Model implements HasMedia
     protected $fillable = [
         'title',
         'slug',
-        'meta_description',
+        'sort_order',
         'category_page_detail',
-        'sort_detail',
         'detail',
         'category_id',
-        'sort_order',
-        'can_be_appointment',
-        'appointment_start_time',
-        'appointment_end_time',
         'is_active'
 
     ];
@@ -39,7 +34,16 @@ class Service extends Model implements HasMedia
     {
         return $this->belongsTo(ServiceCategory::class, 'category_id');
     }
-//buraya ihtiyac var
+    public function translations()
+    {
+        return $this->hasMany(ServiceTranslation::class);
+    }
+
+    public function translation()
+    {
+        return $this->hasOne(ServiceTranslation::class)->where('locale', app()->getLocale());
+    }
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')

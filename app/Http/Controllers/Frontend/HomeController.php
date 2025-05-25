@@ -8,30 +8,46 @@ use App\Models\TabPanel;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $serviceCategories = ServiceCategory::where('is_active', true)->withCount('services')->orderBy('sort_order','ASC')->get();
-        $carousels = Carousel::where('is_active', true)->orderBy('sort_order','ASC')->get();
-        $tabPanels = TabPanel::where('is_active', true)->orderBy('sort_order','ASC')->get();
+        $locale = App::getLocale();
+
+        $serviceCategories = ServiceCategory::where('is_active', true)
+            ->withCount('services')
+            ->with(['translations' => function ($query) use ($locale) {
+                $query->where('locale', $locale);
+            }])
+            ->orderBy('sort_order', 'ASC')
+            ->get();
+
+        $carousels = Carousel::where('is_active', true)
+            ->orderBy('sort_order', 'ASC')
+            ->get();
+
+        $tabPanels = TabPanel::where('is_active', true)
+            ->orderBy('sort_order', 'ASC')
+            ->get();
+
         $types = ServiceCategory::types();
-        $services = Service::where('is_active', true)->orderBy('sort_order','ASC')->get();
 
-        SEOTools::setTitle('Anasayfa'); // Dinamik olacak şekilde ayalanacak
-        SEOTools::setDescription('Anadolu Tadilat'); // Dinamik olacak şekilde ayalanacak
-        SEOTools::opengraph()->addProperty('type', 'website'); // Hizmet detay sayfasında type article olarak güncellenecek
-        SEOTools::metatags()->setKeywords(['tadilat', 'boya']); // Dinamik olacak şekilde ayalanacak
-//        SEOTools::addImages('https://sultanevdesaglikhizmetleri.com/wp-content/uploads/2021/10/cropped-sultan-logo-1536x288.png'); // Dinamik olacak şekilde ayalanacak
+        $services = Service::where('is_active', true)
+            ->with(['translations' => function ($query) use ($locale) {
+                $query->where('locale', $locale);
+            }])
+            ->orderBy('sort_order', 'ASC')
+            ->get();
 
-        return view('frontend.home', [
-            "serviceCategories" => $serviceCategories,
-            "types" => $types,
-            "carousels"=>$carousels,
-            "tabPanels" => $tabPanels,
-            "services" => $services
-        ]);
+        SEOTools::setTitle('Anasayfa');
+        SEOTools::setDescription('Anadolu Tadilat');
+        SEOTools::opengraph()->addProperty('type', 'website');
+        SEOTools::metatags()->setKeywords(['tadilat', 'boya']);
+
+        return view('frontend.home', compact('serviceCategories', 'types', 'carousels', 'tabPanels', 'services'));
     }
+
 
 }

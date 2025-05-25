@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_categories', function (Blueprint $table) {
+        Schema::create('service_translations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('service_id')->constrained()->onDelete('cascade');
+            $table->string('locale'); // 'tr', 'en', 'fr'
             $table->string('title');
-            $table->integer('sort_order')->nullable();
-            $table->string('slug')->unique();
-            $table->boolean('is_active')->default(true);
-            $table->softDeletes();
+            $table->text('category_page_detail')->nullable();
+            $table->text('detail')->nullable();
             $table->timestamps();
+
+            $table->unique(['service_id', 'locale']);
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_categories');
+        Schema::dropIfExists('services_translations');
     }
 };

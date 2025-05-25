@@ -10,9 +10,7 @@ use App\Http\Controllers\Admin\CKEditorController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ServicesCategoryController;
 use App\Http\Controllers\Frontend\ServicesController;
-use App\Http\Controllers\Frontend\OnlineDoctorController;
 use App\Http\Controllers\Frontend\ServicesDetailController;
-use App\Http\Controllers\Frontend\OnlineDoctorDetailController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\TabPanelController;
@@ -20,6 +18,10 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\WebhookGitHub;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\ServiceCategory;
+
+
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -64,7 +66,26 @@ Route::prefix('tab-panel')->group(function () {
     Route::delete('/sil/{id}', [TabPanelController::class, 'destroy'])->name('tab-panel.destroy');
 });
 
+// routes/web.php
+Route::post('/language/change', function (Illuminate\Http\Request $request) {
+    $locale = $request->input('locale');
+    if (in_array($locale, ['tr', 'en', 'fr'])) {
+        session(['locale' => $locale]);
+        app()->setLocale($locale);
+    }
+    return redirect()->back();
+})->name('language.change');
 
+Route::get('/add-translations', function () {
+    $category = ServiceCategory::find(1); // change to your actual ID
+
+    $category->setTranslation('title', 'en', 'Painting Services');
+    $category->setTranslation('title', 'fr', 'Services de Peinture');
+
+    $category->save();
+
+    return 'Translations added!';
+});
 
 Route::get('/ara', [SearchController::class, 'search'])->name('search');
 

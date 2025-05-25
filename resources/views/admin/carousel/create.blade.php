@@ -93,18 +93,51 @@
                                                     <div class="text-muted fs-7">Medya görseli ekleyin.</div>
                                                 </div>
                                             </div>
-
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
-                                                    <label class="required form-label"> Başlık</label>
-                                                    <textarea class="form-control " id="title" name="title" rows="2"></textarea>
+                                                    <label class="required form-label">Başlık (TR)</label>
+                                                    <input class="form-control" name="translations[tr][title]"
+                                                           value="" required/>
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="required form-label">Title (EN)</label>
+                                                    <input class="form-control" name="translations[en][title]"
+                                                           value="" required/>
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="required form-label">Titre (FR)</label>
+                                                    <input class="form-control" name="translations[fr][title]"
+                                                           value="" required/>
+                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="form-label">Açıklama (TR)</label>
+                                                    <textarea class="form-control" id="description"
+                                                              name="translations[tr][description]" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>
                                             <div class="mb-10 row">
                                                 <div class="col-sm-12">
-                                                    <label class="required form-label"> Açıklama</label>
-                                                    <textarea class="form-control " id="description" name="description" rows="2"></textarea>
+                                                    <label class="form-label">Detail (EN)</label>
+                                                    <textarea class="form-control" id="description"
+                                                              name="translations[en][description]" rows="2"></textarea>
+                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-10 row">
+                                                <div class="col-sm-12">
+                                                    <label class="form-label">Détail (FR)</label>
+                                                    <textarea class="form-control" id="description"
+                                                              name="translations[fr][description]" rows="2"></textarea>
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>

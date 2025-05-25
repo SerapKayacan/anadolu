@@ -13,18 +13,20 @@ class ServiceCategory extends Model
     protected $fillable = [
         'title',
         'slug',
-        'meta_description',
-        'home_page_detail',
-        'category_page_detail',
-        'icon',
-        'type',
         'sort_order',
-        'is_show_home_page',
-        'is_show_service_page',
-        'home_page_colspan',
         'is_active'
     ];
+    public function translations()
+    {
+        return $this->hasMany(ServiceCategoryTranslation::class);
+    }
 
+
+    public function translation($locale = null)
+    {
+        $locale = $locale ?: app()->getLocale();
+        return $this->translations->where('locale', $locale)->first();
+    }
     public static function types()
     {
         return [

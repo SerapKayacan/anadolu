@@ -6,6 +6,7 @@ use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\ServiceCategory;
+use App\Models\ServiceTranslation;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -40,19 +41,29 @@ class ServiceController extends Controller
         Log::debug('Request Image Descriptions:', ['descriptions' => $request->input('image_descriptions')]);
 
         $service = new Service();
-        $service->title = $request->title;
-        $service->slug = SlugHelper::generateUniqueSlug(Service::class, $request->title);
-        $service->meta_description = $request->meta_description;
+        $mainTitle = $request->input('translations.tr.title');
+        $service->title = $mainTitle;
+        $service->slug = SlugHelper::generateUniqueSlug(ServiceCategory::class, $mainTitle);
         $service->category_page_detail = $request->category_page_detail;
-        $service->sort_detail = $request->sort_detail;
         $service->detail = $request->detail;
         $service->category_id = $request->category_id;
         $service->sort_order = $request->sort_order;
-        $service->can_be_appointment = $request->can_be_appointment;
-        $service->appointment_start_time = $request->appointment_start_time;
-        $service->appointment_end_time = $request->appointment_end_time;
         $service->is_active = $request->is_active;
         $service->save();
+
+        foreach ($request->translations as $locale => $data) {
+            if (!empty($data['title'])) {
+
+                $service->translations()->create([
+                    'locale' => $locale,
+                    'title' => $data['title'],
+                    'category_page_detail' => $data['category_page_detail'] ?? '',
+                    'detail' => $data['detail'] ?? '',
+                    'description' => $data['description'] ?? '',
+                ]);
+            }
+        }
+
 
         // Handle tags
         $tags = json_decode($request->tags, true);
@@ -125,19 +136,25 @@ class ServiceController extends Controller
             $service->slug = SlugHelper::generateUniqueSlug(Service::class, $request->title);
         }
 
-        $service->title = $request->title;
-        $service->meta_description = $request->meta_description;
+        $service->title = $request->input('translations.tr.title');
         $service->category_page_detail = $request->category_page_detail;
-        $service->sort_detail = $request->sort_detail;
         $service->detail = $request->detail;
         $service->category_id = $request->category_id;
-        $service->sort_order = $request->sort_order;
-        $service->can_be_appointment = $request->can_be_appointment;
-        $service->appointment_start_time = $request->appointment_start_time;
-        $service->appointment_end_time = $request->appointment_end_time;
         $service->is_active = $request->is_active;
         $service->update();
+        foreach ($request->translations as $locale => $data) {
+            if (!empty($data['title'])) {
+                $service->translations()->updateOrCreate(
+                    ['locale' => $locale],
+                    [
+                        'title' => $data['title'],
+                        'category_page_detail' => $data['category_page_detail'] ?? '',
+                        'detail' => $data['detail'] ?? '',
 
+                    ]
+                );
+            }
+        }
         // Update Tags
         $tags = json_decode($request->tags, true);
         $tagIds = [];

@@ -52,9 +52,6 @@
                                     No
                                 </th>
                                 <th class="min-w-250px">Başlık</th>
-                                <th class="min-w-150px">Tip</th>
-                                <th class="min-w-150px">Anasayfada Göster</th>
-                                <th class="min-w-150px">Hizmetlerimizde Göster</th>
                                 <th class="min-w-150px">Durum</th>
                                 <th class="text-end min-w-70px">İşlemler</th>
                             </tr>
@@ -64,9 +61,6 @@
                                     <tr id="order-{{ $serviceCategory->id }}">
                                         <td> {{ $loop->iteration }} </td>
                                         <td><a href="{{ route('service-category.edit', $serviceCategory->id) }}" class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1">{{ $serviceCategory->title }}</a></td>
-                                        <td> {{ $types[$serviceCategory->type] }} </td>
-                                        <td> @if($serviceCategory->is_show_home_page == 1) Evet @else Hayır @endif </td>
-                                        <td> @if($serviceCategory->is_show_service_page == 1) Evet @else Hayır @endif </td>
                                         <td>
                                             @if ($serviceCategory->is_active === 1)
                                                 <div class="badge badge-light-success">Aktif</div>

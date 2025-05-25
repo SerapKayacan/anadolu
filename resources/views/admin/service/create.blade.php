@@ -71,12 +71,12 @@
                         </a>
                     </span>
                                                         </div>
-                                                        <div class="row col-md-12 thumb-output p-2" id="thumb-output"></div>
+                                                        <div class="row col-md-12 thumb-output p-2"
+                                                             id="thumb-output"></div>
                                                     </div>
                                                     <div class="text-muted fs-7">Medya görseli ekleyin.</div>
                                                 </div>
                                             </div>
-
 
                                             <div class="mb-10 row">
                                                 <div class="col-sm-4">
@@ -89,121 +89,129 @@
                                                     </select>
                                                     <div class="text-muted fs-7">Bu alan zorunludur.</div>
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <label class="required form-label">Randevulu</label>
-                                                    <select name="can_be_appointment" id="can_be_appointment"
-                                                            class="form-control" required>
-                                                        <option value="1">Evet</option>
-                                                        <option selected value="0">Hayır</option>
-                                                    </select>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                                <div class="col-sm-4" style="display: none;" id="appointment_times">
-                                                    <label class="required form-label">Randevu Başlangıç / Bitiş
-                                                        Saatleri</label>
-                                                    <div class="d-flex">
-                                                        <select class="form-control me-2" id="appointment_start_time"
-                                                                name="appointment_start_time">
-                                                            @foreach (range(0, 23) as $hour)
-                                                                <option
-                                                                    value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
-                                                                <option
-                                                                    value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        <select class="form-control" id="appointment_end_time"
-                                                                name="appointment_end_time">
-                                                            @foreach (range(0, 23) as $hour)
-                                                                <option
-                                                                    value="{{ sprintf('%02d:00', $hour) }}">{{ sprintf('%02d:00', $hour) }}</option>
-                                                                <option
-                                                                    value="{{ sprintf('%02d:30', $hour) }}">{{ sprintf('%02d:30', $hour) }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="required form-label">Başlık</label>
-                                                    <input class="form-control" name="title" value="" required/>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Kategori Sayfası Açıklama</label>
-                                                    <textarea class="form-control" id="category_page_detail"
-                                                              name="category_page_detail" rows="2"></textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Kısa Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="sort_detail"
-                                                              name="sort_detail" rows="2"></textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Açıklama</label>
-                                                    <textarea class="form-control ckeditors" id="detail" name="detail"
-                                                              rows="2"></textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <label class="required form-label">Sıra Sayısı</label>
-                                                    <input class="form-control" name="sort_order" type="number"
-                                                           value="1" min="0" max="99"/>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <label class="required form-label">Durum</label>
-                                                    <select name="is_active" class="form-control col-sm-3" required>
-                                                        <option selected value="1">Aktif</option>
-                                                        <option value="0">Pasif</option>
-                                                    </select>
-                                                    <div class="text-muted fs-7">Bu alan zorunludur.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="search" role="tab-panel">
-                                <div class="d-flex flex-column gap-7 gap-lg-10">
-                                    <div class="card card-flush pt-5">
-                                        <div class="card-body pt-5">
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Açıklama</label>
-                                                    <input class="form-control" name="meta_description" value="">
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Anahtar Kelimeler</label>
-                                                    <input class="form-control" name="tags" id="inputTagify" value="">
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="d-flex justify-content-end">
-                            <a href="{{ route('service-category.index') }}" class="btn btn-light me-5">Vazgeç</a>
-                            <button type="submit" id="submit" class="btn btn-primary">Kaydet</button>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="required form-label">Başlık (TR)</label>
+                                                        <input class="form-control" name="translations[tr][title]"
+                                                               value="" required/>
+                                                        <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="required form-label">Title (EN)</label>
+                                                        <input class="form-control" name="translations[en][title]"
+                                                               value="" required/>
+                                                        <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="required form-label">Titre (FR)</label>
+                                                        <input class="form-control" name="translations[fr][title]"
+                                                               value="" required/>
+                                                        <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Kategori Sayfası Açıklama (TR)</label>
+                                                        <textarea class="form-control" id="category_page_detail"
+                                                                  name="translations[tr][category_page_detail]" rows="2"></textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Category Page Detail (EN)</label>
+                                                        <textarea class="form-control" id="category_page_detail"
+                                                                  name="translations[en][category_page_detail]" rows="2"></textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Catégorie Page Détail (FR)</label>
+                                                        <textarea class="form-control" id="category_page_detail"
+                                                                  name="translations[fr][category_page_detail]" rows="2"></textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Açıklama (TR)</label>
+                                                        <textarea class="form-control" id="detail"
+                                                                  name="translations[tr][detail]" rows="2"></textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Detail (EN)</label>
+                                                        <textarea class="form-control" id="detail"
+                                                                  name="translations[en][detail]" rows="2"></textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Détail (FR)</label>
+                                                        <textarea class="form-control" id="detail"
+                                                                  name="translations[fr][detail]" rows="2"></textarea>
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <label class="required form-label">Sıra Sayısı</label>
+                                                        <input class="form-control" name="sort_order" type="number"
+                                                               value="1" min="0" max="99"/>
+                                                        <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <label class="required form-label">Durum</label>
+                                                        <select name="is_active" class="form-control col-sm-3" required>
+                                                            <option selected value="1">Aktif</option>
+                                                            <option value="0">Pasif</option>
+                                                        </select>
+                                                        <div class="text-muted fs-7">Bu alan zorunludur.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="search" role="tab-panel">
+                                    <div class="d-flex flex-column gap-7 gap-lg-10">
+                                        <div class="card card-flush pt-5">
+                                            <div class="card-body pt-5">
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Açıklama</label>
+                                                        <input class="form-control" name="meta_description" value="">
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-10 row">
+                                                    <div class="col-sm-12">
+                                                        <label class="form-label">Anahtar Kelimeler</label>
+                                                        <input class="form-control" name="tags" id="inputTagify"
+                                                               value="">
+                                                        <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="{{ route('service-category.index') }}" class="btn btn-light me-5">Vazgeç</a>
+                                <button type="submit" id="submit" class="btn btn-primary">Kaydet</button>
+                            </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>
@@ -217,7 +225,7 @@
 
     <script>
         // Handle image selection and display preview
-        document.getElementById('image-input').addEventListener('change', function(e) {
+        document.getElementById('image-input').addEventListener('change', function (e) {
             const files = e.target.files;
             const previewContainer = document.getElementById('thumb-output');
             previewContainer.innerHTML = ''; // Clear any previous previews
@@ -226,7 +234,7 @@
                 const file = files[i];
                 const reader = new FileReader();
 
-                reader.onload = function(event) {
+                reader.onload = function (event) {
                     const imgElement = document.createElement('img');
                     imgElement.src = event.target.result;
                     imgElement.classList.add('thumb', 'img-thumbnail', 'mb-2');
@@ -252,7 +260,7 @@
                     removeButton.href = '#';
                     removeButton.classList.add('remove-preview', 'btn', 'btn-danger', 'btn-sm', 'mt-2');
                     removeButton.textContent = 'Kaldır';
-                    removeButton.addEventListener('click', function(e) {
+                    removeButton.addEventListener('click', function (e) {
                         e.preventDefault();
                         imagePreviewContainer.remove();
                     });

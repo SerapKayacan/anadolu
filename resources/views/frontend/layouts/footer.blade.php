@@ -4,19 +4,19 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-light mb-4">Bize Ulaşın</h4>
+                    <h4 class="text-light mb-4">{{ __('messages.call_us') }}</h4>
 {{--                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>--}}
-                    <a class="phone" title="Bizi hemen arayın!" href="tel:05447258125"> <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+90 544 725 81 25</p></a>
+                    <a class="phone" title="{{ __('messages.call_us') }}" href="tel:05447258125"> <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+90 544 725 81 25</p></a>
 {{--                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>--}}
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-outline-light btn-social" title="Facebook'tan bizimle iletişime geçin!" href="https://m.facebook.com/profile.php?id=61575540899975"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" title="Linkendl'den bizimle iletişime geçin!" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social" title="İnstagramdan'tan bizimle iletişime geçin!" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="{{ __('messages.contact_us_via_whatsapp') }}" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="{{ __('messages.contact_us_via_facebook') }}" href="https://m.facebook.com/profile.php?id=61575540899975"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="{{ __('messages.contact_us_via_linkedln') }}" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" title="{{ __('messages.contact_us_via_instagram') }}" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw=="><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-light mb-4">Hizmetlerimiz</h4>
+                    <h4 class="text-light mb-4">{{ __('messages.services') }}</h4>
                     @foreach ($serviceCategories as $serviceCategory)
                         <a  title="{{ $serviceCategory->title }} Görüntüle" href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" class="btn btn-link">
                             {{ $serviceCategory->title }}
@@ -24,10 +24,10 @@
                     @endforeach
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h4 class="text-light mb-4">Alt Menü</h4>
-                    <a class="btn btn-link" title="Hakkimizda Görüntüle" href="">Hakkımızda</a>
+                    <h4 class="text-light mb-4">{{ __('messages.tab_menu') }}</h4>
+                    <a class="btn btn-link" title="{{ __('messages.about_us') }}" href="">{{ __('messages.about_us') }}</a>
 {{--                    <a class="btn btn-link" href="">Contact Us</a>--}}
-                    <a class="btn btn-link" title="Hizmetlerimizi Görüntüle" href="">Hizmetlerimiz</a>
+                    <a class="btn btn-link" title="{{ __('messages.services') }}" href="">{{ __('messages.services') }}</a>
                 </div>
 
             </div>

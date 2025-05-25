@@ -14,19 +14,21 @@ class Carousel extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, InteractsWithMedia;
     protected $fillable = [
+        'carousel_id',
         'title',
         'description',
         'sort_order',
-        'button_text',
         'button_link',
-        'background_color',
-        'text_color',
-        'border_color',
         'is_active'
     ];
-    public function tags()
+    public function translations()
     {
-        return $this->belongsToMany(Tag::class, 'carousel_tags');
+        return $this->hasMany(CarouselTranslation::class);
+    }
+
+    public function translation()
+    {
+        return $this->hasOne(CarouselTranslation::class)->where('locale', app()->getLocale());
     }
     public function registerMediaConversions(Media $media = null): void
     {

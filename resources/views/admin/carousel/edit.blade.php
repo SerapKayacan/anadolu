@@ -83,24 +83,33 @@
                                             </div>
 
                                             <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label">Başlık</label>
-                                                    <textarea class="form-control " id="title" name="title"
-                                                              rows="2">{{$carousel->title}}</textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
+                                                @php
+                                                    $locales = ['tr', 'en', 'fr']; // Added French (fr)
+                                                @endphp
 
-                                            <div class="mb-10 row">
-                                                <div class="col-sm-12">
-                                                    <label class="form-label"> Açıklama</label>
-                                                    <textarea class="form-control " id="description"
-                                                              name="description"
-                                                              rows="2">{{$carousel->description }}</textarea>
-                                                    <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-10 row">
+                                                @foreach($locales as $locale)
+                                                    <div class="mb-10 row">
+                                                        <div class="col-sm-12">
+                                                            <label class="form-label">Başlık ({{ strtoupper($locale) }})</label>
+                                                            <textarea class="form-control"
+                                                                      name="translations[{{ $locale }}][title]"
+                                                                      rows="2">{{ old("translations.$locale.title", $carousel->translations->firstWhere('locale', $locale)?->title) }}</textarea>
+                                                            <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-10 row">
+                                                        <div class="col-sm-12">
+                                                            <label class="form-label">Açıklama ({{ strtoupper($locale) }})</label>
+                                                            <textarea class="form-control"
+                                                                      name="translations[{{ $locale }}][description]"
+                                                                      rows="2">{{ old("translations.$locale.description", $carousel->translations->firstWhere('locale', $locale)?->description) }}</textarea>
+                                                            <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+
+                                                <div class="mb-10 row">
                                                 <div class="col-sm-12">
                                                     <label class="form-label"> Buton Linki</label>
                                                     <textarea class="form-control" name="button_link"
@@ -148,7 +157,7 @@
                                                 <div class="col-sm-12">
                                                     <label class="form-label">Anahtar Kelimeler</label>
                                                     <input class="form-control" name="tags" id="inputTagify"
-                                                           value="{{ json_encode($tags) }}">
+                                                           value="">
                                                     <div class="text-muted fs-7">Bu alan zorunlu değildir.</div>
                                                 </div>
                                             </div>

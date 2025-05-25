@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\SlugHelper;
 use App\Http\Controllers\Controller;
 use App\Models\ServiceCategory;
+use App\Models\ServiceCategoryTranslation;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -31,19 +32,23 @@ class ServiceCategoryController extends Controller
     public function store(Request $request)
     {
         $serviceCategory = new ServiceCategory();
-        $serviceCategory->title = $request->title;
-        $serviceCategory->slug = SlugHelper::generateUniqueSlug(ServiceCategory::class, $request->title);
-        $serviceCategory->meta_description = $request->meta_description;
-        $serviceCategory->category_page_detail = $request->category_page_detail;
-        $serviceCategory->home_page_detail = $request->home_page_detail;
-        $serviceCategory->icon = $request->icon;
-        $serviceCategory->type = $request->type;
-        $serviceCategory->sort_order = $request->sort_order;
-        $serviceCategory->is_show_home_page = $request->is_show_home_page;
-        $serviceCategory->is_show_service_page = $request->is_show_service_page;
-        $serviceCategory->home_page_colspan = $request->home_page_colspan;
+        $mainTitle = $request->input('translations.tr.title');
+        $serviceCategory->title = $mainTitle;
+        $serviceCategory->slug = SlugHelper::generateUniqueSlug(ServiceCategory::class, $mainTitle);
         $serviceCategory->is_active = $request->is_active;
         $serviceCategory->save();
+
+        foreach ($request->translations as $locale => $data) {
+            if (!empty($data['title'])) {
+                $serviceCategory->translations()->create([
+                    'locale' => $locale,
+                    'title' => $data['title'],
+                    'meta_description' => $data['meta_description'] ?? '',
+                    'home_page_detail' => $data['home_page_detail'] ?? '',
+                    'category_page_detail' => $data['category_page_detail'] ?? '',
+                ]);
+            }
+        }
 
         $tags = json_decode($request->tags, true);
         $tagIds = [];
@@ -79,19 +84,19 @@ class ServiceCategoryController extends Controller
         if ($serviceCategory->title !== $request->title) {
             $serviceCategory->slug = SlugHelper::generateUniqueSlug(ServiceCategory::class, $request->title);
         }
-        $serviceCategory->title = $request->title;
-        $serviceCategory->meta_description = $request->meta_description;
-        $serviceCategory->category_page_detail = $request->category_page_detail;
-        $serviceCategory->home_page_detail = $request->home_page_detail;
-        $serviceCategory->icon = $request->icon;
-        $serviceCategory->type = $request->type;
-        $serviceCategory->sort_order = $request->sort_order;
-        $serviceCategory->is_show_home_page = $request->is_show_home_page;
-        $serviceCategory->is_show_service_page = $request->is_show_service_page;
-        $serviceCategory->home_page_colspan = $request->home_page_colspan;
+        $serviceCategory->title = $request->input('translations.tr.title');
         $serviceCategory->is_active = $request->is_active;
         $serviceCategory->update();
-
+        foreach ($request->translations as $locale => $data) {
+            if (!empty($data['title'])) {
+                $serviceCategory->translations()->updateOrCreate(
+                    ['locale' => $locale],
+                    [
+                        'title' => $data['title'],
+                    ]
+                );
+            }
+        }
         $tags = json_decode($request->tags, true);
         $tagIds = [];
         if (!is_null($tags) && count($tags) > 0) {

@@ -58,11 +58,11 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="icon-bar call-icon">
-    <a class="phone" title="Bizi hemen arayın!" href="tel:05447258125" ><i class="fas fa-phone-alt text-white"></i></a>
-    <a class="instagram" title="İnstagramdan'tan bizimle iletişime geçin!" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw==" ><i class="fab fa-instagram"></i></a>
-    <a class="whatsapp" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125" ><i class="fab fa-whatsapp"></i></a>
-    <a class="facebook" title="Facebook'tan bizimle iletişime geçin!" href="https://m.facebook.com/profile.php?id=61575540899975" ><i class="fab fa-facebook"></i></a>
-    <a class="linkedin" title="Linkendl'den bizimle iletişime geçin!" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr" ><i class="fab fa-linkedin"></i></a>
+    <a class="phone" title="{{ __('messages.call_us') }}" href="tel:05447258125" ><i class="fas fa-phone-alt text-white"></i></a>
+    <a class="instagram" title="{{ __('messages.contact_us_via_instagram') }}" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw==" ><i class="fab fa-instagram"></i></a>
+    <a class="whatsapp" title="{{ __('messages.contact_us_via_whatsapp') }}" href="https://wa.me/905447258125" ><i class="fab fa-whatsapp"></i></a>
+    <a class="facebook" title="{{ __('messages.contact_us_via_facebook') }}" href="https://m.facebook.com/profile.php?id=61575540899975" ><i class="fab fa-facebook"></i></a>
+    <a class="linkedin" title="{{ __('messages.contact_us_via_linkedln') }}" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr" ><i class="fab fa-linkedin"></i></a>
 </div>
 
     <!-- Topbar Start -->
@@ -84,10 +84,36 @@
                     <small>+90 544 725 81 25</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" title="WhatsApp'tan bizimle iletişime geçin!" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" title="Facebook'tan bizimle iletişime geçin!" href="https://m.facebook.com/profile.php?id=61575540899975"><i class="fab fa-facebook"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" title="Linkendl'den bizimle iletişime geçin!" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" title="İnstagramdan'tan bizimle iletişime geçin!" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw=="><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" title="{{ __('messages.contact_us_via_instagram') }}" href="https://wa.me/905447258125"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" title="{{ __('messages.contact_us_via_facebook') }}" href="https://m.facebook.com/profile.php?id=61575540899975"><i class="fab fa-facebook"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" title="{{ __('messages.contact_us_via_linkedln') }}" href="https://www.linkedin.com/in/erkan-pirim-082723265/?originalSubdomain=tr"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0" title="{{ __('messages.contact_us_via_instagram') }}" href="https://www.instagram.com/anadolutadilat1?igsh=MWtkaGo4eTFhM2xjYw=="><i class="fab fa-instagram"></i></a>
+                    <div class="mt-0.5 ms-1">
+                    <form action="{{ route('language.change') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <input type="hidden" name="locale" value="tr">
+                        <button type="submit" style="border:none; background:none; padding:5px;" {{ app()->getLocale() == 'tr' ? 'disabled' : '' }}>
+                            <img src="{{ asset('assets/frontend/img/turk-bayragi.jpg') }}" alt="Türkçe" style="width:24px; height:auto;">
+                        </button>
+                    </form>
+
+                    <form action="{{ route('language.change') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <input type="hidden" name="locale" value="en">
+                        <button type="submit" style="border:none; background:none; padding:5px;" {{ app()->getLocale() == 'en' ? 'disabled' : '' }}>
+                            <img src="{{ asset('assets/frontend/img/amerikan-bayragi.jpeg') }}" alt="English" width="24">
+                        </button>
+                    </form>
+
+                    <form action="{{ route('language.change') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <input type="hidden" name="locale" value="fr">
+                        <button type="submit" style="border:none; background:none; padding:5px;" {{ app()->getLocale() == 'fr' ? 'disabled' : '' }}>
+                            <img src="{{ asset('assets/frontend/img/fransa-bayragi.png') }}" alt="Français" width="24">
+                        </button>
+                    </form>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -105,21 +131,69 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('home') }}" class="nav-item nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}">Ana Sayfa</a>
-                <a href="{{ route('about-us.index') }}" class="nav-item nav-link {{ Route::currentRouteName() == 'about-us.index' ? 'active' : '' }}">Hakkımızda</a>
+                <div class="dropdown d-inline mt-3 me-3">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        @php
+                            $locale = app()->getLocale();
+                            $flags = [
+                                'tr' => 'turk-bayragi.jpg',
+                                'en' => 'amerikan-bayragi.jpeg',
+                                'fr' => 'fransa-bayragi.png',
+                            ];
+                        @endphp
+                        <img src="{{ asset('assets/frontend/img/' . $flags[$locale]) }}" alt="{{ strtoupper($locale) }}" width="24">
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li>
+                            <form action="{{ route('language.change') }}" method="POST" class="d-inline">
+                                @csrf
+                                <input type="hidden" name="locale" value="tr">
+                                <button type="submit" class="dropdown-item">
+                                    <img src="{{ asset('assets/frontend/img/turk-bayragi.jpg') }}" alt="Türkçe" width="24"> Türkçe
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="{{ route('language.change') }}" method="POST" class="d-inline">
+                                @csrf
+                                <input type="hidden" name="locale" value="en">
+                                <button type="submit" class="dropdown-item">
+                                    <img src="{{ asset('assets/frontend/img/amerikan-bayragi.jpeg') }}" alt="English" width="24"> English
+                                </button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="{{ route('language.change') }}" method="POST" class="d-inline">
+                                @csrf
+                                <input type="hidden" name="locale" value="fr">
+                                <button type="submit" class="dropdown-item">
+                                    <img src="{{ asset('assets/frontend/img/fransa-bayragi.png') }}" alt="Français" width="24"> Français
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="{{ route('home') }}" class="nav-item nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}">{{ __('messages.home') }}</a>
+                <a href="{{ route('about-us.index') }}" class="nav-item nav-link {{ Route::currentRouteName() == 'about-us.index' ? 'active' : '' }}">{{ __('messages.about_us') }}</a>
                 <div class="nav-item dropdown">
-                    <a href="" class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'services-category.index' ? 'active' : '' }}" data-bs-toggle="dropdown">Hizmetler</a>
+                    <a href="" class="nav-link dropdown-toggle {{ Route::currentRouteName() == 'services-category.index' ? 'active' : '' }}" data-bs-toggle="dropdown">{{ __('messages.services') }}</a>
                     <div class="dropdown-menu fade-up m-0">
                         @foreach ($serviceCategories as $serviceCategory)
-                            <a title="{{ $serviceCategory->title }} Görüntüle" href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}" class="dropdown-item">
-                                {{ $serviceCategory->title }}
-                            </a>
+                            @php
+                                $translation = $serviceCategory->translations->firstWhere('locale', app()->getLocale());
+                            @endphp
+                            @if ($translation)
+                                <a href="{{ route('services.byCategory', ['slug' => $serviceCategory->slug]) }}">
+                                    {{ $serviceCategory->translations->first()?->title ?? 'Default Title' }}
+                                </a>
+                            @endif
                         @endforeach
 
                     </div>
                 </div>
             </div>
-            <a title="Bizi hemen arayın!"  href="tel:05447258125" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Bizi Arayın
+            <a title="{{ __('messages.call_us') }}"  href="tel:05447258125" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{ __('messages.call_us') }}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.1-.24 11.36 11.36 0 003.57.57 1 1 0 011 1v3.59a1 1 0 01-1 1A19 19 0 013 4a1 1 0 011-1h3.59a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.24 1.1z" fill="white"/>
                 </svg>

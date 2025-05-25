@@ -29,28 +29,22 @@ class CarouselController extends Controller
     public function store(Request $request)
     {
         $carousel = new Carousel();
-        $carousel->title = $request->title;
+        $mainTitle = $request->input('translations.tr.title');
+        $carousel->title = $mainTitle;
         $carousel->description = $request->description ;
         $carousel->sort_order = $request->sort_order;
-        $carousel->button_text = $request->button_text;
         $carousel->button_link = $request->button_link;
-        $carousel->background_color = $request->background_color  ;
-        $carousel->text_color = $request->text_color;
-        $carousel->border_color = $request->border_color;
         $carousel->is_active = $request->is_active;
         $carousel->save();
-
-        $tags = json_decode($request->tags, true);
-        $tagIds = [];
-        if (!is_null($tags) && count($tags) > 0) {
-            foreach ($tags as $tagName) {
-                if (strlen($tagName["value"]) > 2) {
-                    $tag = Tag::firstOrCreate(['name' => $tagName["value"]]);
-                    $tagIds[] = $tag->id;
-                }
+        foreach ($request->translations as $locale => $data) {
+            if (!empty($data['title'])) {
+                $carousel->translations()->create([
+                    'locale' => $locale,
+                    'title' => $data['title'],
+                    'description' => $data['description'] ?? '',
+                ]);
             }
         }
-        $carousel->tags()->sync($tagIds);
 
         if ($request->hasFile('banner_image')) {
             $carousel->clearMediaCollection('banner');
@@ -63,38 +57,35 @@ class CarouselController extends Controller
     public function edit(string $id)
     {
         $carousel = Carousel::findOrFail($id);
-      $tags = $carousel->tags->pluck('name')->toArray();
+
 
         return view('admin.carousel.edit', [
             "carousel" => $carousel,
-           "tags" => $tags
+
         ]);
     }
     public function update(Request $request, string $id)
     {
         $carousel = Carousel::findOrFail($id);
-        $carousel->title = $request->title;
+        $carousel->title = $request->input('translations.tr.title');
         $carousel->description = $request->description ;
         $carousel->sort_order = $request->sort_order;
-        $carousel->button_text = $request->button_text;
         $carousel->button_link = $request->button_link;
-        $carousel->background_color = $request->background_color  ;
-        $carousel->text_color = $request->text_color;
-        $carousel->border_color = $request->border_color;
         $carousel->is_active = $request->is_active;
         $carousel->update();
 
-        $tags = json_decode($request->tags, true);
-        $tagIds = [];
-        if (!is_null($tags) && count($tags) > 0) {
-            foreach ($tags as $tagName) {
-                if (strlen($tagName["value"]) > 2) {
-                    $tag = Tag::firstOrCreate(['name' => $tagName["value"]]);
-                    $tagIds[] = $tag->id;
-                }
+        foreach ($request->translations as $locale => $data) {
+            if (!empty($data['title'])) {
+                $carousel->translations()->updateOrCreate(
+                    ['locale' => $locale],
+                    [
+                        'title' => $data['title'],
+                        'description' => $data['description'] ?? '',
+
+                    ]
+                );
             }
         }
-        $carousel->tags()->sync($tagIds);
 
 
         if ($request->hasFile('banner_image')) {

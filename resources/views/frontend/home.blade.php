@@ -5,6 +5,10 @@
     <div class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative">
             @foreach ($carousels as $index => $carousel)
+                @php
+                    $translation = $carousel->translations->firstWhere('locale', app()->getLocale());
+                @endphp
+
                 <div class="owl-carousel-item position-relative  @if ($index == 0) active @endif">
                     <img class="img-fluid" src="{{ $carousel->getFirstMediaUrl('banner', 'large') }}"
                          alt="Carousel Image">
@@ -13,10 +17,18 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-lg-8 text-center">
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->title }}</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{{$carousel->description }} </p>
-                                    <a href="{{ $carousel->button_link }}"  title="{{$carousel->title }} Görüntüle " class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Devamını
-                                        Oku</a>
+                                    <h1 class="display-3 text-white animated slideInDown mb-4">
+                                        {{ $translation?->title ?? 'Default Title' }}
+                                    </h1>
+                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">
+                                        {{ $translation?->description ?? 'Default Description' }}
+                                    </p>
+                                    <a href="{{ $carousel->button_link }}"
+                                       title="{{ $translation?->title ?? 'Default Title' }} Görüntüle"
+                                       class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                        {{ __('messages.see_more') }}
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
@@ -40,7 +52,7 @@
                         </div>
                         <h1 class="display-1 text-light mb-0">01</h1>
                     </div>
-                    <h5>Yaratıcı Tasarımcılar</h5>
+                    <h5>{{ __('messages.creative_designers') }}</h5>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <div class="d-flex align-items-center justify-content-between mb-2">
@@ -50,7 +62,7 @@
                         </div>
                         <h1 class="display-1 text-light mb-0">02</h1>
                     </div>
-                    <h5>Kaliteli Ürünler</h5>
+                    <h5>{{ __('messages.quality_products') }}</h5>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <div class="d-flex align-items-center justify-content-between mb-2">
@@ -60,7 +72,7 @@
                         </div>
                         <h1 class="display-1 text-light mb-0">03</h1>
                     </div>
-                    <h5>Ücretsiz Danışmanlık</h5>
+                    <h5>{{ __('messages.free_consultation') }}</h5>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <div class="d-flex align-items-center justify-content-between mb-2">
@@ -70,7 +82,7 @@
                         </div>
                         <h1 class="display-1 text-light mb-0">04</h1>
                     </div>
-                    <h5>Müşteri Desteği</h5>
+                    <h5>{{ __('messages.customer_support') }}</h5>
                 </div>
             </div>
         </div>
@@ -80,16 +92,21 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Hizmetlerimiz</h1>
+                <h1 class="display-5 mb-5">{{ __('messages.services') }}</h1>
             </div>
             <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">Hepsi</li>
+                        <li class="mx-2 active" data-filter="*">{{ __('messages.all') }}</li>
                         @foreach ($serviceCategories as $serviceCategory)
+                            @php
+                                $translation = $serviceCategory->translations->firstWhere('locale', app()->getLocale());
+                            @endphp
+                            @if ($translation)
                             <li class="mx-2" data-filter=".category-{{ $serviceCategory->id }}">
-                                {{ $serviceCategory->title }}
+                                {{ $serviceCategory->translations->first()?->title ?? 'Default Title' }}
                             </li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>
@@ -102,16 +119,21 @@
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
                                     <img class="img-fluid w-100 h-auto"
                                          src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
-                                         alt="{{ $service->title}}">
+                                         alt="{{ $service->translations->first()?->title ?? 'Default Title' }}">
                                 </a>
 
                             </div>
                             <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
+                                 @php
+                                $translation = $service->translations->where('locale', app()->getLocale())->first();
+                                 @endphp
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
-                                    <p class="text-primary fw-medium fs-3 mb-2">{{ $service->title }}</p>
+                                    <p class="text-primary fw-medium fs-3 mb-2">  {{ $service->translations->first()?->title ?? 'Default Title' }}</p>
                                 </a>
-                                <h5 class="lh-base mb-0">{{ $service->category_page_detail }}</h5 >
-                                <a class="fw-medium" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">Devamını Gör<i class="fa fa-arrow-right ms-2"></i></a>
+                                <h5 class="lh-base mb-0">
+                                    {{ $service->translations->first()?->category_page_detail ?? 'Default Title' }}
+                                </h5>
+                                <a class="fw-medium" href="{{ route('services-detail.show', ['slug' => $service->slug]) }}"> {{ __('messages.see_more') }}<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -134,47 +156,39 @@
                 <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Vizyonumuz</h1>
+                            <h1 class="display-5 mb-4">{{ __('messages.vision_title') }}</h1>
                         </div>
-                        <p class="mb-4 pb-2">Yenilikçi ve sürdürülebilir çözümlerle sektörde fark yaratmak, inşaat ve tadilat sektöründe lider konuma gelerek müşterilerimizin ilk
-                            tercihi olmak. Hem bireysel hem de kurumsal müşterilerimize sunduğumuz hizmetlerde, kalite ve güvenilirliği bir arada sunarak uzun vadeli
-                            iş birlikleri kurmayı hedefliyoruz.
-                            Teknolojiyi yakından takip ederek ve sürekli gelişime açık bir yapıyla, sektörde öncü bir marka olmayı amaçlıyoruz.</p>
+                        <p class="mb-4 pb-2">{{ __('messages.vision_text') }}</p>
                         <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Misyonumuz</h1>
+                            <h1 class="display-5 mb-4">{{ __('messages.mission_title') }}</h1>
                         </div>
-                        <p class="mb-4 pb-2"> Müşteri ihtiyaçlarını en iyi şekilde analiz ederek, beklentilerin ötesine geçen hizmetler sunmak.
-                            Çalışmalarımızda kalite standartlarından asla ödün vermeden, çevre dostu malzeme ve teknikler kullanarak
-                            projelerimizi hayata geçiriyoruz. Her projeye özel çözümler üreterek, müşteri memnuniyetini en üst seviyede tutmayı
-                            hedefliyoruz. Aynı zamanda çalışanlarımızın gelişimine katkı sağlayarak, profesyonel ve güçlü bir ekip ruhu ile sektöre değer katıyoruz.
-                            Sizin için en iyisini hedefleyen bir anlayışla, mekanlarınıza değer katmaya ve yaşam kalitenizi yükseltmeye devam ediyoruz.</p>
-
-                        <div class="row g-4 mb-4 pb-2">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
-                                         style="width: 60px; height: 60px;">
-                                        <i class="fa fa-users fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="fw-medium mb-0">Mutlu Müşteri</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
-                                         style="width: 60px; height: 60px;">
-                                        <i class="fa fa-check fa-2x text-primary"></i>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>
-                                        <p class="fw-medium mb-0">Bitirilmiş Proje</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="mb-4 pb-2">{{ __('messages.mission_text') }}
+{{--                        <div class="row g-4 mb-4 pb-2">--}}
+{{--                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">--}}
+{{--                                <div class="d-flex align-items-center">--}}
+{{--                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"--}}
+{{--                                         style="width: 60px; height: 60px;">--}}
+{{--                                        <i class="fa fa-users fa-2x text-primary"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="ms-3">--}}
+{{--                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>--}}
+{{--                                        <p class="fw-medium mb-0">Mutlu Müşteri</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">--}}
+{{--                                <div class="d-flex align-items-center">--}}
+{{--                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"--}}
+{{--                                         style="width: 60px; height: 60px;">--}}
+{{--                                        <i class="fa fa-check fa-2x text-primary"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="ms-3">--}}
+{{--                                        <h2 class="text-primary mb-1" data-toggle="counter-up">1234</h2>--}}
+{{--                                        <p class="fw-medium mb-0">Bitirilmiş Proje</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -189,17 +203,9 @@
                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 ps-lg-0">
                         <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Neden Biz</h1>
+                            <h1 class="display-5 mb-4">{{ __('messages.why_choose_us_title') }}</h1>
                         </div>
-                        <p class="mb-4 pb-2"> Firmamız, Epoksi ve PVC Döşeme, Boya/Badana, Tadilat ve Isı Yalıtımı ile
-                            Mantolama alanlarında uzmanlaşmış bir kuruluş olarak,
-                            sektörde yılların getirdiği tecrübe ve güvenle faaliyet göstermektedir. Müşteri
-                            memnuniyetini ön planda tutarak, her projede kaliteli
-                            işçilik ve yenilikçi çözümler sunmayı ilke edindik. Her biri alanında deneyimli ve uzman
-                            kadromuzla, estetik ve fonksiyonelliği bir araya
-                            getirerek yaşam ve çalışma alanlarınızı daha konforlu, dayanıklı ve modern hale getiriyoruz.
-                            Hedefimiz, sadece hizmet sunmak değil, aynı zamanda müşterilerimizin hayallerini
-                            gerçekleştirmelerine destek olmaktır.</p>
+                        <p class="mb-4 pb-2"> {{ __('messages.why_choose_us_text') }}</p>
                         <div class="row g-4">
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
@@ -208,8 +214,8 @@
                                         <i class="fa fa-check fa-2x text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="mb-2">Kaliteli</p>
-                                        <h5 class="mb-0">Hizmetler</h5>
+                                        <p class="mb-2">{{ __('messages.quality') }}</p>
+                                        <h5 class="mb-0">{{ __('messages.services') }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -220,8 +226,8 @@
                                         <i class="fa fa-user-check fa-2x text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="mb-2">Yenilikçi</p>
-                                        <h5 class="mb-0">Tasarımlar</h5>
+                                        <p class="mb-2">{{ __('messages.innovator') }}</p>
+                                        <h5 class="mb-0">{{ __('messages.designs') }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -232,8 +238,8 @@
                                         <i class="fa fa-drafting-compass fa-2x text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="mb-2">Ücretsiz</p>
-                                        <h5 class="mb-0">Danışma</h5>
+                                        <p class="mb-2">{{ __('messages.free') }}</p>
+                                        <h5 class="mb-0">{{ __('messages.advice') }}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -244,8 +250,8 @@
                                         <i class="fa fa-headphones fa-2x text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="mb-2">Müşteri</p>
-                                        <h5 class="mb-0">Desteği</h5>
+                                        <p class="mb-2">{{ __('messages.customer') }}</p>
+                                        <h5 class="mb-0">{{ __('messages.support') }}</h5>
                                     </div>
                                 </div>
                             </div>
