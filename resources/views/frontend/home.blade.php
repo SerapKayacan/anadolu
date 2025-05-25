@@ -116,11 +116,13 @@
                     <div class="col-lg-4 col-md-6 portfolio-item category-{{ $service->category_id }} wow fadeInUp " >
                         <div class="rounded overflow-hidden h-100 d-flex flex-column">
                             <div class="position-relative overflow-hidden">
+                                @if (!empty($service) && !empty($service->slug))
                                 <a href="{{ route('services-detail.show', ['slug' => $service->slug]) }}">
                                     <img class="img-fluid w-100 h-auto"
                                          src="{{ $service->getFirstMediaUrl('images', 'large') ?: asset('default-image.jpg') }}"
                                          alt="{{ $service->translations->first()?->title ?? 'Default Title' }}">
                                 </a>
+                                @endif
 
                             </div>
                             <div class="border border-5 border-light border-top-0 p-4 d-flex flex-column flex-grow-1">
